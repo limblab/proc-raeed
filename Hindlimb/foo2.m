@@ -14,18 +14,18 @@ plotflag = false;
 
 %% First, set up our neurons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% rng('default')
-% neurons = random('Normal', 0, 1, 10000, 8);
+rng('default')
+neurons = random('Normal', 0, 1, 10000, 8);
 
 % neurons(1,:) = [0 0 0 0 10 0 0 0];
 
 %% check biarticular effect by taking them out
-% neurons(:,[3 4 6]) = zeros(length(neurons),3);
+neurons(:,[3 4 6]) = zeros(length(neurons),3);
 
 %% %%%%
 % Get endpoint positions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-num_positions = 150;
+num_positions = 100;
 
 mp = get_legpts(base_leg,[pi/4 -pi/4 pi/6]);
 mtp = mp(:,base_leg.segment_idx(end,end));
@@ -55,7 +55,7 @@ muscle_lengths_con = muscle_lengths{2};
 scaled_lengths_unc = scaled_lengths{1};
 scaled_lengths_con = scaled_lengths{2};
 
-% calculate neural activity
+%% calculate neural activity
 num_sec = 2;
 activity_unc = get_activity(neurons,scaled_lengths_unc,num_sec);
 activity_con = get_activity(neurons,scaled_lengths_con,num_sec);
@@ -200,8 +200,9 @@ for i = 1:length(neurons)
     F_test_p_con(i) = anova_table_con.pValue(2);
 end
 %% PVAL ANALYSIS DIDN'T WORK
-sum(VAF_unc>0.4 & VAF_con>0.4)
+% sum(VAF_unc>0.4 & VAF_con>0.4)
 sum(VAF_cart_unc>0.4 & VAF_cart_con>0.4)
+median(cosdthetay(VAF_cart_unc>0.4 & VAF_cart_con>0.4))
 acosd(median(cosdthetay(VAF_cart_unc>0.4 & VAF_cart_con>0.4)))
 figure; hist(cosdthetay(VAF_cart_unc>0.4 & VAF_cart_con>0.4),40)
 set(gca,'xlim',[0 1])

@@ -1,4 +1,4 @@
-function [joint_angles, muscle_lengths, scaled_lengths, segment_angles_unc] = find_kinematics(base_leg,endpoint_positions, plotflag)
+function [joint_angles, muscle_lengths, scaled_lengths, segment_angles_unc,segment_angles_con] = find_kinematics(base_leg,endpoint_positions, plotflag)
 
 base_angles = [pi/4 -pi/4 pi/4];
 
@@ -29,7 +29,7 @@ for i = 1:num_positions
     segment_angles_unc = [segment_angles_unc; angles'];
     mp = get_legpts(base_leg,angles);
     
-    % plot leg if needed
+    % plot leg if needed (only corners and center)
     if(plotflag)
         draw_bones(base_leg,angles,false,1);
         hold on
@@ -75,6 +75,7 @@ x0 = base_angles';
 
 muscle_lengths_con = [];
 joint_angles_con = [];
+segment_angles_con = [];
 
 if(plotflag)
     figure;
@@ -85,6 +86,7 @@ for i = 1:num_positions
 %     [x,val,flag] = fminsearch(@mycostcon, x0, options);
     angles = fmincon(@(x) elastic_joint_cost(x,base_angles), start_angles_con(:,i) , [0 1 -1;0 -1 1], [0; pi], [1 -1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
     joint_angles_con = [joint_angles_con; angles'*joint_transform];
+    segment_angles_con = [segment_angles_con; angles'];
     mp = get_legpts(base_leg,angles);
     
     % These were commented out

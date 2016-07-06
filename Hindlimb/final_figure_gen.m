@@ -1,18 +1,22 @@
 %% Figure 3 (used unit number 11, corresponding to i=5 here)
 % (use unit number 43, corresponding to i=19 here, for more representative)
 best_act_ind = VAF_cart_unc>0.4;
-best_act = activity_unc(best_act_ind,:);
-best_PD = yupd(best_act_ind);
+best_act_unc = activity_unc(best_act_ind,:);
+best_act_con = activity_con(best_act_ind,:);
+best_PD_unc = yupd(best_act_ind);
 best_PD_con = ycpd(best_act_ind);
 best_nonlog_ind = find(best_act_ind);
 for i = 19
     figure(1234)
     clf
-    plot_heat_map(base_leg,best_act(i,:),endpoint_positions',best_PD(i))
+    plot_heat_map(base_leg,best_act_unc(i,:),endpoint_positions',best_PD_unc(i))
+    figure(1235)
+    clf
+    plot_heat_map_con(base_leg,best_act_con(i,:),endpoint_positions',best_PD_con(i))
     title(['Polar R2: ' num2str(VAF_unc(best_nonlog_ind(i))) ', Cart R2: ' num2str(VAF_cart_unc(best_nonlog_ind(i)))])
-    disp(['Unit number: ' num2str(best_nonlog_ind(i)) ', Elastic PD: ' num2str(best_PD(i)*180/pi) ', Knee-fixed PD: ' num2str(best_PD_con(i)*180/pi) ', PD diff: ' num2str((best_PD_con(i)-best_PD(i))*180/pi)])
+    disp(['Unit number: ' num2str(best_nonlog_ind(i)) ', Elastic PD: ' num2str(best_PD_unc(i)*180/pi) ', Knee-fixed PD: ' num2str(best_PD_con(i)*180/pi) ', PD diff: ' num2str((best_PD_con(i)-best_PD_unc(i))*180/pi)])
     
-    waitforbuttonpress
+%     waitforbuttonpress
 end
 
 %% Figure _ Plane regression figures (Cartesian)

@@ -111,11 +111,19 @@ moddepth_con = sqrt(yc(2,:).^2+yc(3,:).^2);
 baseline_unc = yu(1,:);
 baseline_con = yc(1,:);
 
+% get principal components
+[pca_coeff_unc,~,eig_unc] = pca(yu(2:3,:)');
+[pca_coeff_con,~,eig_con] = pca(yc(2:3,:)');
+
+theta=linspace(-pi,pi,100)';
+ellipse_unc = [sqrt(eig_unc(1))*cos(theta) sqrt(eig_unc(2))*sin(theta)]*pca_coeff_unc;
+ellipse_con = [sqrt(eig_con(1))*cos(theta) sqrt(eig_con(2))*sin(theta)]*pca_coeff_con;
+
 figure(1235)
 % subplot(1,2,1)
-h1 = polar(0,.2,'.');
+h1 = polar(0,.15,'.');
 set(h1,'MarkerSize',0.1)
-colors = colormap;
+colors = colormap(jet);
 hold on
 for i = 1:length(neurons)
     handles(i) = polar([yupd(i) yupd(i)],[0 moddepth_unc(i)]);
@@ -132,15 +140,19 @@ for i = 1:length(neurons)
     hold on
 %     pause(.01)
 end
+[theta,rho] = cart2pol(ellipse_unc(:,1),ellipse_unc(:,2));
+h=polar(theta,rho);
+set(h,'linewidth',2)
+
 % muscle order: BFA IP RF1 RF2 BFP VL MG SOL TA
 legend(handles,'BFA','IP','RF','BFP','VL','MG','SOL','TA')
 title 'Global pulling directions of muscles (Unc)'
 
 % subplot(1,2,2)
 figure(123444)
-h1 = polar(0,.2,'.');
+h1 = polar(0,.15,'.');
 set(h1,'MarkerSize',0.1)
-colors = colormap;
+colors = colormap(jet);
 hold on
 for i = 1:length(neurons)
     handles(i) = polar([ycpd(i) ycpd(i)],[0 moddepth_con(i)]);
@@ -157,33 +169,49 @@ for i = 1:length(neurons)
     hold on
 %     pause(.01)
 end
+[theta,rho] = cart2pol(ellipse_con(:,1),ellipse_con(:,2));
+h=polar(theta,rho);
+set(h,'linewidth',2)
+
 % muscle order: BFA IP RF1 RF2 BFP VL MG SOL TA
-legend(handles,'BFA','IP','RF','BFP','VL','MG','SOL','TA')
+% legend(handles,'BFA','IP','RF','BFP','VL','MG','SOL','TA')
 title 'Global pulling directions of muscles (Con)'
 
 %% find expected axis of neural GD distribution
-clear i
-mean_axis = angle(sum(moddepth_unc.*exp(i*yupd*2)))/2;
-mean_vect = [cos(mean_axis);sin(mean_axis)];
-perp_vect = [-sin(mean_axis);cos(mean_axis)];
+% clear i
+% mean_axis = angle(sum(moddepth_unc.*exp(1i*yupd*2)))/2;
+% mean_vect = [cos(mean_axis);sin(mean_axis)];
+% perp_vect = [-sin(mean_axis);cos(mean_axis)];
+% 
+% %% find changes in vectors along main axis and normal to main axis
+% axis_tuning_unc = [mean_vect perp_vect]'*yu(2:3,:);
+% axis_tuning_con = [mean_vect perp_vect]'*yc(2:3,:);
+% 
+% axis_changes = axis_tuning_con-axis_tuning_unc;
+% 
+% relative_axis_changes = axis_changes./repmat(moddepth_unc,2,1);
 
-%% find changes in vectors along main axis and normal to main axis
-axis_tuning_unc = [mean_vect perp_vect]'*yu(2:3,:);
-axis_tuning_con = [mean_vect perp_vect]'*yc(2:3,:);
+%% find changes along principal axis and orthogonal axis
+muscle_tuning_unc = yu(2:3,:)';
+muscle_tuning_con = yc(2:3,:)';
 
-axis_changes = axis_tuning_con-axis_tuning_unc;
+proj_unc = muscle_tuning_unc*pca_coeff_unc;
+proj_con = muscle_tuning_con*pca_coeff_con;
 
-relative_axis_changes = axis_changes./repmat(moddepth_unc,2,1);
 
-%% plot distribution
-figure
-subplot(121)
-plot_PD_distr(yupd,100);
-title 'Unconstrained PD Distribution'
+
+%% plot ellipses
+
+
+
 % figure
-subplot(122)
-plot_PD_distr(ycpd,100);
-title 'Constrained PD Distribution'
+% subplot(121)
+% plot_PD_distr(yupd,100);
+% title 'Unconstrained PD Distribution'
+% % figure
+% subplot(122)
+% plot_PD_distr(ycpd,100);
+% title 'Constrained PD Distribution'
 
 %% plot heatmaps
 % for i = 1:length(neurons)
