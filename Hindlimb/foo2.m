@@ -10,7 +10,7 @@ base_leg = get_baseleg;
 % global activity_con;
 % global asg rsg;
 % 
-plotflag = false;
+plotflag = true;
 
 %% First, set up our neurons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,15 +27,18 @@ neurons(:,[3 4 6]) = zeros(length(neurons),3);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 num_positions = 100;
 
-mp = get_legpts(base_leg,[pi/4 -pi/4 pi/6]);
+mp = get_legpts(base_leg,[pi/4 -pi/4 pi/4]);
 mtp = mp(:,base_leg.segment_idx(end,end));
 
 [a,r]=cart2pol(mtp(1), mtp(2));
 
 % get polar points
-rs = linspace(-4,0.5,15) + r;
+rs = linspace(-4,1,10) + r;
+% rs = linspace(-4,1.5,10) + r;
 %rs = r;
-as = pi/16 * linspace(-2,4,10) + a;
+% as = pi/16 * linspace(-2,4,10) + a;
+% as = pi/180 * linspace(-33,33,10) + a;
+as = pi/180 * linspace(-30,25,10) + a;
 %as = a;
 
 [rsg, asg] = meshgrid(rs, as);
