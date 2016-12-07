@@ -1,10 +1,12 @@
 function [joint_angles, muscle_lengths, scaled_lengths, segment_angles_unc,segment_angles_con] = find_kinematics(base_leg,endpoint_positions, plotflag)
 
-base_angles = [pi/4 -pi/4 pi/4];
+% base_angles in joint coordinates, not segment coordinates
+base_angles = [pi/4 pi/2 pi/2];
 
 % matrix to transform hip-centric segment angles into joint angles (offset
-% by pi for knee and ankle), assuming row vector of segment angles
-joint_transform = [1 0 0; 1 -1 0; 0 -1 1]';
+% by pi for knee and ankle), assuming row vector of segment angles (doing
+% things in joint coordinates now, so not used)
+joint_transform_for_inv = [1 0 0; 1 -1 0; 0 -1 1]';
 num_positions = size(endpoint_positions,2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,13 +27,14 @@ for i = 1:num_positions
     my_ep = endpoint_positions(:,i);
     angles = fmincon(@(x) elastic_joint_cost(x,base_angles), x0, [],[],[],[],[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
     start_angles_con = [start_angles_con angles];
-    joint_angles_unc = [joint_angles_unc; angles'*joint_transform];
-    segment_angles_unc = [segment_angles_unc; angles'];
-    mp = get_legpts(base_leg,angles);
+%     joint_angles_unc = [joint_angles_unc; angles'*joint_transform];
+    joint_angles_unc = [joint_angles_unc; angles'];
+%     segment_angles_unc = [segment_angles_unc; angles'];
+    mp = get_legpts(base_leg,angles'/joint_transform_for_inv);
     
     % plot leg if needed (only corners and center)
     if(plotflag)
-        draw_bones(base_leg,angles,false,1);
+        draw_bones(base_leg,angles'/joint_transform_for_inv,false,1);
         hold on
         if (isequal(my_ep,mp(:,base_leg.segment_idx(end,end))))
             plot(my_ep(1), my_ep(2), 'ro');
@@ -40,7 +43,7 @@ for i = 1:num_positions
         end
     end
     
-    muscle_lengths_unc = [muscle_lengths_unc; get_musclelengths(base_leg,angles)];
+    muscle_lengths_unc = [muscle_lengths_unc; get_musclelengths(base_leg,angles'/joint_transform_for_inv)];
 end
 if(plotflag)
     axis square
@@ -64,7 +67,7 @@ end
 
 knee_constraint_angle = pi/2;
 
-% % find vector length from hip to ankle
+% % find vector from hip to ankle
 % constrain_legpts = get_legpts(base_leg,[pi/2 0 0]);
 % ankle_point = constrain_legpts(:,base_leg.segment_idx(3,2));
 % [hipknee_orient,hipknee_len] = cart2pol(ankle_point(1),ankle_point(2));
@@ -84,14 +87,15 @@ end
 for i = 1:num_positions
     my_ep = endpoint_positions(:,i);
 %     [x,val,flag] = fminsearch(@mycostcon, x0, options);
-    angles = fmincon(@(x) elastic_joint_cost(x,base_angles), start_angles_con(:,i) , [0 1 -1;0 -1 1], [0; pi], [1 -1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
-    joint_angles_con = [joint_angles_con; angles'*joint_transform];
-    segment_angles_con = [segment_angles_con; angles'];
-    mp = get_legpts(base_leg,angles);
+    angles = fmincon(@(x) elastic_joint_cost(x,base_angles), start_angles_con(:,i) , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
+%     joint_angles_con = [joint_angles_con; angles'*joint_transform];
+    joint_angles_con = [joint_angles_con; angles'];
+%     segment_angles_con = [segment_angles_con; angles'];
+    mp = get_legpts(base_leg,angles'/joint_transform_for_inv);
     
     % These were commented out
     if(plotflag)
-        draw_bones(base_leg,angles,false,1);
+        draw_bones(base_leg,angles'/joint_transform_for_inv,false,1);
         hold on
         if (isequal(my_ep,mp(:,base_leg.segment_idx(end,end))))
             plot(my_ep(1), my_ep(2), 'ro');
@@ -100,7 +104,7 @@ for i = 1:num_positions
         end
     end
     
-    muscle_lengths_con = [muscle_lengths_con; get_musclelengths(base_leg,angles)];
+    muscle_lengths_con = [muscle_lengths_con; get_musclelengths(base_leg,angles'/joint_transform_for_inv)];
 end
 if(plotflag)
     axis square
