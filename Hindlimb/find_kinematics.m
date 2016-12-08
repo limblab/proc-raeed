@@ -29,7 +29,7 @@ for i = 1:num_positions
     start_angles_con = [start_angles_con angles];
 %     joint_angles_unc = [joint_angles_unc; angles'*joint_transform];
     joint_angles_unc = [joint_angles_unc; angles'];
-%     segment_angles_unc = [segment_angles_unc; angles'];
+    segment_angles_unc = [segment_angles_unc; angles'/joint_transform_for_inv];
     mp = get_legpts(base_leg,angles'/joint_transform_for_inv);
     
     % plot leg if needed (only corners and center)
@@ -90,7 +90,7 @@ for i = 1:num_positions
     angles = fmincon(@(x) elastic_joint_cost(x,base_angles), start_angles_con(:,i) , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
 %     joint_angles_con = [joint_angles_con; angles'*joint_transform];
     joint_angles_con = [joint_angles_con; angles'];
-%     segment_angles_con = [segment_angles_con; angles'];
+    segment_angles_con = [segment_angles_con; angles'/joint_transform_for_inv];
     mp = get_legpts(base_leg,angles'/joint_transform_for_inv);
     
     % These were commented out

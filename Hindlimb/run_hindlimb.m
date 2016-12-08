@@ -1,42 +1,24 @@
-% foo2
-function [prct_tuned,prct_changed,median_dPD] = run_hindlimb(num_sec)
-%% setup
-% leg;
-% clear
+function [num_tuned,cosPDChange,pdChange,PD_unc,PD_con] = run_hindlimb(neurons,num_sec,joint_elast)
+
+%% set up
 base_leg = get_baseleg;
+plotflag = true;
 
-%%
-
-% global activity_unc;
-% global activity_con;
-% global asg rsg;
-% 
-plotflag = false;
-
-%% First, set up our neurons
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% rng('default')
-neurons = random('Normal', 0, 1, 100, 8);
-
-% neurons(1,:) = [0 0 0 0 10 0 0 0];
-
-%% check biarticular effect by taking them out
-% neurons(:,[3 4 6]) = zeros(length(neurons),3);
-
-%% %%%%
-% Get endpoint positions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Get workspace
 num_positions = 100;
 
-mp = get_legpts(base_leg,[pi/4 -pi/4 pi/6]);
+mp = get_legpts(base_leg,[pi/4 -pi/4 pi/4]);
 mtp = mp(:,base_leg.segment_idx(end,end));
 
 [a,r]=cart2pol(mtp(1), mtp(2));
 
 % get polar points
-rs = linspace(-4,-0.5,10) + r;
+rs = linspace(-4,1,10) + r;
+% rs = linspace(-4,1.5,10) + r;
 %rs = r;
-as = pi/16 * linspace(-2,4,10) + a;
+% as = pi/16 * linspace(-2,4,10) + a;
+% as = pi/180 * linspace(-33,33,10) + a;
+as = pi/180 * linspace(-30,25,10) + a;
 %as = a;
 
 [rsg, asg] = meshgrid(rs, as);
@@ -45,10 +27,7 @@ polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
 [x, y] = pol2cart(polpoints(2,:), polpoints(1,:));
 endpoint_positions = [x;y];
 
-
-%% %%%%%%%%%%%
-% Find kinematics of limb in endpoint positions
-%%%%%%%%%%%
+%% Find joint angles for paw positions
 [joint_angles,muscle_lengths,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,plotflag);
 joint_angles_unc = joint_angles{1};
 joint_angles_con = joint_angles{2};
@@ -57,62 +36,38 @@ muscle_lengths_con = muscle_lengths{2};
 scaled_lengths_unc = scaled_lengths{1};
 scaled_lengths_con = scaled_lengths{2};
 
-% calculate neural activity
-% num_sec = 2;
+%% Get neural activity based on num_sec
 activity_unc = get_activity(neurons,scaled_lengths_unc,num_sec);
 activity_con = get_activity(neurons,scaled_lengths_con,num_sec);
 
-%% %%%%%%%%%%%%%%%%%%%%
-% Calculate change in mean firing rates
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%% get fits
 
-yc = [];
-yu = [];
+coef_con = [];
+coef_unc = [];
 
-residuals_con = [];
-residuals_unc = [];
-
-VAF_con = [];
-VAF_unc = [];
 VAF_cart_con = [];
 VAF_cart_unc = [];
 
 zerod_ep = endpoint_positions' - repmat(mean(endpoint_positions'),length(endpoint_positions'),1);
 
-Y = [ones(length(zerod_ep),1) zerod_ep];
-
-x1 = reshape(rsg, 1, num_positions);
-x2 = reshape(asg, 1, num_positions);
-X = [ones(size(x1'))  x1'  x2'];
-
-pol_fit_con = cell(length(neurons),1);
-pol_fit_unc = cell(length(neurons),1);
 cart_fit_con = cell(length(neurons),1);
 cart_fit_unc = cell(length(neurons),1);
 joint_fit_con = cell(length(neurons),1);
 joint_fit_unc = cell(length(neurons),1);
 
-pol_fit_full = cell(length(neurons),1);
 
 for i=1:length(neurons)
     ac = activity_con(i,:)';
     au = activity_unc(i,:)';
-    
-    pol_fit_con{i} = LinearModel.fit([x1' x2'],ac);
-    pol_fit_unc{i} = LinearModel.fit([x1' x2'],au);
-    
-    pol_fit_full{i} = LinearModel.fit([x1' x2' zeros(num_positions,3); x1' x2' ones(num_positions,1) x1' x2'],[au;ac]);
     
     cart_fit_con{i} = LinearModel.fit(zerod_ep,ac);
     cart_fit_unc{i} = LinearModel.fit(zerod_ep,au);
     
     temp_c = cart_fit_con{i}.Coefficients.Estimate;
     temp_u = cart_fit_unc{i}.Coefficients.Estimate;
-    yc = [yc temp_c];
-    yu = [yu temp_u];
+    coef_con = [coef_con temp_c];
+    coef_unc = [coef_unc temp_u];
     
-    VAF_con = [VAF_con pol_fit_con{i}.Rsquared.Ordinary];
-    VAF_unc = [VAF_unc pol_fit_unc{i}.Rsquared.Ordinary];
     VAF_cart_con = [VAF_cart_con cart_fit_con{i}.Rsquared.Ordinary];
     VAF_cart_unc = [VAF_cart_unc cart_fit_unc{i}.Rsquared.Ordinary];
     
@@ -125,78 +80,21 @@ for i=1:length(neurons)
 %     joint_same(i) = (sum(joint_comp)/length(joint_comp) == 1);
 end
 
-% Get t-stat
-% sterr = std([ac;au]);
-% %usterr = std(au)./sqrt(100);
-% t_stat = max( abs(cc-uu)/sterr );
-% 
-% %paired t-test
+%% Get only tuned neurons
+is_best = VAF_cart_unc>0.4 & VAF_cart_con>0.4;
+num_tuned = sum(is_best);
 
-%% Do a one way ANOVA of each neuron
-p_annova = check_tuning(activity_unc);
-
-%% Get t-statistic for change across conditions (max change of coefficients)
-[tStat_neuron,pVal_neuron] = find_extrinsic_stats(pol_fit_full);
-
-% figure out how many just change in baseline
-% Get t-statistic for change across conditions (max change of coefficients)
-% baseline_change_idx = [];
-% for i = 1:length(pol_fit_full)
-%     pVal = pol_fit_full{i}.Coefficients.pValue(4:end);
-%     if(pVal(1)<0.01 && pVal
-% end
+best_coef_con = coef_con(is_best);
+best_coef_unc = coef_unc(is_best);
 
 %% Get prefered directions
-ycpd = atan2(yc(3,:),yc(2,:));
-yupd = atan2(yu(3,:),yu(2,:));
 
-cosdthetay = cos(ycpd-yupd);
+PD_con = atan2(best_coef_con(3,:),best_coef_con(2,:));
+PD_unc = atan2(best_coef_unc(3,:),best_coef_unc(2,:));
 
+cosdPD = cos(PD_con-PD_unc);
 
-%% %%%%%%%%%%% Draw plots of leg positions in joint space
-if(plotflag)
-    figure
-    plot3(joint_angles_unc(:,1)', joint_angles_unc(:,2)', joint_angles_unc(:,3)', 'bo');
-    axis square; grid on;
-    % axis([0 1.5 0 1.5 0 1]);
-    %axis([-1.5 1.5 -1.5 1.5 0 3]);
-    view([-60 40]);
-    xlabel('hip');
-    ylabel('knee');
-    zlabel('ankle');
-    title('Unconstrained')
+%% output variables
+cosPDChange = median(cosdPD);
+pdChange = acosd(median(cosdPD));
 
-    figure
-    plot3(joint_angles_con(:,1)', joint_angles_con(:,2)', joint_angles_con(:,3)', 'bo');
-    axis square; grid on;
-    % axis([0 1.5 0 1.5 0 1]);
-    %axis([-1.5 1.5 -1.5 1.5 0 3]);
-    view([-60 40]);
-    xlabel('hip');
-    ylabel('knee');
-    zlabel('ankle');
-    title('Constrained')
-
-    disp('unc corrcoef')
-    corrcoef(joint_angles_unc)
-
-    disp('con corrcoef')
-    corrcoef(joint_angles_con)
-
-    %% display R^2 and preferred direcction shift plot
-    figure
-    plot3(VAF_unc,VAF_con, cosdthetay, '.')
-    grid on
-    xlabel('unconstrained')
-    ylabel 'constrained'
-    zlabel 'cosdthetay'
-    axis([0 1 0 1 -1 1])
-end
-
-%%
-prct_tuned = sum(VAF_unc>0.4 & VAF_con>0.4)/length(neurons);
-prct_changed = sum(VAF_unc>0.4 & VAF_con>0.4 & pVal_neuron'>0.01)/sum(VAF_unc>0.4 & VAF_con>0.4);
-median_dPD = acosd(median(cosdthetay(VAF_unc>0.4 & VAF_con>0.4)));
-% figure; hist(abs(tStat_neuron(VAF_unc>0.4 & VAF_con>0.4)),20)
-% figure; hist(cosdthetay(VAF_unc>0.4 & VAF_con>0.4),40)
-% figure; plot_PD_distr(yupd,50)

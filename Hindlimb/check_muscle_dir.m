@@ -14,9 +14,12 @@ mtp = mp(:,base_leg.segment_idx(end,end));
 [a,r]=cart2pol(mtp(1), mtp(2));
 
 % get polar points
-rs = linspace(-4,-0.5,10) + r;
+rs = linspace(-4,1,10) + r;
+% rs = linspace(-4,1.5,10) + r;
 %rs = r;
-as = pi/16 * linspace(-2,4,10) + a;
+% as = pi/16 * linspace(-2,4,10) + a;
+% as = pi/180 * linspace(-33,33,10) + a;
+as = pi/180 * linspace(-30,25,10) + a;
 %as = a;
 
 [rsg, asg] = meshgrid(rs, as);

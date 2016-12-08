@@ -10,7 +10,7 @@ base_leg = get_baseleg;
 % global activity_con;
 % global asg rsg;
 % 
-plotflag = true;
+plotflag = false;
 
 %% First, set up our neurons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
