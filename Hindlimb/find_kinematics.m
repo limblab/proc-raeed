@@ -1,4 +1,4 @@
-function [joint_angles, muscle_lengths, scaled_lengths, segment_angles_unc,segment_angles_con] = find_kinematics(base_leg,endpoint_positions, plotflag)
+function [joint_angles, muscle_lengths, scaled_lengths, segment_angles_unc,segment_angles_con] = find_kinematics(base_leg,endpoint_positions, plotflag,joint_elast)
 
 % base_angles in joint coordinates, not segment coordinates
 base_angles = [pi/4 pi/2 pi/2];
@@ -25,7 +25,7 @@ segment_angles_unc = [];
 
 for i = 1:num_positions
     my_ep = endpoint_positions(:,i);
-    angles = fmincon(@(x) elastic_joint_cost(x,base_angles), x0, [],[],[],[],[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
+    angles = fmincon(@(x) elastic_joint_cost(x,base_angles,joint_elast), x0, [],[],[],[],[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
     start_angles_con = [start_angles_con angles];
 %     joint_angles_unc = [joint_angles_unc; angles'*joint_transform];
     joint_angles_unc = [joint_angles_unc; angles'];
@@ -87,7 +87,7 @@ end
 for i = 1:num_positions
     my_ep = endpoint_positions(:,i);
 %     [x,val,flag] = fminsearch(@mycostcon, x0, options);
-    angles = fmincon(@(x) elastic_joint_cost(x,base_angles), start_angles_con(:,i) , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
+    angles = fmincon(@(x) elastic_joint_cost(x,base_angles,joint_elast), start_angles_con(:,i) , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
 %     joint_angles_con = [joint_angles_con; angles'*joint_transform];
     joint_angles_con = [joint_angles_con; angles'];
     segment_angles_con = [segment_angles_con; angles'/joint_transform_for_inv];

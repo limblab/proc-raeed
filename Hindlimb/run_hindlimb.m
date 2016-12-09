@@ -2,7 +2,7 @@ function [num_tuned,cosPDChange,pdChange,PD_unc,PD_con] = run_hindlimb(neurons,n
 
 %% set up
 base_leg = get_baseleg;
-plotflag = true;
+plotflag = false;
 
 %% Get workspace
 num_positions = 100;
@@ -28,7 +28,7 @@ polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
 endpoint_positions = [x;y];
 
 %% Find joint angles for paw positions
-[joint_angles,muscle_lengths,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,plotflag);
+[joint_angles,muscle_lengths,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,plotflag,joint_elast);
 joint_angles_unc = joint_angles{1};
 joint_angles_con = joint_angles{2};
 muscle_lengths_unc = muscle_lengths{1};
@@ -84,8 +84,8 @@ end
 is_best = VAF_cart_unc>0.4 & VAF_cart_con>0.4;
 num_tuned = sum(is_best);
 
-best_coef_con = coef_con(is_best);
-best_coef_unc = coef_unc(is_best);
+best_coef_con = coef_con(:,is_best);
+best_coef_unc = coef_unc(:,is_best);
 
 %% Get prefered directions
 

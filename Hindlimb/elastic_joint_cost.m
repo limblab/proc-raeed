@@ -1,4 +1,4 @@
-function cost = elastic_joint_cost(angles,eq_angles)
+function cost = elastic_joint_cost(angles,eq_angles,joint_elast)
 %Cost to find limb configuration in elastic joint condition
 
-cost = sum([1;1;1].*(angles(:)-eq_angles(:)).^2);
+cost = sum(joint_elast.*(angles(:)-eq_angles(:)).^2);
