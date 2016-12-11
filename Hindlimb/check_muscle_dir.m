@@ -1,3 +1,4 @@
+function figure_handles = check_muscle_dir
 %%% Checking muscle "global pulling directions"
 %% initialize leg
 clear
@@ -15,12 +16,8 @@ mtp = mp(:,base_leg.segment_idx(end,end));
 
 % get polar points
 rs = linspace(-4,1,10) + r;
-% rs = linspace(-4,1.5,10) + r;
-%rs = r;
 % as = pi/16 * linspace(-2,4,10) + a;
-% as = pi/180 * linspace(-33,33,10) + a;
 as = pi/180 * linspace(-30,25,10) + a;
-%as = a;
 
 [rsg, asg] = meshgrid(rs, as);
 polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
@@ -31,7 +28,8 @@ endpoint_positions = [x;y];
 %% %%%%%%%%%%%
 % Find kinematics of limb in endpoint positions
 %%%%%%%%%%%
-[joint_angles,muscle_lengths,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,false);
+joint_elast = [1;1;1];
+[joint_angles,muscle_lengths,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,false,joint_elast);
 joint_angles_unc = joint_angles{1};
 joint_angles_con = joint_angles{2};
 muscle_lengths_unc = muscle_lengths{1};
@@ -62,38 +60,19 @@ end
 
 % only check muscles
 neurons = eye(8);
-% rng('default');
-% neurons = random('Normal', 0, 1, 10000, 8);
-% neurons = random('Uniform', -5, 5, 10000, 8);
-% neurons = abs(random('Normal', 0, 1, 10000, 8));
 activity_con = neurons*scaled_lengths_con';
 activity_unc = neurons*scaled_lengths_unc';
-activity_unc_pred = neurons*pred_length_unc';
-activity_con_pred = neurons*pred_length_con';
-% activity_unc = get_activity(neurons,scaled_lengths_unc,4);
-% activity_con = get_activity(neurons,scaled_lengths_con,4);
-
-x1 = reshape(rsg, 1, num_positions);
-x2 = reshape(asg, 1, num_positions);
 
 yc = [];
 yu = [];
 
-VAF_cart_con = [];
-VAF_cart_unc = [];
-
 cart_fit_con = cell(length(neurons),1);
 cart_fit_unc = cell(length(neurons),1);
-pol_fit_full = cell(length(neurons),1);
 
 for i=1:length(neurons)
     ac = activity_con(i,:)';
     au = activity_unc(i,:)';
-%     ac = activity_con_pred(i,:)';
-%     au = activity_unc_pred(i,:)';
-    
-    pol_fit_full{i} = LinearModel.fit([x1' x2' zeros(num_positions,3); x1' x2' ones(num_positions,1) x1' x2'],[au;ac]);
-    
+        
     cart_fit_con{i} = LinearModel.fit(zerod_ep,ac);
     cart_fit_unc{i} = LinearModel.fit(zerod_ep,au);
     
@@ -122,7 +101,7 @@ theta=linspace(-pi,pi,100)';
 ellipse_unc = [sqrt(eig_unc(1))*cos(theta) sqrt(eig_unc(2))*sin(theta)]*pca_coeff_unc;
 ellipse_con = [sqrt(eig_con(1))*cos(theta) sqrt(eig_con(2))*sin(theta)]*pca_coeff_con;
 
-figure(1235)
+figure_handles(1) = figure;
 % subplot(1,2,1)
 h1 = polar(0,.15,'.');
 set(h1,'MarkerSize',0.1)
@@ -152,7 +131,7 @@ legend(handles,'BFA','IP','RF','BFP','VL','MG','SOL','TA')
 title 'Global pulling directions of muscles (Unc)'
 
 % subplot(1,2,2)
-figure(123444)
+figure_handles(2) = figure;
 h1 = polar(0,.15,'.');
 set(h1,'MarkerSize',0.1)
 colors = colormap(jet);
@@ -180,6 +159,23 @@ set(h,'linewidth',2)
 % legend(handles,'BFA','IP','RF','BFP','VL','MG','SOL','TA')
 title 'Global pulling directions of muscles (Con)'
 
+%% plot directional changes
+figure_handles(3) = figure;
+% subplot(1,2,1)
+h1 = polar(0,.15,'.');
+set(h1,'MarkerSize',0.1)
+colors = colormap(jet);
+hold on
+for i = 1:length(neurons)
+    handles(i) = polar([yupd(i) ycpd(i)],[moddepth_unc(i) moddepth_con(i)]);
+    h2 = polar(ycpd(i),moddepth_con(i),'o');
+    
+    set(handles(i),'Color',colors(8*i,:),'LineWidth',3)
+    set(h2,'Color',colors(8*i,:),'LineWidth',3)
+    
+    hold on
+end
+
 %% find expected axis of neural GD distribution
 % clear i
 % mean_axis = angle(sum(moddepth_unc.*exp(1i*yupd*2)))/2;
@@ -200,9 +196,14 @@ muscle_tuning_con = yc(2:3,:)';
 
 proj_unc = muscle_tuning_unc*pca_coeff_unc;
 proj_con = muscle_tuning_con*pca_coeff_con;
+totalchange = sum(proj_con-proj_unc);
+abschange = sum(abs(proj_con-proj_unc));
 
+disp(['Total projected muscle changes: ' num2str(totalchange(1)) ', ' num2str(totalchange(2))])
+disp(['Absolute projected muscle changes: ' num2str(abschange(1)) ', ' num2str(abschange(2))])
 
-
+disp(['Principal axis elast: ' num2str(atan2d(pca_coeff_unc(2,1),pca_coeff_unc(1,1)))])
+disp(['Principal axis fixed: ' num2str(atan2d(pca_coeff_con(2,1),pca_coeff_con(1,1)))])
 %% plot ellipses
 
 
