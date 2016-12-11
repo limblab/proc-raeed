@@ -1,4 +1,4 @@
-function [best_coef_unc,best_coef_con,best_act_unc,best_act_con,endpoint_positions,is_best_unc,is_best_con,VAF_cart_unc,VAF_cart_con] = run_hindlimb(neurons,num_sec,joint_elast)
+function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb(neurons,num_sec,joint_elast)
 % Runs hindlimb simulation given neural weights, recording time, and joint
 % elasticity
 
@@ -44,18 +44,19 @@ activity_con = get_activity(neurons,scaled_lengths_con,num_sec);
 
 %% get fits
 
-coef_con = [];
-coef_unc = [];
+coef_con = zeros(3,length(neurons));
+coef_unc = zeros(3,length(neurons));
 
-VAF_cart_con = [];
-VAF_cart_unc = [];
+VAF_cart_con = zeros(1,length(neurons));
+VAF_cart_unc = zeros(1,length(neurons));
+
+pval_con = zeros(1,length(neurons));
+pval_unc = zeros(1,length(neurons));
 
 zerod_ep = endpoint_positions' - repmat(mean(endpoint_positions'),length(endpoint_positions'),1);
 
 cart_fit_con = cell(length(neurons),1);
 cart_fit_unc = cell(length(neurons),1);
-joint_fit_con = cell(length(neurons),1);
-joint_fit_unc = cell(length(neurons),1);
 
 num_high_p = 0;
 for i=1:length(neurons)
@@ -67,42 +68,32 @@ for i=1:length(neurons)
     
     temp_c = cart_fit_con{i}.Coefficients.Estimate;
     temp_u = cart_fit_unc{i}.Coefficients.Estimate;
-    coef_con = [coef_con temp_c];
-    coef_unc = [coef_unc temp_u];
+    coef_con(:,i) = temp_c;
+    coef_unc(:,i) = temp_u;
     
-    VAF_cart_con = [VAF_cart_con cart_fit_con{i}.Rsquared.Ordinary];
-    VAF_cart_unc = [VAF_cart_unc cart_fit_unc{i}.Rsquared.Ordinary];
+    VAF_cart_con(i) = cart_fit_con{i}.Rsquared.Ordinary;
+    VAF_cart_unc(i) = cart_fit_unc{i}.Rsquared.Ordinary;
     
-    p_con = coefTest(cart_fit_con{i});
-    p_unc = coefTest(cart_fit_unc{i});
-    
-    if(p_con > 0.001 || p_unc > 0.001)
-        num_high_p = num_high_p + 1;
-    end
-    
-    % do joint regressions
-%     joint_fit_con{i} = LinearModel.stepwise(joint_angles_con,ac,'linear', 'upper', 'linear', 'PRemove', 0.1, 'PEnter', 0.01);
-%     joint_fit_unc{i} = LinearModel.stepwise(joint_angles_unc,au,'linear', 'upper', 'linear', 'PRemove', 0.1, 'PEnter', 0.01);
-    
-    % check if they're the same
-%     joint_comp = strcmp(joint_fit_con{i}.PredictorNames,joint_fit_unc{i}.PredictorNames);
-%     joint_same(i) = (sum(joint_comp)/length(joint_comp) == 1);
+    pval_con(i) = coefTest(cart_fit_con{i});
+    pval_unc(i) = coefTest(cart_fit_unc{i});
 end
 
-if( num_high_p > 0 )
-    warning(['There were ' num2str(num_high_p) ' high p-values'])
-end
+%% assign tuning table output
+out_table_unc = table(neurons,activity_unc,coef_unc',VAF_cart_unc',pval_unc',(VAF_cart_unc>0.4 & pval_unc<0.01)',...
+    'VariableNames',{'weights','activity','coef','VAF','pval','isTuned'});
+out_table_con = table(neurons,activity_con,coef_con',VAF_cart_con',pval_con',(VAF_cart_con>0.4 & pval_con<0.01)',...
+    'VariableNames',{'weights','activity','coef','VAF','pval','isTuned'});
 
 %% Get only tuned neurons
-is_best_unc = VAF_cart_unc>0.4;
-is_best_con = VAF_cart_con>0.4;
-is_best = is_best_unc & is_best_con;
-
-best_coef_con = coef_con(:,is_best);
-best_coef_unc = coef_unc(:,is_best);
-
-best_act_con = activity_con(is_best,:);
-best_act_unc = activity_unc(is_best,:);
+% is_best_unc = VAF_cart_unc>0.4 & pval_unc<0.01;
+% is_best_con = VAF_cart_con>0.4 & pval_con<0.01;
+% is_best = is_best_unc & is_best_con;
+% 
+% best_coef_con = coef_con(:,is_best);
+% best_coef_unc = coef_unc(:,is_best);
+% 
+% best_act_con = activity_con(is_best,:);
+% best_act_unc = activity_unc(is_best,:);
 
 %% Get prefered directions
 

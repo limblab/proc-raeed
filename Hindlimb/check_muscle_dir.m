@@ -9,7 +9,7 @@ base_leg=get_baseleg;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 num_positions = 100;
 
-mp = get_legpts(base_leg,[pi/4 -pi/4 pi/6]);
+mp = get_legpts(base_leg,[pi/4 -pi/4 pi/4]);
 mtp = mp(:,base_leg.segment_idx(end,end));
 
 [a,r]=cart2pol(mtp(1), mtp(2));
