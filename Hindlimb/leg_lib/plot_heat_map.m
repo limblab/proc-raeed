@@ -1,4 +1,4 @@
-function plot_heat_map(base_leg,act,zerod_ep,PD)
+function plot_heat_map(base_leg,act,zerod_ep,PD,joint_elast)
 %% plot heat map of neurons in cartesian space
     
     % scale this activity to between 0 and 1
@@ -20,11 +20,11 @@ function plot_heat_map(base_leg,act,zerod_ep,PD)
     scatter(zerod_ep(:,1),zerod_ep(:,2),100,colorvec,'filled')
     hold on
     center_ep = mean(zerod_ep([45 46 55 56],:))';
-    corner_ep = zerod_ep([1 10 91 100],:)';
-    [~,~,~,segment_angles_center] = find_kinematics(base_leg,center_ep, 0);
-    [~,~,~,segment_angles_corner] = find_kinematics(base_leg,corner_ep, 0);
+    corner_ep = zerod_ep([10 91],:)';
+    [~,~,~,segment_angles_center] = find_kinematics(base_leg,center_ep, 0,joint_elast);
+    [~,~,~,segment_angles_corner] = find_kinematics(base_leg,corner_ep, 0,joint_elast);
     draw_bones(base_leg,segment_angles_center,false,3)
-    for i=1:4
+    for i=1:2
         draw_bones(base_leg,segment_angles_corner(i,:),false,3)
     end
     PD_end = 7*[cos(PD);sin(PD)]+center_ep;

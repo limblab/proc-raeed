@@ -1,4 +1,4 @@
-function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb(neurons,num_sec,joint_elast)
+function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb_joint(neurons,num_sec,joint_elast)
 % Runs hindlimb simulation given neural weights, recording time, and joint
 % elasticity
 
@@ -30,13 +30,26 @@ polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
 endpoint_positions = [x;y];
 
 %% Find joint angles for paw positions
-[~,~,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,plotflag,joint_elast);
-scaled_lengths_unc = scaled_lengths{1};
-scaled_lengths_con = scaled_lengths{2};
+[joint_angles,~,~] = find_kinematics(base_leg,endpoint_positions,plotflag,joint_elast);
+joint_angles_unc = joint_angles{1};
+joint_angles_con = joint_angles{2};
+
+max_joint_angles = max([joint_angles_unc;joint_angles_con]);
+min_joint_angles = min([joint_angles_unc;joint_angles_con]);
+range_joint_angles = max_joint_angles-min_joint_angles;
+
+min_rep = repmat(min_joint_angles,num_positions,1);
+range_rep = repmat(range_joint_angles,num_positions,1);
+
+scaled_joint_angles_unc = (joint_angles_unc-min_rep)./range_rep;
+scaled_joint_angles_con = (joint_angles_con-min_rep)./range_rep;
+
+clear min_rep
+clear range_rep
 
 %% Get neural activity based on num_sec
-activity_unc = get_activity(neurons,scaled_lengths_unc,num_sec);
-activity_con = get_activity(neurons,scaled_lengths_con,num_sec);
+activity_unc = get_activity(neurons,scaled_joint_angles_unc,num_sec);
+activity_con = get_activity(neurons,scaled_joint_angles_con,num_sec);
 
 %% get fits
 
