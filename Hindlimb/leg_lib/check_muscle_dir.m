@@ -99,7 +99,7 @@ ellipse_con = [sqrt(eig_con(1))*cos(theta) sqrt(eig_con(2))*sin(theta)]*pca_coef
 
 figure_handles(1) = figure;
 % subplot(1,2,1)
-h1 = polar(0,.15,'.');
+h1 = polar(0,.2,'.');
 set(h1,'MarkerSize',0.1)
 colors = linspecer(8);
 hold on
@@ -128,7 +128,7 @@ title 'Global pulling directions of muscles (Unc)'
 
 % subplot(1,2,2)
 figure_handles(2) = figure;
-h1 = polar(0,.15,'.');
+h1 = polar(0,.2,'.');
 set(h1,'MarkerSize',0.1)
 hold on
 for i = 1:length(neurons)
@@ -157,7 +157,7 @@ title 'Global pulling directions of muscles (Con)'
 %% plot directional changes
 figure_handles(3) = figure;
 % subplot(1,2,1)
-h1 = polar(0,.15,'.');
+h1 = polar(0,.2,'.');
 set(h1,'MarkerSize',0.1)
 hold on
 for i = 1:length(neurons)
