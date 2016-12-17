@@ -67,10 +67,11 @@ end
 
 knee_constraint_angle = pi/2;
 
-% % find vector from hip to ankle
-% constrain_legpts = get_legpts(base_leg,[pi/2 0 0]);
-% ankle_point = constrain_legpts(:,base_leg.segment_idx(3,2));
+% find vector from hip to ankle
+% constrain_legpts = get_legpts(base_leg,[0 -knee_constraint_angle 0]);
+% ankle_point = constrain_legpts(:,base_leg.segment_idx(2,2));
 % [hipknee_orient,hipknee_len] = cart2pol(ankle_point(1),ankle_point(2));
+% foot_len = sqrt(sum((constrain_legpts(:,base_leg.segment_idx(3,2))-constrain_legpts(:,base_leg.segment_idx(3,1))).^2));
 
 options = optimset('MaxFunEvals', 5000, 'MaxIter', 1000, 'Display', 'off', 'Algorithm', 'active-set');
 %x0 = [pi/4 pi/4];
@@ -87,11 +88,27 @@ end
 for i = 1:num_positions
     my_ep = endpoint_positions(:,i);
 %     [x,val,flag] = fminsearch(@mycostcon, x0, options);
-    angles = fmincon(@(x) elastic_joint_cost(x,base_angles,joint_elast), start_angles_con(:,i) , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
-%     joint_angles_con = [joint_angles_con; angles'*joint_transform];
+%     angles = fmincon(@(x) elastic_joint_cost(x,base_angles,joint_elast), start_angles_con(:,i) , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
+    angles = fmincon(@(x) elastic_joint_cost(x,base_angles,[1;1;1]), x0 , [0 0 -1;0 0 1], [0; pi], [0 1 0], knee_constraint_angle,[],[],@(x) endpoint_constraint(x,my_ep,base_leg), options);
     joint_angles_con = [joint_angles_con; angles'];
     segment_angles_con = [segment_angles_con; angles'/joint_transform_for_inv];
     mp = get_legpts(base_leg,angles'/joint_transform_for_inv);
+    
+    % Do some 2-link inverse kinematics
+%     D = (sum(my_ep.^2)-hipknee_len^2-foot_len^2)/(2*hipknee_len*foot_len);
+%     theta2 = atan2(-sqrt(1-D^2),D);
+%     theta1 = atan2(my_ep(2),my_ep(1)) - atan2(foot_len*sin(theta2),(hipknee_len+foot_len*cos(theta2)));
+%     
+%     % convert to segment angles
+%     hip_angle = theta1 + hipknee_orient;
+%     knee_angle = hip_angle - knee_constraint_angle;
+%     ankle_angle = theta2+theta1-pi/2;
+%     seg_angles = [hip_angle;knee_angle;ankle_angle];
+%     segment_angles_con = [segment_angles_con;seg_angles'];
+%     
+%     % convert to joint angles
+%     angles = (seg_angles'*joint_transform_for_inv)';
+%     joint_angles_con = [joint_angles_con; angles'];
     
     % These were commented out
     if(plotflag)
@@ -103,6 +120,8 @@ for i = 1:num_positions
             plot(my_ep(1), my_ep(2), 'bo');
         end
     end
+    
+%     waitforbuttonpress;
     
     muscle_lengths_con = [muscle_lengths_con; get_musclelengths(base_leg,angles'/joint_transform_for_inv)];
 end

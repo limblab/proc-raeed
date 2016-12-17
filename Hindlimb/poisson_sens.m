@@ -21,6 +21,7 @@ load('sim_10000neuron_20151011.mat','neurons')
 tic
 num_secs = linspace(0.1,5,25);
 for i = 1:length(num_secs)
+    % DEPRECATED
     [num_tuned(i),~,pdChange(i),~,~] = run_hindlimb(neurons,num_secs(i),[1;1;1]);
 end
 toc
