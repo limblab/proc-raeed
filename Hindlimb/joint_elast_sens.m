@@ -51,3 +51,19 @@ clear temp*
 clear spring_list
 clear moddepth_*
 clear PD_*
+
+%% get minimal PD change values to compute numerical derivatives
+% choices = [38 58 62 63 64 68 88]';
+choices = [13 53 61 63 65 73 113]';
+mini_pdChange_spring = pdChange_spring(choices);
+mini_spring_list = spring_list(choices,:);
+
+%% Calculate partial derivatives
+hip_idx = [1;7];
+knee_idx = [2;6];
+ankle_idx = [3;5];
+
+% hip
+dChange_dHip = diff(mini_pdChange_spring(hip_idx))/diff(mini_spring_list(hip_idx,1));
+dChange_dKnee = diff(mini_pdChange_spring(knee_idx))/diff(mini_spring_list(knee_idx,2));
+dChange_dAnkle = diff(mini_pdChange_spring(ankle_idx))/diff(mini_spring_list(ankle_idx,3));
