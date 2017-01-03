@@ -1,4 +1,4 @@
-function figure_handles = check_muscle_dir
+function [muscle_coef_elast,muscle_coef_fixed] = check_muscle_dir
 %%% Checking muscle "global pulling directions"
 %% initialize leg
 clear
@@ -75,6 +75,10 @@ for i=1:length(neurons)
     yc = [yc cart_fit_con{i}.Coefficients.Estimate];
     yu = [yu cart_fit_unc{i}.Coefficients.Estimate];
 end
+
+%% Set outputs
+muscle_coef_elast = yu(2:3,:);
+muscle_coef_fixed = yc(2:3,:);
 
 %% Get prefered directions
 ycpd = atan2(yc(3,:),yc(2,:));
