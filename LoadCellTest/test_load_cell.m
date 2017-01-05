@@ -6,9 +6,9 @@ ranBy='ranByRaeed';
 monkey='monkeyHan';
 task='taskRW';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-raeed\TestData\20161226\';
+folder='C:\Users\rhc307\Projects\limblab\data-raeed\TestData\20161227\';
 % folder = '/home/raeed/Projects/limblab/data-raeed/MultiWorkspace/SplitWS/Han/20160322/area2/preCDS/';
-fname='Loadcell_test_20161226_all_005';
+fname='Loadcell_test_20161227_up_001';
 % Make CDS files
 
 cds = commonDataStructure();
