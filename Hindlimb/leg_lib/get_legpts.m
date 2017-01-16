@@ -25,6 +25,6 @@ tb = t*ones(1,6) + tb;
 
 % Move foot to end of shank
 t = tb(:,2)-ft(:,1);
-ft = t*ones(1,5) + ft;
+ft = t*ones(1,6) + ft;
 
 legpts = [base_leg.pelvic fm tb ft];

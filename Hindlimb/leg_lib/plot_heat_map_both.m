@@ -23,9 +23,9 @@ function plot_heat_map_both(base_leg,act_unc,act_con,zerod_ep,PD_unc,PD_con,join
     subplot(121)
     scatter(zerod_ep(:,1),zerod_ep(:,2),100,colorvec_unc,'filled')
     hold on
-    draw_bones(base_leg,segment_angles_center_unc,false,3)
+    draw_bones(base_leg,segment_angles_center_unc,true,3)
     for i=1:2
-        draw_bones(base_leg,segment_angles_corner_unc(i,:),false,3)
+        draw_bones(base_leg,segment_angles_corner_unc(i,:),true,3)
     end
     PD_end = 7*[cos(PD_unc);sin(PD_unc)]+center_ep;
     plot([center_ep(1) PD_end(1)],[center_ep(2) PD_end(2)],'-k','linewidth',4)
@@ -37,9 +37,9 @@ function plot_heat_map_both(base_leg,act_unc,act_con,zerod_ep,PD_unc,PD_con,join
     colorvec_con = interp1(linspace(0,1,length(map))',map,act_scaled_con(:));
     scatter(zerod_ep(:,1),zerod_ep(:,2),100,colorvec_con,'filled')
     hold on
-    draw_bones(base_leg,segment_angles_center_con,false,3)
+    draw_bones(base_leg,segment_angles_center_con,true,3)
     for i=1:2
-        draw_bones(base_leg,segment_angles_corner_con(i,:),false,3)
+        draw_bones(base_leg,segment_angles_corner_con(i,:),true,3)
     end
     PD_end = 7*[cos(PD_con);sin(PD_con)]+center_ep;
     plot([center_ep(1) PD_end(1)],[center_ep(2) PD_end(2)],'-k','linewidth',4)

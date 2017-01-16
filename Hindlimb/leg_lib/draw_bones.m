@@ -7,9 +7,10 @@ holdstat = ishold;
 
 hold on
 for i = 1:3
-    s=base_leg.segment_idx(i,:);
+    s=base_leg.seg_draw_idx(i,:);
+    j=base_leg.joint_draw_idx(i);
     plot(mp(1,s), mp(2,s), 'k-','LineWidth',linewidth)
-    plot(mp(1,s), mp(2,s), 'bo', 'MarkerSize',10, 'LineWidth',linewidth)
+    plot(mp(1,j), mp(2,j), 'bo', 'MarkerSize',10, 'LineWidth',linewidth)
 end
 
 % plot(cal(1,:),cal(2,:),'ko')

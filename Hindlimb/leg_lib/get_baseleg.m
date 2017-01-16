@@ -39,11 +39,15 @@ base_leg.tibial = [-1.5 0; 10.67 -.14; 2.55 .17; .78 -.41; .13 1.01; 8.96 0.67]'
 %   Medial Gastrocnemius action point (20)
 %   Soleus insertion (21)
 %   Tibialis anterior insertion (22)
-base_leg.foot = [3.57 3.88; 8.03 0; -.17 0.22; .02 .17; 3.65 0.12]';
+%   Calcaneus (23)
+% base_leg.foot = [3.57 3.88; 8.03 0; -.17 0.22; .02 .17; 3.65 0.12; 0 0]';
+base_leg.foot = [2 1; 8.03 0; -.17 0.22; .02 .17; 3.65 0.12; 0 0]';
 
 base_leg.master = [base_leg.pelvic base_leg.femoral base_leg.tibial base_leg.foot];
 
 base_leg.segment_idx = [5 6; 12 13; 18 19];
+base_leg.seg_draw_idx = [5 6;12 13;23 19];
+base_leg.joint_draw_idx = [5;12;18];
 
 % muscle order: BFA IP RF1 RF2 BFP VL MG SOL TA
 % RF muscles will be consoldated in get_lengths.m
