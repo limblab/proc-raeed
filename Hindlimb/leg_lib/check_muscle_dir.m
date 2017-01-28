@@ -10,14 +10,14 @@ base_leg=get_baseleg;
 num_positions = 100;
 
 mp = get_legpts(base_leg,[pi/4 -pi/4 pi/4]);
-mtp = mp(:,base_leg.segment_idx(end,end));
+mtp = mp(:,base_leg.segment_idx(1,1)); % hip rotation center
 
 [a,r]=cart2pol(mtp(1), mtp(2));
 
 % get polar points
-rs = linspace(-4,1,10) + r;
+rs = linspace(23,19,10) + r;
 % as = pi/16 * linspace(-2,4,10) + a;
-as = pi/180 * linspace(-30,25,10) + a;
+as = pi/180 * linspace(-30,25,10)-pi/2;
 
 [rsg, asg] = meshgrid(rs, as);
 polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
@@ -29,7 +29,7 @@ endpoint_positions = [x;y];
 % Find kinematics of limb in endpoint positions
 %%%%%%%%%%%
 joint_elast = [1;1;1];
-[~,~,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,false,joint_elast);
+[~,~,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,true,joint_elast);
 scaled_lengths_unc = scaled_lengths{1};
 scaled_lengths_con = scaled_lengths{2};
 
