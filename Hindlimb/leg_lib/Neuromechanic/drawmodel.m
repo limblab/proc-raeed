@@ -66,6 +66,7 @@ end
 
 if nargout>0, varargout{1} = h; end
 if nargout>1, varargout{2} = worldpoint; end
+if nargout>2, varargout{3} = endpoint; end
 
 
 function R = axis2R(ax)
