@@ -1,4 +1,6 @@
 %% find flexion axes for 2D model
+% load ncmb
+nmcb = read_nmcb('basicCatHindlimb_201201.nmcb');
 
 % neutral joint configuration
 q = [0 0 0 -60 -14 0 -82 0 -78 0]'*pi/180;
@@ -54,3 +56,6 @@ ankle_points = worldpoint(:,9:10);
 
 knee_flex = interp1(knee_points(3,:)',knee_points(1:2,:)',zplane)';
 ankle_flex = interp1(ankle_points(3,:)',ankle_points(1:2,:)',zplane,'linear','extrap')';
+
+%% Convert world points back to segment coordinates
+
