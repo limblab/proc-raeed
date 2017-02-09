@@ -117,11 +117,12 @@ end
 
 muscles = [muscles cell2table(oiv_world,'VariableNames',{'oiv_world'})];
 
-%% plot muscle points
-h=plot3(worldpoint(1,:,1), worldpoint(2,:,1), worldpoint(3,:,1), 'k.-');
+%% plot muscle points to check
+h=plot3(worldpoint(1,:,1), worldpoint(2,:,1), worldpoint(3,:,1), 'k-','linewidth',3);
 hold on
+h=plot3(worldpoint(1,:,1), worldpoint(2,:,1), worldpoint(3,:,1), 'bo','markersize',10,'linewidth',2);
 for musc_idx = 1:height(muscles)
     oiv_world = muscles.oiv_world{musc_idx};
-    plot3(oiv_world(:,1),oiv_world(:,2),oiv_world(:,3),'r.-')
+    plot3(oiv_world(:,1),oiv_world(:,2),oiv_world(:,3),'r.-','linewidth',2)
 end
 axis equal
