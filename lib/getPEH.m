@@ -1,9 +1,15 @@
-function [averageData,dataCIlow,dataCIhigh] = getPEH(dataTimes,data,eventTimes,window)
+function [averageData,dataCIlow,dataCIhigh,dataWindow] = getPEH(dataTimes,data,eventTimes,window)
+% GETPEH Calculates peri-event histogram for data, given the data time
+% vector, data, event times, and a window around the event (specified by an
+% event-relative [start stop] window vector)
+
+% get sample rate
+sampperiod = mode(diff(dataTimes));
 
 % extract relevant times
 numEvents = length(eventTimes);
 for i = 1:numEvents
-    tmp = data(dataTimes>=roundTime(eventTimes(i)+window(1),0.0005) & dataTimes<roundTime(eventTimes(i)+window(2),0.0005))';
+    tmp = data(dataTimes>=roundTime(eventTimes(i)+window(1),sampperiod) & dataTimes<roundTime(eventTimes(i)+window(2),sampperiod))';
     dataWindow(i,:) = tmp;
 end
 
