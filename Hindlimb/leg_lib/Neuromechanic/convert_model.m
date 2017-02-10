@@ -50,13 +50,6 @@ for index = 1:njoints
         cumrot*endpoint(:,index+1);
 end
 
-%% Find world point corresponding to flexion axes 
-
-knee_points = worldpoint(:,7:8);
-ankle_points = worldpoint(:,9:10);
-
-knee_flex = interp1(knee_points(3,:)',knee_points(1:2,:)',zplane)';
-ankle_flex = interp1(ankle_points(3,:)',ankle_points(1:2,:)',zplane,'linear','extrap')';
 
 %% Get axes of different frames
 pelvis_axes = eye(3);
@@ -126,3 +119,45 @@ for musc_idx = 1:height(muscles)
     plot3(oiv_world(:,1),oiv_world(:,2),oiv_world(:,3),'r.-','linewidth',2)
 end
 axis equal
+
+%% Find world point corresponding to flexion axes 
+
+knee_points = worldpoint(:,7:8);
+ankle_points = worldpoint(:,9:10);
+
+knee_flex = interp1(knee_points(3,:)',knee_points(1:2,:)',zplane)';
+ankle_flex = interp1(ankle_points(3,:)',ankle_points(1:2,:)',zplane,'linear','extrap')';
+
+%% Define 2d axes for segments in these world coordinates
+
+% pelvis
+pelvis2d_axes = eye(2);
+plot3([0 pelvis2d_axes(1,1)]/50 + pelvis_origin(1),[0 pelvis2d_axes(2,1)]/50 + pelvis_origin(2),[zplane zplane],'g','linewidth',2)
+plot3([0 pelvis2d_axes(1,2)]/50 + pelvis_origin(1),[0 pelvis2d_axes(2,2)]/50 + pelvis_origin(2),[zplane zplane],'g','linewidth',2)
+
+% femur - hip rotation center (worldpoint 4) to new knee flexion axis
+femur2d_x = knee_flex-worldpoint(1:2,4);
+femur2d_x = femur2d_x/norm(femur2d_x);
+femur2d_y = cross([0;0;1],[femur2d_x;0]);
+femur2d_y = femur2d_y(1:2);
+femur2d_axes = [femur2d_x femur2d_y];
+plot3([0 femur2d_axes(1,1)]/50 + femur_origin(1),[0 femur2d_axes(2,1)]/50 + femur_origin(2),[zplane zplane],'g','linewidth',2)
+plot3([0 femur2d_axes(1,2)]/50 + femur_origin(1),[0 femur2d_axes(2,2)]/50 + femur_origin(2),[zplane zplane],'g','linewidth',2)
+
+% tibia - new knee flexion axis to new ankle flexion axis
+tibia2d_x = ankle_flex-knee_flex;
+tibia2d_x = tibia2d_x/norm(tibia2d_x);
+tibia2d_y = cross([0;0;1],[tibia2d_x;0]);
+tibia2d_y = tibia2d_y(1:2);
+tibia2d_axes = [tibia2d_x tibia2d_y];
+plot3([0 tibia2d_axes(1,1)]/50 + tibia_origin(1),[0 tibia2d_axes(2,1)]/50 + tibia_origin(2),[zplane zplane],'g','linewidth',2)
+plot3([0 tibia2d_axes(1,2)]/50 + tibia_origin(1),[0 tibia2d_axes(2,2)]/50 + tibia_origin(2),[zplane zplane],'g','linewidth',2)
+
+% foot - new ankle flexion axis to toe (world point 11)
+foot2d_x = worldpoint(1:2,11)-ankle_flex;
+foot2d_x = foot2d_x/norm(foot2d_x);
+foot2d_y = cross([0;0;1],[foot2d_x;0]);
+foot2d_y = foot2d_y(1:2);
+foot2d_axes = [foot2d_x foot2d_y];
+plot3([0 foot2d_axes(1,1)]/50 + foot_origin(1),[0 foot2d_axes(2,1)]/50 + foot_origin(2),[zplane zplane],'g','linewidth',2)
+plot3([0 foot2d_axes(1,2)]/50 + foot_origin(1),[0 foot2d_axes(2,2)]/50 + foot_origin(2),[zplane zplane],'g','linewidth',2)
