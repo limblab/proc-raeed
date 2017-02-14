@@ -1,23 +1,17 @@
 function [muscle_coef_elast,muscle_coef_fixed] = check_muscle_dir
 %%% Checking muscle "global pulling directions"
 %% initialize leg
-clear
-base_leg=get_baseleg;
+legmodel=convert_model(false);
 
 %% %%%%
 % Get endpoint positions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 num_positions = 100;
 
-mp = get_legpts(base_leg,[pi/4 -pi/4 pi/4]);
-mtp = mp(:,base_leg.segment_idx(1,1)); % hip rotation center
-
-[a,r]=cart2pol(mtp(1), mtp(2));
-
 % get polar points
-rs = linspace(23,19,10) + r;
+rs = linspace(18,22,10)/100;
 % as = pi/16 * linspace(-2,4,10) + a;
-as = pi/180 * linspace(-30,25,10)-pi/2;
+as = pi/180 * (linspace(-25,30,10)-90);
 
 [rsg, asg] = meshgrid(rs, as);
 polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
@@ -29,7 +23,7 @@ endpoint_positions = [x;y];
 % Find kinematics of limb in endpoint positions
 %%%%%%%%%%%
 joint_elast = [1;1;1];
-[~,~,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,true,joint_elast);
+[~,~,scaled_lengths] = find_kinematics(legmodel,endpoint_positions,false,joint_elast);
 scaled_lengths_unc = scaled_lengths{1};
 scaled_lengths_con = scaled_lengths{2};
 
@@ -103,7 +97,7 @@ ellipse_con = [sqrt(eig_con(1))*cos(theta) sqrt(eig_con(2))*sin(theta)]*pca_coef
 
 figure_handles(1) = figure;
 % subplot(1,2,1)
-h1 = polar(0,.2,'.');
+h1 = polar(0,20,'.');
 set(h1,'MarkerSize',0.1)
 colors = linspecer(8);
 hold on
@@ -132,7 +126,7 @@ title 'Global pulling directions of muscles (Unc)'
 
 % subplot(1,2,2)
 figure_handles(2) = figure;
-h1 = polar(0,.2,'.');
+h1 = polar(0,20,'.');
 set(h1,'MarkerSize',0.1)
 hold on
 for i = 1:length(neurons)
@@ -161,7 +155,7 @@ title 'Global pulling directions of muscles (Con)'
 %% plot directional changes
 figure_handles(3) = figure;
 % subplot(1,2,1)
-h1 = polar(0,.2,'.');
+h1 = polar(0,20,'.');
 set(h1,'MarkerSize',0.1)
 hold on
 for i = 1:length(neurons)

@@ -183,6 +183,7 @@ oiv_2d= cell(height(muscles),1);
 
 for musc_idx = 1:height(muscles)
     oiv = muscles.oiv_world{musc_idx};
+    oivsegment = muscles.oivsegment{musc_idx};
     for oiv_idx = 1:size(oiv,1)
         if strcmp(oivsegment{oiv_idx},'pelvis')
             oiv_2d{musc_idx}(oiv_idx,:) = (oiv(oiv_idx,:)-[pelvis2d_origin' zplane])*[pelvis2d_axes;0 0];
@@ -202,23 +203,24 @@ muscles_2d.oiv = oiv_2d;
 
 %% get locations of bod(i+1) origin relative to bod(i) in 2d coordinates
 
-% Bods = {pelvis,femur,tibia,foot}
-% origins = {ground,hip center, knee flexion, ankle flexion}
-bodloc_2d = zeros(2,4); %location of bod(i+1) relative to bod(i) (location of bod(1) = 0)
+% Bods = {pelvis,femur,tibia,foot,toe}
+% origins = {ground,hip center, knee flexion, ankle flexion, toe}
+bodloc_2d = zeros(2,5); %location of bod(i+1) relative to bod(i) (location of bod(1) = 0)
 
 bodloc_2d(:,2) = pelvis2d_axes'*(femur2d_origin-pelvis2d_origin);
 bodloc_2d(:,3) = femur2d_axes'*(tibia2d_origin-femur2d_origin);
 bodloc_2d(:,4) = tibia2d_axes'*(foot2d_origin-tibia2d_origin);
+bodloc_2d(:,5) = foot2d_axes'*(worldpoint(1:2,end)-foot2d_origin);
 
 %% find default angles for the 2d model
 
-hip_ang = atan2d(femur2d_axes(2,1),femur2d_axes(1,1))-atan2d(pelvis2d_axes(2,1),pelvis2d_axes(1,1));
-knee_ang = atan2d(tibia2d_axes(2,1),tibia2d_axes(1,1))-atan2d(femur2d_axes(2,1),femur2d_axes(1,1));
-ankle_ang = atan2d(foot2d_axes(2,1),foot2d_axes(1,1))-atan2d(tibia2d_axes(2,1),tibia2d_axes(1,1));
+hip_ang = atan2(femur2d_axes(2,1),femur2d_axes(1,1))-atan2(pelvis2d_axes(2,1),pelvis2d_axes(1,1));
+knee_ang = atan2(tibia2d_axes(2,1),tibia2d_axes(1,1))-atan2(femur2d_axes(2,1),femur2d_axes(1,1));
+ankle_ang = atan2(foot2d_axes(2,1),foot2d_axes(1,1))-atan2(tibia2d_axes(2,1),tibia2d_axes(1,1));
 
 %% Save 2d model
 
 legmodel.bodloc = bodloc_2d;
-legmodel.muscles = muscles;
+legmodel.muscles = muscles_2d;
 legmodel.hipcenter = bodloc_2d(:,2);
 legmodel.default_angles = [hip_ang;knee_ang;ankle_ang];

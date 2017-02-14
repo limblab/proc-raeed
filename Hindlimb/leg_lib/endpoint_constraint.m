@@ -1,9 +1,7 @@
-function [C,Ceq] = endpoint_constraint(angles,endpoint,base_leg)
+function [C,Ceq] = endpoint_constraint(angles,endpoint,legmodel)
 % constraint to match endpoint
-joint_transform = [1 0 0; 1 -1 0; 0 -1 1]';
 
-legpts = get_legpts(base_leg,angles'/joint_transform);
-current_ep = legpts(:,base_leg.segment_idx(end,end));
+toepoint = get_toepoint(legmodel,angles);
 
 C = [];
-Ceq = sum((current_ep-endpoint).^2);
+Ceq = sum((toepoint-endpoint).^2);

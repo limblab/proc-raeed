@@ -1,16 +1,17 @@
-function lengths = get_musclelengths(base_leg,angles)
+function lengths = get_musclelengths(legmodel,q)
 % get muscle lengths from base leg and provided angles
 
-mp = get_legpts(base_leg,angles);
+%% Get world points
+[~,oiv_world] = get_legpts(legmodel,q);
 
-lengths = zeros(1,length(base_leg.muscle_idx));
+%% Extract necessary muscle lengths
+lengths = zeros(1,length(oiv_world));
 
-for i = 1:length(base_leg.muscle_idx)
-    s=base_leg.muscle_idx(i,:);
-    l = mp(:,s(1)) - mp(:,s(2));
-    lengths(i) = sqrt ( l(1,:)*l(1,:) + l(2,:)*l(2,:) );
+for musc_idx = 1:length(oiv_world)
+    % Sum world OIVs for muscle lengths
+    oiv = oiv_world{musc_idx};
+    for oiv_idx = 2:size(oiv,1)
+        seg_length = sqrt(sum( (oiv_world{musc_idx}(oiv_idx,:)-oiv_world{musc_idx}(oiv_idx-1,:)).^2 ));
+        lengths(musc_idx) = lengths(musc_idx) + seg_length;
+    end
 end
-
-% Consolidate RF muscles
-lengths(3) = lengths(3)+lengths(4);
-lengths(4) = [];

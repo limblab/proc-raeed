@@ -3,24 +3,24 @@ function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb(neurons
 % elasticity
 
 %% set up
-base_leg = get_baseleg;
+% base_leg = get_baseleg;
+legmodel = convert_model(false);
 plotflag = true;
 
 %% Get workspace
 num_positions = 100;
 
-mp = get_legpts(base_leg,[pi/4 -pi/4 pi/4]);
-mtp = mp(:,base_leg.segment_idx(end,end));
+% default_toepoint = get_toepoint(legmodel,legmodel.default_angles);
 
-[a,r]=cart2pol(mtp(1), mtp(2));
+% [a,r]=cart2pol(default_toepoint(1),default_toepoint(2));
 
 % get polar points
-rs = linspace(-4,1,10) + r;
+rs = linspace(18,22,10)/100;
 % rs = linspace(-4,1.5,10) + r;
 %rs = r;
 % as = pi/16 * linspace(-2,4,10) + a;
 % as = pi/180 * linspace(-33,33,10) + a;
-as = pi/180 * linspace(-30,25,10) + a;
+as = pi/180 * (linspace(-25,30,10)-90);
 %as = a;
 
 [rsg, asg] = meshgrid(rs, as);
@@ -30,7 +30,7 @@ polpoints = [reshape(rsg,[1,num_positions]); reshape(asg,[1,num_positions])];
 endpoint_positions = [x;y];
 
 %% Find joint angles for paw positions
-[~,~,scaled_lengths] = find_kinematics(base_leg,endpoint_positions,plotflag,joint_elast);
+[~,~,scaled_lengths] = find_kinematics(legmodel,endpoint_positions,plotflag,joint_elast);
 scaled_lengths_unc = scaled_lengths{1};
 scaled_lengths_con = scaled_lengths{2};
 
