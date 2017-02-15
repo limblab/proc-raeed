@@ -120,8 +120,9 @@ end
 h=polar(theta,rho);
 set(h,'linewidth',2)
 
-% muscle order: BFA IP RF1 RF2 BFP VL MG SOL TA
-legend(handles,'BFA','IP','RF','BFP','VL','MG','SOL','TA')
+% OLD muscle order: BFA IP RF1 RF2 BFP VL MG SOL TA
+% NEW muscle order: {'bfa','bfp','mg','psoas','rf','vl','sol','ta'};
+legend(handles,upper(legmodel.muscles.name))
 title 'Global pulling directions of muscles (Unc)'
 
 % subplot(1,2,2)

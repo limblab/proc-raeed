@@ -24,7 +24,7 @@ segment_angles_unc = [];
 
 for i = 1:num_positions
     my_ep = endpoint_positions(:,i);
-    q = fmincon(@(x) elastic_joint_cost(x,base_q,joint_elast), base_q, [0 0 -1;0 0 1;0 1 0;0 -1 0], [-5/180*pi; 120/180*pi; 0; 135/180*pi],[],[],[],[],@(x) endpoint_constraint(x,my_ep,legmodel), options);
+    q = fmincon(@(x) elastic_joint_cost(x,base_q,joint_elast), base_q, [0 0 -1;0 0 1;0 1 0;0 -1 0], [-5/180*pi; 120/180*pi; 0; 150/180*pi],[],[],[],[],@(x) endpoint_constraint(x,my_ep,legmodel), options);
 %     q = fmincon(@(x) elastic_joint_cost(x,base_q,joint_elast), base_q, [], [],[],[],[],[],@(x) endpoint_constraint(x,my_ep,legmodel), options);
     start_angles_con = [start_angles_con q];
 %     joint_angles_unc = [joint_angles_unc; angles'*joint_transform];
@@ -68,6 +68,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 knee_constraint_angle = legmodel.default_angles(2);
+% knee_constraint_angle = -pi/2;
 
 % find vector from hip to ankle
 % constrain_legpts = get_legpts(base_leg,[0 -knee_constraint_angle 0]);

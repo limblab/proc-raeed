@@ -85,10 +85,17 @@ for index = 1:10
 end
 
 %% Extract necessary muscles
-muscles = struct2table(nmcb.ms);
-muscle_list = {'bfa','bfp','psoas','rf','mg','vl','sol','ta'};
+muscles_nmcb = struct2table(nmcb.ms);
+% muscle_list = {'bfa','bfp','psoas','rf','mg','vl','sol','ta'};
 
-muscles = muscles(contains(muscles.name,muscle_list),:);
+% OLD muscle order: BFA IP RF1 RF2 BFP VL MG SOL TA
+musc_order = {'bfa','psoas','rf','bfp','vl','mg','sol','ta'};
+muscles = muscles_nmcb;
+muscles(length(musc_order):end,:) = [];
+for musc_idx = 1:length(musc_order)
+    muscles(musc_idx,:) = muscles_nmcb(contains(muscles_nmcb.name,musc_order{musc_idx}),:);
+end
+
 oiv_world = cell(height(muscles),1);
 
 for musc_idx = 1:height(muscles)
@@ -111,6 +118,9 @@ for musc_idx = 1:height(muscles)
 end
 
 muscles = [muscles cell2table(oiv_world,'VariableNames',{'oiv_world'})];
+
+%% Reorder muscles to be in old order
+
 
 %% plot muscle points to check
 if(plotflag)
