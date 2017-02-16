@@ -1,4 +1,4 @@
-function plot_heat_map_both(legmodel,act_unc,act_con,zerod_ep,PD_unc,PD_con,joint_elast)
+function plot_heat_map_both(legmodel,act_unc,act_con,ep,PD_unc,PD_con,joint_elast)
 %% plot heat map of neurons in cartesian space
     
     % scale this activity to between 0 and 1
@@ -12,8 +12,10 @@ function plot_heat_map_both(legmodel,act_unc,act_con,zerod_ep,PD_unc,PD_con,join
     act_scaled_unc = (act_unc-min_act)/(max_act-min_act);
     act_scaled_con = (act_con-min_act)/(max_act-min_act);
     
-    center_ep = mean(zerod_ep([45 46 55 56],:))';
-    corner_ep = zerod_ep([10 91],:)';
+    center_ep = mean(ep([45 46 55 56],:))';
+%     corner_ep = ep([10 91],:)';
+    corner_ep = ep([1 100],:)';
+%     corner_ep = ep';
     [joint_angles_center,~,~] = find_kinematics(legmodel,center_ep, 0,joint_elast);
     [joint_angles_corner,~,~] = find_kinematics(legmodel,corner_ep, 0,joint_elast);
     joint_angles_center_unc = joint_angles_center{1};
@@ -25,29 +27,31 @@ function plot_heat_map_both(legmodel,act_unc,act_con,zerod_ep,PD_unc,PD_con,join
     colorvec_unc = interp1(linspace(0,1,length(map))',map,act_scaled_unc(:));
     
     subplot(121)
-    scatter(zerod_ep(:,1),zerod_ep(:,2),100,colorvec_unc,'filled')
+    scatter(ep(:,1),ep(:,2),100,colorvec_unc,'filled')
     hold on
     draw_hindlimb(legmodel,joint_angles_center_unc',false)
-    for i=1:2
+    for i=1:size(joint_angles_corner_unc,1)
         draw_hindlimb(legmodel,joint_angles_corner_unc(i,:)',false)
     end
     PD_end = 7/100*[cos(PD_unc);sin(PD_unc)]+center_ep;
-    plot([center_ep(1) PD_end(1)],[center_ep(2) PD_end(2)],'-k','linewidth',4)
+    plot([center_ep(1) PD_end(1)],[center_ep(2) PD_end(2)],'-r','linewidth',4)
     colorbar('YTick',[0 1],'YTickLabel',{[num2str(min_act) ' Hz'], [num2str(max_act) ' Hz']})
-    axis off
+    set(gca,'box','off','tickdir','out','xtick',center_ep(1),'ytick',center_ep(2),'xticklabel',{},'yticklabel',{});
+%     axis off
     axis equal
     
     subplot(122)
     colorvec_con = interp1(linspace(0,1,length(map))',map,act_scaled_con(:));
-    scatter(zerod_ep(:,1),zerod_ep(:,2),100,colorvec_con,'filled')
+    scatter(ep(:,1),ep(:,2),100,colorvec_con,'filled')
     hold on
     draw_hindlimb(legmodel,joint_angles_center_con',false)
-    for i=1:2
+    for i=1:size(joint_angles_corner_con,1)
         draw_hindlimb(legmodel,joint_angles_corner_con(i,:)',false)
     end
     PD_end = 7/100*[cos(PD_con);sin(PD_con)]+center_ep;
-    plot([center_ep(1) PD_end(1)],[center_ep(2) PD_end(2)],'-k','linewidth',4)
+    plot([center_ep(1) PD_end(1)],[center_ep(2) PD_end(2)],'-r','linewidth',4)
     colorbar('YTick',[0 1],'YTickLabel',{[num2str(min_act) ' Hz'], [num2str(max_act) ' Hz']})
-    axis off
+    set(gca,'box','off','tickdir','out','xtick',center_ep(1),'ytick',center_ep(2),'xticklabel',{},'yticklabel',{});
+%     axis off
     axis equal
 end

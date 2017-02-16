@@ -8,7 +8,7 @@ function draw_hindlimb(legmodel,q,show_muscles)
 
 %% plot muscle points to check
 holdstat = ishold;
-plot(worldpoint(1,:), worldpoint(2,:), 'k-','linewidth',1);
+plot(worldpoint(1,:), worldpoint(2,:), 'k-','linewidth',2);
 hold on
 plot(worldpoint(1,:), worldpoint(2,:), 'bo','markersize',10,'linewidth',2);
 if(show_muscles)
