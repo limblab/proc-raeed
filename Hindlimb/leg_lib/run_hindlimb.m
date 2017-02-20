@@ -5,7 +5,7 @@ function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb(neurons
 %% set up
 % base_leg = get_baseleg;
 legmodel = convert_model(false);
-plotflag = true;
+plotflag = false;
 
 %% Get workspace
 num_positions = 100;
