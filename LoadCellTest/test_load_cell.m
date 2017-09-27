@@ -1,14 +1,13 @@
 %% Load cds
-addpath(genpath('C:\Users\rhc307\Projects\limblab\ClassyDataAnalysis'))
 
 lab=6;
 ranBy='ranByRaeed';
 monkey='monkeyHan';
 task='taskRW';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-raeed\TestData\20161227\';
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20170922\';
 % folder = '/home/raeed/Projects/limblab/data-raeed/MultiWorkspace/SplitWS/Han/20160322/area2/preCDS/';
-fname='Loadcell_test_20161227_up_001';
+fname='Loadcell_20170922_down';
 % Make CDS files
 
 cds = commonDataStructure();
