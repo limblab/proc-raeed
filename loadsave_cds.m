@@ -3,46 +3,59 @@ meta.lab=6;
 meta.ranBy='Raeed';
 meta.monkey='Chips';
 meta.date='20170913';
-meta.task='COactpas';
-meta.filenum='001';
-meta.array='LeftS1Area2';
-meta.arrayAlias='area2';
+meta.task='COactpas'; % for the loading of cds
+meta.taskAlias={'COactpas_001'}; % for the filename (cell array list for files to load and save)
+meta.array='LeftS1Area2'; % for the loading of cds
+meta.arrayAlias='area2'; % for the filename
 meta.folder='C:\Users\rhc307\Projects\limblab\data-preproc\ForceKin\Chips\20170913\';
 
-meta.colorTrackingFilename = [meta.monkey '_' meta.date '_' meta.task '_colorTracking_' meta.filenum];
-meta.markersFilename = [meta.monkey '_' meta.date '_' meta.task '_markers_' meta.filenum];
-meta.neuralFilename = [meta.monkey '_' meta.date '_' meta.task '_' meta.arrayAlias '_' meta.filenum];
-
-altMeta = meta;
-altMeta.array='RightCuneate';
-altMeta.arrayAlias='cuneate';
-altMeta.neuralFilename = [altMeta.monkey '_' altMeta.date '_' altMeta.task '_' altMeta.arrayAlias '_' altMeta.filenum];
+meta.neuralPrefix = [meta.monkey '_' meta.date '_' meta.arrayAlias];
 
 if strcmp(meta.monkey,'Chips')
     meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Chips\left_S1\SN 6251-001455.cmp';
-    clear altMeta
 elseif strcmp(meta.monkey,'Han')
     warning('mapfiles not found for Han yet')
 %     meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Chips\left_S1\SN 6251-001455.cmp';
+    altMeta = meta;
+    altMeta.array='';
+    altMeta.arrayAlias='EMGextra';
+    altMeta.neuralPrefix = [altMeta.monkey '_' altMeta.date '_' altMeta.arrayAlias];
 %     altMeta.mapfile=???;
 elseif strcmp(meta.monkey,'Lando')
     warning('mapfiles not found for Lando yet')
 %     meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Chips\left_S1\SN 6251-001455.cmp';
+    altMeta = meta;
+    altMeta.array='RightCuneate';
+    altMeta.arrayAlias='cuneate';
+    altMeta.neuralPrefix = [altMeta.monkey '_' altMeta.date '_' altMeta.arrayAlias];
 %     altMeta.mapfile=???;
 end
 
-%% Load colorTracking file (and settings if desired)
-fname_load=ls([meta.folder 'ColorTracking\' meta.colorTrackingFilename '*']);
-load(deblank([meta.folder 'ColorTracking\' fname_load]))
+%% Merge and strip files for spike sorting
+% Run processSpikesForSorting for the first time to combine spike data from
+% all files with a name starting with file_prefix.
+processSpikesForSorting(fullfile(meta.folder,'preCDS','merging'),meta.neuralPrefix);
+if exist('altMeta','var') && ~isempty(altMeta.array)
+    processSpikesForSorting(fullfile(altMeta.folder,'preCDS','merging'),altMeta.neuralPrefix);
+end
 
-%% Run color tracking script
-color_tracker_4colors_script;
+% Now sort in Offline Sorter!
 
-%% Save
-if savefile
-    fname_save=[main_dir '\ColorTracking\Markers\' meta.markersFilename '.mat'];
+%% Load colorTracking file (and settings if desired) -- NOTE: Can do this simultaneously with sorting, since it takes some time
+for fileIdx = 1:length(meta.taskAlias)
+    colorTrackingFilename = [meta.monkey '_' meta.date '_colorTracking_' meta.taskAlias{fileIdx}];
+
+    fname_load=ls([meta.folder 'ColorTracking\' colorTrackingFilename '*']);
+    load(deblank([meta.folder 'ColorTracking\' fname_load]))
+
+    % Run color tracking script
+    color_tracker_4colors_script;
+
+    % Save
+    markersFilename = [meta.monkey '_' meta.date '_markers_' meta.taskAlias{fileIdx}];
+    fname_save=[meta.folder 'ColorTracking\Markers\' markersFilename '.mat'];
     save(fname_save,'all_medians','all_medians2','led_vals','times');
-    
+
     if first_time
         fname_save_settings=[meta.folder '\ColorTracking\Markers\settings_' meta.monkey '_' meta.date];
         save(fname_save_settings,'red_elbow_dist_from_blue','red_blue_arm_dist_max',...
@@ -56,47 +69,75 @@ end
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clearvars -except meta altMeta
 
+%% Split files and move to Final folder before loading
+processSpikesForSorting(fullfile(meta.folder,'preCDS','merging'),meta.neuralPrefix);
+if exist('altMeta','var') && ~isempty(altMeta.array)
+    processSpikesForSorting(fullfile(altMeta.folder,'preCDS','merging'),altMeta.neuralPrefix);
+end
+
+% copy into final folder
+for fileIdx = 1:length(meta.taskAlias)
+    copyfile([meta.folder 'preCDS\merging\' meta.neuralPrefix '_' meta.taskAlias{fileIdx} '.mat'],...
+        [meta.folder 'preCDS\Final\']);
+    if exist('altMeta','var') && ~isempty(altMeta.array)
+        processSpikesForSorting(fullfile(altMeta.folder,'preCDS','merging'),altMeta.neuralPrefix);
+    end
+end
+
 %% Load data into CDS file
 % Make CDS files
+for fileIdx = 1:length(meta.taskAlias)
+    cds{fileIdx} = commonDataStructure();
+    cds{fileIdx}.file2cds([meta.folder 'preCDS\Final\' meta.neuralPrefix '_' meta.taskAlias{fileIdx}],...
+        ['ranBy' meta.ranBy],['array' meta.array],['monkey' meta.monkey],meta.lab,'ignoreJumps',['task' meta.task],['mapFile' meta.mapfile]);
 
-cds = commonDataStructure();
-cds.file2cds([meta.folder 'preCDS\Final\' meta.neuralFilename],...
-    ['ranBy' meta.ranBy],['array' meta.array],['monkey' meta.monkey],meta.lab,'ignoreJumps',['task' meta.task],['mapFile' meta.mapfile]);
+    % also load second file if necessary
+    if exist('altMeta','var')
+        cds{fileIdx}.file2cds([altMeta.folder 'preCDS\Final\' altMeta.neuralPrefix '_' altMeta.taskAlias{fileIdx}],...
+            ['ranBy' altMeta.ranBy],['array' altMeta.array],['monkey' altMeta.monkey],altMeta.lab,'ignoreJumps',['task' altMeta.task],['mapFile' altMeta.mapfile]);
+    end
+end
 
-% also load second file if necessary
-% cds.file2cds([altMeta.folder 'preCDS\Final\' altMeta.neuralFilename],...
-%     ['ranBy' altMeta.ranBy],['array' altMeta.array],['monkey' altMeta.monkey],altMeta.lab,'ignoreJumps',['task' altMeta.task],['mapFile' altMeta.mapfile]);
-
-%% Load marker file
-
-marker_data = load([meta.folder 'ColorTracking\Markers\' meta.markersFilename '.mat']);
-
-%% Get TRC
-
-% go to getTRCfromMarkers and run from there for now.
-affine_xform = getTRCfromMarkers(cds,marker_data,[meta.folder 'OpenSim\']);
+%% Load marker file and create TRC
+for fileIdx = 1:length(meta.taskAlias)
+    markersFilename = [meta.monkey '_' meta.date '_markers_' meta.taskAlias{fileIdx}];
+    marker_data = load([meta.folder 'ColorTracking\Markers\' markersFilename '.mat']);
+    affine_xform = getTRCfromMarkers(cds{fileIdx},marker_data,[meta.folder 'OpenSim\']);
+end
 
 %% Do openSim stuff and save analysis results to analysis folder
 
 % do this in opensim for now
 
 %% Add kinematic information to CDS
+for fileIdx = 1:length(meta.taskAlias)
+    % load joint information
+    cds{fileIdx}.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'joint_ang')
 
-% load joint information
-cds.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'joint_ang')
+    % load joint velocities
+    cds{fileIdx}.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'joint_vel')
 
-% load joint velocities
-cds.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'joint_vel')
+    % load joint moments
+    cds{fileIdx}.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'joint_dyn')
 
-% load joint moments
-cds.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'joint_dyn')
+    % load muscle information
+    cds{fileIdx}.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'muscle_len')
 
-% load muscle information
-cds.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'muscle_len')
-
-% load muscle velocities
-cds.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'muscle_vel')
+    % load muscle velocities
+    cds{fileIdx}.loadOpenSimData([meta.folder 'OpenSim\Analysis\'],'muscle_vel')
+end
 
 %% Save CDS
+save([meta.folder 'CDS\' meta.neuralPrefix '_CDS.mat'],'cds','-v7.3')
 
-save([meta.folder 'CDS\' meta.fname '_CDS.mat'],'cds','-v7.3')
+%% Save TD
+params.array_alias = {'LeftS1Area2','S1'};
+% params.exclude_units = [255];
+params.event_list = {'ctrHoldBump';'bumpTime';'bumpDir'};
+params.trial_results = {'R','A','F','I'};
+td_meta = struct('task',meta.task);
+params.meta = td_meta;
+trial_data_actpas = parseFileByTrial(cds{1},params);
+
+trial_data = trial_data_actpas;
+save([meta.folder 'TD\' meta.neuralPrefix '_TD.mat'],'trial_data','-v7.3')
