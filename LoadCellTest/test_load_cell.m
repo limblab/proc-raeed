@@ -5,13 +5,13 @@ ranBy='ranByRaeed';
 monkey='monkeyHan';
 task='taskRW';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20170922\';
-% folder = '/home/raeed/Projects/limblab/data-raeed/MultiWorkspace/SplitWS/Han/20160322/area2/preCDS/';
-fname='Loadcell_20170922_down';
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20170927\';
+fname='Loadcell_20170927_left';
 % Make CDS files
 
 cds = commonDataStructure();
 cds.file2cds([folder fname],ranBy,array,monkey,lab,'ignoreJumps',task);
+% cds.file2cds([folder fname],ranBy,array,monkey,lab,'ignoreJumps',task,'getLoadCellOffsets','useAbsoluteStillThresh');
 
 %%
 figure
@@ -23,3 +23,4 @@ axis equal
 %%
 figure
 plot(cds.force.fx,cds.force.fy,'o')
+axis equal
