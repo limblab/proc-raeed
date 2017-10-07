@@ -2,12 +2,12 @@
 meta.lab=6;
 meta.ranBy='Raeed';
 meta.monkey='Chips';
-meta.date='20170913';
-meta.task='COactpas'; % for the loading of cds
-meta.taskAlias={'COactpas_001'}; % for the filename (cell array list for files to load and save)
+meta.date='20171006';
+meta.task='CObump'; % for the loading of cds
+meta.taskAlias={'CObumpcurl_baseline_001','CObumpcurl_adaptation_002','CObumpcurl_washout_003'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
 meta.arrayAlias='area2'; % for the filename
-meta.folder='C:\Users\rhc307\Projects\limblab\data-preproc\ForceKin\Chips\20170913\';
+meta.folder='C:\Users\rhc307\Projects\limblab\data-preproc\BumpCurl\Chips\20171006\';
 
 meta.neuralPrefix = [meta.monkey '_' meta.date '_' meta.arrayAlias];
 
@@ -29,6 +29,45 @@ elseif strcmp(meta.monkey,'Lando')
     altMeta.arrayAlias='cuneate';
     altMeta.neuralPrefix = [altMeta.monkey '_' altMeta.date '_' altMeta.arrayAlias];
 %     altMeta.mapfile=???;
+end
+
+%% Set up folder structure
+if ~exist(fullfile(meta.folder,'preCDS'),'dir')
+    mkdir(fullfile(meta.folder,'preCDS'))
+    movefile(fullfile(meta.folder,[meta.neuralPrefix '*']),fullfile(meta.folder,'preCDS'))
+    if exist('altMeta','var')
+        movefile(fullfile(meta.folder,[altMeta.neuralPrefix '*']),fullfile(meta.folder,'preCDS'))
+    end
+end
+if ~exist(fullfile(meta.folder,'preCDS','merging'),'dir')
+    mkdir(fullfile(meta.folder,'preCDS','merging'))
+    copyfile(fullfile(meta.folder,'preCDS',[meta.neuralPrefix '*.nev']),fullfile(meta.folder,'preCDS','merging'))
+    if exist('altMeta','var')
+        copyfile(fullfile(meta.folder,'preCDS',[altMeta.neuralPrefix '*.nev']),fullfile(meta.folder,'preCDS','merging'))
+    end
+end
+if ~exist(fullfile(meta.folder,'preCDS','Final'),'dir')
+    mkdir(fullfile(meta.folder,'preCDS','Final'))
+    movefile(fullfile(meta.folder,'preCDS',[meta.neuralPrefix '*.n*']),fullfile(meta.folder,'preCDS','Final'))
+    if exist('altMeta','var')
+        movefile(fullfile(meta.folder,[altMeta.neuralPrefix '*.n*']),fullfile(meta.folder,'preCDS','Final'))
+    end
+end
+if ~exist(fullfile(meta.folder,'ColorTracking'),'dir')
+    mkdir(fullfile(meta.folder,'ColorTracking'))
+    movefile(fullfile(meta.folder,'*_colorTracking_*.mat'),fullfile(meta.folder,'ColorTracking'))
+end
+if ~exist(fullfile(meta.folder,'ColorTracking','Markers'),'dir')
+    mkdir(fullfile(meta.folder,'ColorTracking','Markers'))
+end
+if ~exist(fullfile(meta.folder,'OpenSim'),'dir')
+    mkdir(fullfile(meta.folder,'OpenSim'))
+end
+if ~exist(fullfile(meta.folder,'CDS'),'dir')
+    mkdir(fullfile(meta.folder,'CDS'))
+end
+if ~exist(fullfile(meta.folder,'TD'),'dir')
+    mkdir(fullfile(meta.folder,'TD'))
 end
 
 %% Merge and strip files for spike sorting
@@ -135,9 +174,14 @@ params.array_alias = {'LeftS1Area2','S1'};
 % params.exclude_units = [255];
 params.event_list = {'ctrHoldBump';'bumpTime';'bumpDir'};
 params.trial_results = {'R','A','F','I'};
-td_meta = struct('task',meta.task);
+td_meta = struct('task',meta.task,'epoch','BL');
 params.meta = td_meta;
-trial_data_actpas = parseFileByTrial(cds{1},params);
+trial_data_BL = parseFileByTrial(cds{1},params);
+params.meta.epoch = 'AD';
+trial_data_AD = parseFileByTrial(cds{2},params);
+params.meta.epoch = 'WO';
+trial_data_WO = parseFileByTrial(cds{3},params);
 
-trial_data = trial_data_actpas;
-save([meta.folder 'TD\' meta.neuralPrefix '_TD.mat'],'trial_data','-v7.3')
+trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
+
+% save([meta.folder 'TD\' meta.neuralPrefix '_TD.mat'],'trial_data','-v7.3')
