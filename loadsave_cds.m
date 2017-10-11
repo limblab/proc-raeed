@@ -184,4 +184,4 @@ trial_data_WO = parseFileByTrial(cds{3},params);
 
 trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
 
-% save([meta.folder 'TD\' meta.neuralPrefix '_TD.mat'],'trial_data','-v7.3')
+% save([meta.folder 'TD\' meta.monkey '_' meta.date '_TD.mat'],'trial_data','-v7.3')
