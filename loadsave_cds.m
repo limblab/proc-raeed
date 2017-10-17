@@ -2,12 +2,12 @@
 meta.lab=6;
 meta.ranBy='Raeed';
 meta.monkey='Chips';
-meta.date='20171006';
-meta.task='CObump'; % for the loading of cds
-meta.taskAlias={'CObumpcurl_baseline_001','CObumpcurl_adaptation_002','CObumpcurl_washout_003'}; % for the filename (cell array list for files to load and save)
+meta.date='20170913';
+meta.task='COactpas'; % for the loading of cds
+meta.taskAlias={'COactpas_001'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
 meta.arrayAlias='area2'; % for the filename
-meta.folder='C:\Users\rhc307\Projects\limblab\data-preproc\BumpCurl\Chips\20171006\';
+meta.folder='C:\Users\rhc307\Projects\limblab\data-preproc\ForceKin\Chips\20170913\';
 
 meta.neuralPrefix = [meta.monkey '_' meta.date '_' meta.arrayAlias];
 
@@ -172,16 +172,20 @@ save([meta.folder 'CDS\' meta.neuralPrefix '_CDS.mat'],'cds','-v7.3')
 %% Save TD
 params.array_alias = {'LeftS1Area2','S1'};
 % params.exclude_units = [255];
-params.event_list = {'ctrHoldBump';'bumpTime';'bumpDir'};
+params.event_list = {'ctrHoldBump';'bumpTime';'bumpDir';'ctrHold'};
 params.trial_results = {'R','A','F','I'};
-td_meta = struct('task',meta.task,'epoch','BL');
+td_meta = struct('task',meta.task);
 params.meta = td_meta;
-trial_data_BL = parseFileByTrial(cds{1},params);
-params.meta.epoch = 'AD';
-trial_data_AD = parseFileByTrial(cds{2},params);
-params.meta.epoch = 'WO';
-trial_data_WO = parseFileByTrial(cds{3},params);
+trial_data = parseFileByTrial(cds{1},params);
 
-trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
+% td_meta = struct('task',meta.task,'epoch','BL');
+% params.meta = td_meta;
+% trial_data_BL = parseFileByTrial(cds{1},params);
+% params.meta.epoch = 'AD';
+% trial_data_AD = parseFileByTrial(cds{2},params);
+% params.meta.epoch = 'WO';
+% trial_data_WO = parseFileByTrial(cds{3},params);
+% 
+% trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
 
-% save([meta.folder 'TD\' meta.monkey '_' meta.date '_TD.mat'],'trial_data','-v7.3')
+save([meta.folder 'TD\' meta.monkey '_' meta.date '_TD.mat'],'trial_data','-v7.3')
