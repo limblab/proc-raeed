@@ -21,6 +21,7 @@
 %                       them together for a single eval. If false, treats the trial indices
 %                       like a list of blocked testing segments
 %       .num_boots    : # bootstrap iterations to use (if <2, doesn't bootstrap)
+%       .distribution : distribution to use. See fitglm for options
 %
 % OUTPUTS:
 %   pdTable : calculated velocity PD table with CIs
@@ -37,6 +38,7 @@ trial_idx        =  [1,length(trial_data)];
 move_corr      =  '';
 block_trials     =  false;
 num_boots        =  1000;
+distribution = 'Poisson';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters
 td_fn_prefix     =  '';    % prefix for fieldname
@@ -54,7 +56,7 @@ out_signals = check_signals(trial_data(1),out_signals);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Calculate PD
 response_var = get_vars(trial_data,out_signals);
-bootfunc = @(data) fitglm(data(:,2:end),data(:,1),'Distribution','Poisson');
+bootfunc = @(data) fitglm(data(:,2:end),data(:,1),'Distribution',distribution);
 tic;
 for uid = 1:size(response_var,2)
     disp(['  Bootstrapping GLM PD computation(ET=',num2str(toc),'s).'])
@@ -73,20 +75,25 @@ for uid = 1:size(response_var,2)
 
         dirs = atan2(boot_coef(:,3),boot_coef(:,2));
         %handle wrap around problems:
-        centeredDirs=dirs-mean(dirs);
-        while(sum(centeredDirs<-pi))
-            centeredDirs(centeredDirs<-pi) = centeredDirs(centeredDirs<-pi)+2*pi;
-        end
-        while(sum(centeredDirs>pi))
-            centeredDirs(centeredDirs>pi) = centeredDirs(centeredDirs>pi)-2*pi;
-        end
+        centeredDirs=minusPi2Pi(dirs-mean(dirs));
         dirArr(uid,:)=mean(dirs);
         dirCIArr(uid,:)=prctile(centeredDirs,[2.5 97.5])+mean(dirs);
+
+        if(strcmpi(distribution,'normal'))
+            % get moddepth
+            moddepths = sqrt(sum(boot_coef(:,2:3).^2,2));
+            moddepthArr(uid,:) = mean(moddepths);
+            moddepthCIArr(uid,:) = prctile(moddepths,[2.5 97.5]);
+        else
+            moddepthArr(uid,:) = [];
+            moddepthCIArr(uid,:) = [];
+        end
     end
 end
 
 % package output
-pdTable = table(dirArr,dirCIArr,'VariableNames',{[move_corr 'Dir'],[move_corr 'DirCI']});
+pdTable = table(dirArr,dirCIArr,moddepthArr,moddepthCIArr,...
+        'VariableNames',{[move_corr 'Dir'],[move_corr 'DirCI'],[move_corr 'Moddepth'],[move_corr 'ModdepthCI']});
 
 
 
