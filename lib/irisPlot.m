@@ -11,12 +11,10 @@ dirCIPM = PM_pdData.velDirCI;
 angsDL = DL_pdData.velDir;
 dirCIDL = DL_pdData.velDirCI;
 
-% calculate CI widths
-DLCIwidth = diff(dirCIDL,1,2); % get CI widths
-PMCIwidth = diff(dirCIPM,1,2);
-DLCIwidth(DLCIwidth<0) = DLCIwidth(DLCIwidth<0)+2*pi;
-PMCIwidth(PMCIwidth<0) = PMCIwidth(PMCIwidth<0)+2*pi;
-tunedNeurons = DLCIwidth<pi/4 & PMCIwidth<pi/4;
+% check tuned neurons
+isTuned_params = struct('move_corr','vel','CIthresh',pi/3);
+tunedNeurons = checkIsTuned(PM_pdData,isTuned_params)...
+            & checkIsTuned(DL_pdData,isTuned_params);
 
 if(~isempty(which_neurons))
     tunedNeurons = tunedNeurons & which_neurons;
