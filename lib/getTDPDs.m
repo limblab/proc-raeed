@@ -75,8 +75,8 @@ for uid = 1:size(response_var,2)
 
         dirs = atan2(boot_coef(:,3),boot_coef(:,2));
         %handle wrap around problems:
-        centeredDirs=minusPi2Pi(dirs-mean(dirs));
-        dirArr(uid,:)=mean(dirs);
+        centeredDirs=minusPi2Pi(dirs-circ_mean(dirs));
+        dirArr(uid,:)=circ_mean(dirs);
         dirCIArr(uid,:)=prctile(centeredDirs,[2.5 97.5])+mean(dirs);
 
         if(strcmpi(distribution,'normal'))

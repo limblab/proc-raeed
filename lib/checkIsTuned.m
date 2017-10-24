@@ -9,5 +9,5 @@ CIthresh = pi/4;
 
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 
-CIwidth = minusPi2Pi(diff(pdData.([move_corr 'DirCI']),1,2));
-isTuned = CIwidth < pi/4;
+CIwidth = diff(pdData.([move_corr 'DirCI']),1,2);
+isTuned = CIwidth < CIthresh;
