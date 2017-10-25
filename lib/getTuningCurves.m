@@ -28,7 +28,3 @@ end
 
 % set up output struct
 curves = table(binnedFR,binned_CIlow,binned_CIhigh,'VariableNames',{'binnedFR','CIlow','CIhigh'});
-% curve.bins = {bins};
-% curve.FR = {binnedFR};
-% curve.CIhigh = {binned_CIhigh};
-% curve.CIlow = {binned_CIlow};
