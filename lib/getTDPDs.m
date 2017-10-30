@@ -10,10 +10,7 @@
 %       .out_signals  : which signals to calculate PDs for
 %       .out_signal_names : names of signals to be used as signalID pdTable
 %                           default - empty
-%       .trial_idx    : (NOT IMPLEMENTED) trials to evaluate. Ways to use:
-%                     1) 1:end treats each trial separately
-%                     2) 1:N:end predicts in bins of size N trials
-%                     3) [1,end] returns a single value for predicting all trials
+%       .trial_idx    : trials to use.
 %                         DEFAULT: [1,length(trial_data]
 %       .move_corr    : (string) name of behavior correlate for PD
 %                           'vel' : velocity of handle
@@ -29,7 +26,6 @@
 %
 % OUTPUTS:
 %   pdTable : calculated velocity PD table with CIs
-%                Note: will return relative metric if model_name is 1x2 cell of names
 %
 % Written by Raeed Chowdhury. Updated Jul 2017.
 %

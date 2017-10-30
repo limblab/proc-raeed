@@ -9,12 +9,16 @@ h=polar(0,maxRadius);
 set(h,'color','w')
 hold all
 
+if ~exist('linspec','var')
+    linspec = '-';
+end
+
 % tuning curve
 if(~isempty(curve))
     if(height(curve)>1)
         error('plotTuning:TooManyThings','curve must contain only one row')
     end
-    h=polar(repmat(bins,1,2),repmat(curve.binnedFR,1,2));
+    h=polar(repmat(bins,1,2),repmat(curve.binnedResponse,1,2));
     set(h,'linewidth',2,'color',color)
     th_fill = [fliplr(bins) bins(end) bins(end) bins];
     r_fill = [fliplr(curve.CIhigh) curve.CIhigh(end) curve.CIlow(end) curve.CIlow];
