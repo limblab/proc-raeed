@@ -18,7 +18,7 @@
 %       .block_trials : (NOT IMPLEMENTED) if true, takes input of trial indices and pools
 %                       them together for a single eval. If false, treats the trial indices
 %                       like a list of blocked testing segments
-%       .num_boots    : # bootstrap iterations to use (if <2, doesn't bootstrap)
+%       .num_boots    : # bootstrap iterations to use
 %       .distribution : distribution to use. See fitglm for options
 %       .do_plot      : plot of directions for diagnostics, not for general
 %                       use.
@@ -84,10 +84,10 @@ dirArr = zeros(size(response_var,2),1);
 dirCIArr = zeros(size(response_var,2),2);
 moddepthArr = zeros(size(response_var,2),1);
 moddepthCIArr = zeros(size(response_var,2),2);
-pdTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey','date','task','signalID');
+pdTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey','date','task','signalID'});
 for in_signal_idx = 1:size(in_signals,2)
     tab_append = table(dirArr,dirCIArr,moddepthArr,moddepthCIArr,...
-                        'VariableNames',{[in_signals{in_signal_idx,1} 'Dir'],[in_signals{in_signal_idx,1} 'DirCI'],[in_signals{in_signal_idx,1} 'Moddepth'],[in_signals{in_signal_idx,1} 'ModdepthCI']});
+                        'VariableNames',{[in_signals{in_signal_idx,1} 'PD'],[in_signals{in_signal_idx,1} 'PDCI'],[in_signals{in_signal_idx,1} 'Moddepth'],[in_signals{in_signal_idx,1} 'ModdepthCI']});
     pdTable = [pdTable tab_append];
 end
 
@@ -133,8 +133,8 @@ for uid = 1:size(response_var,2)
                 set(gca,'box','off','tickdir','out','xlim',[0 3])
             end
 
-            pdTable.([move_corr 'Dir'])(uid,:)=circ_mean(dirs);
-            pdTable.([move_corr 'DirCI'])(uid,:)=prctile(centeredDirs,[2.5 97.5])+circ_mean(dirs);
+            pdTable.([move_corr 'PD'])(uid,:)=circ_mean(dirs);
+            pdTable.([move_corr 'PDCI'])(uid,:)=prctile(centeredDirs,[2.5 97.5])+circ_mean(dirs);
 
             if(strcmpi(distribution,'normal'))
                 % get moddepth
