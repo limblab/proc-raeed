@@ -11,11 +11,10 @@
 %       .out_signal_names : names of signals to be used as signalID pdTable
 %                           default - empty
 %       .trial_idx    : trials to use.
-%                         DEFAULT: [1,length(trial_data]
-%       .move_corr    : (string) name of behavior correlate for PD
-%                           'vel' : velocity of handle
-%                           'acc' : acceleration of handle
-%                           'force'  : force on handle
+%                         DEFAULT: 1:length(trial_data
+%       .in_signals   : which signals to calculate PDs on
+%                           note: each signal must have only two columns for a PD to be calculated
+%                           default - 'vel'
 %       .block_trials : (NOT IMPLEMENTED) if true, takes input of trial indices and pools
 %                       them together for a single eval. If false, treats the trial indices
 %                       like a list of blocked testing segments
@@ -27,7 +26,7 @@
 % OUTPUTS:
 %   pdTable : calculated velocity PD table with CIs
 %
-% Written by Raeed Chowdhury. Updated Jul 2017.
+% Written by Raeed Chowdhury. Updated Nov 2017.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function pdTable = getTDPDs(trial_data,params)
@@ -35,8 +34,8 @@ function pdTable = getTDPDs(trial_data,params)
 % DEFAULT PARAMETERS
 out_signals      =  [];
 out_signal_names = {};
-trial_idx        =  [1,length(trial_data)];
-move_corr      =  '';
+trial_idx        =  1:length(trial_data);
+in_signals      = 'vel';
 block_trials     =  false;
 num_boots        =  1000;
 distribution = 'Poisson';
@@ -46,14 +45,20 @@ do_plot = false;
 td_fn_prefix     =  '';    % prefix for fieldname
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-possible_corrs = {'vel','acc','force'};
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Process inputs
 if isempty(out_signals), error('Need to provide output signal'); end
-if isempty(move_corr), error('Must provide movement correlate.'); end
-if ~any(ismember(move_corr,possible_corrs)), error('Correlate not recognized.'); end
+
 out_signals = check_signals(trial_data(1),out_signals);
 response_var = get_vars(trial_data,out_signals);
+
+in_signals = check_signals(trial_data(1),in_signals);
+for i = 1:size(in_signals,1)
+    if length(in_signals{i,2})~=2
+        error('Each element of in_signals needs to refer to only two-column covariates')
+    end
+end
+input_var = get_vars(trial_data,in_signals);
 
 if numel(unique(cat(1,{trial_data.monkey}))) > 1
     error('More than one monkey in trial data')
@@ -73,6 +78,19 @@ else
 end
 
 out_signal_names = reshape(out_signal_names,size(response_var,2),[]);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% preallocate final table
+dirArr = zeros(size(response_var,2),1);
+dirCIArr = zeros(size(response_var,2),2);
+moddepthArr = zeros(size(response_var,2),1);
+moddepthCIArr = zeros(size(response_var,2),2);
+pdTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey','date','task','signalID');
+for in_signal_idx = 1:size(in_signals,2)
+    tab_append = table(dirArr,dirCIArr,moddepthArr,moddepthCIArr,...
+                        'VariableNames',{[in_signals{in_signal_idx,1} 'Dir'],[in_signals{in_signal_idx,1} 'DirCI'],[in_signals{in_signal_idx,1} 'Moddepth'],[in_signals{in_signal_idx,1} 'ModdepthCI']});
+    pdTable = [pdTable tab_append];
+end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,50 +104,49 @@ for uid = 1:size(response_var,2)
         % not implemented currently, look at evalModel for how block trials should be implemented
         error('getTDPDs:noBlockTrials','Block trials option is not implemented yet')
     else
-        data_arr = [response_var(:,uid) cat(1,trial_data.(move_corr))];
+        data_arr = [response_var(:,uid) input_var];
         boot_tuning = bootstrp(num_boots,@(data) {bootfunc(data)}, data_arr);
         boot_coef = cell2mat(cellfun(@(x) x.Coefficients.Estimate',boot_tuning,'uniformoutput',false));
 
-        if size(boot_coef,2) ~= 3
+        if size(boot_coef,2) ~= 1+size(in_signals,1)*2
             error('getTDPDs:moveCorrProblem','GLM doesn''t have correct number of inputs')
         end
 
-        dirs = atan2(boot_coef(:,3),boot_coef(:,2));
-        %handle wrap around problems:
-        centeredDirs=minusPi2Pi(dirs-circ_mean(dirs));
-        dirArr(uid,:)=circ_mean(dirs);
-        dirCIArr(uid,:)=prctile(centeredDirs,[2.5 97.5])+circ_mean(dirs);
+        for in_signal_idx = 1:size(in_signals,2)
+            move_corr = in_signals{in_signal_idx,1};
 
-        if do_plot
-            % plot for checking
-            figure(12344)
-            clf
-            scatter(ones(size(dirs)),dirs,'ko')
-            hold on
-            scatter(1,dirArr(uid,:),'rx')
-            scatter(2*ones(size(centeredDirs)),centeredDirs,'ko')
-            scatter(2,0,'rx')
-            scatter(ones(2,1),dirCIArr(uid,:),'gx')
-            scatter(2*ones(2,1),dirCIArr(uid,:)-circ_mean(dirs),'gx')
-            set(gca,'box','off','tickdir','out','xlim',[0 3])
-        end
+            dirs = atan2(boot_coef(:,1+in_signal_idx*2),boot_coef(:,in_signal_idx*2));
+            %handle wrap around problems:
+            centeredDirs=minusPi2Pi(dirs-circ_mean(dirs));
 
-        if(strcmpi(distribution,'normal'))
-            % get moddepth
-            moddepths = sqrt(sum(boot_coef(:,2:3).^2,2));
-            moddepthArr(uid,:) = mean(moddepths);
-            moddepthCIArr(uid,:) = prctile(moddepths,[2.5 97.5]);
-        else
-            moddepthArr(uid,:) = -1;
-            moddepthCIArr(uid,:) = [-1 -1];
+            if do_plot
+                % plot for checking
+                figure(12344)
+                clf
+                scatter(ones(size(dirs)),dirs,'ko')
+                hold on
+                scatter(1,dirArr(uid,:),'rx')
+                scatter(2*ones(size(centeredDirs)),centeredDirs,'ko')
+                scatter(2,0,'rx')
+                scatter(ones(2,1),dirCIArr(uid,:),'gx')
+                scatter(2*ones(2,1),dirCIArr(uid,:)-circ_mean(dirs),'gx')
+                set(gca,'box','off','tickdir','out','xlim',[0 3])
+            end
+
+            pdTable.([move_corr 'Dir'])(uid,:)=circ_mean(dirs);
+            pdTable.([move_corr 'DirCI'])(uid,:)=prctile(centeredDirs,[2.5 97.5])+circ_mean(dirs);
+
+            if(strcmpi(distribution,'normal'))
+                % get moddepth
+                moddepths = sqrt(sum(boot_coef(:,(2*in_signal_idx):(2*in_signal_idx+1)).^2,2));
+                pdTable.([move_corr 'Moddepth'])(uid,:)= mean(moddepths);
+                pdTable.([move_corr 'ModdepthCI'])(uid,:)= prctile(moddepths,[2.5 97.5]);
+            else
+                pdTable.([move_corr 'Moddepth'])(uid,:)= -1;
+                pdTable.([move_corr 'ModdepthCI'])(uid,:)= [-1 -1];
+            end
         end
     end
 end
-
-% package output
-pdTable = table(monkey,date,task,out_signal_names,dirArr,dirCIArr,moddepthArr,moddepthCIArr,...
-        'VariableNames',{'monkey','date','task','signalID',[move_corr 'Dir'],[move_corr 'DirCI'],[move_corr 'Moddepth'],[move_corr 'ModdepthCI']});
-
-
 
 end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
