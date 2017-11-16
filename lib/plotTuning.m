@@ -1,15 +1,16 @@
-function [handle] = plotTuning(bins,pdData,curve,maxRadius,color,linspec)
+function [handle] = plotTuning(bins,pdData,curve,maxRadius,color,linspec, move_corrIn)
 % PLOT_TUNING makes a single figure showing the tuning curve and PD with
 % confidence intervals. Leave either entry blank to skip plotting it. Color
 % is a 3 element vector for the color of the plotted tuning curve and PD.
 % pdData is one row taken from binnedData object.
-
+move_cor = 'velDir';
+if nargin >6, move_cor = move_corrIn; end 
 % plot initial point
 h=polar(0,maxRadius);
 set(h,'color','w')
 hold all
 
-if ~exist('linspec','var')
+if ~exist('linspec','var') || isempty(linspec)
     linspec = '-';
 end
 
@@ -31,9 +32,9 @@ if(~isempty(pdData))
     if(height(pdData)>1)
         error('plotTuning:TooManyThings','pdData must contain only one row')
     end
-    h=polar(repmat(pdData.velDir,2,1),maxRadius*[0;1],linspec);
+    h=polar(repmat(pdData.(move_cor),2,1),maxRadius*[0;1],linspec);
     set(h,'linewidth',2,'color',color)
-    th_fill = [pdData.velDirCI(2) pdData.velDir pdData.velDirCI(1) 0];
+    th_fill = [pdData.([move_cor, 'CI'])(2) pdData.(move_cor) pdData.([move_cor, 'CI'])(1) 0];
     r_fill = [maxRadius maxRadius maxRadius 0];
     [x_fill,y_fill] = pol2cart(th_fill,r_fill);
     patch(x_fill,y_fill,color,'edgecolor','none','facealpha',0.3);

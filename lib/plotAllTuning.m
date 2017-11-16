@@ -1,4 +1,4 @@
-function compareTuning(curves,pds,bins,which_units,maxFR)
+function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   comares tuning between different conditions with empirical
 %   tuning curves and PDs.
@@ -14,9 +14,11 @@ function compareTuning(curves,pds,bins,which_units,maxFR)
 %               find maximum firing rate over all curve
 %               conditions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Default Param
+move_cor = 'velDir';
 % check maxFR input
-if ~exist('maxFR','var')
+if ~exist('maxFR','var') || isempty(maxFR)
     maxFR = [];
 elseif numel(maxFR) == 1
     maxFR = repmat(maxFR,height(curves{1}));
@@ -24,7 +26,7 @@ elseif numel(maxFR) ~= height(curves{1})
     error('maxFR is wrong size')
 end
 
-if ~exist('which_units','var')
+if ~exist('which_units','var') || isempty(which_units)
     which_units = 1:height(curves{1});
 elseif ~isvector(which_units)
     error('which_units needs to be vector')
@@ -39,6 +41,7 @@ if ~iscell(curves) || ~iscell(pds)
     error('curves and pds must be cell arrays of tables')
 end
 
+if nargin >5, move_cor = move_corIn; end 
 %% Plot tuning curves
 % pick condition colors
 cond_colors = linspecer(numel(curves));
@@ -54,16 +57,16 @@ for neuron_idx = 1:length(which_units)
     for cond_idx = 1:numel(curves)
         pdTable = pds{cond_idx};
         curveTable = curves{cond_idx};
-        plotTuning(bins,pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:));
+        plotTuning(bins,pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
         hold on
     end
-    if isnumeric(signalID(which_units(neuron_idx)))
-        label = ['Neuron ' num2str(signalID(which_units(neuron_idx)))];
-    else
-        label = ['Neuron ' signalID(which_units(neuron_idx))];
-    end
-
-    title(label)
+%     if isnumeric(signalID(which_units(neuron_idx)))
+%         label = ['Neuron ' num2str(signalID(which_units(neuron_idx)))];
+%     else
+%         label = ['Neuron ' signalID(which_units(neuron_idx))];
+%     end
+% 
+%     title(label)
 end
 
 subplot(n_rows,n_rows,n_rows^2)
