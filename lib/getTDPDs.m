@@ -85,7 +85,7 @@ dirCIArr = zeros(size(response_var,2),2);
 moddepthArr = zeros(size(response_var,2),1);
 moddepthCIArr = zeros(size(response_var,2),2);
 pdTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey','date','task','signalID'});
-for in_signal_idx = 1:size(in_signals,2)
+for in_signal_idx = 1:size(in_signals,1)
     tab_append = table(dirArr,dirCIArr,moddepthArr,moddepthCIArr,...
                         'VariableNames',{[in_signals{in_signal_idx,1} 'PD'],[in_signals{in_signal_idx,1} 'PDCI'],[in_signals{in_signal_idx,1} 'Moddepth'],[in_signals{in_signal_idx,1} 'ModdepthCI']});
     pdTable = [pdTable tab_append];
@@ -112,7 +112,7 @@ for uid = 1:size(response_var,2)
             error('getTDPDs:moveCorrProblem','GLM doesn''t have correct number of inputs')
         end
 
-        for in_signal_idx = 1:size(in_signals,2)
+        for in_signal_idx = 1:size(in_signals,1)
             move_corr = in_signals{in_signal_idx,1};
 
             dirs = atan2(boot_coef(:,1+in_signal_idx*2),boot_coef(:,in_signal_idx*2));
