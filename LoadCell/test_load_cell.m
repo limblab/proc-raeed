@@ -5,8 +5,8 @@ ranBy='ranByRaeed';
 monkey='monkeyHan';
 task='taskRW';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20170927\';
-fname='Loadcell_20170927_left';
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20171208\';
+fname='LoadCell_20171207_1kg_down';
 % Make CDS files
 
 cds = commonDataStructure();
@@ -24,3 +24,7 @@ axis equal
 figure
 plot(cds.force.fx,cds.force.fy,'o')
 axis equal
+
+%% 
+figure
+plot(cds.force.t,cds.force.fy)
