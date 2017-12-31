@@ -1,0 +1,924 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BlackrockNEVLoadingEngine	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function [timeStamps, waveForms] = BlackrockNEVLoadingEngine(varargin)$/;"	f
+BodyFileReader	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = BodyFileReader(fid)$/;"	f
+Build	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^class Build():$/;"	c
+CHECK_VALIDITY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	376;"	d	file:
+CalculateR2	lib/ClassyDataAnalysis/lib/CalculateR2.m	/^function R2 = CalculateR2(Sig1,Sig2)$/;"	f
+DLL_HANDLE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	147;"	d	file:
+DLL_HANDLE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	221;"	d	file:
+FileDesc	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_FILEDESC FileDesc[16];  \/\/ Text descriptor of files that the DLL can interpret$/;"	m	struct:__anon7
+GCC_ALIGN_4	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	112;"	d
+GCC_ALIGN_4	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	761;"	d
+GCC_ALIGN_4	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	93;"	d
+INT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef short          INT16;$/;"	t
+INT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed short        INT16, *PINT16;$/;"	t
+INT32	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef int            INT32;$/;"	t
+INT32	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed int          INT32, *PINT32;$/;"	t
+INT64	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed __int64      INT64, *PINT64;$/;"	t
+INT8	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef char           INT8;$/;"	t
+INT8	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed char         INT8, *PINT8;$/;"	t
+KLDiv	lib/ClassyDataAnalysis/lib/KLDiv.m	/^function div=KLDiv(Q,P,varargin)$/;"	f
+Kabsch	lib/KinectTracking/functions/Kabcsh/Kabsch.m	/^function[U, r, lrms] = Kabsch(P, Q, m)$/;"	f
+LD_OUT	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	41;"	d	file:
+LOAD_LIBRARY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	502;"	d	file:
+LOAD_LIBRARY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	542;"	d	file:
+MAX_LIBS	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	371;"	d	file:
+MAX_SO_PATH	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	132;"	d	file:
+NEVNSx2cds	lib/ClassyDataAnalysis/@commonDataStructure/NEVNSx2cds.m	/^function NEVNSx2cds(cds,opts)$/;"	f
+NODE_ATTRIBUTE	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^NODE_ATTRIBUTE=1    # For creating an attribute$/;"	v
+NODE_COMMENT	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^NODE_COMMENT=3      # For creating a comment$/;"	v
+NODE_ELEMENT	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^NODE_ELEMENT=2      # For creating an element$/;"	v
+NS_CFILE_VERSION	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	113;"	d	file:
+NS_FIRST_ARG	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	311;"	d
+NS_FIRST_ARG	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	314;"	d
+NS_HEADER_VERSION	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	69;"	d
+NS_H_INCLUDED	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	63;"	d
+NS_LIBRARY_FUNCS	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^struct NS_LIBRARY_FUNCS $/;"	s	file:
+NS_REQ_LIB_VERSION	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	114;"	d	file:
+NSxPowerSpectrum	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/NSxPowerSpectrum.m	/^function NSxPowerSpectrum(NSx, channelNumber, colorCode)$/;"	f
+NSxToHL	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/NSxToHL.m	/^function NSxToHL(fname)$/;"	f
+PESTH	lib/ClassyDataAnalysis/@unitData/PESTH.m	/^function varargout=PESTH(units,eventTimes,preEventWindow,postEventWindow,unitNum,varargin)$/;"	f
+PINT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed short        INT16, *PINT16;$/;"	t
+PINT32	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed int          INT32, *PINT32;$/;"	t
+PINT64	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed __int64      INT64, *PINT64;$/;"	t
+PINT8	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef signed char         INT8, *PINT8;$/;"	t
+PUINT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned short      UINT16, *PUINT16;$/;"	t
+PUINT32	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned int        UINT32, *PUINT32;$/;"	t
+PUINT64	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned __int64    UINT64, *PUINT64;$/;"	t
+PUINT8	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned char       UINT8, *PUINT8;$/;"	t
+ParseCCF	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function CCF = ParseCCF()$/;"	f
+R2axis	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def R2axis(M):$/;"	f
+RDPIsAlreadyDone	lib/ClassyDataAnalysis/lib/RDPIsAlreadyDone.m	/^function isDone=RDPIsAlreadyDone(objName,targetDirectory)$/;"	f
+RDPLoadExisting	lib/ClassyDataAnalysis/lib/RDPLoadExisting.m	/^function obj=RDPLoadExisting(objName,targetDirectory)$/;"	f
+RDPSave	lib/ClassyDataAnalysis/lib/RDPSave.m	/^function RDPSave(obj,objName,targetDirectory)$/;"	f
+RDPSaveFig	lib/ClassyDataAnalysis/lib/RDPSaveFig.m	/^function RDPSaveFig(H,targetDirectory)$/;"	f
+ReadAttach	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadAttach(fid,nmcb)$/;"	f
+ReadEnvironment	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadEnvironment(fid,nmcb)$/;"	f
+ReadEquilibrate	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadEquilibrate(fid,nmcb)$/;"	f
+ReadMuscles	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadMuscles(fid,nmcb)$/;"	f
+ReadNeurons	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadNeurons(fid,nmcb)$/;"	f
+ReadParameters	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadParameters(fid,nmcb,outflags)$/;"	f
+ReadSplines	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadSplines(fid,nmcb)$/;"	f
+ReadView	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadView(fid,nmcb)$/;"	f
+SO_EXT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	148;"	d	file:
+SO_EXT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	226;"	d	file:
+T_IN	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	36;"	d	file:
+Ti_OUT	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	40;"	d	file:
+Tree	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^class Tree():$/;"	c
+TreeList	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^class TreeList(list):$/;"	c
+UINT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned short      UINT16, *PUINT16;$/;"	t
+UINT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned short UINT16;$/;"	t
+UINT32	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned int        UINT32, *PUINT32;$/;"	t
+UINT32	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned int   UINT32;$/;"	t
+UINT64	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned __int64    UINT64, *PUINT64;$/;"	t
+UINT64	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned long long  UINT64;$/;"	t
+UINT8	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned char       UINT8, *PUINT8;$/;"	t
+UINT8	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned char  UINT8;$/;"	t
+__getattr__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __getattr__(self, item):$/;"	m	class:TreeList	file:
+__getattr__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __getattr__(self,itemc):$/;"	m	class:Tree	file:
+__getattr__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^   def __getattr__(self,name):$/;"	m	class:modeldynamics	file:
+__getitem__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __getitem__(self, item):$/;"	m	class:TreeList	file:
+__getitem__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __getitem__(self,item):$/;"	m	class:Tree	file:
+__init__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __init__(self, value):$/;"	m	class:nmerror
+__init__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __init__(self,x=[]):$/;"	m	class:Build
+__init__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __init__(self,x=[]):$/;"	m	class:Tree
+__init__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^   def __init__(self,x):$/;"	m	class:modeldynamics
+__setattr__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __setattr__(self,name,value):$/;"	m	class:Tree	file:
+__setattr__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __setattr__(self,name,value):$/;"	m	class:TreeList	file:
+__str__	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def __str__(self):$/;"	m	class:nmerror	file:
+_checkPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static int _checkPath (const char *path, char *so_name) {$/;"	f	file:
+_libraries	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static struct NS_LIBRARY_FUNCS _libraries[MAX_LIBS];$/;"	v	typeref:struct:NS_LIBRARY_FUNCS	file:
+_setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) $/;"	f	file:
+_setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) {$/;"	f	file:
+actpas_tuning	Archive/MiscTuning/actpas_tuning.m	/^function [figure_handles, output_data] = actpas_tuning(folder, options)$/;"	f
+addAttribute_	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addAttribute_(self,name,value):$/;"	m	class:Tree
+addAttribute_	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addAttribute_(self,name,value):$/;"	m	class:TreeList
+addComment_	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addComment_(self,value):$/;"	m	class:Tree
+addComment_	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addComment_(self,value):$/;"	m	class:TreeList
+addContact	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addContact(self,Name,Type,Parent=None,Ellipsoid=None):$/;"	m	class:Build
+addDoF	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addDoF(self,ind,Name,Type='Rotation',Axis=[1,0,0],Locked='false',State=[0,0]):$/;"	m	class:Build
+addElement_	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addElement_(self,name,value=None):$/;"	m	class:Tree
+addElement_	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addElement_(self,name,value=None):$/;"	m	class:TreeList
+addGravity	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addGravity(self,Gravity=[0.,-9.80665,0.]):$/;"	m	class:Build
+addMuscleSplines	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addMuscleSplines(self):$/;"	m	class:Build
+addNeuron	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addNeuron(self,Name,OutputBounds=[0.,1.],EqBounds=[0.01,.95],EqCCost=.0,$/;"	m	class:Build
+addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function addOperation(obj,operation,opPath,varargin)$/;"	f
+addPerturbation	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addPerturbation(x,Name,Parent,Type,Wrench=[0.,0.,0.],ApplicationDirection=[1.,0.,0.],$/;"	m	class:Build
+addPolygon	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addPolygon(x,Name,Parent,Vertices,Facets,Origin=[0.,0.,0.],Rotation=[0.,0.,0.]):$/;"	m	class:Build
+addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
+addProblem	lib/ClassyDataAnalysis/@experiment/addProblem.m	/^function addProblem(ex,problem)$/;"	f
+addRigidBody	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^            InertialEllipsoid=[1,1,1],R=np.eye(3),Density=None):$/;"	m	class:Build
+addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession(ex,cds)$/;"	f
+addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
+addZajacMuscle	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def addZajacMuscle(self,Name,MusclePath,MotorNeuron,MaxForce=100,OptimalFiberLength=.1,$/;"	m	class:Build
+add_trial_table	MultiWorkspace/Archive/Deprecated code/add_trial_table.m	/^function bdf_new = add_trial_table(bdf_old)$/;"	f
+aglobal	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def aglobal(nmtree,bod,axis):$/;"	f
+analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
+angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
+animateBumpcurlTrials	BumpCurl/lib/animateBumpcurlTrials.m	/^function animateBumpcurlTrials(trial_data,field,bump_colors,waitperiod,tail_length)$/;"	f
+appendData	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function appendData(units,data,varargin)$/;"	f
+appendLoadCellOffsets	lib/ClassyDataAnalysis/lib/appendLoadCellOffsets.m	/^function appendLoadCellOffsets(offsets,labNum,dateTime)$/;"	f
+appendTDs	lib/TrialData/Tools/appendTDs.m	/^function combined = appendTDs(varargin)$/;"	f
+appendTable	lib/ClassyDataAnalysis/@timeSeriesData/appendTable.m	/^function appendTable(tsd,data,varargin)$/;"	f
+appendTable	lib/ClassyDataAnalysis/@trialData/appendTable.m	/^function appendTable(trials,data,varargin)$/;"	f
+arrayWaveLayout	lib/arrayWaveLayout.m	/^function h = arrayWaveLayout(cds)$/;"	f
+artifact_removal	lib/SpikeMerge/artifact_removal.m	/^function unit_structure = artifact_removal(varargin)$/;"	f
+assignParams	lib/TrialData/util/assignParams.m	/^function assignParams(opts,params)$/;"	f
+assignopts	lib/ClassyDataAnalysis/lib/gpfa/util/assignopts.m	/^function remain = assignopts (opts, varargin)$/;"	f
+axis2R	Hindlimb/leg_lib/Neuromechanic/axis2R.m	/^function R = axis2R(ax)$/;"	f
+axis2R	Hindlimb/leg_lib/Neuromechanic/drawmodel.m	/^function R = axis2R(ax)$/;"	f
+bdf2cds	lib/ClassyDataAnalysis/@commonDataStructure/bdf2cds.m	/^function bdf2cds(cds,bdf,varargin)$/;"	f
+binData	lib/ClassyDataAnalysis/@experiment/binData.m	/^function binData(ex,varargin)$/;"	f
+binTD	lib/TrialData/Tools/binTD.m	/^function trial_data = binTD(trial_data,num_bins)$/;"	f
+bin_angles	lib/TrialData/util/bin_angles.m	/^function theta = bin_angles(theta,angle_bin_size)$/;"	f
+bin_events	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = bin_events(trials,event_list,t_bin)$/;"	f
+bin_spikes	Archive/bin_spikes.m	/^function [s, t] = bin_spikes(bdf_cell,ts,channel,unit)$/;"	f
+bin_spikes	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [binned_spikes,sg] = bin_spikes(units,unit_idx,t_bin)$/;"	f
+boundingbox	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def boundingbox(nmtree):$/;"	f
+brighten	lib/linspecer/linspecer.m	/^function varIn = brighten(varIn,varargin) % increase the brightness$/;"	f
+bumpcurl_analysis	BumpCurl/bumpcurl_analysis.m	/^function bumpcurl_analysis(trial_data)$/;"	f
+bytes2float	lib/ClassyDataAnalysis/lib/bytes2float.m	/^function f = bytes2float(varargin)$/;"	f
+calcFiringRate	lib/ClassyDataAnalysis/@experiment/calcFiringRate.m	/^function calcFiringRate(ex,varargin)$/;"	f
+calcTimeDelay	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/calcTimeDelay.m	/^function timeDelay = calcTimeDelay(NSx1, NSx2)$/;"	f
+calc_PD_helper	MultiWorkspace/Archive/Helpers/calc_PD_helper.m	/^function [out_tuning] = calc_PD_helper(bootfunc,endpoint_kin,FR)$/;"	f
+calc_VAF	Hindlimb/Deprecated/calc_VAF.m	/^function VAF = calc_VAF(Y,Yhat)$/;"	f
+calculatePDs	MultiWorkspace/lib/calculatePDs.m	/^function [tuning] = calculatePDs(velInput,FR,doBoot,bootreps)$/;"	f
+calculate_PD_diff	MultiWorkspace/Archive/Deprecated code/calculate_PD_diff.m	/^function dPD_data = calculate_PD_diff(bdf_cell_1,bdf_cell_2,leave_sorted,plotPDs)$/;"	f
+calculate_PDs	Archive/calculate_PDs.m	/^function PD_data = calculate_PDs(bdf_cell,leave_sorted,plotPDs)$/;"	f
+cart2joint_xform	Archive/Cuneate/Grant support/cart2joint_xform.m	/^function [jointPD, joint_vec] = cart2joint_xform(cartPD,should_flexion,elbow_flexion)$/;"	f
+catDataWindow	lib/catDataWindow.m	/^function cattedData = catDataWindow(dataTimes,data,eventTimes,window)$/;"	f
+causalInference	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInference.m	/^function seq = causalInference(seq, params, varargin)$/;"	f
+causalInferencePrecomp	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInferencePrecomp.m	/^function precomp = causalInferencePrecomp(params, Tmax, varargin)$/;"	f
+cerebus2NEVNSx	lib/SpikeMerge/cerebus2NEVNSx.m	/^function NEVNSx = cerebus2NEVNSx(varargin)$/;"	f
+checkAssumption	lib/CircStat/circ_wwtest.m	/^function checkAssumption(rw,n)$/;"	f
+checkEmg60Hz	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function checkEmg60Hz(cds)$/;"	f
+checkIsTuned	lib/checkIsTuned.m	/^function isTuned = checkIsTuned(pdData,params)$/;"	f
+checkLFP60hz	lib/ClassyDataAnalysis/@commonDataStructure/checkLFP60hz.m	/^function [bad, badChanList]=checkLFP60hz(cds)$/;"	f
+check_muscle_dir	Hindlimb/leg_lib/check_muscle_dir.m	/^function [muscle_coef_elast,muscle_coef_fixed] = check_muscle_dir$/;"	f
+check_overlap	Hindlimb/Deprecated/check_overlap.m	/^function [overlap] = check_overlap(ci1,ci2)$/;"	f
+check_signals	lib/TrialData/util/subfcn/check_signals.m	/^function signals = check_signals(trial_data,signals)$/;"	f
+check_tuning	Hindlimb/Deprecated/check_tuning.m	/^function p = check_tuning(activity)$/;"	f
+circ_ang2rad	lib/CircStat/circ_ang2rad.m	/^function alpha = circ_ang2rad(alpha)$/;"	f
+circ_axial	lib/CircStat/circ_axial.m	/^function alpha = circ_axial(alpha, p)$/;"	f
+circ_axialmean	lib/CircStat/circ_axialmean.m	/^function [r mu] = circ_axialmean(alphas, m, dim)$/;"	f
+circ_clust	lib/CircStat/circ_clust.m	/^function [cid, alpha, mu] = circ_clust(alpha, numclust, disp)$/;"	f
+circ_cmtest	lib/CircStat/circ_cmtest.m	/^function [pval med P] = circ_cmtest(varargin)$/;"	f
+circ_confmean	lib/CircStat/circ_confmean.m	/^function t = circ_confmean(alpha, xi, w, d, dim)$/;"	f
+circ_corrcc	lib/CircStat/circ_corrcc.m	/^function [rho pval] = circ_corrcc(alpha1, alpha2)$/;"	f
+circ_corrcl	lib/CircStat/circ_corrcl.m	/^function [rho pval] = circ_corrcl(alpha, x)$/;"	f
+circ_dist	lib/CircStat/circ_dist.m	/^function r =  circ_dist(x,y)$/;"	f
+circ_dist2	lib/CircStat/circ_dist2.m	/^function r =  circ_dist2(x,y)$/;"	f
+circ_hktest	lib/CircStat/circ_hktest.m	/^function [pval table] = circ_hktest(alpha, idp, idq, inter, fn)$/;"	f
+circ_kappa	lib/CircStat/circ_kappa.m	/^function kappa = circ_kappa(alpha,w)$/;"	f
+circ_ktest	lib/CircStat/circ_ktest.m	/^function [pval, f] = circ_ktest(alpha1, alpha2)$/;"	f
+circ_kuipertest	lib/CircStat/circ_kuipertest.m	/^function [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)$/;"	f
+circ_kurtosis	lib/CircStat/circ_kurtosis.m	/^function [k k0] = circ_kurtosis(alpha, w, dim)$/;"	f
+circ_mean	lib/CircStat/circ_mean.m	/^function [mu ul ll] = circ_mean(alpha, w, dim)$/;"	f
+circ_median	lib/CircStat/circ_median.m	/^function med = circ_median(alpha,dim)$/;"	f
+circ_medtest	lib/CircStat/circ_medtest.m	/^function pval = circ_medtest(alpha,md)$/;"	f
+circ_moment	lib/CircStat/circ_moment.m	/^function [mp  rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)$/;"	f
+circ_mtest	lib/CircStat/circ_mtest.m	/^function [h mu ul ll] = circ_mtest(alpha, dir, xi, w, d)$/;"	f
+circ_otest	lib/CircStat/circ_otest.m	/^function [pval m] = circ_otest(alpha, sz, w)$/;"	f
+circ_plot	lib/CircStat/circ_plot.m	/^function a = circ_plot(alpha, format, formats, varargin)$/;"	f
+circ_r	lib/CircStat/circ_r.m	/^function r = circ_r(alpha, w, d, dim)$/;"	f
+circ_rad2ang	lib/CircStat/circ_rad2ang.m	/^function alpha = circ_rad2ang(alpha)$/;"	f
+circ_raotest	lib/CircStat/circ_raotest.m	/^function [p U UC] = circ_raotest(alpha)$/;"	f
+circ_rtest	lib/CircStat/circ_rtest.m	/^function [pval z] = circ_rtest(alpha, w, d)$/;"	f
+circ_samplecdf	lib/CircStat/circ_samplecdf.m	/^function [phis, cdf, phiplot, cdfplot] = circ_samplecdf(thetas, resolution)$/;"	f
+circ_skewness	lib/CircStat/circ_skewness.m	/^function [b b0] = circ_skewness(alpha, w, dim)$/;"	f
+circ_stats	lib/CircStat/circ_stats.m	/^function stats = circ_stats(alpha, w, d)$/;"	f
+circ_std	lib/CircStat/circ_std.m	/^function [s s0] = circ_std(alpha, w, d, dim)$/;"	f
+circ_symtest	lib/CircStat/circ_symtest.m	/^function pval = circ_symtest(alpha)$/;"	f
+circ_var	lib/CircStat/circ_var.m	/^function [S s] = circ_var(alpha, w, d, dim)$/;"	f
+circ_vmpar	lib/CircStat/circ_vmpar.m	/^function [thetahat kappa] = circ_vmpar(alpha,w,d)$/;"	f
+circ_vmpdf	lib/CircStat/circ_vmpdf.m	/^function [p alpha] = circ_vmpdf(alpha, thetahat, kappa)$/;"	f
+circ_vmrnd	lib/CircStat/circ_vmrnd.m	/^function alpha = circ_vmrnd(theta, kappa, n)$/;"	f
+circ_vtest	lib/CircStat/circ_vtest.m	/^function [pval v] = circ_vtest(alpha, dir, w, d)$/;"	f
+circ_wwtest	lib/CircStat/circ_wwtest.m	/^function [pval table] = circ_wwtest(varargin)$/;"	f
+circular_mean	lib/TrialData/util/circular_mean.m	/^function [mu, ul, ll] = circular_mean(alpha, w, dim)$/;"	f
+clearTempFields	lib/ClassyDataAnalysis/@commonDataStructure/clearTempFields.m	/^function clearTempFields(cds)$/;"	f
+cluster_func	lib/KinectTracking/Marker_Tracking/tracking_functions/cluster_func.m	/^function [ prev_num_clust, prev_meds, medians, medians2  ] = cluster_func(t, loc, num_clust, prev_num_clust, dist_min, penalty, prev_meds, medians, medians2 )$/;"	f
+cluster_func2	lib/KinectTracking/Marker_Tracking/tracking_functions/cluster_func2.m	/^function [ prev_num_clust, prev_meds, medians, medians2  ] = cluster_func2(t, loc, num_clust, prev_num_clust, dist_min, prev_meds, medians, medians2, z_min )$/;"	f
+cluster_func_reach	lib/KinectTracking/Marker_Tracking/Reaching/cluster_func_reach.m	/^function [ prev_num_clust, prev_meds, medians, medians2  ] = cluster_func_reach(t, loc, num_clust, prev_num_clust, dist_min, penalty, prev_meds, medians, medians2 )$/;"	f
+cluster_func_reach2	lib/KinectTracking/Marker_Tracking/Reaching/cluster_func_reach2.m	/^function [ prev_num_clust, prev_meds, medians, medians2  ] = cluster_func_reach2(t, loc, num_clust, prev_num_clust, dist_min, prev_meds, medians, medians2 )$/;"	f
+cluster_rho	lib/TrialData/Analysis/pairwiseCorr.m	/^function sort_idx = cluster_rho(rho)$/;"	f
+cmap2linspecer	lib/linspecer/linspecer.m	/^function vOut = cmap2linspecer(vIn) % changes the format from a double array to a cell array with the right format$/;"	f
+collections	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^import collections$/;"	i
+colorBrew2mat	lib/linspecer/linspecer.m	/^function varIn = colorBrew2mat(varIn)$/;"	f
+colorm	lib/linspecer/linspecer.m	/^function cmap = colorm(varargin)$/;"	f
+combineNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/combineNSxNEV.m	/^function [NSx1, NEV1] = combineNSxNEV(filename1, filename2)$/;"	f
+compareTuning	lib/compareTuning.m	/^function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)$/;"	f
+compare_actpas_RW	Archive/MiscTuning/compare_actpas_RW.m	/^function [figure_handles, output_data] = compare_actpas_RW(folder, options)$/;"	f
+compare_workspace_PDs	MultiWorkspace/Archive/Analysis/compare_workspace_PDs.m	/^function [figure_handles, output_data]=compare_workspace_PDs(folder,options)$/;"	f
+compute_pseudo_R2	MultiWorkspace/Archive/compute_pseudo_R2.m	/^function R2 = compute_pseudo_R2(Y, Yhat, Ymean, distr, Yhat_null)$/;"	f
+compute_pseudo_R2	lib/TrialData/util/compute_pseudo_R2.m	/^function R2 = compute_pseudo_R2(Y, Yhat, Ymean, distr, Yhat_null)$/;"	f
+compute_r2	lib/TrialData/util/compute_r2.m	/^function r2 = compute_r2(sig1,sig2,which_method)$/;"	f
+compute_rel_pseudo_R2	MultiWorkspace/Archive/compute_rel_pseudo_R2.m	/^function R2 = compute_rel_pseudo_R2(Y, Yhat1, Yhat2)$/;"	f
+compute_rel_pseudo_R2	lib/TrialData/util/compute_rel_pseudo_R2.m	/^function R2 = compute_rel_pseudo_R2(Y, Yhat1, Yhat2)$/;"	f
+compute_vaf	lib/TrialData/util/compute_vaf.m	/^function VAF = compute_vaf(Y,Yhat,Yhat2)$/;"	f
+contacts	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def contacts(x):$/;"	f
+convBasisFunc	lib/TrialData/Tools/convBasisFunc.m	/^function trial_data = convBasisFunc(trial_data,params)$/;"	f
+convert_model	Hindlimb/leg_lib/Neuromechanic/convert_model.m	/^function legmodel = convert_model(plotflag)$/;"	f
+cosmoother_fa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/cosmoother_fa.m	/^function [Ycs, Vcs] = cosmoother_fa(Y, params)$/;"	f
+cosmoother_gpfa_viaOrth	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/cosmoother_gpfa_viaOrth.m	/^function seq = cosmoother_gpfa_viaOrth(seq, params, mList)$/;"	f
+cosmoother_gpfa_viaOrth_fast	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/cosmoother_gpfa_viaOrth_fast.m	/^function seq = cosmoother_gpfa_viaOrth_fast(seq, params, mList)$/;"	f
+cosmoother_pca	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/cosmoother_pca.m	/^function Ycs = cosmoother_pca(Y, params)$/;"	f
+create_call_list	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function call = create_call_list(called_from)$/;"	f
+create_hg_cbnames	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function hg_cbnames = create_hg_cbnames$/;"	f
+crossmat	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def crossmat(x):$/;"	f
+csv	Archive/force.py	/^import csv$/;"	i
+curvature	lib/curvature.m	/^function k = curvature(varargin)$/;"	f
+cutTrials	lib/ClassyDataAnalysis/lib/gpfa/util/cutTrials.m	/^function seqOut = cutTrials(seqIn, varargin)$/;"	f
+dHighFreqCorner	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dHighFreqCorner;       \/\/ High frequency cutoff in Hz of the source signal filtering$/;"	m	struct:__anon11
+dHighFreqCorner	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dHighFreqCorner;       \/\/ High frequency cutoff in Hz of the source signal filtering$/;"	m	struct:__anon13
+dLocationUser	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dLocationUser;         \/\/ Additional position information (e.g. tetrode number)$/;"	m	struct:__anon11
+dLocationUser	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dLocationUser;         \/\/ Additional position information (e.g tetrode number)$/;"	m	struct:__anon13
+dLocationX	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dLocationX;            \/\/ X coordinate in meters$/;"	m	struct:__anon11
+dLocationX	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dLocationX;            \/\/ X coordinate of source in meters$/;"	m	struct:__anon13
+dLocationY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dLocationY;            \/\/ Y coordinate in meters$/;"	m	struct:__anon11
+dLocationY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dLocationY;            \/\/ Y coordinate of source in meters$/;"	m	struct:__anon13
+dLocationZ	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dLocationZ;            \/\/ Z coordinate in meters$/;"	m	struct:__anon11
+dLocationZ	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dLocationZ;            \/\/ Z coordinate of source in meters$/;"	m	struct:__anon13
+dLowFreqCorner	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dLowFreqCorner;        \/\/ Low frequency cutoff in Hz of the source signal filtering$/;"	m	struct:__anon11
+dLowFreqCorner	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dLowFreqCorner;        \/\/ Low frequency cutoff in Hz of the source signal filtering$/;"	m	struct:__anon13
+dMaxVal	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dMaxVal;               \/\/ Maximum possible value of the input signal$/;"	m	struct:__anon11
+dMaxVal	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dMaxVal;               \/\/ Maximum possible value of the input signal$/;"	m	struct:__anon13
+dMinVal	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dMinVal;               \/\/ Minimum possible value of the input signal$/;"	m	struct:__anon11
+dMinVal	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dMinVal;               \/\/ Minimum possible value of the input signal$/;"	m	struct:__anon13
+dResolution	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dResolution;           \/\/ Minimum resolvable step (.0000305 for a +\/-1V 16-bit ADC)  $/;"	m	struct:__anon11
+dResolution	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dResolution;           \/\/ Minimum input step size that can be resolved$/;"	m	struct:__anon13
+dSampleRate	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dSampleRate;           \/\/ The sampling rate in Hz used to digitize the analog values$/;"	m	struct:__anon11
+dSampleRate	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dSampleRate;       \/\/ The sampling rate in Hz used to digitize source signals$/;"	m	struct:__anon12
+dSubSampleShift	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dSubSampleShift;       \/\/ Time diff btn timestamp and actual sampling time of source$/;"	m	struct:__anon13
+dTimeSpan	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dTimeSpan;              \/\/ Time span covered by the data file in seconds$/;"	m	struct:__anon8
+dTimeStampResolution	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dTimeStampResolution;   \/\/ Minimum timestamp resolution$/;"	m	struct:__anon8
+database2cds	lib/ClassyDataAnalysis/@commonDataStructure/database2cds.m	/^function database2cds(cds,conn,filepath,varargin)$/;"	f
+dct1d	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function data=dct1d(data)$/;"	f
+decimateData	lib/ClassyDataAnalysis/lib/decimateData.m	/^function [dataD]=decimateData(data,fc)$/;"	f
+decimate_signals	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = decimate_signals(data,var_list,bin_size)$/;"	f
+delaysignal	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def delaysignal(t,D,x=[]):$/;"	f
+deleteInvalid	lib/ClassyDataAnalysis/@unitData/deleteInvalid.m	/^function deleteInvalid(units)$/;"	f
+deleteUnsorted	lib/ClassyDataAnalysis/@unitData/deleteUnsorted.m	/^function deleteUnsorted(units)$/;"	f
+dim	lib/linspecer/linspecer.m	/^function varIn = dim(varIn,f)$/;"	f
+dimRedHelper	lib/ClassyDataAnalysis/@binnedData/dimRedHelper.m	/^function [ dat ] = dimRedHelper( binned )$/;"	f
+dlclose	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	224;"	d	file:
+dlerror	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	225;"	d	file:
+dllHandle	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    DLL_HANDLE dllHandle;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+dlopen	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	222;"	d	file:
+dlsym	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	223;"	d	file:
+doBumpCurlPCA	BumpCurl/Deprecated/doBumpCurlPCA.m	/^function [base_scores,adapt_scores,wash_scores] = doBumpCurlPCA(base_data,adapt_data,wash_data)/;"	f
+do_affine_xform	lib/KinectTracking/functions/do_affine_xform.m	/^function [ kinect_pos ] = do_affine_xform( all_medians, affine_xform, plot_flag )$/;"	f
+do_the_loading	lib/TrialData/DataProcessing/loadTDfiles.m	/^function [trial_data,extra_outs] = do_the_loading(filename,func_calls)$/;"	f
+do_translation_rotation	lib/KinectTracking/functions/Deprecated/do_translation_rotation.m	/^function [ kinect_pos ] = do_translation_rotation( all_medians, alignment_settings, plot_flag, times_good, pos_h, colors_xy )$/;"	f
+dpca	lib/TrialData/util/dpca/dpca.m	/^function [W, V, whichMarg] = dpca(Xfull, numComps, varargin)$/;"	f
+dpca	lib/dPCA/dpca.m	/^function [W, V, whichMarg] = dpca(Xfull, numComps, varargin)$/;"	f
+dpca_classificationAccuracy	lib/dPCA/dpca_classificationAccuracy.m	/^function [accuracy, brier] = dpca_classificationAccuracy(Xfull, Xtrial, numOfTrials, varargin)$/;"	f
+dpca_classificationShuffled	lib/dPCA/dpca_classificationShuffled.m	/^function [accuracyShuffle, brierShuffle] = dpca_classificationShuffled(Xtrial, numOfTrials, varargin)$/;"	f
+dpca_explainedVariance	lib/TrialData/util/dpca/dpca_explainedVariance.m	/^function explVar = dpca_explainedVariance(Xfull, W, V, varargin)$/;"	f
+dpca_explainedVariance	lib/dPCA/dpca_explainedVariance.m	/^function explVar = dpca_explainedVariance(Xfull, W, V, varargin)$/;"	f
+dpca_getNoiseCovariance	lib/dPCA/dpca_getNoiseCovariance.m	/^function [SSnoise, CnoisePooled, CnoiseAveraged] = dpca_getNoiseCovariance(Xfull, Xtrial, numOfTrials)$/;"	f
+dpca_getTestTrials	lib/dPCA/dpca_getTestTrials.m	/^function Xtest = dpca_getTestTrials(firingRatesPerTrial, numOfTrials)$/;"	f
+dpca_marginalize	lib/TrialData/util/dpca/dpca_marginalize.m	/^function [YY, margNums] = dpca_marginalize(X, varargin)$/;"	f
+dpca_marginalize	lib/dPCA/dpca_marginalize.m	/^function [YY, margNums] = dpca_marginalize(X, varargin)$/;"	f
+dpca_optimizeLambda	lib/dPCA/dpca_optimizeLambda.m	/^function [optimalLambda, optimalLambdas] = dpca_optimizeLambda(Xfull, ...$/;"	f
+dpca_perMarginalization	lib/dPCA/dpca_perMarginalization.m	/^function dpca_perMarginalization(Xfull, plotFunction, varargin)$/;"	f
+dpca_pinv	lib/dPCA/dpca_pinv.m	/^function [W,V,whichMarg] = dpca_pinv(Xfull, numC, varargin)$/;"	f
+dpca_plot	lib/TrialData/util/dpca/dpca_plot.m	/^function dpca_plot(Xfull, W, V, plotFunction, varargin)$/;"	f
+dpca_plot	lib/dPCA/dpca_plot.m	/^function dpca_plot(Xfull, W, V, plotFunction, varargin)$/;"	f
+dpca_plot_default	lib/TrialData/util/dpca/dpca_plot_td.m	/^function dpca_plot_default(data, time, yspan, explVar, compNum, events, signif, marg)$/;"	f
+dpca_plot_default	lib/dPCA/dpca_plot_default.m	/^function dpca_plot_default(data, time, yspan, explVar, compNum, events, signif, marg)$/;"	f
+dpca_plot_default_j	ForceKin/lib/dpca_plot_actpas.m	/^function dpca_plot_default_j(data, time, yspan, explVar, compNum, events, signif, marg)$/;"	f
+dpca_plot_default_j	lib/dpca_plot_default_j.m	/^function dpca_plot_default_j(data, time, yspan, explVar, compNum, events, signif, marg)$/;"	f
+dpca_signifComponents	lib/dPCA/dpca_signifComponents.m	/^function componentsSignif = dpca_signifComponents(accuracy, accuracyShuffle, whichMarg, varargin)$/;"	f
+draw_bones	Hindlimb/Deprecated/draw_bones.m	/^function draw_bones(base_leg, angles, plot_muscle, linewidth)$/;"	f
+draw_hindlimb	Hindlimb/leg_lib/Neuromechanic/draw_hindlimb.m	/^function draw_hindlimb(legmodel,q,show_muscles)$/;"	f
+drawmodel	Hindlimb/leg_lib/Neuromechanic/drawmodel.m	/^function varargout = drawmodel(nmo,q)$/;"	f
+dupeAndShift	lib/TrialData/Tools/dupeAndShift.m	/^function trial_data = dupeAndShift(trial_data,varargin)$/;"	f
+dwAPIVersionMaj	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwAPIVersionMaj;    \/\/ Major version number of API$/;"	m	struct:__anon7
+dwAPIVersionMin	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwAPIVersionMin;    \/\/ Minor version number of API$/;"	m	struct:__anon7
+dwEntityCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwEntityCount;          \/\/ Number of entities in the data file.$/;"	m	struct:__anon8
+dwEntityType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwEntityType;       \/\/ One of the ns_ENTITY_* types defined above$/;"	m	struct:__anon9
+dwEventType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwEventType;      \/\/ One of the ns_EVENT_* types defined above$/;"	m	struct:__anon10
+dwFileDescCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwFileDescCount;    \/\/ Number of valid description entries in the following array$/;"	m	struct:__anon7
+dwFlags	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwFlags;            \/\/ Additional library flags$/;"	m	struct:__anon7
+dwHighFreqOrder	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32    dwHighFreqOrder;       \/\/ Order of the filter used for high frequency cutoff$/;"	m	struct:__anon11
+dwHighFreqOrder	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwHighFreqOrder;       \/\/ Order of the filter used for high frequency cutoff$/;"	m	struct:__anon13
+dwItemCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwItemCount;        \/\/ Number of data items for the specified entity in the file$/;"	m	struct:__anon9
+dwLibVersionMaj	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwLibVersionMaj;    \/\/ Major version number of library$/;"	m	struct:__anon7
+dwLibVersionMin	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwLibVersionMin;    \/\/ Minor version number of library$/;"	m	struct:__anon7
+dwLowFreqOrder	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32    dwLowFreqOrder;        \/\/ Order of the filter used for low frequency cutoff$/;"	m	struct:__anon11
+dwLowFreqOrder	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwLowFreqOrder;        \/\/ Order of the filter used for low frequency cutoff$/;"	m	struct:__anon13
+dwMaxDataLength	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwMaxDataLength;  \/\/ Maximum number of bytes that can be returned for an Event$/;"	m	struct:__anon10
+dwMaxFiles	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwMaxFiles;         \/\/ Maximum number of files library can simultaneously open$/;"	m	struct:__anon7
+dwMaxSampleCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwMaxSampleCount;  \/\/ Maximum number of samples in each Segment data item$/;"	m	struct:__anon12
+dwMinDataLength	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwMinDataLength;  \/\/ Minimum number of bytes that can be returned for an Event$/;"	m	struct:__anon10
+dwMinSampleCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwMinSampleCount;  \/\/ Minimum number of samples in each Segment data item$/;"	m	struct:__anon12
+dwSourceCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwSourceCount;     \/\/ Number of sources in the Segment Entity, e.g. 4 for a tetrode$/;"	m	struct:__anon12
+dwSourceEntityID	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwSourceEntityID;  \/\/ Optional ID number of a source entity$/;"	m	struct:__anon14
+dwSourceUnitID	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwSourceUnitID;    \/\/ Optional sorted unit ID number used in the source entity$/;"	m	struct:__anon14
+dwTime_Day	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Day;             \/\/ Day of the month (1-31)$/;"	m	struct:__anon8
+dwTime_Day	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Day;         \/\/ Day of the month (1-31) of last modification date$/;"	m	struct:__anon7
+dwTime_DayofWeek	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_DayofWeek;       \/\/ Day of the week (0-6; Sunday = 0)$/;"	m	struct:__anon8
+dwTime_Hour	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Hour;            \/\/ Hour since midnight (0-23)$/;"	m	struct:__anon8
+dwTime_MilliSec	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_MilliSec;        \/\/ Milliseconds after the second (0-1000)$/;"	m	struct:__anon8
+dwTime_Min	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Min;             \/\/ Minute after the hour (0-59)$/;"	m	struct:__anon8
+dwTime_Month	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Month;           \/\/ Month (1-12; January = 1)$/;"	m	struct:__anon8
+dwTime_Month	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Month;       \/\/ Month (1-12; January = 1) of last modification date$/;"	m	struct:__anon7
+dwTime_Sec	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Sec;             \/\/ Seconds after the minute (0-59)$/;"	m	struct:__anon8
+dwTime_Year	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Year;            \/\/ Year the file was created$/;"	m	struct:__anon8
+dwTime_Year	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Year;        \/\/ Year of last modification date$/;"	m	struct:__anon7
+edgeDetect	lib/ClassyDataAnalysis/lib/NPMK/Other tools/edgeDetect.m	/^function timestamps = edgeDetect(signal, threshold, type)$/;"	f
+elastic_joint_cost	Hindlimb/leg_lib/elastic_joint_cost.m	/^function cost = elastic_joint_cost(angles,eq_angles,joint_elast)$/;"	f
+em	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/em.m	/^function [estParams, seq, LL, iterTime] = em(currentParams, seq, varargin)$/;"	f
+emgFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/emgFromNSx.m	/^function emgFromNSx(cds)$/;"	f
+enc2WFpos	lib/ClassyDataAnalysis/@commonDataStructure/enc2WFpos.m	/^function pos=enc2WFpos(cds)$/;"	f
+enc2handlepos	lib/ClassyDataAnalysis/@commonDataStructure/enc2handlepos.m	/^function [pos]=enc2handlepos(cds,dateTime,lab)$/;"	f
+endpoint_constraint	Hindlimb/leg_lib/endpoint_constraint.m	/^function [C,Ceq] = endpoint_constraint(angles,endpoint,legmodel)$/;"	f
+ep_constraint	Hindlimb/Deprecated/ep_constraint.m	/^function [c,ceq] = ep_constraint(weights, endpoint_positions, scaled_lengths_unc, scaled_lengths_con)$/;"	f
+ep_costfunc	Hindlimb/Deprecated/ep_costfunc.m	/^function cost = ep_costfunc(weights, endpoint_positions, scaled_lengths_unc, scaled_lengths_con)$/;"	f
+error2CellStr	lib/ClassyDataAnalysis/lib/error2CellStr.m	/^function [errorCellStr]=error2CellStr(ME)$/;"	f
+estimateBumpFromPCA	BumpCurl/lib/estimateBumpFromPCA.m	/^function td = estimateBumpFromPCA(trial_data)$/;"	f
+estimateDimensionality	lib/TrialData/Analysis/estimateDimensionality.m	/^function [dims,noise_eigen_prctile] = estimateDimensionality(trial_data,params)$/;"	f
+evalModel	lib/TrialData/Analysis/evalModel.m	/^function metric = evalModel(trial_data,params)$/;"	f
+eventsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/eventsFromNEV.m	/^function eventsFromNEV(cds,opts)$/;"	f
+exactInferenceWithLL	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/exactInferenceWithLL.m	/^function [seq, LL] = exactInferenceWithLL(seq, params, varargin)$/;"	f
+exploreData	BumpCurl/exploreData.m	/^function exploreData(trial_data)$/;"	f
+exportSTL	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def exportSTL(node,fname):$/;"	f
+extract_behaviors	MultiWorkspace/Archive/Deprecated code/extract_behaviors.m	/^function [behaviors_new] = extract_behaviors(behaviors,times)$/;"	f
+extract_bumpcurl_data	BumpCurl/Deprecated/extract_bumpcurl_data.m	/^function [binned_data,emg,trial_table] = extract_bumpcurl_data(cds)$/;"	f
+extract_extra_bumpcurl_data	BumpCurl/Deprecated/extract_extra_bumpcurl_data.m	/^function [data,emg] = extract_extra_bumpcurl_data(cds)$/;"	f
+extract_resid	ForceKin/lib/extract_resid.m	/^function [resid_lin,resid_non] = extract_resid(fr,thv,thf)$/;"	f
+extract_workspace	MultiWorkspace/Archive/Deprecated code/extract_workspace.m	/^function [times] = extract_workspace(bdf,bottom_left,top_right)$/;"	f
+extract_workspace_times	MultiWorkspace/Archive/Helpers/extract_workspace_times.m	/^function [times] = extract_workspace_times(bdf,x_lim,y_lim)$/;"	f
+fastfa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
+fastfa_estep	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa_estep.m	/^function [Z, LL] = fastfa_estep(X, params)$/;"	f
+filMIMO4	lib/ClassyDataAnalysis/@binnedData/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
+filMIMO4	lib/ClassyDataAnalysis/lib/weiner/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
+file2cds	lib/ClassyDataAnalysis/@commonDataStructure/file2cds.m	/^function file2cds(cds,filePath,varargin)$/;"	f
+filename	Archive/force.py	/^	filename = "\/Users\/brianlondon\/Desktop\/cleanup\/data\/Pedro_S1_014_s2.csv"$/;"	v
+fillPerSymm	lib/ClassyDataAnalysis/lib/gpfa/util/fillPerSymm.m	/^function Pout = fillPerSymm(Pin, blkSize, T, varargin)$/;"	f
+filter22	lib/ClassyDataAnalysis/lib/weiner/filter22.m	/^function y = filter22(fil,x,numsides)$/;"	f
+findAllListeners	lib/ClassyDataAnalysis/lib/findAllListeners.m	/^function eventsWithListeners=findAllListeners(obj)$/;"	f
+findEventTimes	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/findEventTimes.m	/^function [allTimestamps allSnippets allIndices] = findEventTimes(NEV, Channel, Units)$/;"	f
+findSpikes	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/findSpikes.m	/^function Spikes = findSpikes(NSx, varargin)$/;"	f
+find_affine_xform	lib/KinectTracking/functions/Deprecated/find_affine_xform.m	/^function affine_xform = find_affine_xform(pos_k,pos_h)$/;"	f
+find_extrinsic_stats	Hindlimb/Deprecated/find_extrinsic_stats.m	/^function [tStat_neuron, pVal_neuron] = find_extrinsic_stats(pol_fit_full)$/;"	f
+find_fig_callback_strings	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function [cbnames,cbstrings] = find_fig_callback_strings(figstruct,hg_cbnames)$/;"	f
+find_kinematics	Hindlimb/leg_lib/find_kinematics.m	/^function [joint_angles, muscle_lengths, scaled_lengths, segment_angles_unc,segment_angles_con] = find_kinematics(legmodel,endpoint_positions, plotflag,joint_elast)$/;"	f
+find_ms_curve_dist	MultiWorkspace/Archive/Analysis/rotate_tuning_curves.m	/^function [dist] = find_ms_curve_dist(curve1,curve2)$/;"	f
+find_vibe_sensitivity	SensorStim/SpindleStim/find_vibe_sensitivity.m	/^function [figure_handles, output_data]=find_vibe_sensitivity(folder,options)$/;"	f
+fitDPCA	lib/ClassyDataAnalysis/@binnedData/fitDPCA.m	/^function fitDPCA(binned,windowClasses)$/;"	f
+fitFA	lib/ClassyDataAnalysis/@binnedData/fitFA.m	/^function fitFA(binned)$/;"	f
+fitGPFA	lib/ClassyDataAnalysis/@binnedData/fitGPFA.m	/^function fitGPFA(binned)$/;"	f
+fitGPFA	lib/ClassyDataAnalysis/lib/gpfa/fitGPFA.m	/^function fitGPFA(binned)$/;"	f
+fitPCA	lib/ClassyDataAnalysis/@binnedData/fitPCA.m	/^function fitPCA(binned,varargin)$/;"	f
+fitPPCA	lib/ClassyDataAnalysis/@binnedData/fitPPCA.m	/^function fitPPCA(binned)$/;"	f
+fitPds	lib/ClassyDataAnalysis/@binnedData/fitPds.m	/^function fitPds(binned)$/;"	f
+fitWeiner	lib/ClassyDataAnalysis/@binnedData/fitWeiner.m	/^function fitWeiner(binned)$/;"	f
+fit_cartesian	Hindlimb/Deprecated/fit_cartesian.m	/^function [cart_coefs] = fit_cartesian(zerod_ep,activity)$/;"	f
+fit_lin_mdl	Archive/force.py	/^def fit_lin_mdl(xy, fr):$/;"	f
+fit_mdl	Archive/force.py	/^def fit_mdl(xy, fr):$/;"	f
+fixed_point	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function  out=fixed_point(t,N,I,a2)$/;"	f
+flatten	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def flatten(l):$/;"	f
+float_info	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^from sys import float_info$/;"	i
+folder	ForceKin/Old proc/check_domains.py	/^folder = '\/home\/raeed\/Dropbox\/Research\/ForceKin\/ForceKin Paper\/Data\/'$/;"	v
+followLinks	lib/ClassyDataAnalysis/lib/followLinks.m	/^function fname=followLinks(fname)$/;"	f
+forceFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/forceFromNSx.m	/^function forceFromNSx(cds,opts)$/;"	f
+forceKinPathSetup	ForceKin/Old proc/forceKinPathSetup.m	/^function forceKinPathSetup$/;"	f
+formatForLee	lib/ClassyDataAnalysis/lib/formatForLee.m	/^function formatForLee(fhandle)$/;"	f
+formatSubplot	lib/CircStat/examples/formatSubplot.m	/^function formatSubplot(handle,varargin)$/;"	f
+fr	Archive/force.py	/^	def fr(x):$/;"	f	function:sim_points
+full_ratio	Archive/force.py	/^		full_ratio = 1 - np.var(mdl.resid) \/ np.var(la_m)$/;"	v
+gen_fig0	ForceKin/Old proc/gen_fig0.m	/^function gen_fig0$/;"	f
+generate_targets	MultiWorkspace/Archive/Deprecated code/Simulation/generate_targets.m	/^function targets = generate_targets(num_targets,boundaries,varargin)$/;"	f
+getBDTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getBDTaskTable.m	/^function getBDTaskTable(cds,times)$/;"	f
+getCOTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCOTaskTable.m	/^function getCOTaskTable(cds,times)$/;"	f
+getCObumpTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCObumpTaskTable.m	/^function getCObumpTaskTable(cds,times)$/;"	f
+getChannels	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function channels = getChannels$/;"	f
+getCommonUnits	lib/TrialData/Tools/getCommonUnits.m	/^function trial_data = getCommonUnits(trial_data)$/;"	f
+getDPCA	lib/TrialData/Analysis/getDPCA.m	/^function [trial_data, dPCA_info] = getDPCA(trial_data,varargin)$/;"	f
+getFile	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFile.m	/^function [dataFilename, dataFolder] = getFile(filterSpec, title)$/;"	f
+getFilteredFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/getFilteredFromNSx.m	/^function [adata,t]=getFilteredFromNSx(cds,fc,achan_index)$/;"	f
+getFolder	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFolder.m	/^function dataFolder = getFolder$/;"	f
+getGitInfo	lib/TrialData/util/getGitInfo.m	/^function gitInfo=getGitInfo()$/;"	f
+getGitLog	lib/ClassyDataAnalysis/@operationLogger/getGitLog.m	/^function varargout=getGitLog(obj,path,varargin)$/;"	f
+getISIcomps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [tsISI]=getISIcomps(units,data)$/;"	f
+getLabParams	lib/ClassyDataAnalysis/lib/getLabParams.m	/^function [fhcal,rotcal,Fy_invert, forceOffsets]=getLabParams(labnum,dateTime,rothandle)$/;"	f
+getLearningMetrics	lib/TrialData/Analysis/getLearningMetrics.m	/^function metric = getLearningMetrics(trial_data,params)$/;"	f
+getLoadCellOffsets	lib/ClassyDataAnalysis/lib/getLoadCellOffsets.m	/^function [dates, offsets] = getLoadCellOffsets(labNum,dateTime)$/;"	f
+getMesh	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def getMesh(ply,fct=None,vrt=None):$/;"	f
+getModel	lib/TrialData/Analysis/getModel.m	/^function [trial_data,model_info] = getModel(trial_data,params)$/;"	f
+getMoveOnsetAndPeak	lib/TrialData/Tools/getMoveOnsetAndPeak.m	/^function trial_data = getMoveOnsetAndPeak(trial_data,params)$/;"	f
+getMoveStart	lib/ClassyDataAnalysis/@experiment/getMoveStart.m	/^function varargout=getMoveStart(ex,varargin)$/;"	f
+getNeuronTuning	lib/TrialData/Analysis/getNeuronTuning.m	/^function [tcs,fr,covar] = getNeuronTuning(trial_data,which_method,params)$/;"	f
+getNoiseCorr	lib/addCorrelatedNoise.m	/^function [td] = getNoiseCorr(trial_data,params)$/;"	f
+getNoiseCovar	lib/getNoiseCovar.m	/^function [noise_covar,td] = getNoiseCovar(trial_data,params)$/;"	f
+getOORTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getOORTaskTable.m	/^function getOORTaskTable(cds,times)$/;"	f
+getPCA	lib/TrialData/Analysis/getPCA.m	/^function [trial_data,pca_info] = getPCA(trial_data, params)$/;"	f
+getPEH	lib/getPEH.m	/^function [averageData,dataCIlow,dataCIhigh,dataWindow] = getPEH(dataTimes,data,eventTimes,window)$/;"	f
+getPotentSpace	lib/TrialData/Analysis/getPotentSpace.m	/^function [trial_data,pca_info] = getPotentSpace(trial_data,params)$/;"	f
+getRWMovements	lib/TrialData/Tools/getRWMovements.m	/^function rw_td = getRWMovements(trial_data,params)$/;"	f
+getRWTargetDirection	lib/TrialData/Tools/getRWTargetDirection.m	/^function [ trial_data ] = getRWTargetDirection(trial_data, params  )$/;"	f
+getRWTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getRWTaskTable.m	/^function getRWTaskTable(cds,times)$/;"	f
+getSABESTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getSABESTaskTable.m	/^function getSABESTaskTable(cds,times)$/;"	f
+getSeq	lib/ClassyDataAnalysis/lib/gpfa/util/getSeq.m	/^function seq = getSeq(dat, binWidth, varargin)$/;"	f
+getSeq_td	lib/TrialData/util/gpfa/getSeq_td.m	/^function seq = getSeq_td(dat, binWidth, varargin)$/;"	f
+getSettingFileFullPath	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getSettingFileFullPath.m	/^function settingFileFullPath = getSettingFileFullPath(functionName)$/;"	f
+getShapeComps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [coeff,diffDist,matchDist,empDist]=getShapeComps(units,data,SNRThresh)$/;"	f
+getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data)$/;"	f
+getTDPDs	lib/getTDPDs.m	/^function pdTable = getTDPDs(trial_data,params)$/;"	f
+getTDfields	lib/TrialData/Tools/getTDfields.m	/^function fn = getTDfields(trial_data,which_type)$/;"	f
+getTDidx	lib/TrialData/Tools/getTDidx.m	/^function [return_idx, trial_data] = getTDidx(trial_data,varargin)$/;"	f
+getTRCfromMarkers	lib/KinectTracking/getTRCfromMarkers.m	/^function affine_xform = getTRCfromMarkers(cds,marker_data,saveFolder,varargin)$/;"	f
+getTRTTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getTRTTaskTable.m	/^function getTRTTaskTable(cds,times)$/;"	f
+getTargetDirection	lib/TrialData/Tools/getTargetDirection.m	/^function trial_data = getTargetDirection(trial_data, params)$/;"	f
+getTask	lib/ClassyDataAnalysis/@commonDataStructure/getTask.m	/^function [opts]=getTask(cds,task,opts)$/;"	f
+getTrajNewTrials	lib/ClassyDataAnalysis/lib/gpfa/util/getTrajNewTrials.m	/^function seqNew = getTrajNewTrials(ws, dat, varargin)$/;"	f
+getTrialTable	lib/ClassyDataAnalysis/@commonDataStructure/getTrialTable.m	/^function getTrialTable(cds,opts)$/;"	f
+getTuningCurves	lib/getTuningCurves.m	/^function [curves,bins] = getTuningCurves(trial_data,params)$/;"	f
+getUCKTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getUCKTaskTable.m	/^function getUCKTaskTable(cds,times)$/;"	f
+getUNTTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getUNTTaskTable.m	/^function getUNTTaskTable(cds,times)$/;"	f
+getUnitName	lib/ClassyDataAnalysis/@unitData/getUnitName.m	/^function unitName=getUnitName(units,unitNum)$/;"	f
+getUnitNames	lib/ClassyDataAnalysis/@binnedData/getUnitNames.m	/^function [unitNames,varargout]=getUnitNames(binned)$/;"	f
+getUserDependencies	lib/ClassyDataAnalysis/lib/getUserDependencies.m	/^function functionList=getUserDependencies(fname)$/;"	f
+getUserHost	lib/ClassyDataAnalysis/@operationLogger/getUserHost.m	/^function [uName,hName]=getUserHost(obj)$/;"	f
+getVal	lib/CircStat/circ_raotest.m	/^function [p UC] = getVal(N, U)$/;"	f
+getWFTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getWFTaskTable.m	/^function getWFTaskTable(cds,times)$/;"	f
+get_activity	Hindlimb/leg_lib/get_activity.m	/^function [activity,avg_act] = get_activity(neurons, scaled_lengths, num_sec)$/;"	f
+get_affine_xform	lib/KinectTracking/functions/get_affine_xform.m	/^function [ affine_xform ] = get_affine_xform( cds, kinect_times, all_medians, x_lim_handle, y_lim_handle, plot_flag )$/;"	f
+get_baseleg	Hindlimb/Deprecated/get_baseleg.m	/^function base_leg = get_baseleg$/;"	f
+get_full_curve	MultiWorkspace/Archive/Analysis/rotate_tuning_curves.m	/^function [rays,mags] = get_full_curve(curve)$/;"	f
+get_joint_predicted_tuning	MultiWorkspace/Archive/Deprecated code/get_joint_predicted_tuning.m	/^function [something] = get_joint_predicted_tuning(bdf,workspace,joint_weights)$/;"	f
+get_legpts	Hindlimb/Deprecated/get_legpts.m	/^function legpts = get_legpts(base_leg,angles)$/;"	f
+get_legpts	Hindlimb/leg_lib/Neuromechanic/get_legpts.m	/^function [worldpoint,oiv_world] = get_legpts(legmodel,q)$/;"	f
+get_lin_models	ForceKin/lib/get_lin_models.m	/^function [lin_models] = get_lin_models(fr,thv,thf)$/;"	f
+get_lin_models_from_td	ForceKin/lib/get_lin_models_from_td.m	/^function lin_models = get_lin_models_from_td(td)$/;"	f
+get_master_dist	lib/TrialData/Tools/removeBadNeurons.m	/^function prctile_dist = get_master_dist()$/;"	f
+get_metric	lib/TrialData/Analysis/evalModel.m	/^function metric = get_metric(varargin)$/;"	f
+get_musclelengths	Hindlimb/leg_lib/get_musclelengths.m	/^function lengths = get_musclelengths(legmodel,q)$/;"	f
+get_pd	Archive/force.py	/^def get_pd(th, la):$/;"	f
+get_predicted_tuning	MultiWorkspace/Archive/Helpers/get_predicted_tuning.m	/^function [modeled_tuning,curves] = get_predicted_tuning(bdf,xlim,ylim,weights,frame,gen_model,fit_model)$/;"	f
+get_single_tuning_curve	MultiWorkspace/Archive/Helpers/get_single_tuning_curve.m	/^function [curve] = get_single_tuning_curve(move_corr,FR)$/;"	f
+get_stat_stats	Hindlimb/Deprecated/get_stat_stats.m	/^function [num_neurons,num_same,median_t,median_cos] = get_stat_stats$/;"	f
+get_toepoint	Hindlimb/leg_lib/Neuromechanic/get_toepoint.m	/^function toepoint = get_toepoint(legmodel,q)$/;"	f
+get_translation_rotation	lib/KinectTracking/functions/Deprecated/get_translation_rotation.m	/^function [ alignment_settings, times_good, pos_h, colors_xy ] = get_translation_rotation( cds, kinect_times, all_medians, x_lim_handle, y_lim_handle, plot_flag )$/;"	f
+get_tuning_vec	Archive/get_tuning_vec.m	/^function [tuning_vec,tuned_single] = get_tuning_vec(bdf_istuned)$/;"	f
+get_vars	lib/TrialData/util/subfcn/get_vars.m	/^function x = get_vars(trial_data, signals)$/;"	f
+get_vibe_response	SensorStim/SpindleStim/get_vibe_response.m	/^function [vibe_avg,checkfig_h] = get_vibe_response(units,vibe_trace,which_units)$/;"	f
+getnexttag	Archive/Neuromechanic/xml2matlab.m	/^function [xml,eof,L] = getnexttag(xml,L,fid,count,curnt,eof,prnt)$/;"	f
+getnexttag	MultiWorkspace/Archive/Deprecated code/neuromechanic/xml2matlab.m	/^function [xml,eof,L] = getnexttag(xml,L,fid,count,curnt,eof,prnt)$/;"	f
+glm_bootstrap	Archive/glm_bootstrap.m	/^function [pds, CI_low, CI_high, moddepth] = glm_bootstrap(varargin)$/;"	f
+gpfaEngine	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/gpfaEngine.m	/^function output = gpfaEngine(seqTrain, seqTest, varargin)$/;"	f
+gpfaEngine_td	lib/TrialData/util/gpfa/gpfaEngine_td.m	/^function result = gpfaEngine_td(seqTrain, seqTest, fname, varargin)$/;"	f
+grad_betgam	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/grad_betgam.m	/^function [f, df] = grad_betgam(p, precomp, const)$/;"	f
+handleForceFromNEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/handleForceFromNEVNSx.m	/^function handleforce=handleForceFromNEVNSx(raw_force,cds,enc,opts)$/;"	f
+handleForceFromRaw	lib/ClassyDataAnalysis/@commonDataStructure/handleForceFromRaw.m	/^function handleForce=handleForceFromRaw(cds,loadCellData,t,opts)$/;"	f
+hasan	SpindleSim/Hasan/hasan.m	/^function [t,mu,dmudt,r] = hasan(a,b,c,h,p,g,offset,t_x,dxdt,x)$/;"	f
+idct1d	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function out = idct1d(data)$/;"	f
+inBound	lib/KinectTracking/Marker_Tracking/4color/inBound.m	/^function [ out ] = inBound( val, window )$/;"	f
+initializeWaveform	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function waveForms = initializeWaveform(numOfTimestamps)$/;"	f
+installNPMK	lib/ClassyDataAnalysis/lib/NPMK/installNPMK.m	/^function installNPMK$/;"	f
+interpomap	lib/linspecer/linspecer.m	/^function cmap = interpomap(n,cmapp)$/;"	f
+invPerSymm	lib/ClassyDataAnalysis/lib/gpfa/util/invPerSymm.m	/^function [invM, logdet_M] = invPerSymm(M, blkSize, varargin)$/;"	f
+invToeplitz	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [Ti,ld] = invToeplitz( T , runMode )$/;"	f
+invToeplitzFast	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFast.m	/^function [Ti,ld] = invToeplitzFast(T)$/;"	f
+invToeplitzMode	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [Ti,ld] = invToeplitzMode( T , runMode )$/;"	f
+irisPlot	lib/irisPlot.m	/^function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData, which_neurons )$/;"	f
+iris_plot	MultiWorkspace/Archive/Helpers/iris_plot.m	/^function iris_plot(tuning_PM,tuning_DL)$/;"	f
+iris_predict	MultiWorkspace/Archive/Analysis/iris_predict.m	/^function [figure_handles, output_data] = iris_predict(folder,options)$/;"	f
+isStill	lib/ClassyDataAnalysis/@commonDataStructure/isStill.m	/^function [still,stats]=isStill(cds,x,varargin)$/;"	f
+ischildof	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def ischildof(nmtree,childname,parentname):$/;"	f
+itertools	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^import itertools$/;"	i
+jangoData	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function [pRatios,classification]=jangoData()$/;"	f
+joint2cart_xform	Archive/Cuneate/Grant support/joint2cart_xform.m	/^function cartPD = joint2cart_xform(jointPD,should_flexion,elbow_flexion)$/;"	f
+joint_elast_sens	Hindlimb/joint_elast_sens.m	/^function [num_tuned_spring,pdChange_spring,moddepthChange_spring,spring_list] = joint_elast_sens(neurons)$/;"	f
+joint_elast_sens	Hindlimb/leg_lib/joint_elast_sens.m	/^function [num_tuned_spring,pdChange_spring,moddepthChange_spring] = joint_elast_sens(neurons)$/;"	f
+kde	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function [bandwidth,density,xmesh,cdf]=kde(data,n,MIN,MAX)$/;"	f
+kevinData	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function [pRatios,classification]=kevinData()$/;"	f
+killUnwantedChannels	lib/ClassyDataAnalysis/lib/NPMK/openNEV.m	/^function NEV = killUnwantedChannels(NEV, selectedChannels)$/;"	f
+kinematicsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/kinematicsFromNEV.m	/^function kinematicsFromNEV(cds,opts)$/;"	f
+kneefix_cost	Hindlimb/leg_lib/kneefix_cost.m	/^function y = kneefix_cost(x)$/;"	f
+kshuffle	lib/ClassyDataAnalysis/lib/NPMK/Other tools/kshuffle.m	/^function shuffledArray = kshuffle(inputArray, DIM)$/;"	f
+kuiperlookup	lib/CircStat/circ_kuipertest.m	/^function [p K] = kuiperlookup(n, k)$/;"	f
+la_m	Archive/force.py	/^		la_m = x[:, 2]$/;"	v
+learnGPparams	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/learnGPparams.m	/^function res = learnGPparams(seq, params, varargin)$/;"	f
+lfpFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/lfpFromNSx.m	/^function lfpFromNSx(cds,opts)$/;"	f
+lin_mdl	Archive/force.py	/^		lin_mdl = fit_lin_mdl(vf_m, la_m)$/;"	v
+linspecer	lib/linspecer/linspecer.m	/^function lineStyles=linspecer(N,varargin)$/;"	f
+list2tableMask	lib/ClassyDataAnalysis/lib/list2tableMask.m	/^function mask=list2tableMask(dataTable,list)$/;"	f
+loadLogFile	lib/ClassyDataAnalysis/@operationLogger/loadLogFile.m	/^function logEntry=loadLogFile(obj,fname)$/;"	f
+loadMapFile	lib/ClassyDataAnalysis/lib/loadMapFile.m	/^function arrayMap=loadMapFile(fName)$/;"	f
+loadNEV	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function NEV = loadNEV(fn, input)$/;"	f
+loadOpenSimData	lib/ClassyDataAnalysis/@commonDataStructure/loadOpenSimData.m	/^function loadOpenSimData(cds,folderPath,dataType)$/;"	f
+loadTDfiles	lib/TrialData/DataProcessing/loadTDfiles.m	/^function [master_td, params] = loadTDfiles(filenames,varargin)$/;"	f
+loadobj	lib/ClassyDataAnalysis/@commonDataStructure/loadobj.m	/^function cds=loadobj(S)$/;"	f
+loadsave_bumpcurl_cds	BumpCurl/Deprecated/loadsave_bumpcurl_cds.m	/^function [base_cds,adapt_cds,wash_cds] = loadsave_bumpcurl_cds(datecode)$/;"	f
+loadsave_bumpcurl_td	BumpCurl/Deprecated/loadsave_bumpcurl_td.m	/^function trial_data = loadsave_bumpcurl_td(datecode,do_save)$/;"	f
+loadsave_oor_cds	ForceKin/lib/loadsave_oor_cds.m	/^function [actpas_cds,OOR_cds] = loadsave_oor_cds(monkey,datecode,do_save)$/;"	f
+loadsave_oor_td	ForceKin/lib/loadsave_oor_td.m	/^function [trial_data_actpas,trial_data_OOR] = loadsave_oor_td(datecode,do_save)$/;"	f
+locateMethod	lib/ClassyDataAnalysis/@operationLogger/locateMethod.m	/^function methodPath=locateMethod(obj,className,methodName)$/;"	f
+logdet	lib/ClassyDataAnalysis/lib/gpfa/util/logdet.m	/^function y = logdet(A)$/;"	f
+loop_me_twice	lib/TrialData/Analysis/getDPCA.m	/^function valCat = loop_me_twice(dim,valCat,val,valIdx,depthCount,varargin)$/;"	f
+loops_all_the_way_down	lib/TrialData/Analysis/getDPCA.m	/^function val = loops_all_the_way_down(val,varargin)$/;"	f
+loops_for_fr	lib/TrialData/Analysis/getDPCA.m	/^function [val,valIdx] = loops_for_fr(depthCount,valIdx,val,trial_data,signals,max_trial_num,varargin)$/;"	f
+lstsq	Archive/force.py	/^from numpy.linalg import lstsq$/;"	i
+machineepsilon	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^machineepsilon = float_info.epsilon # machine epsilon$/;"	v
+makeBasis_PostSpike	lib/TrialData/util/makeBasis_PostSpike.m	/^function [iht, ihbas, ihbasis] = makeBasis_PostSpike(ihprs,dt,iht0)$/;"	f
+makePrecomp	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePrecomp.m	/^function precomp = makePrecomp( seq , xDim )$/;"	f
+makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f
+makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f
+make_K_big	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/make_K_big.m	/^function [K_big, K_big_inv, logdet_K_big] = make_K_big(params, T)$/;"	f
+match_squarewave_func	lib/KinectTracking/functions/match_squarewave_func.m	/^function [ sse ] = match_squarewave_func( x, led_vals, KinectSquare, times, handle_times )$/;"	f
+match_squarewave_main	lib/KinectTracking/functions/match_squarewave_main.m	/^function [ kinect_times ] = match_squarewave_main( cerebus_vals, led_vals, times, kinect_start_guess, plot_flag)$/;"	f
+math	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^import math$/;"	i
+matplotlib	ForceKin/Old proc/check_domains.py	/^import matplotlib.pyplot as plt$/;"	i
+matrixToNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/matrixToNSx.m	/^function matrixToNSx(varargin)$/;"	f
+maxmin_diffjoint	Archive/Cuneate/Grant support/maxmin_diffjoint.m	/^function cost = maxmin_diffjoint(armpos)$/;"	f
+mdl	Archive/force.py	/^		mdl = fit_mdl(vf_m, la_m)$/;"	v
+medfilt1nan	lib/KinectTracking/functions/medfilt1nan.m	/^function y = medfilt1nan( x, s )$/;"	f
+mergeAnalogTables	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function merged=mergeAnalogTables(table1,table2)$/;"	f
+mergeJacobians	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def mergeJacobians(x,dyn):$/;"	f
+mergeNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/mergeNEV.m	/^function [NEV] = mergeNEV()$/;"	f
+mergeNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/mergeNSxNEV.m	/^function mergeNSxNEV(varargin)$/;"	f
+mergeNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/mergeNSxNEVSeries.m	/^function mergeNSxNEV(varargin)$/;"	f
+mergeTable	lib/ClassyDataAnalysis/@commonDataStructure/mergeTable.m	/^function mergeTable(cds,fieldName,mergeData)$/;"	f
+mergeTables	lib/ClassyDataAnalysis/lib/mergeTables.m	/^function merged=mergeTables(table1,table2)$/;"	f
+merge_spikes	Archive/merge_spikes.m	/^function file_names = merge_spikes(file_path,file_prefix)$/;"	f
+metaFromNEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/metaFromNEVNSx.m	/^function metaFromNEVNSx(cds,opts)$/;"	f
+mexFunction	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	/^void mexFunction( int nlhs, mxArray *plhs[], $/;"	f
+mexFunction	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	/^void mexFunction( int nlhs, mxArray *plhs[], $/;"	f
+minimize	lib/ClassyDataAnalysis/lib/gpfa/util/minimize.m	/^function [X, fX, i] = minimize(X, f, length, varargin)$/;"	f
+minusPi2Pi	lib/TrialData/util/minusPi2Pi.m	/^function out = minusPi2Pi(in)$/;"	f
+modeldynamics	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^class modeldynamics():$/;"	c
+move_point_to_target	MultiWorkspace/Archive/Deprecated code/Simulation/move_point_to_target.m	/^function [time,state] = move_point_to_target(target_pos,target_size,hold_time,init_state)$/;"	f
+moving_average	lib/TrialData/util/moving_average.m	/^function data_mvavg = moving_average(data,bins)$/;"	f
+mycost	Hindlimb/Deprecated/mycost.m	/^function y = mycost(x)$/;"	f
+mycostcon	Hindlimb/Deprecated/mycostcon.m	/^function y = mycostcon(x)$/;"	f
+myode	SpindleSim/Hasan/hasan.m	/^function dmudt = myode(t,mu,t_x,x,dxdt,a,b,c)$/;"	f
+nanmmean	lib/TrialData/util/dpca/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
+nanmmean	lib/dPCA/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
+neuralTraj	lib/ClassyDataAnalysis/lib/gpfa/neuralTraj.m	/^function result = neuralTraj(runIdx, dat, varargin)$/;"	f
+neuralTraj_td	lib/TrialData/util/gpfa/neuralTraj_td.m	/^function result = neuralTraj_td(runIdx, dat, directory, varargin)$/;"	f
+neuronPredict	MultiWorkspace/Archive/Analysis/neuronPredict.m	/^function [predOutputTable ,pseudoR2] = neuronPredict(neuronModel,testDataTable)$/;"	f
+nev2NEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/nev2NEVNSx.m	/^function nev2NEVNSx(cds,fname,varargin)$/;"	f
+next_arg_file	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function [trace_file,off] = next_arg_file(arg_file)$/;"	f
+nm	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^import neuromechanic as nm$/;"	i
+nmerror	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^class nmerror(Exception):$/;"	c
+np	Archive/force.py	/^import numpy as np$/;"	i
+np	ForceKin/Old proc/check_domains.py	/^import numpy as np$/;"	i
+np	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^import numpy as np$/;"	i
+ns_AFTER	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_AFTER   = +1,  \/\/ greater than or equal to specified time$/;"	e	enum:__anon5
+ns_ANALOGINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_ANALOGINFO;$/;"	t	typeref:struct:__anon11
+ns_BADENTITY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_BADENTITY = -5,  \/\/Invalid or inappropriate entity identifier specified$/;"	e	enum:__anon1
+ns_BADFILE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_BADFILE   = -4,  \/\/Invalid file handle passed to function$/;"	e	enum:__anon1
+ns_BADINDEX	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_BADINDEX  = -7   \/\/Invalid entity index or index range specified$/;"	e	enum:__anon1
+ns_BADSOURCE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_BADSOURCE = -6,  \/\/Invalid source identifier specified$/;"	e	enum:__anon1
+ns_BEFORE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_BEFORE  = -1,  \/\/ less than or equal to specified time    $/;"	e	enum:__anon5
+ns_CLOSEST	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_CLOSEST =  0,  \/\/ closest time $/;"	e	enum:__anon5
+ns_CloseFile	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_CloseFileType ns_CloseFile;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_CloseFile	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_CloseFile (ns_DLLHANDLE nsDllHandle, UINT32 hFile)$/;"	f
+ns_CloseFileType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_CloseFileType)$/;"	t	file:
+ns_CloseLibrary	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_CloseLibrary (ns_DLLHANDLE nsDllHandle)$/;"	f
+ns_DLLHANDLE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^typedef INT32 ns_DLLHANDLE;$/;"	t
+ns_ENTITYINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} ns_ENTITYINFO;$/;"	t	typeref:struct:__anon9
+ns_ENTITY_ANALOG	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_ENTITY_ANALOG      = 2,     \/\/ Analog entity$/;"	e	enum:__anon4
+ns_ENTITY_EVENT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_ENTITY_EVENT       = 1,     \/\/ Event entity$/;"	e	enum:__anon4
+ns_ENTITY_NEURALEVENT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_ENTITY_NEURALEVENT = 4,     \/\/ Sorted Neural entity$/;"	e	enum:__anon4
+ns_ENTITY_SEGMENT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_ENTITY_SEGMENT     = 3,     \/\/ Segment entity$/;"	e	enum:__anon4
+ns_ENTITY_TYPE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} ns_ENTITY_TYPE;$/;"	t	typeref:enum:__anon4
+ns_ENTITY_UNKNOWN	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_ENTITY_UNKNOWN     = 0,     \/\/ unknown entity type$/;"	e	enum:__anon4
+ns_EVENTINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_EVENTINFO;$/;"	t	typeref:struct:__anon10
+ns_EVENT_BYTE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_EVENT_BYTE  = 2,  \/\/ 8-bit value$/;"	e	enum:__anon3
+ns_EVENT_CSV	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_EVENT_CSV   = 1,  \/\/ comma separated ascii text values$/;"	e	enum:__anon3
+ns_EVENT_DWORD	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_EVENT_DWORD = 4,  \/\/ 32-bit value$/;"	e	enum:__anon3
+ns_EVENT_TEXT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_EVENT_TEXT  = 0,  \/\/ null-terminated ascii text string$/;"	e	enum:__anon3
+ns_EVENT_TYPE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} ns_EVENT_TYPE;$/;"	t	typeref:enum:__anon3
+ns_EVENT_WORD	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_EVENT_WORD  = 3,  \/\/ 16-bit value$/;"	e	enum:__anon3
+ns_FILEDESC	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_FILEDESC;$/;"	t	typeref:struct:__anon6
+ns_FILEERROR	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_FILEERROR = -3,  \/\/File access or read Error$/;"	e	enum:__anon1
+ns_FILEINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_FILEINFO;$/;"	t	typeref:struct:__anon8
+ns_GetAnalogData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetAnalogDataType ns_GetAnalogData;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetAnalogData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetAnalogData (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, UINT32 dwStartIndex, UINT32 dwIndexCount, $/;"	f
+ns_GetAnalogDataType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetAnalogDataType)$/;"	t	file:
+ns_GetAnalogInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetAnalogInfoType ns_GetAnalogInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetAnalogInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetAnalogInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, ns_ANALOGINFO *pAnalogInfo, UINT32 dwAnalogInfoSize)$/;"	f
+ns_GetAnalogInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetAnalogInfoType)$/;"	t	file:
+ns_GetEntityInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetEntityInfoType ns_GetEntityInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetEntityInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetEntityInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, ns_ENTITYINFO *pEntityInfo, UINT32 dwEntityInfoSize)$/;"	f
+ns_GetEntityInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetEntityInfoType)$/;"	t	file:
+ns_GetEventData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetEventDataType ns_GetEventData;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetEventData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetEventData (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, UINT32 nIndex, double *pdTimeStamp, void *pData,$/;"	f
+ns_GetEventDataType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetEventDataType)$/;"	t	file:
+ns_GetEventInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetEventInfoType ns_GetEventInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetEventInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetEventInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, ns_EVENTINFO *pEventInfo, UINT32 dwEventInfoSize)$/;"	f
+ns_GetEventInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetEventInfoType)$/;"	t	file:
+ns_GetFileInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetFileInfoType ns_GetFileInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetFileInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetFileInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, ns_FILEINFO *pFileInfo, UINT32 dwFileInfoSize)$/;"	f
+ns_GetFileInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetFileInfoType)$/;"	t	file:
+ns_GetIndexByTime	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetIndexByTimeType ns_GetIndexByTime;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetIndexByTime	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetIndexByTime (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, double dTime, INT32 nFlag, UINT32 *pdwIndex)$/;"	f
+ns_GetIndexByTimeType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetIndexByTimeType)$/;"	t	file:
+ns_GetLastErrorMsg	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetLastErrorMsgType ns_GetLastErrorMsg;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetLastErrorMsg	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetLastErrorMsg (ns_DLLHANDLE nsDllHandle, char *pszMsgBuffer, UINT32 dwMsgBufferSize)$/;"	f
+ns_GetLastErrorMsgType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetLastErrorMsgType)$/;"	t	file:
+ns_GetLibraryInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetLibraryInfoType ns_GetLibraryInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetLibraryInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetLibraryInfo (ns_DLLHANDLE nsDllHandle, ns_LIBRARYINFO *pLibraryInfo, UINT32 dwLibraryInfoSize)$/;"	f
+ns_GetLibraryInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetLibraryInfoType)$/;"	t	file:
+ns_GetNeuralData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetNeuralDataType ns_GetNeuralData;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetNeuralData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetNeuralData (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, UINT32 dwStartIndex, UINT32 dwIndexCount, double *pdData)$/;"	f
+ns_GetNeuralDataType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetNeuralDataType)$/;"	t	file:
+ns_GetNeuralInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetNeuralInfoType ns_GetNeuralInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetNeuralInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetNeuralInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, ns_NEURALINFO *pNeuralInfo, UINT32 dwNeuralInfoSize)$/;"	f
+ns_GetNeuralInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetNeuralInfoType)$/;"	t	file:
+ns_GetSegmentData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetSegmentDataType ns_GetSegmentData;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetSegmentData	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetSegmentData (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, UINT32 nIndex, double *pdTimeStamp, double *pdData,$/;"	f
+ns_GetSegmentDataType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetSegmentDataType)$/;"	t	file:
+ns_GetSegmentInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetSegmentInfoType ns_GetSegmentInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetSegmentInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetSegmentInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, ns_SEGMENTINFO *pSegmentInfo, UINT32 dwSegmentInfoSize)$/;"	f
+ns_GetSegmentInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetSegmentInfoType)$/;"	t	file:
+ns_GetSegmentSourceInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetSegmentSourceInfoType ns_GetSegmentSourceInfo;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetSegmentSourceInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetSegmentSourceInfo (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, UINT32 dwSourceID, ns_SEGSOURCEINFO *pSourceInfo,$/;"	f
+ns_GetSegmentSourceInfoType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetSegmentSourceInfoType)$/;"	t	file:
+ns_GetTimeByIndex	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_GetTimeByIndexType ns_GetTimeByIndex;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_GetTimeByIndex	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_GetTimeByIndex (ns_DLLHANDLE nsDllHandle, UINT32 hFile, UINT32 dwEntityID, UINT32 dwIndex, double *pdTime)$/;"	f
+ns_GetTimeByIndexType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_GetTimeByIndexType)$/;"	t	file:
+ns_LIBERROR	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_LIBERROR  = -1,  \/\/Linked Library Error$/;"	e	enum:__anon1
+ns_LIBRARYINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_LIBRARYINFO;$/;"	t	typeref:struct:__anon7
+ns_LIBRARY_DEBUG	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_LIBRARY_DEBUG         = 0x01,  \/\/ includes debug info linkage$/;"	e	enum:__anon2
+ns_LIBRARY_FLAGS	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} ns_LIBRARY_FLAGS;$/;"	t	typeref:enum:__anon2
+ns_LIBRARY_MODIFIED	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_LIBRARY_MODIFIED      = 0x02,  \/\/ file was patched or modified$/;"	e	enum:__anon2
+ns_LIBRARY_MULTITHREADED	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_LIBRARY_MULTITHREADED = 0x10,  \/\/ library is multithread safe$/;"	e	enum:__anon2
+ns_LIBRARY_PRERELEASE	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_LIBRARY_PRERELEASE    = 0x04,  \/\/ pre-release or beta version$/;"	e	enum:__anon2
+ns_LIBRARY_SPECIALBUILD	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_LIBRARY_SPECIALBUILD  = 0x08,  \/\/ different from release version$/;"	e	enum:__anon2
+ns_LOCATION_FLAGS	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} ns_LOCATION_FLAGS;$/;"	t	typeref:enum:__anon5
+ns_LoadLibrary	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_DLLHANDLE ns_stdcall ns_LoadLibrary (const char *libname)$/;"	f
+ns_NEURALINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_NEURALINFO;$/;"	t	typeref:struct:__anon14
+ns_OK	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_OK        =  0,  \/\/Function Successful$/;"	e	enum:__anon1
+ns_OpenFile	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    ns_OpenFileType ns_OpenFile;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+ns_OpenFile	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^ns_RESULT ns_stdcall ns_OpenFile (ns_DLLHANDLE nsDllHandle, const char *pszFilename, UINT32 *hFile)$/;"	f
+ns_OpenFileType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^typedef ns_RESULT (ns_api_stdcall *ns_OpenFileType)$/;"	t	file:
+ns_RESULT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^typedef    INT32 ns_RESULT;$/;"	t
+ns_SEGMENTINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_SEGMENTINFO;$/;"	t	typeref:struct:__anon12
+ns_SEGSOURCEINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_SEGSOURCEINFO;$/;"	t	typeref:struct:__anon13
+ns_STATUS	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} ns_STATUS;$/;"	t	typeref:enum:__anon1
+ns_TYPEERROR	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_TYPEERROR = -2,  \/\/Library unable to open file type$/;"	e	enum:__anon1
+ns_api_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	258;"	d	file:
+ns_api_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	260;"	d	file:
+ns_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	312;"	d
+ns_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	316;"	d
+ns_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	318;"	d
+ntrodeGroups	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/ntrodeGroups.m	/^function output = ntrodeGroups(ccf)$/;"	f
+obs_window_pds	ForceKin/Old proc/obs_window_pds.m	/^function [fr,thv,thf] = obs_window_pds(bdf)$/;"	f
+obs_window_pds	ForceKin/lib/obs_window_pds.m	/^function [fr,thv,thf] = obs_window_pds(td,params)$/;"	f
+odefun	ForceKin/Old proc/vectorfigplot.m	/^function dy = odefun(~,y)$/;"	f
+openCCF	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function [infoPackets, version] = openCCF(filename)$/;"	f
+openFile	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function [path fname fext] = openFile$/;"	f
+openNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/openNEVTracking.m	/^function varargout = openNEV(varargin)$/;"	f
+openNEV	lib/ClassyDataAnalysis/lib/NPMK/openNEV.m	/^function varargout = openNEV(varargin)$/;"	f
+openNEVLimblab	lib/SpikeMerge/openNEVLimblab.m	/^function varargout = openNEVLimblab(varargin)$/;"	f
+openNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/openNSxNew.m	/^function varargout = openNSx(varargin)$/;"	f
+openNSx	lib/ClassyDataAnalysis/lib/NPMK/openNSx.m	/^function varargout = openNSx(varargin)$/;"	f
+openNSxHL	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/openNSxHL.m	/^function OUTPUT = openNSxHL(fname)$/;"	f
+openNSxLimblab	lib/SpikeMerge/openNSxLimblab.m	/^function varargout = openNSxLimblab(varargin)$/;"	f
+openNSxSync	lib/ClassyDataAnalysis/lib/NPMK/openNSxSync.m	/^function NSx = openNSxSync(varargin)$/;"	f
+orthogonalize	lib/ClassyDataAnalysis/lib/gpfa/util/orthogonalize.m	/^function [Xorth, Lorth, TT] = orthogonalize(X, L)$/;"	f
+os	ForceKin/Old proc/check_domains.py	/^import os$/;"	i
+pairwiseCorr	lib/TrialData/Analysis/pairwiseCorr.m	/^function [rho,sort_idx] = pairwiseCorr(trial_data,params)$/;"	f
+parseAttributes	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function attributes = parseAttributes(theNode)$/;"	f
+parseAttributes	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function attributes = parseAttributes(theNode)$/;"	f
+parseCCF	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function CCF = parseCCF(varargin)$/;"	f
+parseChildNodes	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function children = parseChildNodes(theNode)$/;"	f
+parseChildNodes	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function children = parseChildNodes(theNode)$/;"	f
+parseCommand	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCommand.m	/^function [parsedCommand errorFlag] = parseCommand(inputString)$/;"	f
+parseFileByTrial	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [trial_data,td_params] = parseFileByTrial(data,params)$/;"	f
+parseFileByTrial_cds	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [trial_data,td_params] = parseFileByTrial_cds(cds,params)$/;"	f
+parseFilename	lib/ClassyDataAnalysis/lib/gpfa/util/parseFilename.m	/^function [result, err] = parseFilename(str)$/;"	f
+parseVarArgs	lib/CircStat/examples/parseVarArgs.m	/^function params = parseVarArgs(params,varargin)$/;"	f
+parse_file	Archive/force.py	/^def parse_file(filename):$/;"	f
+partial_ratio	Archive/force.py	/^		partial_ratio = 1 - np.var(lin_mdl.resid) \/ np.var(la_m)$/;"	v
+pathSetup	BumpCurl/lib/pathSetup.m	/^function pathSetup$/;"	f
+pd	ForceKin/Old proc/check_domains.py	/^import pandas as pd$/;"	i
+pglobal	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def pglobal(p):$/;"	f
+playSound	lib/ClassyDataAnalysis/lib/NPMK/Other tools/playSound.m	/^function playSound(soundType)$/;"	f
+plot3D	lib/ClassyDataAnalysis/lib/gpfa/plotting/plot3D.m	/^function plot3D(seq, xspec, varargin)$/;"	f
+plot3D_td	lib/TrialData/util/gpfa/plot3D_td.m	/^function plot3D_td(seq, xspec, varargin)$/;"	f
+plotAverageWaveforms	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/plotAverageWaveforms.m	/^function plotAverageWaveforms(NEV, units, plottype)$/;"	f
+plotBumpcurlTuning	BumpCurl/plotBumpcurlTuning.m	/^function plotBumpcurlTuning(trial_data)$/;"	f
+plotColor	lib/CircStat/circ_clust.m	/^function plotColor(x, y, c, varargin)$/;"	f
+plotDecomposedFR	ForceKin/lib/plotDecomposedFR.m	/^function plotDecomposedFR(fr,thv,thf,lin_models,savefigs)$/;"	f
+plotEachDimVsTime	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotEachDimVsTime.m	/^function plotEachDimVsTime(seq, xspec, binWidth, varargin)$/;"	f
+plotMovie	lib/ClassyDataAnalysis/lib/gpfa/plotMovie.m	/^function plotMovie(seq, xspec, varargin)$/;"	f
+plotPredCurves	MultiWorkspace/plotPredCurves.m	/^function plotPredCurves(td_test)$/;"	f
+plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m	/^function method = plotPredErrorVsDim(runIdx, kernSD, varargin)$/;"	f
+plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
+plotTuning	lib/plotTuning.m	/^function [handle] = plotTuning(bins,pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
+plotTuningDistr	BumpCurl/plotTuningDistr.m	/^function plotTuningDistr(trial_data)$/;"	f
+plotWindows	lib/ClassyDataAnalysis/lib/plotWindows.m	/^function h=plotWindows(data,windows,colLabels,varargin)$/;"	f
+plot_PD_distr	Hindlimb/leg_lib/plot_PD_distr.m	/^function plot_PD_distr(pds,num_bins)$/;"	f
+plot_PD_distr	MultiWorkspace/Archive/Deprecated code/Preliminary Data/plot_PD_distr.m	/^function plot_PD_distr(pds,num_bins)$/;"	f
+plot_PD_distr	MultiWorkspace/Archive/Helpers/plot_PD_distr.m	/^function plot_PD_distr(pds,num_bins)$/;"	f
+plot_PD_predictions	MultiWorkspace/Archive/Analysis/plot_PD_predictions.m	/^function [figure_handles, output_data] = plot_PD_predictions(folder,options)$/;"	f
+plot_PD_predictions	MultiWorkspace/Archive/plot_PD_predictions_old.m	/^function [figure_handles, output_data] = plot_PD_predictions(folder,options)$/;"	f
+plot_clusts	lib/KinectTracking/Marker_Tracking/tracking_functions/plot_clusts.m	/^function [ ] = plot_clusts( plot_on, num_clust, x, y, z, medians, i, t, pause_time, xlims, ylims, zlims )$/;"	f
+plot_ellipse	Archive/plot_ellipse.m	/^function plot_ellipse(mu,cov,val)$/;"	f
+plot_heat_map	Hindlimb/leg_lib/plot_heat_map.m	/^function plot_heat_map(base_leg,act,zerod_ep,PD,joint_elast)$/;"	f
+plot_heat_map_both	Hindlimb/leg_lib/plot_heat_map_both.m	/^function plot_heat_map_both(legmodel,act_unc,act_con,ep,PD_unc,PD_con,joint_elast)$/;"	f
+plot_heat_map_con	Hindlimb/leg_lib/plot_heat_map_con.m	/^function plot_heat_map_con(base_leg,act,zerod_ep,PD,joint_elast)$/;"	f
+plot_polar_heatmap	Hindlimb/Deprecated/plot_polar_heatmap.m	/^function plot_polar_heatmap(act,r,a)$/;"	f
+plot_real_v_predicted	Hindlimb/Deprecated/plot_real_v_predicted.m	/^function plot_real_v_predicted(real_act, model, position)$/;"	f
+plot_robot_pos	Archive/plot_robot_pos.m	/^function plot_robot_pos(bdf)$/;"	f
+plot_together_3colors_func	lib/KinectTracking/Marker_Tracking/tracking_functions/plot_together_3colors_func.m	/^function [] = plot_together_3colors_func(frame,text_markers,markers,all_medians, color1, color2, color3, start, finish, plot_original)$/;"	f
+plot_together_4colors_func	lib/KinectTracking/Marker_Tracking/tracking_functions/plot_together_4colors_func.m	/^function [] = plot_together_4colors_func(frame,text_markers,markers,all_medians, color1, color2, color3, color4, start, finish, plot_original)$/;"	f
+plot_tuning	MultiWorkspace/Archive/Helpers/plot_tuning.m	/^function [handle] = plot_tuning(modeled_tuning,curve,max_FR,color)$/;"	f
+plot_tuning_surfaces	ForceKin/lib/plot_tuning_surfaces.m	/^function plot_tuning_surfaces(fr,thv,thf)$/;"	f
+plt	ForceKin/Old proc/check_domains.py	/^import matplotlib.pyplot as plt$/;"	i
+poisson_sens	Hindlimb/leg_lib/poisson_sens.m	/^function [num_tuned_pois,pdChange_pois,moddepthChange_pois] = poisson_sens(neurons,num_secs_pois)$/;"	f
+polarTuningPlot	lib/ClassyDataAnalysis/lib/polarTuningPlot.m	/^function [H,axisID]=polarTuningPlot(dirs,activity,varargin)$/;"	f
+postprocess	lib/ClassyDataAnalysis/lib/gpfa/util/postprocess.m	/^function [estParams, seqTrain, seqTest] = postprocess(ws, varargin)$/;"	f
+power60HzRatio	lib/ClassyDataAnalysis/lib/power60HzRatio.m	/^function RList=power60HzRatio(x)$/;"	f
+precomp_IN	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	41;"	d	file:
+predMIMO4	lib/ClassyDataAnalysis/@binnedData/predMIMO4.m	/^function [Y,Xnew,Ynew]=predMIMO4(X,H,numsides,fs,Yact)$/;"	f
+predMIMO4	lib/ClassyDataAnalysis/lib/weiner/predMIMO4.m	/^function [Y,Xnew,Yact]=predMIMO4(X,H,numsides,fs,Yact)$/;"	f
+pred_lin_mdl	Archive/force.py	/^def pred_lin_mdl(mdl, xy):$/;"	f
+pred_mdl	Archive/force.py	/^def pred_mdl(mdl, xy):$/;"	f
+predict_td_from_models	ForceKin/lib/predict_td_from_models.m	/^function td = predict_td_from_models(td,lin_models)$/;"	f
+principal_angles	BumpCurl/lib/principle_angles.m	/^function [angles, varargout] = principal_angles(A,B)$/;"	f
+print	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def print(*arg):$/;"	f
+printxmlstruct	Archive/Neuromechanic/printxmlstruct.m	/^function printxmlstruct(A,name,buffer)$/;"	f
+processDefault	lib/ClassyDataAnalysis/@emgData/processDefault.m	/^function processDefault(emg)$/;"	f
+processInput	lib/CircStat/circ_cmtest.m	/^function [alpha, idx] = processInput(varargin)$/;"	f
+processInput	lib/CircStat/circ_wwtest.m	/^function [alpha, idx, w] = processInput(varargin)$/;"	f
+processSpikesForSorting	lib/SpikeMerge/processSpikesForSorting.m	/^function status = processSpikesForSorting(file_path,file_prefix)$/;"	f
+pvalues	Archive/force.py	/^		pvalues = np.vstack([pvalues, mdl.pvalues])$/;"	v
+pvalues	Archive/force.py	/^	pvalues = np.empty([0, 4])$/;"	v
+rampandhold	SpindleSim/Hasan/rampandhold.m	/^function [t,acc,vel,len] = rampandhold(max_len,max_vel,max_acc,init_len,dt,rampdown)$/;"	f
+randomwalk_sim	MultiWorkspace/Archive/Deprecated code/Simulation/randomwalk_sim.m	/^function [targets, movements] = randomwalk_sim(boundaries, num_targets, target_size, spacing, hold_time, time_step)$/;"	f
+reCrop	lib/ClassyDataAnalysis/@firingRateData/reCrop.m	/^function reCrop(frd,cropType)$/;"	f
+readAdapFilterPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readAdapFilterPacket(fid)$/;"	f
+readCbHoop	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = readCbHoop(fid)$/;"	f
+readCbHoops	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function hs = readCbHoops(fid, maxUnits, maxHoops)$/;"	f
+readCbManualUnitMapping	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function um = readCbManualUnitMapping(fid)$/;"	f
+readCbManualUnitMapping3_6	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function um = readCbManualUnitMapping3_6(fid)$/;"	f
+readCbManualUnitMappings	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function ums = readCbManualUnitMappings(fid, maxUnits, version)$/;"	f
+readCbScaling	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function sc = readCbScaling(fid)$/;"	f
+readFiltDesc	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function fd = readFiltDesc(fid)$/;"	f
+readInfoPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readInfoPacket(fid, version)$/;"	f
+readNTrodeInfoPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readNTrodeInfoPacket(infoPackets)$/;"	f
+readSortingPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readSortingPacket(fid)$/;"	f
+readSystemInfoPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readSystemInfoPacket(fid)$/;"	f
+read_nmcb	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = read_nmcb(varargin)$/;"	f
+read_nmco	Hindlimb/leg_lib/Neuromechanic/read_nmco.m	/^function NMCO = read_nmco(output_file)$/;"	f
+readrigidbodies	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = readrigidbodies(fid,nmcb)$/;"	f
+realignMarkerSpacetime	lib/KinectTracking/functions/realignMarkerSpacetime.m	/^function [marker_data_aligned,affine_xform] = realignMarkerSpacetime(cds,marker_data,varargin)$/;"	f
+realignMarkerTimes	lib/KinectTracking/functions/realignMarkerTimes.m	/^function kinect_times = realignMarkerTimes(cerebus_vals,marker_data,plot_flag)$/;"	f
+rectify	lib/ClassyDataAnalysis/@emgData/rectify.m	/^function rectify(emg)$/;"	f
+refCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    int refCount;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+refilter	lib/ClassyDataAnalysis/@timeSeriesData/refilter.m	/^function refilter(tsd)$/;"	f
+reg_m	Archive/force.py	/^def reg_m(x, y):$/;"	f
+removeBadNeurons	lib/TrialData/Tools/removeBadNeurons.m	/^function [trial_data,bad_units] = removeBadNeurons(trial_data,params)$/;"	f
+removeBadTrials	lib/TrialData/Tools/removeBadTrials.m	/^function [trial_data,bad_trials] = removeBadTrials(trial_data,params)$/;"	f
+removeIndentNodes	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function removeIndentNodes( childNodes )$/;"	f
+removeIndentNodes	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function removeIndentNodes( childNodes )$/;"	f
+removeNSxData	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/removeNSxData.m	/^function removeNSxData(timestamps, filename)$/;"	f
+removeSorting	lib/ClassyDataAnalysis/@unitData/removeSorting.m	/^function removeSorting(units,varargin)$/;"	f
+removeWindow	lib/KinectTracking/Marker_Tracking/4color/removeWindow.m	/^function [ color2 ] = removeWindow( color1, indices, xWin, yWin, zWin)$/;"	f
+remove_pd	Archive/force.py	/^def remove_pd(x):$/;"	f
+remove_pd_from_axis	Archive/force.py	/^	def remove_pd_from_axis(xyf, axis):$/;"	f	function:remove_pd
+remove_sorting	Archive/remove_sorting.m	/^function bdf_nosort=remove_sorting(bdf)$/;"	f
+remove_wrap	Hindlimb/leg_lib/remove_wrap.m	/^function unwrapped_angles = remove_wrap(angles)$/;"	f
+remove_wrapping	MultiWorkspace/Archive/remove_wrapping.m	/^function unwrapped = remove_wrapping(wrapped)$/;"	f
+reorderTDfields	lib/TrialData/DataProcessing/reorderTDfields.m	/^function trial_data = reorderTDfields(trial_data)$/;"	f
+rethresholdNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/rethresholdNSx.m	/^function NEV = rethresholdNSx(varargin)$/;"	f
+root	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function t=root(f,N)$/;"	f
+rotate_func	lib/KinectTracking/functions/Deprecated/rotate_func.m	/^function [sse]=rotate_func(x,rec_pos_trans,true_pos_trans)$/;"	f
+rotate_match_func2	lib/KinectTracking/functions/Deprecated/rotate_match_func2.m	/^function [ rec_pos_trans2, R, q, fval] = rotate_match_func2( rec_pos_trans, true_pos_trans )$/;"	f
+rotate_tuning_curves	MultiWorkspace/Archive/Analysis/rotate_tuning_curves.m	/^function [figure_handles, output_data]=rotate_tuning_curves(folder,options)$/;"	f
+round2	lib/ClassyDataAnalysis/lib/round2/round2.m	/^function z = round2(x,y)$/;"	f
+roundTime	lib/ClassyDataAnalysis/lib/roundTime.m	/^function roundedTime=roundTime(timeData,varargin)$/;"	f
+runDataProcessing	lib/ClassyDataAnalysis/lib/runDataProcessing.m	/^function dataStruct = runDataProcessing(mainFunctionName,targetDirectory,varargin)$/;"	f
+runGPFA	lib/TrialData/Analysis/runGPFA.m	/^function [trial_data, gpfa_out] = runGPFA(trial_data, params)$/;"	f
+run_func	lib/TrialData/DataProcessing/loadTDfiles.m	/^function [trial_data,out_params] = run_func(trial_data,funcCall)$/;"	f
+run_hindlimb	Hindlimb/Deprecated/run_hindlimb.m	/^function [prct_tuned,prct_changed,median_dPD] = run_hindlimb(num_sec)$/;"	f
+run_hindlimb	Hindlimb/leg_lib/run_hindlimb.m	/^function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb(neurons,num_sec,joint_elast)$/;"	f
+run_hindlimb_joint	Hindlimb/leg_lib/run_hindlimb_joint.m	/^function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb_joint(neurons,num_sec,joint_elast)$/;"	f
+sample_bdf_kin	Archive/sample_bdf_kin.m	/^function [pos, vel, acc] = sample_bdf_kin(bdf_cell,ts)$/;"	f
+sanitizeTimeWindows	lib/ClassyDataAnalysis/@commonDataStructure/sanitizeTimeWindows.m	/^function sanitizeTimeWindows(cds)$/;"	f
+saveChNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function NSx = saveChNSx(varargin)$/;"	f
+saveNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/saveNEV.m	/^function saveNEV(NEV, varargin)$/;"	f
+saveNEVSpikes	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/saveNEVSpikes.m	/^function saveNEVSpikes(spikeStruct, newFileName)$/;"	f
+saveNEVSpikesLimblab	lib/SpikeMerge/saveNEVSpikesLimblab.m	/^function saveNEVSpikesLimblab(NEV, filepath, newFileName)$/;"	f
+saveNEVSubSpikes	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/saveNEVSubSpikes.m	/^function saveNEVSubSpikes(channelsToRead, fileFullPath, addedSuffix)$/;"	f
+saveNEVTetrodes	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/saveNEVTetrodes.m	/^function saveNEVTetrodes(NEVFullFilename)$/;"	f
+saveNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveNSx.m	/^function saveNSx(NSx,varargin)$/;"	f
+savecds	lib/ClassyDataAnalysis/@commonDataStructure/savecds.m	/^function savecds(cds,filePath)$/;"	f
+saveobj	lib/ClassyDataAnalysis/@commonDataStructure/saveobj.m	/^function S=saveobj(cds)$/;"	f
+segmentByTrial	lib/ClassyDataAnalysis/lib/gpfa/util/segmentByTrial.m	/^function seq = segmentByTrial(seq, X, fn)$/;"	f
+separatePausedNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/separatePausedNSx.m	/^function separatePausedNSx(varargin)$/;"	f
+seq_IN	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	42;"	d	file:
+setFlagsCBAINP	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBAINP(flags)$/;"	f
+setFlagsCBAOUT	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBAOUT(flags)$/;"	f
+setFlagsCBCHAN	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBCHAN(flags)$/;"	f
+setFlagsCBDINP	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBDINP(flags)$/;"	f
+setFlagsCBDOUT	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBDOUT(flags)$/;"	f
+sim_points	Archive/force.py	/^def sim_points(n = 100):$/;"	f
+skipResets	lib/ClassyDataAnalysis/@commonDataStructure/skipResets.m	/^function idx=skipResets(cds,ts)$/;"	f
+sm	Archive/force.py	/^import statsmodels.api as sm$/;"	i
+smoothMarkerData	lib/KinectTracking/functions/smoothMarkerData.m	/^function md_smooth = smoothMarkerData(marker_data)$/;"	f
+smoothSignals	lib/TrialData/Tools/smoothSignals.m	/^function trial_data = smoothSignals(trial_data,params)$/;"	f
+smooth_data	lib/TrialData/util/smooth_data.m	/^function data_smooth = smooth_data(data,dt,kernel_SD)$/;"	f
+smoother	lib/ClassyDataAnalysis/lib/gpfa/util/smoother.m	/^function yOut = smoother(yIn, kernSD, stepSize, varargin)$/;"	f
+snprintf	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	227;"	d	file:
+so_name	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    char so_name[MAX_SO_PATH+1];$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+softNormalize	lib/TrialData/Tools/softNormalize.m	/^function trial_data = softNormalize(trial_data,params)$/;"	f
+sortNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/sortNEV.m	/^function [SortedStruct, SortedIndeces] = sortNEV(STRUCT, field, TestValue, Report)$/;"	f
+splitNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/splitNSx.m	/^function splitNSx(splitCount)$/;"	f
+splitNSxNTrode	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/splitNEVNTrode.m	/^function splitNSxNTrode$/;"	f
+splitNSxNTrode	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/splitNSxNTrode.m	/^function splitNSxNTrode$/;"	f
+splitNSxPauses	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/splitNSxPauses.m	/^function splitNSxPauses(fileName)$/;"	f
+split_array_Han	ForceKin/split_array_Han.m	/^function [ant_chans,post_chans] = split_array_Han(cds)$/;"	f
+sqrtTransform	lib/TrialData/Tools/sqrtTransform.m	/^function trial_data = sqrtTransform(trial_data,signals)$/;"	f
+statePosture	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def statePosture(nmtree,name):$/;"	f
+statsmodels	Archive/force.py	/^import statsmodels.api as sm$/;"	i
+stdpath	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function fn = stdpath(file,root)$/;"	f
+stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	149;"	d	file:
+stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	228;"	d	file:
+stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	230;"	d	file:
+stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	231;"	d	file:
+strobed2encoder	lib/ClassyDataAnalysis/lib/strobed2encoder.m	/^function varargout = strobed2encoder(strobed_events,varargin)$/;"	f
+subsets	lib/TrialData/util/dpca/dpca_marginalize.m	/^function S = subsets(X)$/;"	f
+subsets	lib/dPCA/dpca_marginalize.m	/^function S = subsets(X)$/;"	f
+subtractConditionMean	lib/TrialData/Tools/subtractConditionMean.m	/^function trial_data = subtractConditionMean(trial_data,params)$/;"	f
+surfaceplot	ForceKin/Old proc/surfaceplot.m	/^function surfaceplot$/;"	f
+switch_pts	lib/KinectTracking/Marker_Tracking/tracking_functions/switch_pts.m	/^function [ all_medians, all_medians2 ] = switch_pts(switch_pts,t,all_medians,all_medians2)$/;"	f
+syncPatternDetectNEV	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/syncPatternDetectNEV.m	/^function codeKeeper = syncPatternDetectNEV(NEVStruct)$/;"	f
+syncPatternDetectNSx	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/syncPatternDetectNSx.m	/^function codeKeeper = syncPatternDetectNSx(data)$/;"	f
+syncPatternFinderNSx	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/syncPatternFinderNSx.m	/^function codeKeeper = syncPatternFinderNSx(filenameNSx)$/;"	f
+szAppName	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szAppName[64];          \/\/ Name of the application that created the file$/;"	m	struct:__anon8
+szCSVDesc	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szCSVDesc[128];   \/\/ Description of the data fields for CSV Event Entities$/;"	m	struct:__anon10
+szCreator	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szCreator[64];      \/\/ Name of library creator$/;"	m	struct:__anon7
+szDescription	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szDescription[64];  \/\/ Text description of the library$/;"	m	struct:__anon7
+szDescription	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char szDescription[32];    \/\/ Text description of the file type or file family$/;"	m	struct:__anon6
+szEntityLabel	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szEntityLabel[32];  \/\/ Specifies the label or name of the entity$/;"	m	struct:__anon9
+szExtension	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char szExtension[8];       \/\/ Extension used on PC, Linux, and Unix Platforms$/;"	m	struct:__anon6
+szFileComment	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szFileComment[256];     \/\/ Comments embedded in the source file$/;"	m	struct:__anon8
+szFileType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szFileType[32];         \/\/ Manufacturer's file type descriptor$/;"	m	struct:__anon8
+szHighFilterType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char    szHighFilterType[16];    \/\/ Type of filter used for high frequency cutoff (text format)$/;"	m	struct:__anon11
+szHighFilterType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szHighFilterType[16];  \/\/ Type of filter used for high frequency cutoff (text format)$/;"	m	struct:__anon13
+szLowFilterType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char    szLowFilterType[16];     \/\/ Type of filter used for low frequency cutoff (text format)$/;"	m	struct:__anon11
+szLowFilterType	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szLowFilterType[16];   \/\/ Type of filter used for low frequency cutoff (text format)$/;"	m	struct:__anon13
+szMacCodes	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char szMacCodes[8];        \/\/ Application and Type Codes used on Mac Platforms$/;"	m	struct:__anon6
+szMagicCode	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char szMagicCode[16];      \/\/ Null-terminated code used at the file beginning$/;"	m	struct:__anon6
+szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char    szProbeInfo[128];        \/\/ Additional text information about the signal source$/;"	m	struct:__anon11
+szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szProbeInfo[128];      \/\/ Additional text information about the signal source$/;"	m	struct:__anon13
+szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szProbeInfo[128];  \/\/ Additional probe text information or source entity label$/;"	m	struct:__anon14
+szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char    szUnits[16];             \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon11
+szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szUnits[32];       \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon12
+target_in_workspace	MultiWorkspace/Archive/Deprecated code/Simulation/target_in_workspace.m	/^function is_inside = target_in_workspace(target,boundaries)$/;"	f
+tesselateFR	ForceKin/lib/tesselateFR.m	/^function tesselateFR(fr,thv,thf)$/;"	f
+testSorting	lib/ClassyDataAnalysis/@commonDataStructure/testSorting.m	/^function testSorting(cds)$/;"	f
+test_sep	ForceKin/lib/test_sep.m	/^function [separability,mdl] = test_sep(td,params)$/;"	f
+thf	ForceKin/Old proc/check_domains.py	/^        thf = pd.read_csv(folder+fname,usecols=[1])$/;"	v
+thv	ForceKin/Old proc/check_domains.py	/^        thv = pd.read_csv(folder+fname,usecols=[0])$/;"	v
+timeShiftBins	lib/ClassyDataAnalysis/@experiment/timeShiftBins.m	/^function [lagData, lagPts, t]=timeShiftBins(ex,data,lags,varargin)$/;"	f
+timeStampsSecondsToTimestamps	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function timeStamps = timeStampsSecondsToTimestamps(timeStampsSeconds, samplingRate)$/;"	f
+timeStampsToTimestampSeconds	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function timeStampsSec = timeStampsToTimestampSeconds(timeStamps, samplingRate)$/;"	f
+train_hindlimb	Hindlimb/Deprecated/train_hindlimb.m	/^function [neural_weights] = train_hindlimb(scaled_muscle_lens,init_weights)$/;"	f
+transformForOpenSim	lib/KinectTracking/functions/transformForOpenSim.m	/^function [md_opensim,handle_opensim] = transformForOpenSim(marker_data,cds)$/;"	f
+transformPDhist	Archive/Cuneate/Grant support/transformPDhist.m	/^function transformPDhist$/;"	f
+trenchSetup	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [r,gam,v] = trenchSetup(T);$/;"	f
+trialAverage	lib/TrialData/Tools/trialAverage.m	/^function [avg_data,cond_idx] = trialAverage(trial_data, conditions, params)$/;"	f
+trialCI	ForceKin/lib/trialCI.m	/^function [avg_data, CIhigh_data, CIlow_data] = trialCI(trial_data, conditions, params)$/;"	f
+triggersFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/triggersFromNSx.m	/^function triggersFromNSx(cds)$/;"	f
+trimTD	lib/TrialData/Tools/trimTD.m	/^function trial_data = trimTD(trial_data,idx_start,idx_end)$/;"	f
+tsladjust	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def tsladjust(nmtree,tslmin,lftargmax):$/;"	f
+twoStageEngine	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/twoStageEngine.m	/^function twoStageEngine(seqTrain, seqTest, fname, varargin)$/;"	f
+twoStageEngine_td	lib/TrialData/util/gpfa/twoStageEngine_td.m	/^function result = twoStageEngine_td(seqTrain, seqTest, fname, varargin)$/;"	f
+unitsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/unitsFromNEV.m	/^function unitsFromNEV(cds,opts)$/;"	f
+unmerge_spikes	Archive/unmerge_spikes.m	/^function unmerge_spikes(file_path,file_prefix)$/;"	f
+updateBins	lib/ClassyDataAnalysis/@binnedData/updateBins.m	/^function updateBins(bd,bins)$/;"	f
+updateMeta	lib/ClassyDataAnalysis/@firingRateData/updateMeta.m	/^function updateMeta(frd,meta)$/;"	f
+upload2DB	lib/ClassyDataAnalysis/@commonDataStructure/upload2DB.m	/^function upload2DB(cds)$/;"	f
+valid	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    int valid;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+var_ratios	Archive/force.py	/^		var_ratios = np.vstack([[full_ratio, partial_ratio], var_ratios])$/;"	v
+var_ratios	Archive/force.py	/^	var_ratios = np.empty([0, 2])$/;"	v
+vectorfigplot	ForceKin/Old proc/vectorfigplot.m	/^function vectorfigplot$/;"	f
+velocityforce_plot	Archive/Cuneate/Grant support/velocityforce_plot.m	/^function velocityforce_plot(bdf)$/;"	f
+vf_m	Archive/force.py	/^		vf_m = x[:, 0:2]$/;"	v
+vglobal	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def vglobal(p):$/;"	f
+visData	lib/TrialData/Plotting/visData.m	/^function [ ] = visData( trial_data, params )$/;"	f
+whiteFade	lib/linspecer/linspecer.m	/^function cmap = whiteFade(varargin)$/;"	f
+windows2mask	lib/ClassyDataAnalysis/lib/windows2mask.m	/^function mask=windows2mask(time,windows)$/;"	f
+writeHandleForceOpenSim	lib/KinectTracking/writeHandleForceOpenSim.m	/^function writeHandleForceOpenSim(marker_data,cds,handle_opensim,savefile_name)$/;"	f
+writeLoad	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^    def writeLoad(self,fname):$/;"	m	class:Build
+writeSessionSummary	lib/ClassyDataAnalysis/@commonDataStructure/writeSessionSummary.m	/^function writeSessionSummary(cds) $/;"	f
+writeToTRC	lib/KinectTracking/functions/writeToTRC.m	/^function writeToTRC(marker_data,savefile_name)$/;"	f
+x	Archive/force.py	/^		x = np.hstack([vf, np.atleast_2d(la[neuron]).T])$/;"	v
+x	Archive/force.py	/^		x = remove_pd(x)$/;"	v
+xml2matlab	Archive/Neuromechanic/xml2matlab.m	/^function xml = xml2matlab(fname,varargin)$/;"	f
+xml2matlab	MultiWorkspace/Archive/Deprecated code/neuromechanic/xml2matlab.m	/^function xml = xml2matlab(fname,varargin)$/;"	f
+xmlstr	MultiWorkspace/Archive/Deprecated code/neuromechanic/nmextension.py	/^def xmlstr(x):$/;"	f
