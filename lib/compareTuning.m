@@ -16,7 +16,7 @@ function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Default Param
-move_cor = 'velDir';
+move_cor = 'velPD';
 % check maxFR input
 if ~exist('maxFR','var') || isempty(maxFR)
     maxFR = [];
