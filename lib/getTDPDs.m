@@ -43,6 +43,7 @@ do_plot = false;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters
 td_fn_prefix     =  '';    % prefix for fieldname
+disp_times       = false; % whether to display compuation times
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,7 +51,7 @@ if nargin > 1, assignParams(who,params); end % overwrite parameters
 if isempty(out_signals), error('Need to provide output signal'); end
 
 out_signals = check_signals(trial_data(1),out_signals);
-response_var = get_vars(trial_data,out_signals);
+response_var = get_vars(trial_data(trial_idx),out_signals);
 
 in_signals = check_signals(trial_data(1),in_signals);
 for i = 1:size(in_signals,1)
@@ -58,7 +59,7 @@ for i = 1:size(in_signals,1)
         error('Each element of in_signals needs to refer to only two-column covariates')
     end
 end
-input_var = get_vars(trial_data,in_signals);
+input_var = get_vars(trial_data(trial_idx),in_signals);
 
 if numel(unique(cat(1,{trial_data.monkey}))) > 1
     error('More than one monkey in trial data')
@@ -96,17 +97,28 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Calculate PD
 bootfunc = @(data) fitglm(data(:,2:end),data(:,1),'Distribution',distribution);
-tic;
+if disp_times
+    tic;
+end
 for uid = 1:size(response_var,2)
-    disp(['  Bootstrapping GLM PD computation(ET=',num2str(toc),'s).'])
+    if disp_times
+        disp(['  Bootstrapping GLM PD computation(ET=',num2str(toc),'s).'])
+    end
     %bootstrap for firing rates to get output parameters
     if block_trials
         % not implemented currently, look at evalModel for how block trials should be implemented
         error('getTDPDs:noBlockTrials','Block trials option is not implemented yet')
     else
         data_arr = [response_var(:,uid) input_var];
-        boot_tuning = bootstrp(num_boots,@(data) {bootfunc(data)}, data_arr);
-        boot_coef = cell2mat(cellfun(@(x) x.Coefficients.Estimate',boot_tuning,'uniformoutput',false));
+        % check if actually bootstrapping
+        if num_boots>1
+            boot_tuning = bootstrp(num_boots,@(data) {bootfunc(data)}, data_arr);
+            boot_coef = cell2mat(cellfun(@(x) x.Coefficients.Estimate',boot_tuning,'uniformoutput',false));
+        else
+            % don't bootstrap
+            boot_tuning = bootfunc(data_arr);
+            boot_coef = boot_tuning.Coefficients.Estimate';
+        end
 
         if size(boot_coef,2) ~= 1+size(in_signals,1)*2
             error('getTDPDs:moveCorrProblem','GLM doesn''t have correct number of inputs')
@@ -142,6 +154,7 @@ for uid = 1:size(response_var,2)
                 pdTable.([move_corr 'Moddepth'])(uid,:)= mean(moddepths);
                 pdTable.([move_corr 'ModdepthCI'])(uid,:)= prctile(moddepths,[2.5 97.5]);
             else
+                % moddepth is poorly defined for GLM context
                 pdTable.([move_corr 'Moddepth'])(uid,:)= -1;
                 pdTable.([move_corr 'ModdepthCI'])(uid,:)= [-1 -1];
             end
