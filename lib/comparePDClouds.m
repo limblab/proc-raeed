@@ -1,5 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% varargin is for the plotting parameters, like facealpha and color (see plot for details)
+% comparePDClouds Plots patches corresponding to 95% confidence intervals
+%   of PDs against each other. Uses pdTable structure, where each row is
+%   a bootstrap sample of a PD for a particular signal
+%
+%   Inputs:
+%       pdTable1 - PD table for x-axis
+%       pdTable2 - PD table for y-axis
+%       params - parameters struct
+%           .move_corr - movement correlate that PD was calculated on
+%                        (defaults to 'vel')
+%           .filter_tuning - which of the pdTables to filter units out by
+%                       Checks if 95% confidence interval along a particular
+%                       direction < CI_thresh
+%                       Possible values are: [],1,2 (defaults to [])
+%           .CI_thresh - threshold for confidence interval width in filter_tuning
+%                       (defaults to pi/4)
+%       varargin - various plotting parameters, like color and facealpha,
+%               input like patch (see patch for details)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function comparePDClouds(pdTable1,pdTable2,params,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
