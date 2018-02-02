@@ -81,6 +81,7 @@ addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function a
 addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@experiment/addProblem.m	/^function addProblem(ex,problem)$/;"	f
 addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession(ex,cds)$/;"	f
+addSphereHand2TD	MultiWorkspace/lib/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
 angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
@@ -172,6 +173,7 @@ cmap2linspecer	lib/linspecer/linspecer.m	/^function vOut = cmap2linspecer(vIn) %
 colorBrew2mat	lib/linspecer/linspecer.m	/^function varIn = colorBrew2mat(varIn)$/;"	f
 colorm	lib/linspecer/linspecer.m	/^function cmap = colorm(varargin)$/;"	f
 combineNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/combineNSxNEV.m	/^function [NSx1, NEV1] = combineNSxNEV(filename1, filename2)$/;"	f
+comparePDClouds	lib/comparePDClouds.m	/^function comparePDClouds(pdTable1,pdTable2,params,varargin)$/;"	f
 comparePDs	lib/comparePDs.m	/^function comparePDs(pdTable1,pdTable2,params,varargin)$/;"	f
 compareTuning	lib/compareTuning.m	/^function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)$/;"	f
 compare_actpas_RW	Archive/MiscTuning/compare_actpas_RW.m	/^function [figure_handles, output_data] = compare_actpas_RW(folder, options)$/;"	f
