@@ -2,11 +2,11 @@
 meta.lab=6;
 meta.ranBy='Raeed';
 meta.monkey='Han';
-meta.date='20171101';
-meta.task='TRT'; % for the loading of cds
-meta.taskAlias={'TRT_001'}; % for the filename (cell array list for files to load and save)
+meta.date='20160322';
+meta.task='RW'; % for the loading of cds
+meta.taskAlias={'RW_DL_001','RW_PM_002'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
-meta.arrayAlias='area2EMG'; % for the filename
+meta.arrayAlias='area2'; % for the filename
 meta.project='MultiWorkspace'; % for the folder in data-preproc
 meta.superfolder=fullfile('C:\Users\rhc307\Projects\limblab\data-preproc\',meta.project,meta.monkey); % folder for data dump
 meta.folder=fullfile(meta.superfolder,meta.date); % compose subfolder and superfolder
@@ -146,6 +146,7 @@ end
 
 %% Load data into CDS file
 % Make CDS files
+cds = cell(size(meta.taskAlias));
 for fileIdx = 1:length(meta.taskAlias)
     cds{fileIdx} = commonDataStructure();
     cds{fileIdx}.file2cds(fullfile(meta.folder,'preCDS','Final',[meta.neuralPrefix '_' meta.taskAlias{fileIdx}]),...
@@ -167,8 +168,8 @@ end
 for fileIdx = 1:length(meta.taskAlias)
     markersFilename = [meta.monkey '_' meta.date '_markers_' meta.taskAlias{fileIdx} '.mat'];
     affine_xform = cds{fileIdx}.loadRawMarkerData(fullfile(meta.folder,'ColorTracking','Markers',markersFilename));
-%     writeTRCfromCDS(cds{fileIdx},fullfile(meta.folder,'OpenSim',[meta.monkey '_' meta.date '_' meta.taskAlias{fileIdx} '_markerData.trc']))
-%     writeHandleForceFromCDS(cds{fileIdx},fullfile(meta.folder,'OpenSim',[meta.monkey '_' meta.date '_' meta.taskAlias{fileIdx} '_handleForce.mot']))
+    writeTRCfromCDS(cds{fileIdx},fullfile(meta.folder,'OpenSim',[meta.monkey '_' meta.date '_' meta.taskAlias{fileIdx} '_markerData.trc']))
+    writeHandleForceFromCDS(cds{fileIdx},fullfile(meta.folder,'OpenSim',[meta.monkey '_' meta.date '_' meta.taskAlias{fileIdx} '_handleForce.mot']))
 end
 
 %% Do openSim stuff and save analysis results to analysis folder
@@ -240,12 +241,28 @@ save(fullfile(meta.folder,'CDS',[meta.neuralPrefix '_CDS.mat']),'cds','-v7.3')
 % trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
 
 % TRT
+% params.array_alias = {'LeftS1Area2','S1'};
+% params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
+% params.trial_results = {'R','A','F','I'};
+% td_meta = struct('task',meta.task);
+% params.meta = td_meta;
+% trial_data = parseFileByTrial(cds{1},params);
+
+% RW DL/PM
 params.array_alias = {'LeftS1Area2','S1'};
-params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
 params.trial_results = {'R','A','F','I'};
-td_meta = struct('task',meta.task);
+td_meta = struct('task',meta.task,'spaceNum',2);
 params.meta = td_meta;
-trial_data = parseFileByTrial(cds{1},params);
+trial_data_DL = parseFileByTrial(cds{1},params);
+td_meta = struct('task',meta.task,'spaceNum',1);
+params.meta = td_meta;
+trial_data_PM = parseFileByTrial(cds{2},params);
+trial_data = [trial_data_PM trial_data_DL];
+% match up with TRT
+for trial = 1:length(trial_data)
+    trial_data(trial).idx_targetStartTime = trial_data(trial).idx_startTime;
+end
+trial_data = reorderTDfields(trial_data);
 
 %% Save TD
-save(fullfile(meta.folder,'TD',[meta.monkey '_' meta.date '_TD.mat']),'trial_data','-v7.3')
+save(fullfile(meta.folder,'TD',[meta.monkey '_' meta.date '_TD.mat']),'trial_data')
