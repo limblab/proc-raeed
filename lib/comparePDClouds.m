@@ -94,5 +94,11 @@ for i = 1:size(signalIDs,1)
     patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2),varargin{:});
     patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2),varargin{:});
     patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
-    patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
+    p=patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
+    
+    % plot clusters
+    % scatter(centered_clust(:,1)+means(1),centered_clust(:,2)+means(2),[],get(p,'facecolor'));
+    % scatter(centered_clust(:,1)+means(1)-2*pi,centered_clust(:,2)+means(2),[],get(p,'facecolor'));
+    % scatter(centered_clust(:,1)+means(1),centered_clust(:,2)+means(2)-2*pi,[],get(p,'facecolor'));
+    % scatter(centered_clust(:,1)+means(1)-2*pi,centered_clust(:,2)+means(2)-2*pi,[],get(p,'facecolor'));
 end
