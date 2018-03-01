@@ -1,14 +1,15 @@
 %% Set up
 meta.lab=6;
 meta.ranBy='Raeed';
-meta.monkey='Han';
-meta.date='20160322';
-meta.task='RW'; % for the loading of cds
-meta.taskAlias={'RW_DL_001','RW_PM_002'}; % for the filename (cell array list for files to load and save)
+meta.monkey='Chips';
+meta.date='201700915';
+meta.task='TRT'; % for the loading of cds
+meta.taskAlias={'TRT_001'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
 meta.arrayAlias='area2'; % for the filename
 meta.project='MultiWorkspace'; % for the folder in data-preproc
-meta.superfolder=fullfile('C:\Users\rhc307\Projects\limblab\data-preproc\',meta.project,meta.monkey); % folder for data dump
+meta.hyperfolder=fullfile('C:\Users\rhc307\Projects\limblab'); % folder for both data_preproc and data_td
+meta.superfolder=fullfile(meta.hyperfolder,'data-preproc',meta.project,meta.monkey); % folder for data dump
 meta.folder=fullfile(meta.superfolder,meta.date); % compose subfolder and superfolder
 
 meta.neuralPrefix = [meta.monkey '_' meta.date '_' meta.arrayAlias];
@@ -23,13 +24,12 @@ elseif strcmp(meta.monkey,'Han')
     altMeta.neuralPrefix = [altMeta.monkey '_' altMeta.date '_' altMeta.arrayAlias];
 %     altMeta.mapfile=???;
 elseif strcmp(meta.monkey,'Lando')
-    warning('mapfiles not found for Lando yet')
-%     meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Chips\left_S1\SN 6251-001455.cmp';
+    meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Lando\left_S1\SN 6251-001701.cmp';
     altMeta = meta;
     altMeta.array='RightCuneate';
     altMeta.arrayAlias='cuneate';
     altMeta.neuralPrefix = [altMeta.monkey '_' altMeta.date '_' altMeta.arrayAlias];
-%     altMeta.mapfile=???;
+    altMeta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Lando\right_cuneate\SN 1025-001745.cmp';
 end
 
 %% Move data into subfolder
@@ -128,7 +128,7 @@ if exist('altMeta','var') && ~isempty(altMeta.array)
     processSpikesForSorting(fullfile(altMeta.folder,'preCDS','merging'),altMeta.neuralPrefix);
 end
 
-% copy into final folder
+% move into final folder
 for fileIdx = 1:length(meta.taskAlias)
     movefile(fullfile(meta.folder,'preCDS','merging',[meta.neuralPrefix '_' meta.taskAlias{fileIdx} '.mat']),...
         fullfile(meta.folder,'preCDS','Final'));
@@ -159,7 +159,7 @@ for fileIdx = 1:length(meta.taskAlias)
                 ['ranBy' altMeta.ranBy],['array' altMeta.array],['monkey' altMeta.monkey],altMeta.lab,'ignoreJumps',['task' altMeta.task],['mapFile' altMeta.mapfile]);
         else
             cds{fileIdx}.file2cds(fullfile(altMeta.folder,'preCDS','Final',[altMeta.neuralPrefix '_' altMeta.taskAlias{fileIdx}]),...
-                ['ranBy' altMeta.ranBy],['monkey' altMeta.monkey],altMeta.lab,'ignoreJumps',['task' altMeta.task],['mapFile' altMeta.mapfile]);
+                ['ranBy' altMeta.ranBy],['monkey' altMeta.monkey],altMeta.lab,'ignoreJumps',['task' altMeta.task]);
         end
     end
 end
@@ -241,15 +241,18 @@ save(fullfile(meta.folder,'CDS',[meta.neuralPrefix '_CDS.mat']),'cds','-v7.3')
 % trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
 
 % TRT
-% params.array_alias = {'LeftS1Area2','S1'};
+% params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
 % params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
 % params.trial_results = {'R','A','F','I'};
 % td_meta = struct('task',meta.task);
 % params.meta = td_meta;
 % trial_data = parseFileByTrial(cds{1},params);
+% % sanitize?
+% idxkeep = cat(1,trial_data.spaceNum) == 1 | cat(1,trial_data.spaceNum) == 2;
+% trial_data = trial_data(idxkeep);
 
 % RW DL/PM
-params.array_alias = {'LeftS1Area2','S1'};
+params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
 params.trial_results = {'R','A','F','I'};
 td_meta = struct('task',meta.task,'spaceNum',2);
 params.meta = td_meta;
@@ -266,3 +269,4 @@ trial_data = reorderTDfields(trial_data);
 
 %% Save TD
 save(fullfile(meta.folder,'TD',[meta.monkey '_' meta.date '_TD.mat']),'trial_data')
+copyfile(fullfile(meta.folder,'TD',[meta.monkey '_' meta.date '_TD.mat']),fullfile(meta.hyperfolder,'data-td',meta.project))
