@@ -16,12 +16,11 @@
 %       .num_bins - number of directional bins (default: 8)
 % OUTPUTS -
 %   curves - table of tuning curves for each column in signal, with 95% CI
-%   bins - vector of bin directions
 %
 % Written by Raeed Chowdhury. Updated Jul 2017.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [curves,bins] = getTuningCurves(trial_data,params)
+function [curves] = getTuningCurves(trial_data,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
 out_signals      =  [];
@@ -96,7 +95,7 @@ for i = 1:length(bins)
 end
 
 % set up output struct
-curves = table(monkey,date,task,out_signal_names,binnedResponse,binned_CIlow,binned_CIhigh,...,
-        'VariableNames',{'monkey','date','task','signalID','binnedResponse','CIlow','CIhigh'});
+curves = table(monkey,date,task,out_signal_names,repmat(bins,size(response_var,2),1),binnedResponse,binned_CIlow,binned_CIhigh,...,
+        'VariableNames',{'monkey','date','task','signalID','bins','binnedResponse','CIlow','CIhigh'});
 
 end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

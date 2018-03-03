@@ -1,4 +1,4 @@
-function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)
+function compareTuning(curves,pds,which_units,maxFR,move_corIn)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   comares tuning between different conditions with empirical
 %   tuning curves and PDs.
@@ -6,7 +6,6 @@ function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)
 %       curves - cell array of tuning curve tables, one table
 %                   per condition
 %       pds - cell array of PD tables, one table per condition
-%       bins - vector of bin directions for tuning curves
 %       which_units - (optional) vector array unit indices to plot
 %                   default - plots them all
 %       maxFR - (optional) array of maximum firing rates to
@@ -32,10 +31,6 @@ elseif ~isvector(which_units)
     error('which_units needs to be vector')
 end
 
-if ~isvector(bins)
-    error('bins needs to be vector input, e.g. from getTuningCurves')
-end
-
 % check cell nature of curves and pds
 if ~iscell(curves) || ~iscell(pds)
     error('curves and pds must be cell arrays of tables')
@@ -57,7 +52,7 @@ for neuron_idx = 1:length(which_units)
     for cond_idx = 1:numel(curves)
         pdTable = pds{cond_idx};
         curveTable = curves{cond_idx};
-        plotTuning(bins,pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
+        plotTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
         hold on
     end
 %     if isnumeric(signalID(which_units(neuron_idx)))

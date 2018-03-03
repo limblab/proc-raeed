@@ -1,4 +1,4 @@
-function [handle] = plotTuning(bins,pdData,curve,maxRadius,color,linspec, move_corrIn)
+function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)
 % PLOT_TUNING makes a single figure showing the tuning curve and PD with
 % confidence intervals. Leave either entry blank to skip plotting it. Color
 % is a 3 element vector for the color of the plotted tuning curve and PD.
@@ -15,6 +15,7 @@ if ~exist('linspec','var') || isempty(linspec)
 end
 
 % tuning curve
+bins = curve.bins;
 if(~isempty(curve))
     if(height(curve)>1)
         error('plotTuning:TooManyThings','curve must contain only one row')
