@@ -4,7 +4,7 @@ function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn
 % is a 3 element vector for the color of the plotted tuning curve and PD.
 % pdData is one row taken from binnedData object.
 move_cor = 'velDir';
-if nargin >6, move_cor = move_corrIn; end 
+if nargin >5, move_cor = move_corrIn; end 
 % plot initial point
 h=polar(0,maxRadius);
 set(h,'color','w')

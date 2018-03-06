@@ -36,7 +36,7 @@ if ~iscell(curves) || ~iscell(pds)
     error('curves and pds must be cell arrays of tables')
 end
 
-if nargin >5, move_cor = move_corIn; end 
+if nargin >4, move_cor = move_corIn; end 
 %% Plot tuning curves
 % pick condition colors
 cond_colors = linspecer(numel(curves));
