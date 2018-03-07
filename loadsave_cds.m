@@ -2,7 +2,7 @@
 meta.lab=6;
 meta.ranBy='Raeed';
 meta.monkey='Chips';
-meta.date='201700915';
+meta.date='20170915';
 meta.task='TRT'; % for the loading of cds
 meta.taskAlias={'TRT_001'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
@@ -69,6 +69,9 @@ if ~exist(fullfile(meta.folder,'ColorTracking','Markers'),'dir')
 end
 if ~exist(fullfile(meta.folder,'OpenSim'),'dir')
     mkdir(fullfile(meta.folder,'OpenSim'))
+end
+if ~exist(fullfile(meta.folder,'OpenSim','Analysis'),'dir')
+    mkdir(fullfile(meta.folder,'OpenSim','Analysis'))
 end
 if ~exist(fullfile(meta.folder,'CDS'),'dir')
     mkdir(fullfile(meta.folder,'CDS'))
@@ -241,31 +244,31 @@ save(fullfile(meta.folder,'CDS',[meta.neuralPrefix '_CDS.mat']),'cds','-v7.3')
 % trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
 
 % TRT
-% params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
-% params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
-% params.trial_results = {'R','A','F','I'};
-% td_meta = struct('task',meta.task);
-% params.meta = td_meta;
-% trial_data = parseFileByTrial(cds{1},params);
-% % sanitize?
-% idxkeep = cat(1,trial_data.spaceNum) == 1 | cat(1,trial_data.spaceNum) == 2;
-% trial_data = trial_data(idxkeep);
+params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
+params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
+params.trial_results = {'R','A','F','I'};
+td_meta = struct('task',meta.task);
+params.meta = td_meta;
+trial_data = parseFileByTrial(cds{1},params);
+% sanitize?
+idxkeep = cat(1,trial_data.spaceNum) == 1 | cat(1,trial_data.spaceNum) == 2;
+trial_data = trial_data(idxkeep);
 
 % RW DL/PM
-params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
-params.trial_results = {'R','A','F','I'};
-td_meta = struct('task',meta.task,'spaceNum',2);
-params.meta = td_meta;
-trial_data_DL = parseFileByTrial(cds{1},params);
-td_meta = struct('task',meta.task,'spaceNum',1);
-params.meta = td_meta;
-trial_data_PM = parseFileByTrial(cds{2},params);
-trial_data = [trial_data_PM trial_data_DL];
-% match up with TRT
-for trial = 1:length(trial_data)
-    trial_data(trial).idx_targetStartTime = trial_data(trial).idx_startTime;
-end
-trial_data = reorderTDfields(trial_data);
+% params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
+% params.trial_results = {'R','A','F','I'};
+% td_meta = struct('task',meta.task,'spaceNum',2);
+% params.meta = td_meta;
+% trial_data_DL = parseFileByTrial(cds{1},params);
+% td_meta = struct('task',meta.task,'spaceNum',1);
+% params.meta = td_meta;
+% trial_data_PM = parseFileByTrial(cds{2},params);
+% trial_data = [trial_data_PM trial_data_DL];
+% % match up with TRT
+% for trial = 1:length(trial_data)
+%     trial_data(trial).idx_targetStartTime = trial_data(trial).idx_startTime;
+% end
+% trial_data = reorderTDfields(trial_data);
 
 %% Save TD
 save(fullfile(meta.folder,'TD',[meta.monkey '_' meta.date '_TD.mat']),'trial_data')
