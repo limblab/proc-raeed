@@ -84,6 +84,7 @@ addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession
 addSphereHand2TD	MultiWorkspace/lib/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
+analyzeTRT	MultiWorkspace/analyzeTRT.m	/^function results = analyzeTRT(trial_data,params)$/;"	f
 angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
 animateBumpcurlTrials	BumpCurl/lib/animateBumpcurlTrials.m	/^function animateBumpcurlTrials(trial_data,field,bump_colors,waitperiod,tail_length)$/;"	f
 appendData	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function appendData(units,data,varargin)$/;"	f
@@ -175,7 +176,7 @@ colorm	lib/linspecer/linspecer.m	/^function cmap = colorm(varargin)$/;"	f
 combineNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/combineNSxNEV.m	/^function [NSx1, NEV1] = combineNSxNEV(filename1, filename2)$/;"	f
 comparePDClouds	lib/comparePDClouds.m	/^function comparePDClouds(pdTable1,pdTable2,params,varargin)$/;"	f
 comparePDs	lib/comparePDs.m	/^function comparePDs(pdTable1,pdTable2,params,varargin)$/;"	f
-compareTuning	lib/compareTuning.m	/^function compareTuning(curves,pds,bins,which_units,maxFR, move_corIn)$/;"	f
+compareTuning	lib/compareTuning.m	/^function compareTuning(curves,pds,which_units,maxFR,move_corIn)$/;"	f
 compare_actpas_RW	Archive/MiscTuning/compare_actpas_RW.m	/^function [figure_handles, output_data] = compare_actpas_RW(folder, options)$/;"	f
 compute_pseudo_R2	lib/TrialData/util/compute_pseudo_R2.m	/^function R2 = compute_pseudo_R2(Y, Yhat, Ymean, distr, Yhat_null)$/;"	f
 compute_r2	lib/TrialData/util/compute_r2.m	/^function r2 = compute_r2(sig1,sig2,which_method)$/;"	f
@@ -351,6 +352,7 @@ getCObumpTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCObumpTaskTabl
 getChannels	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function channels = getChannels$/;"	f
 getCommonUnits	lib/TrialData/Tools/getCommonUnits.m	/^function trial_data = getCommonUnits(trial_data)$/;"	f
 getDPCA	lib/TrialData/Analysis/getDPCA.m	/^function [trial_data, dPCA_info] = getDPCA(trial_data,varargin)$/;"	f
+getEmpiricalShift	MultiWorkspace/lib/getEmpiricalShift.m	/^function [rots,scales,shifted_curves] = getEmpiricalShift(curves)$/;"	f
 getFile	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFile.m	/^function [dataFilename, dataFolder] = getFile(filterSpec, title)$/;"	f
 getFilteredFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/getFilteredFromNSx.m	/^function [adata,t]=getFilteredFromNSx(cds,fc,achan_index)$/;"	f
 getFolder	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFolder.m	/^function dataFolder = getFolder$/;"	f
@@ -387,7 +389,7 @@ getTargetDirection	lib/TrialData/Tools/getTargetDirection.m	/^function trial_dat
 getTask	lib/ClassyDataAnalysis/@commonDataStructure/getTask.m	/^function [opts]=getTask(cds,task,opts)$/;"	f
 getTrajNewTrials	lib/ClassyDataAnalysis/lib/gpfa/util/getTrajNewTrials.m	/^function seqNew = getTrajNewTrials(ws, dat, varargin)$/;"	f
 getTrialTable	lib/ClassyDataAnalysis/@commonDataStructure/getTrialTable.m	/^function getTrialTable(cds,opts)$/;"	f
-getTuningCurves	lib/getTuningCurves.m	/^function [curves,bins] = getTuningCurves(trial_data,params)$/;"	f
+getTuningCurves	lib/getTuningCurves.m	/^function [curves] = getTuningCurves(trial_data,params)$/;"	f
 getUCKTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getUCKTaskTable.m	/^function getUCKTaskTable(cds,times)$/;"	f
 getUNTTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getUNTTaskTable.m	/^function getUNTTaskTable(cds,times)$/;"	f
 getUnitName	lib/ClassyDataAnalysis/@unitData/getUnitName.m	/^function unitName=getUnitName(units,unitNum)$/;"	f
@@ -646,7 +648,7 @@ plotMovie	lib/ClassyDataAnalysis/lib/gpfa/plotMovie.m	/^function plotMovie(seq, 
 plotPredCurves	MultiWorkspace/plotPredCurves.m	/^function plotPredCurves(td_test)$/;"	f
 plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m	/^function method = plotPredErrorVsDim(runIdx, kernSD, varargin)$/;"	f
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
-plotTuning	lib/plotTuning.m	/^function [handle] = plotTuning(bins,pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
+plotTuning	lib/plotTuning.m	/^function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotTuningDistr	BumpCurl/plotTuningDistr.m	/^function plotTuningDistr(trial_data)$/;"	f
 plotWindows	lib/ClassyDataAnalysis/lib/plotWindows.m	/^function h=plotWindows(data,windows,colLabels,varargin)$/;"	f
 plot_PD_distr	Hindlimb/leg_lib/plot_PD_distr.m	/^function plot_PD_distr(pds,num_bins)$/;"	f
