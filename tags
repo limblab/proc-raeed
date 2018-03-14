@@ -81,7 +81,7 @@ addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function a
 addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@experiment/addProblem.m	/^function addProblem(ex,problem)$/;"	f
 addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession(ex,cds)$/;"	f
-addSphereHand2TD	MultiWorkspace/lib/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
+addSphereHand2TD	lib/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
 analyzeTRT	MultiWorkspace/analyzeTRT.m	/^function results = analyzeTRT(trial_data,params)$/;"	f
@@ -111,7 +111,6 @@ bytes2float	lib/ClassyDataAnalysis/lib/bytes2float.m	/^function f = bytes2float(
 calcFiringRate	lib/ClassyDataAnalysis/@experiment/calcFiringRate.m	/^function calcFiringRate(ex,varargin)$/;"	f
 calcTimeDelay	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/calcTimeDelay.m	/^function timeDelay = calcTimeDelay(NSx1, NSx2)$/;"	f
 calc_VAF	Hindlimb/Deprecated/calc_VAF.m	/^function VAF = calc_VAF(Y,Yhat)$/;"	f
-calculatePDs	MultiWorkspace/lib/calculatePDs.m	/^function [tuning] = calculatePDs(velInput,FR,doBoot,bootreps)$/;"	f
 calculate_PDs	Archive/calculate_PDs.m	/^function PD_data = calculate_PDs(bdf_cell,leave_sorted,plotPDs)$/;"	f
 cart2joint_xform	Archive/Cuneate/Grant support/cart2joint_xform.m	/^function [jointPD, joint_vec] = cart2joint_xform(cartPD,should_flexion,elbow_flexion)$/;"	f
 catDataWindow	lib/catDataWindow.m	/^function cattedData = catDataWindow(dataTimes,data,eventTimes,window)$/;"	f
@@ -352,7 +351,6 @@ getCObumpTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCObumpTaskTabl
 getChannels	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function channels = getChannels$/;"	f
 getCommonUnits	lib/TrialData/Tools/getCommonUnits.m	/^function trial_data = getCommonUnits(trial_data)$/;"	f
 getDPCA	lib/TrialData/Analysis/getDPCA.m	/^function [trial_data, dPCA_info] = getDPCA(trial_data,varargin)$/;"	f
-getEmpiricalShift	MultiWorkspace/lib/getEmpiricalShift.m	/^function [rots,scales,shifted_curves] = getEmpiricalShift(curves)$/;"	f
 getFile	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFile.m	/^function [dataFilename, dataFolder] = getFile(filterSpec, title)$/;"	f
 getFilteredFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/getFilteredFromNSx.m	/^function [adata,t]=getFilteredFromNSx(cds,fc,achan_index)$/;"	f
 getFolder	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFolder.m	/^function dataFolder = getFolder$/;"	f
@@ -645,9 +643,9 @@ plotColor	lib/CircStat/circ_clust.m	/^function plotColor(x, y, c, varargin)$/;"	
 plotDecomposedFR	ForceKin/lib/plotDecomposedFR.m	/^function plotDecomposedFR(fr,thv,thf,lin_models,savefigs)$/;"	f
 plotEachDimVsTime	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotEachDimVsTime.m	/^function plotEachDimVsTime(seq, xspec, binWidth, varargin)$/;"	f
 plotMovie	lib/ClassyDataAnalysis/lib/gpfa/plotMovie.m	/^function plotMovie(seq, xspec, varargin)$/;"	f
-plotPredCurves	MultiWorkspace/plotPredCurves.m	/^function plotPredCurves(td_test)$/;"	f
 plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m	/^function method = plotPredErrorVsDim(runIdx, kernSD, varargin)$/;"	f
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
+plotTRTTrials	MultiWorkspace/lib/plotTRTTrials.m	/^function plotTRTTrials(trial_data,params)$/;"	f
 plotTuning	lib/plotTuning.m	/^function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotTuningDistr	BumpCurl/plotTuningDistr.m	/^function plotTuningDistr(trial_data)$/;"	f
 plotWindows	lib/ClassyDataAnalysis/lib/plotWindows.m	/^function h=plotWindows(data,windows,colLabels,varargin)$/;"	f
