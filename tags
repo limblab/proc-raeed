@@ -77,6 +77,7 @@ _libraries	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevL
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) $/;"	f	file:
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) {$/;"	f	file:
 actpas_tuning	Archive/MiscTuning/actpas_tuning.m	/^function [figure_handles, output_data] = actpas_tuning(folder, options)$/;"	f
+addFiringRates	lib/addFiringRates.m	/^function td = addFiringRates(trial_data,params)$/;"	f
 addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function addOperation(obj,operation,opPath,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@experiment/addProblem.m	/^function addProblem(ex,problem)$/;"	f
@@ -84,6 +85,7 @@ addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession
 addSphereHand2TD	lib/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
+analyzeMultiworkspace	MultiWorkspace/analyzeMultiworkspace.m	/^function results = analyzeMultiworkspace(trial_data,params)$/;"	f
 analyzeTRT	MultiWorkspace/analyzeTRT.m	/^function results = analyzeTRT(trial_data,params)$/;"	f
 angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
 animateBumpcurlTrials	BumpCurl/lib/animateBumpcurlTrials.m	/^function animateBumpcurlTrials(trial_data,field,bump_colors,waitperiod,tail_length)$/;"	f
@@ -308,6 +310,7 @@ exploreData	BumpCurl/exploreData.m	/^function exploreData(trial_data)$/;"	f
 extract_bumpcurl_data	BumpCurl/Deprecated/extract_bumpcurl_data.m	/^function [binned_data,emg,trial_table] = extract_bumpcurl_data(cds)$/;"	f
 extract_extra_bumpcurl_data	BumpCurl/Deprecated/extract_extra_bumpcurl_data.m	/^function [data,emg] = extract_extra_bumpcurl_data(cds)$/;"	f
 extract_resid	ForceKin/lib/extract_resid.m	/^function [resid_lin,resid_non] = extract_resid(fr,thv,thf)$/;"	f
+fake_parula	lib/PythonColors/Colormaps/fake_parula.m	/^function cm_data=fake_parula(m)$/;"	f
 fastfa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
 fastfa_estep	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa_estep.m	/^function [Z, LL] = fastfa_estep(X, params)$/;"	f
 filMIMO4	lib/ClassyDataAnalysis/@binnedData/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
@@ -398,6 +401,7 @@ getVal	lib/CircStat/circ_raotest.m	/^function [p UC] = getVal(N, U)$/;"	f
 getWFTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getWFTaskTable.m	/^function getWFTaskTable(cds,times)$/;"	f
 get_activity	Hindlimb/leg_lib/get_activity.m	/^function [activity,avg_act] = get_activity(neurons, scaled_lengths, num_sec)$/;"	f
 get_affine_xform	lib/KinectTracking/functions/get_affine_xform.m	/^function [ affine_xform ] = get_affine_xform( cds, kinect_times, all_medians, x_lim_handle, y_lim_handle, plot_flag )$/;"	f
+get_alpha_potent	MultiWorkspace/get_alpha_potent.m	/^function [alpha_potent,alpha_null] = get_alpha_potent(trial_data)$/;"	f
 get_baseleg	Hindlimb/Deprecated/get_baseleg.m	/^function base_leg = get_baseleg$/;"	f
 get_legpts	Hindlimb/Deprecated/get_legpts.m	/^function legpts = get_legpts(base_leg,angles)$/;"	f
 get_legpts	Hindlimb/leg_lib/Neuromechanic/get_legpts.m	/^function [worldpoint,oiv_world] = get_legpts(legmodel,q)$/;"	f
@@ -424,6 +428,7 @@ handleForceFromRaw	lib/ClassyDataAnalysis/@commonDataStructure/handleForceFromRa
 hasan	SpindleSim/Hasan/hasan.m	/^function [t,mu,dmudt,r] = hasan(a,b,c,h,p,g,offset,t_x,dxdt,x)$/;"	f
 idct1d	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function out = idct1d(data)$/;"	f
 inBound	lib/KinectTracking/Marker_Tracking/4color/inBound.m	/^function [ out ] = inBound( val, window )$/;"	f
+inferno	lib/PythonColors/Colormaps/inferno.m	/^function [cm_data]=inferno(m)$/;"	f
 initializeWaveform	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function waveForms = initializeWaveform(numOfTimestamps)$/;"	f
 installNPMK	lib/ClassyDataAnalysis/lib/NPMK/installNPMK.m	/^function installNPMK$/;"	f
 interpomap	lib/linspecer/linspecer.m	/^function cmap = interpomap(n,cmapp)$/;"	f
@@ -467,6 +472,7 @@ loop_me_twice	lib/TrialData/Analysis/getDPCA.m	/^function valCat = loop_me_twice
 loops_all_the_way_down	lib/TrialData/Analysis/getDPCA.m	/^function val = loops_all_the_way_down(val,varargin)$/;"	f
 loops_for_fr	lib/TrialData/Analysis/getDPCA.m	/^function [val,valIdx] = loops_for_fr(depthCount,valIdx,val,trial_data,signals,max_trial_num,varargin)$/;"	f
 lstsq	Archive/force.py	/^from numpy.linalg import lstsq$/;"	i
+magma	lib/PythonColors/Colormaps/magma.m	/^function [cm_data]=magma(m)$/;"	f
 makeBasis_PostSpike	lib/TrialData/util/makeBasis_PostSpike.m	/^function [iht, ihbas, ihbasis] = makeBasis_PostSpike(ihprs,dt,iht0)$/;"	f
 makePrecomp	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePrecomp.m	/^function precomp = makePrecomp( seq , xDim )$/;"	f
 makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f
@@ -634,6 +640,7 @@ parse_file	Archive/force.py	/^def parse_file(filename):$/;"	f
 partial_ratio	Archive/force.py	/^		partial_ratio = 1 - np.var(lin_mdl.resid) \/ np.var(la_m)$/;"	v
 pathSetup	BumpCurl/lib/pathSetup.m	/^function pathSetup$/;"	f
 pd	ForceKin/Old proc/check_domains.py	/^import pandas as pd$/;"	i
+plasma	lib/PythonColors/Colormaps/plasma.m	/^function cm_data=plasma(m)$/;"	f
 playSound	lib/ClassyDataAnalysis/lib/NPMK/Other tools/playSound.m	/^function playSound(soundType)$/;"	f
 plot3D	lib/ClassyDataAnalysis/lib/gpfa/plotting/plot3D.m	/^function plot3D(seq, xspec, varargin)$/;"	f
 plot3D_td	lib/TrialData/util/gpfa/plot3D_td.m	/^function plot3D_td(seq, xspec, varargin)$/;"	f
@@ -642,9 +649,12 @@ plotBumpcurlTuning	BumpCurl/plotBumpcurlTuning.m	/^function plotBumpcurlTuning(t
 plotColor	lib/CircStat/circ_clust.m	/^function plotColor(x, y, c, varargin)$/;"	f
 plotDecomposedFR	ForceKin/lib/plotDecomposedFR.m	/^function plotDecomposedFR(fr,thv,thf,lin_models,savefigs)$/;"	f
 plotEachDimVsTime	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotEachDimVsTime.m	/^function plotEachDimVsTime(seq, xspec, binWidth, varargin)$/;"	f
+plotFlatTuning	lib/plotFlatTuning.m	/^function [handle] = plotFlatTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotMovie	lib/ClassyDataAnalysis/lib/gpfa/plotMovie.m	/^function plotMovie(seq, xspec, varargin)$/;"	f
+plotMultiworkspaceTuning	MultiWorkspace/plotMultiworkspaceTuning.m	/^function plotMultiworkspaceTuning(results,neuron_idx)$/;"	f
 plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m	/^function method = plotPredErrorVsDim(runIdx, kernSD, varargin)$/;"	f
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
+plotSmoothFR	lib/plotSmoothFR.m	/^function plotSmoothFR(x,y,fr,gridrange)$/;"	f
 plotTRTTrials	MultiWorkspace/lib/plotTRTTrials.m	/^function plotTRTTrials(trial_data,params)$/;"	f
 plotTuning	lib/plotTuning.m	/^function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotTuningDistr	BumpCurl/plotTuningDistr.m	/^function plotTuningDistr(trial_data)$/;"	f
@@ -799,7 +809,7 @@ szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/Nev
 szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szProbeInfo[128];  \/\/ Additional probe text information or source entity label$/;"	m	struct:__anon14
 szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char    szUnits[16];             \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon11
 szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szUnits[32];       \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon12
-tesselateFR	ForceKin/lib/tesselateFR.m	/^function tesselateFR(fr,thv,thf)$/;"	f
+tesselateFR	lib/tesselateFR.m	/^function tesselateFR(x,y,fr)$/;"	f
 testSorting	lib/ClassyDataAnalysis/@commonDataStructure/testSorting.m	/^function testSorting(cds)$/;"	f
 test_sep	ForceKin/lib/test_sep.m	/^function [separability,mdl] = test_sep(td,params)$/;"	f
 thf	ForceKin/Old proc/check_domains.py	/^        thf = pd.read_csv(folder+fname,usecols=[1])$/;"	v
@@ -828,6 +838,7 @@ var_ratios	Archive/force.py	/^	var_ratios = np.empty([0, 2])$/;"	v
 vectorfigplot	ForceKin/Old proc/vectorfigplot.m	/^function vectorfigplot$/;"	f
 velocityforce_plot	Archive/Cuneate/Grant support/velocityforce_plot.m	/^function velocityforce_plot(bdf)$/;"	f
 vf_m	Archive/force.py	/^		vf_m = x[:, 0:2]$/;"	v
+viridis	lib/PythonColors/Colormaps/viridis.m	/^function cm_data=viridis(m)$/;"	f
 visData	lib/TrialData/Plotting/visData.m	/^function [ ] = visData( trial_data, params )$/;"	f
 whiteFade	lib/linspecer/linspecer.m	/^function cmap = whiteFade(varargin)$/;"	f
 windows2mask	lib/ClassyDataAnalysis/lib/windows2mask.m	/^function mask=windows2mask(time,windows)$/;"	f
