@@ -9,10 +9,6 @@
 %   trial_data : the struct
 %   params     : parameter struct
 %       .out_signals  : which signals to calculate PDs for
-%       .out_signal_names : names of signals to be used as signalID weightTable
-%                           default - empty
-%       .trial_idx    : trials to use.
-%                         DEFAULT: 1:length(trial_data
 %       .in_signals   : which signals to calculate PDs on
 %                           note: each signal must have only two columns for a PD to be calculated
 %                           default - 'vel'
@@ -20,9 +16,10 @@
 %                       them together for a single eval. If false, treats the trial indices
 %                       like a list of blocked testing segments
 %       .num_boots    : # bootstrap iterations to use
+%       .model_type   : type of model to use (to be passed into getModel)
+%                       default - 'glm'
 %       .distribution : distribution to use. See fitglm for options
-%       .do_plot      : plot of directions for diagnostics, not for general
-%                       use.
+%       .prefix : prefix to add onto columns of weight table
 %
 % OUTPUTS:
 %   weightTable : calculated velocity PD table with CIs
@@ -30,20 +27,17 @@
 % Written by Raeed Chowdhury. Updated Nov 2017.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function weightTable = getTDPDs(trial_data,params)
+function weightTable = getTDModelWeights(trial_data,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
 out_signals      =  [];
-out_signal_names = {};
 trial_idx        =  1:length(trial_data);
 in_signals      = 'vel';
-block_trials     =  false;
+model_type = 'glm';
 distribution = 'Poisson';
-do_plot = false;
+prefix = '';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters
-td_fn_prefix     =  '';    % prefix for fieldname
-disp_times       = false; % whether to display compuation times
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,7 +45,7 @@ if nargin > 1, assignParams(who,params); end % overwrite parameters
 if isempty(out_signals), error('Need to provide output signal'); end
 
 out_signals = check_signals(trial_data(1),out_signals);
-response_var = get_vars(trial_data(trial_idx),out_signals);
+num_out_signals = sum(cellfun(@(x) length(x),out_signals(:,2)));
 
 in_signals = check_signals(trial_data(1),in_signals);
 for i = 1:size(in_signals,1)
@@ -59,15 +53,18 @@ for i = 1:size(in_signals,1)
         error('Each element of in_signals needs to refer to only two-column covariates')
     end
 end
-input_var = get_vars(trial_data(trial_idx),in_signals);
+
+if ~isempty(prefix)
+    if ~endsWith(prefix,'_')
+        prefix = [prefix '_'];
+    end
+end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % preallocate final table
-weightTable = getNeuronTableStarter(trial_data,params);
-tab_append = table(zeros(size(response_var,2),1),'VariableNames',{'baselineWeight'});
-weightTable = [weightTable tab_append];
+weightTable = table(zeros(num_out_signals,1),'VariableNames',{[prefix 'baselineWeight']});
 for in_signal_idx = 1:size(in_signals,1)
-    weightArr = zeros(size(response_var,2),size(in_signals{in_signal_idx,2},2));
-    tab_append = table(weightArr, 'VariableNames',{[in_signals{in_signal_idx,1} 'Weight']});
+    weightArr = zeros(num_out_signals,size(in_signals{in_signal_idx,2},2));
+    tab_append = table(weightArr, 'VariableNames',{[prefix in_signals{in_signal_idx,1} 'Weight']});
     weightTable = [weightTable tab_append];
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,7 +73,8 @@ model_params = struct('model_type',model_type,'model_name','temp',...
                             'in_signals',{in_signals},...
                             'out_signals',{out_signals},...
                             'add_pred_to_td',false);
-[~,temp_info] = getModel(td_test{spacenum},model_params);
+[~,temp_info] = getModel(trial_data,model_params);
 weights = temp_info.b';
 % replace zeros with actual weights
-weightTable{:,5:end} = weights;
+weight_width = size(weights,2);
+weightTable{:,:} = weights;

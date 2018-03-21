@@ -371,6 +371,7 @@ getNoiseCorr	lib/addCorrelatedNoise.m	/^function [td] = getNoiseCorr(trial_data,
 getNoiseCovar	lib/getNoiseCovar.m	/^function [noise_covar,td] = getNoiseCovar(trial_data,params)$/;"	f
 getOORTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getOORTaskTable.m	/^function getOORTaskTable(cds,times)$/;"	f
 getPCA	lib/TrialData/Analysis/getPCA.m	/^function [trial_data,pca_info] = getPCA(trial_data, params)$/;"	f
+getPDsfromWeights	lib/getPDsFromWeights.m	/^function pdTable = getPDsfromWeights(weightTable,params)$/;"	f
 getPEH	lib/getPEH.m	/^function [averageData,dataCIlow,dataCIhigh,dataWindow] = getPEH(dataTimes,data,eventTimes,window)$/;"	f
 getPotentSpace	lib/TrialData/Analysis/getPotentSpace.m	/^function [trial_data,pca_info] = getPotentSpace(trial_data,params)$/;"	f
 getRWMovements	lib/TrialData/Tools/getRWMovements.m	/^function rw_td = getRWMovements(trial_data,params)$/;"	f
@@ -382,6 +383,7 @@ getSeq_td	lib/TrialData/util/gpfa/getSeq_td.m	/^function seq = getSeq_td(dat, bi
 getSettingFileFullPath	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getSettingFileFullPath.m	/^function settingFileFullPath = getSettingFileFullPath(functionName)$/;"	f
 getShapeComps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [coeff,diffDist,matchDist,empDist]=getShapeComps(units,data,SNRThresh)$/;"	f
 getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data)$/;"	f
+getTDPDs	lib/getTDModelWeights.m	/^function weightTable = getTDPDs(trial_data,params)$/;"	f
 getTDPDs	lib/getTDPDs.m	/^function pdTable = getTDPDs(trial_data,params)$/;"	f
 getTDfields	lib/TrialData/Tools/getTDfields.m	/^function fn = getTDfields(trial_data,which_type)$/;"	f
 getTDidx	lib/TrialData/Tools/getTDidx.m	/^function [return_idx, trial_data] = getTDidx(trial_data,varargin)$/;"	f
@@ -474,6 +476,7 @@ loops_for_fr	lib/TrialData/Analysis/getDPCA.m	/^function [val,valIdx] = loops_fo
 lstsq	Archive/force.py	/^from numpy.linalg import lstsq$/;"	i
 magma	lib/PythonColors/Colormaps/magma.m	/^function [cm_data]=magma(m)$/;"	f
 makeBasis_PostSpike	lib/TrialData/util/makeBasis_PostSpike.m	/^function [iht, ihbas, ihbasis] = makeBasis_PostSpike(ihprs,dt,iht0)$/;"	f
+makeNeuronTableStarter	lib/makeNeuronTableStarter.m	/^function neuronTable = makeNeuronTableStarter(trial_data,params)$/;"	f
 makePrecomp	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePrecomp.m	/^function precomp = makePrecomp( seq , xDim )$/;"	f
 makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f
 makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f

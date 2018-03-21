@@ -1,22 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% function neuronTable = getNeuronTableStarter(trial_data,params)
+% function neuronTable = makeNeuronTableStarter(trial_data,params)
 %
-%   Gets weight table for given out_signal. You need to define the out_signal
-%   This is basically a wrapper around getModel, to put weights into a nice
-%       tabular format per neuron
+%   Makes the neuron table starter from the trial data structure
 %
 % INPUTS:
 %   trial_data : the struct
 %   params     : parameter struct
 %       .out_signal_names : names of signals to be used as signalID weightTable
 %                           default - empty
+%       .meta         : include any conditions that these fits should be tagged as
+%                       Ex. meta = struct('spaceNum',1) % for PM space fits
 % OUTPUTS:
 %   neuronTable : neuron table starter (first few columns of a neuron table)
 %
 % Written by Raeed Chowdhury. Updated Nov 2017.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function neuronTable = getNeuronTableStarter(trial_data,params)
+function neuronTable = makeNeuronTableStarter(trial_data,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
 out_signal_names = {};
@@ -42,3 +42,17 @@ else
 end
 
 neuronTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey','date','task','signalID'});
+
+% add meta fields if there are any
+if isfield(params,'meta')
+    fields = fieldnames(params.meta);
+    for fn = 1:numel(fields)
+        metafield = params.meta.(fields{fn});
+        if size(metafield,2)>1
+            metafield = {metafield};
+        end
+        arr_append = repmat(metafield,tab_height,1);
+        tab_append = table(arr_append,'VariableNames',{fields{fn}});
+        neuronTable = [neuronTable tab_append];
+    end
+end
