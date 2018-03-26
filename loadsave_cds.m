@@ -207,7 +207,7 @@ for fileIdx = 1:length(meta.taskAlias)
 end
 
 %% Save CDS
-save(fullfile(meta.folder,'CDS',[meta.neuralPrefix '_CDS.mat']),'cds','-v7.3')
+save(fullfile(meta.folder,'CDS',[meta.monkey '_' meta.date '_CDS.mat']),'cds','-v7.3')
 
 %% Make TD
 % COactpas
