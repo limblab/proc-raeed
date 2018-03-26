@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% function results = analyzeTRT(trial_data,params)
+% function results = analyzeMultiworkspace(trial_data,params)
 % 
 % For multiworkspace files, with dl and pm workspaces:
 %   * Fits three different coordinate frame models to data from both workspaces
@@ -10,7 +10,7 @@
 %   trial_data : the struct
 %   params     : parameter struct
 %       .neural_signals  : which signals to calculate PDs for
-%                           default: 'S1_FR'
+%                           default: 'S1_spikes'
 %       .model_type     :   type of model to fit
 %                           default; 'glm'
 %       .glm_distribution : distribution to use for GLM
@@ -29,10 +29,10 @@
 %       .td_eval        : evaluation metrics for various models, in cell array
 %                           rows: PM, DL, full
 %                           cols: ext, ego, musc
-%       .pdTables       : PD tables in cell array
+%       .weights       : PD tables in cell array
 %                           Rows: PM, DL
 %                           Cols: ext_model, ego_model, musc_model, real
-%       .tuning_curves  : tuning curves in cell array, same as pdTables
+%       .tuning_curves  : tuning curves in cell array, same as weights
 %       .shift_tables   : PD shift tables in cell array, cols same as above
 %       .glm_info       : output from fitting GLMs to different models
 %                           Cols: ext, ego, musc
@@ -41,12 +41,12 @@
 %       .td_test        : trial data structures used to test models
 %                           PM is first, DL is second
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function results = analyzeTRT(trial_data,params)
+function results = analyzeMultiworkspace(trial_data,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Set up
     % default parameters
-    neural_signals = 'S1_FR';
+    neural_signals = 'S1_spikes';
     glm_distribution = 'poisson';
     model_eval_metric = 'pr2';
     model_type = 'glm';
@@ -173,115 +173,38 @@ function results = analyzeTRT(trial_data,params)
         end
     end
 
-    % Evaluate model fits
-    % set up eval array
-    % row 1 is PM, row 2 is DL, and row 3 is PM and DL together
-    % col 1 is ext, col 2 is ego, col 3 is musc
-    td_eval = cell(3,3);
-    eval_params = glm_info;
-    for modelnum = 1:3
-        eval_params{modelnum}.eval_metric = model_eval_metric;
-        for spacenum = 1:2
-            td_eval{spacenum,modelnum} = squeeze(evalModel(td_test{spacenum},eval_params{modelnum}));
-        end
-        td_eval{end,modelnum} = squeeze(evalModel([td_test{2} td_test{1}],eval_params{modelnum}));
-    end
-
-%% Get extrinsic test tuning (to calculate later quantities from)
-    tuningTable = table();
-    trial_idx = randi(length(td_test{1}),length(td_test{1}),num_boots);
-    if verbose
-        tic
-    end
-    for bootctr = 1:num_boots
-        for spacenum = 1:2
-            tempTuningTable = makeNeuronTableStarter(td_train,struct('out_signal_names',td_test{spacenum}(1).S1_unit_guide,...
-                                                                'meta',struct('spaceNum',spacenum)));
-            for modelnum = 1:length(model_names)
-                % get tuning weights for each model
-                weightParams = struct('out_signals',model_names(modelnum),'prefix',model_names{modelnum});
-                temp_weight_table = getTDModelWeights(td_test{spacenum}(trial_idx(:,bootctr)),weightParams);
-
-                % append table to full tuning table for space
-                tempTuningTable = [tempTuningTable temp_weight_table];
-            end
-
-            % smoosh space tables together
-            tuningTable = [tuningTable;tempTuningTable];
-        end
-        if verbose
-            disp(['Bootstrap sample ' num2str(bootctr) ', ending at ' num2str(toc) 's'])
-        end
-    end
-
 %% Get PDs and tuning curves for the modeled and actual neurons
     % set up outputs
-    pdTables = cell(2,4); % PM is first row, DL is second. Column order is Ext, Ego, Musc, Real
-    tuning_curves = cell(2,4); % PM is first row, DL is second. Column order is Ext, Ego, Musc, Real
-    isTuned = cell(1,4);
-    pd_params = cell(1,4);
-    tuning_params = cell(1,4);
+    weights = cell(2,4); % PM is first row, DL is second. Column order is Ext, Ego, Musc, Real
     
-    num_bins = 8;
+    % set up parameters
     % get PDs and tuning curves
+    figure
     for modelnum = 1:4
-        tuning_params{modelnum} = struct('num_bins',num_bins,'out_signals',{model_names(modelnum)},'out_signal_names',td_train(1).S1_unit_guide);
+        model_params = struct('model_type',model_type,'model_name','temp',...
+                                        'in_signals',{{'pos',1:2;'vel',1:2}},...
+                                        'out_signals',{model_names(modelnum)});
     
         for spacenum = 1:2
-            pdTables{spacenum,modelnum} = getPDsFromWeights(tuningTable);
-            tuning_curves{spacenum,modelnum} = getTuningCurves(td_test{spacenum},tuning_params{modelnum});
+            [~,temp_info] = getModel(td_test{spacenum},model_params);
+            weights{spacenum,modelnum} = temp_info.b;
         end
-        % isTuned{modelnum} = checkIsTuned(pdTables{1,modelnum}) & checkIsTuned(pdTables{2,modelnum});
+
+        % make quiver plot
+        w_1 = weights{1,modelnum}(4:5,:);
+        w_2 = weights{2,modelnum}(4:5,:);
+        dw = w_2-w_1;
+
+        ax(modelnum) = subplot(2,2,modelnum);
+        scatter(w_1(1,:),w_1(2,:),5,[0 0 1],'filled')
+        hold on
+        scatter(w_2(1,:),w_2(2,:),5,[1 0 0],'filled')
+        axis equal
+        xlims = get(gca,'xlim');
+        ylims = get(gca,'ylim');
+        plot([0 0],ylims,'-k','linewidth',2)
+        plot(xlims,[0 0],'-k','linewidth',2)
+        quiver(w_1(1,:),w_1(2,:),dw(1,:),dw(2,:),0,'filled','linewidth',1.5)
+        title(model_names{modelnum})
     end
-
-%% Bootstrap on PD shifts
-    % get shifts from weights
-    % shift_tables = cell(1,length(model_names));
-    % num_internal_boots = 1;
-    % trial_idx = randi(length(td_test{1}),length(td_test{1}),num_boots);
-    % if verbose
-    %     tic
-    % end
-    % for bootctr = 1:num_boots
-    %     for modelctr = 1:length(model_names)
-    %         pd_params = struct('num_boots',num_internal_boots,'out_signals',{model_names(modelctr)},'out_signal_names',td_train(1).S1_unit_guide,'distribution',glm_distribution);
-
-    %         pm_pdTable = getTDPDs(td_test{1}(trial_idx(:,bootctr)),pd_params);
-    %         dl_pdTable = getTDPDs(td_test{2}(trial_idx(:,bootctr)),pd_params);
-
-    %         % compose shift table for this model/bootstrap sample
-    %         temp_shift_table = pm_pdTable;
-    %         temp_shift_table.velPD = minusPi2Pi(dl_pdTable.velPD-pm_pdTable.velPD);
-    %         temp_shift_table.velPDCI = minusPi2Pi(dl_pdTable.velPDCI-pm_pdTable.velPDCI); % this doesn't actually mean anything with one internal boot sample
-    %         % don't care about moddepth currently
-
-    %         if bootctr == 1
-    %             % slot new table into cell array
-    %             shift_tables{modelctr} = temp_shift_table;
-    %         else
-    %             % append to old table
-    %             shift_tables{modelctr} = [shift_tables{modelctr};temp_shift_table];
-    %         end
-
-    %     end
-    %     if verbose
-    %         disp(['Bootstrap sample ' num2str(bootctr) ', ending at ' num2str(toc) 's'])
-    %     end
-    % end
-
-%% Package up outputs
-    results = struct('td_eval',{td_eval},...
-                        'tuningTable',{tuningTable},...
-                        'glm_info',{glm_info},...
-                        'td_train',{td_train},...
-                        'td_test',{td_test});
-
-    % results = struct('td_eval',{td_eval},...
-    %                     'weight_tables',{weight_tables},...
-    %                     %'pdTables',{pdTables},...
-    %                     %'tuning_curves',{tuning_curves},...
-    %                     %'shift_tables',{shift_tables},...
-    %                     'glm_info',{glm_info},...
-    %                     %'isTuned',{isTuned},...
-    %                     'td_train',{td_train},...
-    %                     'td_test',{td_test});
+    linkaxes(ax,'xy')

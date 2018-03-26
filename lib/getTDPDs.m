@@ -60,40 +60,18 @@ for i = 1:size(in_signals,1)
     end
 end
 input_var = get_vars(trial_data(trial_idx),in_signals);
-
-if numel(unique(cat(1,{trial_data.monkey}))) > 1
-    error('More than one monkey in trial data')
-end
-monkey = repmat({trial_data(1).monkey},size(response_var,2),1);
-if numel(unique(cat(1,{trial_data.date}))) > 1
-    date = cell(size(response_var,2),1);
-    warning('More than one date in trial data')
-else
-    date = repmat({trial_data(1).date},size(response_var,2),1);
-end
-if numel(unique(cat(1,{trial_data.task}))) > 1
-    task = cell(size(response_var,2),1);
-    warning('More than one task in trial data')
-else
-    task = repmat({trial_data(1).task},size(response_var,2),1);
-end
-
-out_signal_names = reshape(out_signal_names,size(response_var,2),[]);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % preallocate final table
 dirArr = zeros(size(response_var,2),1);
 dirCIArr = zeros(size(response_var,2),2);
 moddepthArr = zeros(size(response_var,2),1);
 moddepthCIArr = zeros(size(response_var,2),2);
-pdTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey','date','task','signalID'});
+pdTable = getNeuronTableStarter(trial_data,params);
 for in_signal_idx = 1:size(in_signals,1)
     tab_append = table(dirArr,dirCIArr,moddepthArr,moddepthCIArr,...
                         'VariableNames',{[in_signals{in_signal_idx,1} 'PD'],[in_signals{in_signal_idx,1} 'PDCI'],[in_signals{in_signal_idx,1} 'Moddepth'],[in_signals{in_signal_idx,1} 'ModdepthCI']});
     pdTable = [pdTable tab_append];
 end
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Calculate PD
 bootfunc = @(data) fitglm(data(:,2:end),data(:,1),'Distribution',distribution);
@@ -154,9 +132,10 @@ for uid = 1:size(response_var,2)
                 pdTable.([move_corr 'Moddepth'])(uid,:)= mean(moddepths);
                 pdTable.([move_corr 'ModdepthCI'])(uid,:)= prctile(moddepths,[2.5 97.5]);
             else
-                % moddepth is poorly defined for GLM context
-                pdTable.([move_corr 'Moddepth'])(uid,:)= -1;
-                pdTable.([move_corr 'ModdepthCI'])(uid,:)= [-1 -1];
+                % moddepth is poorly defined for GLM context, but for this case, let's use sqrt(sum(squares))
+                moddepths = sqrt(sum(boot_coef(:,(2*in_signal_idx):(2*in_signal_idx+1)).^2,2));
+                pdTable.([move_corr 'Moddepth'])(uid,:)= mean(moddepths);
+                pdTable.([move_corr 'ModdepthCI'])(uid,:)= prctile(moddepths,[2.5 97.5]);
             end
         end
     end

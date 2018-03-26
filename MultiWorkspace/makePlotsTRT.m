@@ -2,21 +2,32 @@
 % This script makes plots from results given by analyzeTRT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Plot handle positions
-    if verbose
-        figure
-        pos_dl = cat(1,td_test{2}.pos);
-        plot(pos_dl(:,1),pos_dl(:,2),'r')
-        hold on
-        pos_pm = cat(1,td_test{1}.pos);
-        plot(pos_pm(:,1),pos_pm(:,2),'b')
-        axis equal
+%%%%%%%%%%%%%%%%% Main line figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Figure 1 - Task and classic analysis methods
+    % 1a - Monkey using manipulandum (in illustrator)
 
-        % clean up
-        clearvars pos_*
-    end
+    % 1b - example movements in two workspaces (with neural firing dots?)
+    % First, get example trials
+    [~,td_pm_ex] = getTDidx(trial_data,'spaceNum',1,'result','R','rand',1);
+    [~,td_dl_ex] = getTDidx(trial_data,'spaceNum',2,'result','R','rand',1);
+    % trim to just go from target start to end
+    td_ex = trimTD([td_pm_ex td_dl_ex],{'idx_ctHoldTime',0},{'idx_endTime',0});
+    % plot the example trials
+    figure
+    plotTRTTrials(td_ex);
+    % plot neural firing?
+    unit_idx = 1
+    plotSpikesOnHandle(td_ex,struct('unit_idx',unit_idx,'spikespec','b.','spikesize',10));
+    % plot of same muscle movement given different Jacobians?
 
-%% Plot example neuron model fit
+    % 1c - example directional rasters and tuning curves?
+
+%% Figure 2 - Analysis block diagrams
+    % 2a - Block diagram of three different models
+
+    % 2b - Breaking up the data into training and testing sets
+
+    % 2c - Example neural predictions for each model
     % neuron 1 has decent pseudo R2
     for neuron_idx = 1:length(td_eval{2,1})
         h = figure;
@@ -42,9 +53,37 @@
         linkaxes([ax1 ax2],'x')
         waitfor(h)
     end
-
-    % clean up
     clearvars neuron_idx temp_* ax1 ax2
+
+%% Figure 3 - Comparison of modeled tuning curves
+    % 3a - a few example flat tuning curves (models on top of each other) DL under PM
+
+    % 3b - DNA plot for each model/real tuning for each monkey
+
+%% Figure 4 - Summaries
+    % 3c - Summary over neurons: PD shift plots for each model and each monkey
+    % 3d - Summary over monkeys/sessions: Bar chart of variance explained for each model by 1:1 line
+
+%%%%%%%%%%%%%%%%% Supplementary Figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Supplementary A - pR2s against each other for muscle vs endpoint
+
+%% Supplementary B - Figure showing why one monkey didn't have as large a change in tuning
+
+%% Plot handle positions
+    if verbose
+        figure
+        pos_dl = cat(1,results.td_test{2}.pos);
+        plot(pos_dl(:,1),pos_dl(:,2),'r')
+        hold on
+        pos_pm = cat(1,results.td_test{1}.pos);
+        plot(pos_pm(:,1),pos_pm(:,2),'b')
+        axis equal
+
+        % clean up
+        clearvars pos_*
+    end
+
+%% Plot example neuron model fit
 
 %% Plot pR2s against each other
     % av_pR2_ext_dl = mean(td_ext_dl_eval,2);
@@ -91,13 +130,13 @@
 %% Plot comparison of actual tuning curves with various modeled tuning curves
     % first compare PM and DL tuning for each model
     for modelnum = 1:4
-        figure;compareTuning(tuning_curves(:,modelnum),pdTables(:,modelnum),find(isTuned{4}))
+        figure;compareTuning(results.tuning_curves(:,modelnum),results.pdTables(:,modelnum),find(results.isTuned{4}))
     end
 
     % then compare PM and DL tuning for each model
     % reorder for color consistency..
     for spacenum = 1:2
-        figure;compareTuning(tuning_curves(spacenum,[3,1,2,4]),pdTables(spacenum,[3,1,2,4]),find(isTuned{4}))
+        figure;compareTuning(results.tuning_curves(spacenum,[3,1,2,4]),results.pdTables(spacenum,[3,1,2,4]),find(results.isTuned{4}))
     end
 
 %% Plot DL vs PM just for neurons actually tuned to velocity
@@ -114,7 +153,7 @@
     colors = {'r','g','b'};
     titles = {'Hand-based model PD shift vs Actual PD shift','Egocentric model PD shift vs Actual PD shift','Muscle-based model PD shift vs Actual PD shift'};
     for modelnum = 1:3
-        comparePDClouds(shift_tables{4},shift_tables{modelnum},struct('filter_tuning',1),colors{modelnum},'facealpha',0.5)
+        comparePDClouds(results.shift_tables{4},results.shift_tables{modelnum},struct('filter_tuning',1),colors{modelnum},'facealpha',0.5)
         xlabel 'Actual PD Shift'
         ylabel 'Modeled PD Shift'
         title(titles{modelnum})
@@ -122,3 +161,23 @@
 
     % clean up
     clearvars colors titles
+
+%% Plot tuning weight clouds
+    tuningHull = getTuningHull(results.tuningTable);
+    % loop over each unit in one workspace
+    % n_rows = ceil(sqrt(height(signalIDs)+1));
+    cloud_fig = figure;
+    surf_fig = figure;
+    for neuron_idx = 10%1:height(signalIDs)
+        close_fig = figure;
+
+        figure(cloud_fig)
+        clf
+        plotMWTuningCloud(tuningHull,neuron_idx)
+
+        figure(surf_fig)
+        clf
+        plotMultiworkspaceTuning(results,neuron_idx)
+
+        waitfor(close_fig)
+    end
