@@ -20,6 +20,8 @@
 %                       default - 'glm'
 %       .distribution : distribution to use. See fitglm for options
 %       .prefix : prefix to add onto columns of weight table
+%       .out_signal_names : names for out_signals (used in makeNeuronTableStarter)
+%       .meta   : meta parameters for makeNeuronTableStarter
 %
 % OUTPUTS:
 %   weightTable : calculated velocity PD table with CIs
@@ -78,3 +80,7 @@ weights = temp_info.b';
 % replace zeros with actual weights
 weight_width = size(weights,2);
 weightTable{:,:} = weights;
+
+% add table starter to head
+tableStarter = makeNeuronTableStarter(trial_data,params);
+weightTable = [tableStarter weightTable];
