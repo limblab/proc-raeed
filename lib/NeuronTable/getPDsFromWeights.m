@@ -79,6 +79,7 @@ for in_signal_idx = 1:length(weight_cols_idx)
         % get CI of moddepth
         moddepthCI_append(key_idx,:) = prctile(r,[2.5 97.5]);
         % get circular CI of PD
+        % PD_append(key_idx,:) = circ_mean(th);
         PDCI_append(key_idx,:) = minusPi2Pi(prctile(minusPi2Pi(th-PD_append(key_idx,:)),[2.5 97.5]) + PD_append(key_idx,:));
 
     end

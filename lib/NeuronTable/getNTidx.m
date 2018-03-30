@@ -62,6 +62,9 @@ for i = 1:length(fn)
             idx = idx & strcmpi(neuronTable.(fn{i}),fv{i});
         elseif iscell(fv{i})
             idx = idx & ismember(neuronTable.(fn{i}),fv{i});
+        elseif size(fv{i},1)==1 && size(fv{i},2)>1
+            % match by row
+            idx = idx & ismember(neuronTable.(fn{i}),fv{i},'rows');
         else
             idx = idx & ismember(neuronTable.(fn{i}),fv{i});
         end
