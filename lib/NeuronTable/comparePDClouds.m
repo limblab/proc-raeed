@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% comparePDClouds Plots patches corresponding to 95% confidence intervals
+% comparePDClouds Plots hollow patches corresponding to 95% confidence intervals
 %   of PDs against each other. Uses pdTable structure, where each row is
 %   a bootstrap sample of a PD for a particular signal
 %
@@ -15,8 +15,8 @@
 %                       Possible values are: [],1,2 (defaults to [])
 %           .CI_thresh - threshold for confidence interval width in filter_tuning
 %                       (defaults to pi/4)
-%       varargin - various plotting parameters, like color and facealpha,
-%               input like patch (see patch for details)
+%       varargin - various plotting parameters, like color and linewidth,
+%               input like plot (see plot for details)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function comparePDClouds(pdTable1,pdTable2,params,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,7 +31,7 @@ if nargin > 1, assignParams(who,params); end % overwrite parameters
 
 % Loop through and get mean shifts out of bootstrapped shifts
 %error
-signalIDs = unique(pdTable1(:,{'monkey','date','signalID'}));
+keys = unique(pdTable1(:,{'monkey','date','signalID'}));
 
 % set up figure axes
 figure
@@ -43,11 +43,11 @@ axis equal
 set(gca,'box','off','tickdir','out','xtick',[-pi pi],'ytick',[-pi pi],'xlim',[-pi pi],'ylim',[-pi pi],...
 'xticklabel',{'-\pi','\pi'},'yticklabel',{'-\pi','\pi'})
 
-for i = 1:size(signalIDs,1)
+for i = 1:size(keys,1)
     % make new table set
     % Populate new table with only that unit's PD shifts
     ID = pdTable1(:,{'monkey','date','signalID'});
-    unit_idx = ismember(ID,signalIDs(i,:));
+    unit_idx = ismember(ID,keys(i,:));
     pdTable_unit1 = pdTable1(unit_idx,:);
     pdTable_unit2 = pdTable2(unit_idx,:);
 
@@ -63,17 +63,20 @@ for i = 1:size(signalIDs,1)
     centered_clust = minusPi2Pi(clust-repmat(means,size(clust,1),1));
 
     % check whether to plot cluster
+    CIthresh = pi/3;
     if ~isempty(filter_tuning)
         if ismember(1,filter_tuning)
             % skip cluster if range is above CI_thresh
-            if diff(prctile(centered_clust(:,1),[2.5 97.5]))>pi/3
+            if diff(prctile(centered_clust(:,1),[2.5 97.5]))>CIthresh
+                % keys(i,:)
                 continue
             end
         end
         if ismember(2,filter_tuning)
             % skip if range is above CI_thresh
             % skip cluster if range is above CI_thresh
-            if diff(prctile(centered_clust(:,2),[2.5 97.5]))>pi/3
+            if diff(prctile(centered_clust(:,2),[2.5 97.5]))>CIthresh
+                % keys(i,:)
                 continue
             end
         end

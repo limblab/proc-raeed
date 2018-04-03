@@ -1,4 +1,4 @@
-function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData, which_neurons )
+function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData)
 %IRISPLOT Create iris plot for PM and DL
 %   Inputs - PM and DL pdData tables with PDs calculated (extract from
 %   binnedData object), logical array of neurons to plot (if tuned)
@@ -6,22 +6,21 @@ function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData, which_neurons )
 %   original data
 
 %extract relevant information
-angsPM = PM_pdData.velDir;
-dirCIPM = PM_pdData.velDirCI;
-angsDL = DL_pdData.velDir;
-dirCIDL = DL_pdData.velDirCI;
+angsPM = PM_pdData.velPD;
+dirCIPM = PM_pdData.velPDCI;
+angsDL = DL_pdData.velPD;
+dirCIDL = DL_pdData.velPDCI;
 
 % check tuned neurons
-isTuned_params = struct('move_corr','vel','CIthresh',pi/3);
-tunedNeurons = checkIsTuned(PM_pdData,isTuned_params)...
-            & checkIsTuned(DL_pdData,isTuned_params);
-
-if(~isempty(which_neurons))
-    tunedNeurons = tunedNeurons & which_neurons;
-end
-
-angsPMtuned = angsPM(tunedNeurons);
-angsDLtuned = angsDL(tunedNeurons);
+% isTuned_params = struct('move_corr','vel','CIthresh',pi/3);
+% tunedNeurons = checkIsTuned(PM_pdData,isTuned_params)...
+%             & checkIsTuned(DL_pdData,isTuned_params);
+% 
+% if(~isempty(which_neurons))
+%     tunedNeurons = tunedNeurons & which_neurons;
+% end
+% angsPM = angsPM(which_neurons);
+% angsDL = angsDL(which_neurons);
 
 %plot circles
 h=polar(linspace(-pi,pi,1000),ones(1,1000));
@@ -31,8 +30,8 @@ h=polar(linspace(-pi,pi,1000),0.5*ones(1,1000));
 set(h,'linewidth',2,'color',[0.6 0.5 0.7])
 
 % plot changes with alpha dependent on CI width
-for unit_ctr = 1:length(angsPMtuned)
-    h=polar(linspace(angsPMtuned(unit_ctr),angsDLtuned(unit_ctr),2),linspace(0.5,1,2));
+for unit_ctr = 1:length(angsPM)
+    h=polar(linspace(angsPM(unit_ctr),angsDL(unit_ctr),2),linspace(0.5,1,2));
     set(h,'linewidth',2,'color',[0.1 0.6 1])
 end
 

@@ -36,6 +36,9 @@ if ~iscell(curves) || ~iscell(pds)
     error('curves and pds must be cell arrays of tables')
 end
 
+% make curves a row cell array
+curves = reshape(curves,1,length(curves)); % this should throw an error if it's not a 1-d cell array
+
 if nargin >4, move_cor = move_corIn; end 
 %% Plot tuning curves
 % pick condition colors
@@ -52,17 +55,17 @@ for neuron_idx = 1:length(which_units)
     for cond_idx = 1:numel(curves)
         pdTable = pds{cond_idx};
         curveTable = curves{cond_idx};
-        % plotFlatTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
-        plotTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
+        plotFlatTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
+        % plotTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
         hold on
     end
-%     if isnumeric(signalID(which_units(neuron_idx)))
-%         label = ['Neuron ' num2str(signalID(which_units(neuron_idx)))];
-%     else
-%         label = ['Neuron ' signalID(which_units(neuron_idx))];
-%     end
-% 
-%     title(label)
+    if isnumeric(signalID(which_units(neuron_idx)))
+        label = ['Neuron ' num2str(signalID(which_units(neuron_idx)))];
+    else
+        label = ['Neuron ' signalID(which_units(neuron_idx))];
+    end
+
+    title(label)
 end
 
 subplot(n_rows,n_rows,n_rows^2)

@@ -16,7 +16,7 @@ end
 fr_grid = griddata(x_cent,y_cent,fr,xq,yq,'natural');
 scatter(xq(:)+mean(x),yq(:)+mean(y),10,fr_grid(:),'filled')
 % mesh(xq,yq,fr_grid)
-% imagesc(fr_grid)
+% imagesc(gridrange+mean(x),gridrange+mean(y),fr_grid); axis xy
 
 clims = prctile(fr,[5 95]);
 caxis(clims)

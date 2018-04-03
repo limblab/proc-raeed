@@ -26,6 +26,8 @@ if(~isempty(curve))
     r_fill = [fliplr(curve.CIhigh) curve.CIhigh(end) curve.CIlow(end) curve.CIlow];
     [x_fill,y_fill] = pol2cart(th_fill,r_fill);
     patch(x_fill,y_fill,color,'facealpha',0.3,'edgealpha',0);
+    % plot so things work in illustrator
+    % plot(x_fill,y_fill,'color',color,'linewidth',1.85);
 end
 
 % PD
@@ -35,8 +37,10 @@ if(~isempty(pdData))
     end
     h=polar(repmat(pdData.(move_cor),2,1),maxRadius*[0;1],linspec);
     set(h,'linewidth',2,'color',color)
-    th_fill = [pdData.([move_cor, 'CI'])(2) pdData.(move_cor) pdData.([move_cor, 'CI'])(1) 0];
-    r_fill = [maxRadius maxRadius maxRadius 0];
+    th_fill = [0 pdData.([move_cor, 'CI'])(2) pdData.(move_cor) pdData.([move_cor, 'CI'])(1) 0];
+    r_fill = [0 maxRadius maxRadius maxRadius 0];
     [x_fill,y_fill] = pol2cart(th_fill,r_fill);
     patch(x_fill,y_fill,color,'edgecolor','none','facealpha',0.3);
+    % plot so things work in illustrator
+    % plot(x_fill,y_fill,'color',color,'linewidth',1.85);
 end
