@@ -33,13 +33,13 @@ function weightTable = getTDModelWeights(trial_data,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
 out_signals      =  [];
-trial_idx        =  1:length(trial_data);
 in_signals      = 'vel';
 model_type = 'glm';
-distribution = 'Poisson';
 prefix = '';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters
+do_eval_model = false;
+eval_metric = 'pr2';
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,13 +74,23 @@ end
 model_params = struct('model_type',model_type,'model_name','temp',...
                             'in_signals',{in_signals},...
                             'out_signals',{out_signals},...
-                            'add_pred_to_td',false);
-[~,temp_info] = getModel(trial_data,model_params);
+                            'add_pred_to_td',do_eval_model);
+[td_temp,temp_info] = getModel(trial_data,model_params);
 weights = temp_info.b';
 % replace zeros with actual weights
-weight_width = size(weights,2);
 weightTable{:,:} = weights;
 
 % add table starter to head
 tableStarter = makeNeuronTableStarter(trial_data,params);
 weightTable = [tableStarter weightTable];
+
+% get model evaluation
+if do_eval_model
+    eval_params = temp_info;
+    eval_params.eval_metric = eval_metric;
+    eval_params.num_boots = 1;
+    model_eval = squeeze(evalModel(td_temp,eval_params))';
+    model_eval_table = array2table(model_eval,'VariableNames',strcat({prefix},'eval'));
+    weightTable = [weightTable model_eval_table];
+end
+
