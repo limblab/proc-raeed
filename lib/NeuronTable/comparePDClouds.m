@@ -4,11 +4,12 @@
 %   a bootstrap sample of a PD for a particular signal
 %
 %   Inputs:
-%       pdTable1 - PD table for x-axis
-%       pdTable2 - PD table for y-axis
+%       pdTable - PD table to get tuning from
 %       params - parameters struct
 %           .move_corr - movement correlate that PD was calculated on
 %                        (defaults to 'vel')
+%           .model1 - Name of model for x-axis of plot
+%           .model2 - Name of model for y-axis of plot
 %           .filter_tuning - which of the pdTables to filter units out by
 %                       Checks if 95% confidence interval along a particular
 %                       direction < CI_thresh
@@ -18,20 +19,25 @@
 %       varargin - various plotting parameters, like color and linewidth,
 %               input like plot (see plot for details)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function comparePDClouds(pdTable1,pdTable2,params,varargin)
+function comparePDClouds(pdTable,params,varargin)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
 move_corr      =  'vel';
+model1 = 'S1_FR';
+model2 = '';
 filter_tuning = []; % filter by cloud width in one or both of the tables (should be either empty, 1, or 2)
 CI_thresh = pi/4; % threshold for what's considered a tuned neuron in filtering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters
-if nargin > 1, assignParams(who,params); end % overwrite parameters
+assignParams(who,params);% overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if isempty(model2)
+    error('Need to provide model for comparison')
+end
 
 % Loop through and get mean shifts out of bootstrapped shifts
 %error
-keys = unique(pdTable1(:,{'monkey','date','signalID'}));
+keys = unique(pdTable(:,{'monkey','date','signalID'}));
 
 % set up figure axes
 figure
@@ -46,10 +52,9 @@ set(gca,'box','off','tickdir','out','xtick',[-pi pi],'ytick',[-pi pi],'xlim',[-p
 for i = 1:size(keys,1)
     % make new table set
     % Populate new table with only that unit's PD shifts
-    ID = pdTable1(:,{'monkey','date','signalID'});
+    ID = pdTable(:,{'monkey','date','signalID'});
     unit_idx = ismember(ID,keys(i,:));
-    pdTable_unit1 = pdTable1(unit_idx,:);
-    pdTable_unit2 = pdTable2(unit_idx,:);
+    pdTable_unit = pdTable(unit_idx,:);
 
     % now create hulls and plot
 
@@ -58,16 +63,17 @@ for i = 1:size(keys,1)
     %plot(circ_mean(pdTable_unit1.([move_corr 'PD'])),circ_mean(pdTable_unit{modelctr}.([move_corr 'PD'])),'ko','linewidth',2);
 
     % get cluster in easy to work with form
-    clust = [pdTable_unit1.([move_corr 'PD']) pdTable_unit2.([move_corr 'PD'])];
-    means = [circ_mean(pdTable_unit1.([move_corr 'PD'])) circ_mean(pdTable_unit2.([move_corr 'PD']))];
+    model1_colname = sprintf('%s_%sPDShift',model1,move_corr);
+    model2_colname = sprintf('%s_%sPDShift',model2,move_corr);
+    clust = [pdTable_unit.(model1_colname) pdTable_unit.(model2_colname)];
+    means = [circ_mean(clust(:,1)) circ_mean(clust(:,2))];
     centered_clust = minusPi2Pi(clust-repmat(means,size(clust,1),1));
 
     % check whether to plot cluster
-    CIthresh = pi/3;
     if ~isempty(filter_tuning)
         if ismember(1,filter_tuning)
             % skip cluster if range is above CI_thresh
-            if diff(prctile(centered_clust(:,1),[2.5 97.5]))>CIthresh
+            if diff(prctile(centered_clust(:,1),[2.5 97.5]))>CI_thresh
                 % keys(i,:)
                 continue
             end
@@ -75,7 +81,7 @@ for i = 1:size(keys,1)
         if ismember(2,filter_tuning)
             % skip if range is above CI_thresh
             % skip cluster if range is above CI_thresh
-            if diff(prctile(centered_clust(:,2),[2.5 97.5]))>CIthresh
+            if diff(prctile(centered_clust(:,2),[2.5 97.5]))>CI_thresh
                 % keys(i,:)
                 continue
             end
@@ -86,7 +92,6 @@ for i = 1:size(keys,1)
     % should I be calculating geodesic distance somehow? seems like no, based on a preliminary google search
     dists = sqrt(sum(centered_clust.^2,2));
     inliers = dists<prctile(dists,95);
-    clust = clust(inliers,:);
     centered_clust = centered_clust(inliers,:);
 
     % generate convex hull of inliers
@@ -97,7 +102,7 @@ for i = 1:size(keys,1)
     patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2),varargin{:});
     patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2),varargin{:});
     patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
-    p=patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
+    patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
     
     % plot clusters
     % scatter(centered_clust(:,1)+means(1),centered_clust(:,2)+means(2),[],get(p,'facecolor'));
