@@ -5,7 +5,7 @@
 %   Inputs:
 %       tuningTable
 %       params - params struct
-%           .CIthresh - confidence interval percentage (defaults to 95)
+%           .CIpercentile - confidence interval percentage (defaults to 95)
 %
 %   Outputs:
 %       tuningHulls - table of tuning convex hulls
@@ -13,13 +13,14 @@
 function tuningHulls = getTuningHull(tuningTable,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
-CIthresh = 95; % percent confidence interval
+CIpercentile = 95; % percent confidence interval
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Find non-bootstrapped headers
-meta_header_idx = ~endsWith(tuningTable.Properties.VariableNames,'Weight');
-weight_header_idx = ~meta_header_idx;
+weight_header_idx = endsWith(tuningTable.Properties.VariableNames,'Weight');
+meta_header_idx = ~weight_header_idx &...
+                  ~endsWith(tuningTable.Properties.VariableNames,'eval');
 
 % Loop through and get mean shifts out of bootstrapped shifts
 unitIDs = unique(tuningTable(:,meta_header_idx));
@@ -45,7 +46,7 @@ for i = 1:size(unitIDs,1)
 
         % figure out 95% confidence interval
         dists = sqrt(sum(centered_clust.^2,2));
-        inliers = dists<prctile(dists,CIthresh);
+        inliers = dists<prctile(dists,CIpercentile);
         clust = clust(inliers,:);
         centered_clust = centered_clust(inliers,:);
         

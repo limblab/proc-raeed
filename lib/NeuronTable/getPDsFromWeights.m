@@ -19,8 +19,9 @@ function pdTable = getPDsfromWeights(weightTable)
 % get weight column indices
 baseline_cols = contains(weightTable.Properties.VariableNames,'baseline');
 weight_cols = endsWith(weightTable.Properties.VariableNames,'Weight') & ~baseline_cols;
+eval_cols = endsWith(weightTable.Properties.VariableNames,'eval');
 % get key column indices
-key_cols = ~weight_cols & ~baseline_cols;
+key_cols = ~weight_cols & ~baseline_cols & ~eval_cols;
 keyTable = unique(weightTable(:,key_cols));
 pdTable = unique(weightTable(:,key_cols));
 
