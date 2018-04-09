@@ -14,6 +14,8 @@
 %                           'acc' : acceleration of handle
 %                           'force'  : force on handle
 %       .num_bins - number of directional bins (default: 8)
+%       .prefix : prefix to add onto columns of weight table
+%       .meta   : meta parameters for makeNeuronTableStarter
 % OUTPUTS -
 %   curves - table of tuning curves for each column in signal, with 95% CI
 %
@@ -24,12 +26,13 @@ function [curves] = getTuningCurves(trial_data,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DEFAULT PARAMETERS
 out_signals      =  [];
-out_signal_names = {};
 use_trials        =  1:length(trial_data);
 move_corr      =  'vel';
 num_bins        = 8;
+prefix = '';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters?
+calc_CIs = true;
 if nargin > 1, assignParams(who,params); end % overwrite parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 possible_corrs = {'vel','acc','force'};
@@ -44,58 +47,52 @@ response_var = get_vars(trial_data,out_signals);
 move_corr = check_signals(trial_data(1),move_corr);
 move_var = get_vars(trial_data,move_corr);
 
-if numel(unique(cat(1,{trial_data.monkey}))) > 1
-    error('More than one monkey in trial data')
-end
-monkey = repmat({trial_data(1).monkey},size(response_var,2),1);
-if numel(unique(cat(1,{trial_data.date}))) > 1
-    date = cell(size(response_var,2),1);
-    warning('More than one date in trial data')
-else
-    date = repmat({trial_data(1).date},size(response_var,2),1);
-end
-if numel(unique(cat(1,{trial_data.task}))) > 1
-    task = cell(size(response_var,2),1);
-    warning('More than one task in trial data')
-else
-    task = repmat({trial_data(1).task},size(response_var,2),1);
-end
-
-out_signal_names = reshape(out_signal_names,size(response_var,2),[]);
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % get bins
 bins = linspace(-pi,pi,num_bins+1);
 bins = bins(2:end);
 bin_spacing = unique(diff(bins));
-if numel(bin_spacing)>1
-    error('Something went wrong...')
-end
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-dir = atan2(move_var(:,2),move_var(:,1));
-spd = sqrt(sum(move_var.^2,2));
+assert(numel(bin_spacing)==1,'Something went wrong...')
 
 % bin directions
+dir = atan2(move_var(:,2),move_var(:,1));
 dir_bins = round(dir/bin_spacing)*bin_spacing;
 dir_bins(dir_bins==-pi) = pi;
 
 % find response_var in each bin, along with CI
-for i = 1:length(bins)
+curve = zeros(size(response_var,2),num_bins);
+curve_CIhigh = zeros(size(response_var,2),num_bins);
+curve_CIlow = zeros(size(response_var,2),num_bins);
+for i = 1:num_bins
     % get response_var when move_var is in the direction of bin
     % Also transpose response_var so that rows are neurons and columns are observations
     response_var_in_bin = response_var(dir_bins==bins(i),:)';
 
     % Mean binned response_var has normal-looking distribution (checked with
     % bootstrapping on a couple S1 neurons)
-    binnedResponse(:,i) = mean(response_var_in_bin,2); % mean firing rate
-    binned_stderr = std(response_var_in_bin,0,2)/sqrt(size(response_var_in_bin,2)); % standard error
-    tscore = tinv(0.975,size(response_var_in_bin,2)-1); % t-score for 95% CI
-    binned_CIhigh(:,i) = binnedResponse(:,i)+tscore*binned_stderr; %high CI
-    binned_CIlow(:,i) = binnedResponse(:,i)-tscore*binned_stderr; %low CI
+    curve(:,i) = mean(response_var_in_bin,2); % mean firing rate
+
+    if calc_CIs
+        curve_stderr = std(response_var_in_bin,0,2)/sqrt(size(response_var_in_bin,2)); % standard error
+        tscore = tinv(0.975,size(response_var_in_bin,2)-1); % t-score for 95% CI
+        curve_CIhigh(:,i) = curve(:,i)+tscore*curve_stderr; %high CI
+        curve_CIlow(:,i) = curve(:,i)-tscore*curve_stderr; %low CI
+    end
 end
 
 % set up output struct
-curves = table(monkey,date,task,out_signal_names,repmat(bins,size(response_var,2),1),binnedResponse,binned_CIlow,binned_CIhigh,...,
-        'VariableNames',{'monkey','date','task','signalID','bins','binnedResponse','CIlow','CIhigh'});
+if ~isempty(prefix)
+    prefix = strcat(prefix,'_');
+end
+if calc_CIs
+    var_names = [{'bins'} strcat(prefix,move_corr{:,1},{'Curve','CurveCIlow','CurveCIhigh'})];
+    tab_append = table(repmat(bins,size(response_var,2),1),curve,curve_CIlow,curve_CIhigh,...
+                'VariableNames',var_names);
+else
+    var_names = [{'bins'} strcat(prefix,move_corr{:,1},{'Curve'})];
+    tab_append = table(repmat(bins,size(response_var,2),1),curve,...
+                'VariableNames',var_names);
+end
+curves = horzcat(makeNeuronTableStarter(trial_data,params),tab_append);
 
 end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

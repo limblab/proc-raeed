@@ -19,8 +19,7 @@ if nargin > 1, assignParams(who,params); end % overwrite parameters
 
 % Find non-bootstrapped headers
 weight_header_idx = endsWith(tuningTable.Properties.VariableNames,'Weight');
-meta_header_idx = ~weight_header_idx &...
-                  ~endsWith(tuningTable.Properties.VariableNames,'eval');
+meta_header_idx = contains(tuningTable.Properties.VariableDescriptions,'meta');
 
 % Loop through and get mean shifts out of bootstrapped shifts
 unitIDs = unique(tuningTable(:,meta_header_idx));

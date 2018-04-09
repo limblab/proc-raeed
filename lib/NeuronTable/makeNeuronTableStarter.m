@@ -46,13 +46,17 @@ neuronTable = table(monkey,date,task,out_signal_names,'VariableNames',{'monkey',
 % add meta fields if there are any
 if isfield(params,'meta')
     fields = fieldnames(params.meta);
+    tab_append = cell(1,numel(fields));
     for fn = 1:numel(fields)
         metafield = params.meta.(fields{fn});
         if size(metafield,2)>1
             metafield = {metafield};
         end
         arr_append = repmat(metafield,tab_height,1);
-        tab_append = table(arr_append,'VariableNames',{fields{fn}});
-        neuronTable = [neuronTable tab_append];
+        tab_append{fn} = table(arr_append,'VariableNames',{fields{fn}});
     end
+    neuronTable = horzcat(neuronTable,tab_append{:});
 end
+
+% Describe all starter columns as meta for future ease
+neuronTable.Properties.VariableDescriptions = repmat({'meta'},1,width(neuronTable));

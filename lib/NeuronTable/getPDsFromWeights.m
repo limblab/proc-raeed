@@ -13,26 +13,28 @@
 % Written by Raeed Chowdhury. Updated Nov 2017.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function pdTable = getPDsfromWeights(weightTable)
+function pdTable = getPDsFromWeights(weightTable)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % preallocate final table
 % get weight column indices
 baseline_cols = contains(weightTable.Properties.VariableNames,'baseline');
 weight_cols = endsWith(weightTable.Properties.VariableNames,'Weight') & ~baseline_cols;
-eval_cols = endsWith(weightTable.Properties.VariableNames,'eval');
+% eval_cols = endsWith(weightTable.Properties.VariableNames,'eval');
 % get key column indices
-key_cols = ~weight_cols & ~baseline_cols & ~eval_cols;
+% key_cols = ~weight_cols & ~baseline_cols & ~eval_cols;
+key_cols = contains(weightTable.Properties.VariableDescriptions,'meta');
 keyTable = unique(weightTable(:,key_cols));
 pdTable = unique(weightTable(:,key_cols));
 
 % add columns to pdTable for each input signal
 % first baseline columns
 baseline_cols_idx = find(baseline_cols);
+tab_append = cell(1,length(baseline_cols_idx));
 for in_signal_idx = 1:length(baseline_cols_idx)
     mean_append = zeros(height(pdTable),1);
     CI_append = zeros(height(pdTable),2);
     % loop over keys in pdTable
-    for key_idx = 1:height(pdTable)
+    for key_idx = 1:height(keyTable)
         % get key
         key = keyTable(key_idx,:);
         % select all entries in weightTable matching key
@@ -48,12 +50,13 @@ for in_signal_idx = 1:length(baseline_cols_idx)
         % get CIs
         CI_append(key_idx,:) = prctile(weights,[2.5 97.5]);
     end
-    tab_append = table(mean_append,CI_append,'VariableNames',{col_title,[col_title 'CI']});
-    pdTable = [pdTable tab_append];
+    tab_append{in_signal_idx} = table(mean_append,CI_append,'VariableNames',{col_title,[col_title 'CI']});
 end
+pdTable = horzcat(pdTable,tab_append{:});
 
 % now weight columns
 weight_cols_idx = find(weight_cols);
+tab_append = cell(1,length(weight_cols_idx));
 for in_signal_idx = 1:length(weight_cols_idx)
     % preallocate
     PD_append = zeros(height(pdTable),1);
@@ -84,8 +87,8 @@ for in_signal_idx = 1:length(weight_cols_idx)
         PDCI_append(key_idx,:) = minusPi2Pi(prctile(minusPi2Pi(th-PD_append(key_idx,:)),[2.5 97.5]) + PD_append(key_idx,:));
 
     end
-    tab_append = table(PD_append,PDCI_append,moddepth_append,moddepthCI_append,'VariableNames',{[in_signal_name 'PD'],[in_signal_name 'PDCI'],...
+    tab_append{in_signal_idx} = table(PD_append,PDCI_append,moddepth_append,moddepthCI_append,'VariableNames',{[in_signal_name 'PD'],[in_signal_name 'PDCI'],...
                                                                                                 [in_signal_name 'Moddepth'],[in_signal_name 'ModdepthCI']});
-    pdTable = [pdTable tab_append];
 end
+pdTable = horzcat(pdTable,tab_append{:});
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
