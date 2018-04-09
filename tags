@@ -85,7 +85,8 @@ addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession
 addSphereHand2TD	lib/TrialData/Tools/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
-analyzeTRT	MultiWorkspace/lib/analyzeTRT.m	/^function results = analyzeTRT(trial_data,params)$/;"	f
+analyzeFold	MultiWorkspace/lib/analyzeTRT.m	/^function [foldEval,foldTuning] = analyzeFold(td_train,td_test,params)$/;"	f
+analyzeTRT	MultiWorkspace/lib/analyzeTRT.m	/^function [crossEval, crossTuning, td] = analyzeTRT(trial_data,params)$/;"	f
 angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
 animateBumpcurlTrials	BumpCurl/lib/animateBumpcurlTrials.m	/^function animateBumpcurlTrials(trial_data,field,bump_colors,waitperiod,tail_length)$/;"	f
 appendData	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function appendData(units,data,varargin)$/;"	f
@@ -104,6 +105,7 @@ binData	lib/ClassyDataAnalysis/@experiment/binData.m	/^function binData(ex,varar
 binTD	lib/TrialData/Tools/binTD.m	/^function trial_data = binTD(trial_data,num_bins)$/;"	f
 bin_angles	lib/TrialData/util/bin_angles.m	/^function theta = bin_angles(theta,angle_bin_size)$/;"	f
 bin_events	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = bin_events(trials,event_list,t_bin)$/;"	f
+bin_spikes	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_spikes = bin_spikes(units,unit_idx,t_bin)$/;"	f
 bin_spikes	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [binned_spikes,sg] = bin_spikes(units,unit_idx,t_bin)$/;"	f
 brighten	lib/linspecer/linspecer.m	/^function varIn = brighten(varIn,varargin) % increase the brightness$/;"	f
 bumpcurl_analysis	BumpCurl/bumpcurl_analysis.m	/^function bumpcurl_analysis(trial_data)$/;"	f
@@ -175,6 +177,7 @@ compute_r2	lib/TrialData/util/compute_r2.m	/^function r2 = compute_r2(sig1,sig2,
 compute_rel_pseudo_R2	lib/TrialData/util/compute_rel_pseudo_R2.m	/^function R2 = compute_rel_pseudo_R2(Y, Yhat1, Yhat2)$/;"	f
 compute_vaf	lib/TrialData/util/compute_vaf.m	/^function VAF = compute_vaf(Y,Yhat,Yhat2)$/;"	f
 convBasisFunc	lib/TrialData/Tools/convBasisFunc.m	/^function trial_data = convBasisFunc(trial_data,params)$/;"	f
+convertDataToTD	lib/TrialData/DataProcessing/convertDataToTD.m	/^function [trial_data,td_params] = convertDataToTD(varargin)$/;"	f
 convert_model	Hindlimb/leg_lib/Neuromechanic/convert_model.m	/^function legmodel = convert_model(plotflag)$/;"	f
 cosmoother_fa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/cosmoother_fa.m	/^function [Ycs, Vcs] = cosmoother_fa(Y, params)$/;"	f
 cosmoother_gpfa_viaOrth	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/cosmoother_gpfa_viaOrth.m	/^function seq = cosmoother_gpfa_viaOrth(seq, params, mList)$/;"	f
@@ -220,6 +223,7 @@ dlerror	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-
 dllHandle	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    DLL_HANDLE dllHandle;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
 dlopen	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	222;"	d	file:
 dlsym	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	223;"	d	file:
+dnaPlot	MultiWorkspace/lib/dnaPlot.m	/^function dnaPlot( PM_pdData, DL_pdData)$/;"	f
 do_affine_xform	lib/KinectTracking/functions/do_affine_xform.m	/^function [ kinect_pos ] = do_affine_xform( all_medians, affine_xform, plot_flag )$/;"	f
 do_the_loading	lib/TrialData/DataProcessing/loadTDfiles.m	/^function [trial_data,extra_outs] = do_the_loading(filename,func_calls)$/;"	f
 do_translation_rotation	lib/KinectTracking/functions/Deprecated/do_translation_rotation.m	/^function [ kinect_pos ] = do_translation_rotation( all_medians, alignment_settings, plot_flag, times_good, pos_h, colors_xy )$/;"	f
@@ -293,6 +297,7 @@ evalModel	lib/TrialData/Analysis/evalModel.m	/^function metric = evalModel(trial
 eventsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/eventsFromNEV.m	/^function eventsFromNEV(cds,opts)$/;"	f
 exactInferenceWithLL	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/exactInferenceWithLL.m	/^function [seq, LL] = exactInferenceWithLL(seq, params, varargin)$/;"	f
 exploreData	BumpCurl/exploreData.m	/^function exploreData(trial_data)$/;"	f
+extract_ns5_spikes	lib/TrialData/util/subfcn/extract_ns5_spikes.m	/^function out = extract_ns5_spikes(file_data,params)$/;"	f
 extract_resid	ForceKin/lib/extract_resid.m	/^function [resid_lin,resid_non] = extract_resid(fr,thv,thf)$/;"	f
 fake_parula	lib/PythonColors/Colormaps/fake_parula.m	/^function cm_data=fake_parula(m)$/;"	f
 fastfa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
@@ -326,7 +331,9 @@ getCOTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCOTaskTable.m	/^fu
 getCObumpTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCObumpTaskTable.m	/^function getCObumpTaskTable(cds,times)$/;"	f
 getChannels	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function channels = getChannels$/;"	f
 getCommonUnits	lib/TrialData/Tools/getCommonUnits.m	/^function trial_data = getCommonUnits(trial_data)$/;"	f
+getCurvesFromCrossval	MultiWorkspace/lib/getCurvesFromCrossval.m	/^function curveTable = getCurvesFromCrossval(crossvalTable)$/;"	f
 getDPCA	lib/TrialData/Analysis/getDPCA.m	/^function [trial_data, dPCA_info] = getDPCA(trial_data,varargin)$/;"	f
+getDifferential	lib/TrialData/Tools/getDifferential.m	/^function trial_data = getDifferential(trial_data,params)$/;"	f
 getFile	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFile.m	/^function [dataFilename, dataFolder] = getFile(filterSpec, title)$/;"	f
 getFilteredFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/getFilteredFromNSx.m	/^function [adata,t]=getFilteredFromNSx(cds,fc,achan_index)$/;"	f
 getFolder	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFolder.m	/^function dataFolder = getFolder$/;"	f
@@ -344,7 +351,7 @@ getNeuronTuning	lib/TrialData/Analysis/getNeuronTuning.m	/^function [tcs,fr,cova
 getNoiseCovar	lib/TrialData/Tools/getNoiseCovar.m	/^function [noise_covar,td] = getNoiseCovar(trial_data,params)$/;"	f
 getOORTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getOORTaskTable.m	/^function getOORTaskTable(cds,times)$/;"	f
 getPCA	lib/TrialData/Analysis/getPCA.m	/^function [trial_data,pca_info] = getPCA(trial_data, params)$/;"	f
-getPDsfromWeights	lib/NeuronTable/getPDsFromWeights.m	/^function pdTable = getPDsfromWeights(weightTable)$/;"	f
+getPDsFromWeights	lib/NeuronTable/getPDsFromWeights.m	/^function pdTable = getPDsFromWeights(weightTable)$/;"	f
 getPotentSpace	lib/TrialData/Analysis/getPotentSpace.m	/^function [trial_data,pca_info] = getPotentSpace(trial_data,params)$/;"	f
 getRWMovements	lib/TrialData/Tools/getRWMovements.m	/^function rw_td = getRWMovements(trial_data,params)$/;"	f
 getRWTargetDirection	lib/TrialData/Tools/getRWTargetDirection.m	/^function [ trial_data ] = getRWTargetDirection(trial_data, params  )$/;"	f
@@ -357,7 +364,7 @@ getShapeComps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [coeff,di
 getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data)$/;"	f
 getTDModelWeights	lib/NeuronTable/getTDModelWeights.m	/^function weightTable = getTDModelWeights(trial_data,params)$/;"	f
 getTDPDs	lib/NeuronTable/getTDPDs.m	/^function pdTable = getTDPDs(trial_data,params)$/;"	f
-getTDfields	lib/TrialData/Tools/getTDfields.m	/^function fn = getTDfields(trial_data,which_type)$/;"	f
+getTDfields	lib/TrialData/Tools/getTDfields.m	/^function fn = getTDfields(trial_data,which_type,cont_var_ref)$/;"	f
 getTDidx	lib/TrialData/Tools/getTDidx.m	/^function [return_idx, trial_data] = getTDidx(trial_data,varargin)$/;"	f
 getTRTTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getTRTTaskTable.m	/^function getTRTTaskTable(cds,times)$/;"	f
 getTargetDirection	lib/TrialData/Tools/getTargetDirection.m	/^function trial_data = getTargetDirection(trial_data, params)$/;"	f
@@ -397,6 +404,7 @@ hasan	SpindleSim/Hasan/hasan.m	/^function [t,mu,dmudt,r] = hasan(a,b,c,h,p,g,off
 idct1d	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function out = idct1d(data)$/;"	f
 inBound	lib/KinectTracking/Marker_Tracking/4color/inBound.m	/^function [ out ] = inBound( val, window )$/;"	f
 inferno	lib/PythonColors/Colormaps/inferno.m	/^function [cm_data]=inferno(m)$/;"	f
+initSignalStruct	lib/TrialData/DataProcessing/initSignalStruct.m	/^function signal_info = initSignalStruct(varargin)$/;"	f
 initializeWaveform	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function waveForms = initializeWaveform(numOfTimestamps)$/;"	f
 installNPMK	lib/ClassyDataAnalysis/lib/NPMK/installNPMK.m	/^function installNPMK$/;"	f
 interpomap	lib/linspecer/linspecer.m	/^function cmap = interpomap(n,cmapp)$/;"	f
@@ -404,7 +412,7 @@ invPerSymm	lib/ClassyDataAnalysis/lib/gpfa/util/invPerSymm.m	/^function [invM, l
 invToeplitz	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [Ti,ld] = invToeplitz( T , runMode )$/;"	f
 invToeplitzFast	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFast.m	/^function [Ti,ld] = invToeplitzFast(T)$/;"	f
 invToeplitzMode	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [Ti,ld] = invToeplitzMode( T , runMode )$/;"	f
-irisPlot	lib/NeuronTable/irisPlot.m	/^function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData, which_neurons )$/;"	f
+irisPlot	lib/NeuronTable/irisPlot.m	/^function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData)$/;"	f
 isStill	lib/ClassyDataAnalysis/@commonDataStructure/isStill.m	/^function [still,stats]=isStill(cds,x,varargin)$/;"	f
 jangoData	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function [pRatios,classification]=jangoData()$/;"	f
 joint_elast_sens	Hindlimb/joint_elast_sens.m	/^function [num_tuned_spring,pdChange_spring,moddepthChange_spring,spring_list] = joint_elast_sens(neurons)$/;"	f
@@ -460,6 +468,7 @@ nanmmean	lib/TrialData/util/dpca/dpca_marginalize.m	/^function Y = nanmmean(X, d
 nanmmean	lib/dPCA/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
 neuralTraj	lib/ClassyDataAnalysis/lib/gpfa/neuralTraj.m	/^function result = neuralTraj(runIdx, dat, varargin)$/;"	f
 neuralTraj_td	lib/TrialData/util/gpfa/neuralTraj_td.m	/^function result = neuralTraj_td(runIdx, dat, directory, varargin)$/;"	f
+neuronAverage	lib/NeuronTable/neuronAverage.m	/^function [avgTable,cond_idx] = neuronAverage(neuronTable, keycols)$/;"	f
 nev2NEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/nev2NEVNSx.m	/^function nev2NEVNSx(cds,fname,varargin)$/;"	f
 next_arg_file	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function [trace_file,off] = next_arg_file(arg_file)$/;"	f
 ns_AFTER	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_AFTER   = +1,  \/\/ greater than or equal to specified time$/;"	e	enum:__anon5
@@ -569,11 +578,13 @@ openFile	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function [p
 openNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/openNEVTracking.m	/^function varargout = openNEV(varargin)$/;"	f
 openNEV	lib/ClassyDataAnalysis/lib/NPMK/openNEV.m	/^function varargout = openNEV(varargin)$/;"	f
 openNEVLimblab	lib/SpikeMerge/openNEVLimblab.m	/^function varargout = openNEVLimblab(varargin)$/;"	f
+openNEV_td	lib/TrialData/util/openNEV_td.m	/^function varargout = openNEV_td(varargin)$/;"	f
 openNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/openNSxNew.m	/^function varargout = openNSx(varargin)$/;"	f
 openNSx	lib/ClassyDataAnalysis/lib/NPMK/openNSx.m	/^function varargout = openNSx(varargin)$/;"	f
 openNSxHL	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/openNSxHL.m	/^function OUTPUT = openNSxHL(fname)$/;"	f
 openNSxLimblab	lib/SpikeMerge/openNSxLimblab.m	/^function varargout = openNSxLimblab(varargin)$/;"	f
 openNSxSync	lib/ClassyDataAnalysis/lib/NPMK/openNSxSync.m	/^function NSx = openNSxSync(varargin)$/;"	f
+openNSx_td	lib/TrialData/util/openNSx_td.m	/^function varargout = openNSx_td(varargin)$/;"	f
 orthogonalize	lib/ClassyDataAnalysis/lib/gpfa/util/orthogonalize.m	/^function [Xorth, Lorth, TT] = orthogonalize(X, L)$/;"	f
 pairwiseCorr	lib/TrialData/Analysis/pairwiseCorr.m	/^function [rho,sort_idx] = pairwiseCorr(trial_data,params)$/;"	f
 parseAttributes	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function attributes = parseAttributes(theNode)$/;"	f
@@ -595,9 +606,9 @@ plotBumpcurlTuning	BumpCurl/plotBumpcurlTuning.m	/^function plotBumpcurlTuning(t
 plotColor	lib/CircStat/circ_clust.m	/^function plotColor(x, y, c, varargin)$/;"	f
 plotDecomposedFR	ForceKin/lib/plotDecomposedFR.m	/^function plotDecomposedFR(fr,thv,thf,lin_models,savefigs)$/;"	f
 plotEachDimVsTime	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotEachDimVsTime.m	/^function plotEachDimVsTime(seq, xspec, binWidth, varargin)$/;"	f
-plotFlatTuning	lib/NeuronTable/plotFlatTuning.m	/^function [handle] = plotFlatTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
+plotFlatTuning	lib/NeuronTable/plotFlatTuning.m	/^function plotFlatTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotMWTuningCloud	MultiWorkspace/lib/plotMWTuningCloud.m	/^function plotMWTuningCloud(tuningHull,neuron_idx)$/;"	f
-plotMWTuningSurfaces	MultiWorkspace/lib/plotMWTuningSurfaces.m	/^function plotMWTuningSurfaces(results,neuron_idx)$/;"	f
+plotMWTuningSurfaces	MultiWorkspace/lib/plotMWTuningSurfaces.m	/^function plotMWTuningSurfaces(td_test,pdTables,neuron_idx)$/;"	f
 plotMovie	lib/ClassyDataAnalysis/lib/gpfa/plotMovie.m	/^function plotMovie(seq, xspec, varargin)$/;"	f
 plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m	/^function method = plotPredErrorVsDim(runIdx, kernSD, varargin)$/;"	f
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
@@ -628,6 +639,9 @@ processDefault	lib/ClassyDataAnalysis/@emgData/processDefault.m	/^function proce
 processInput	lib/CircStat/circ_cmtest.m	/^function [alpha, idx] = processInput(varargin)$/;"	f
 processInput	lib/CircStat/circ_wwtest.m	/^function [alpha, idx, w] = processInput(varargin)$/;"	f
 processSpikesForSorting	lib/SpikeMerge/processSpikesForSorting.m	/^function status = processSpikesForSorting(file_path,file_prefix)$/;"	f
+process_emg	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_emg = process_emg(data,samprate,params)$/;"	f
+process_nev	lib/TrialData/DataProcessing/convertDataToTD.m	/^function out = process_nev(filename,params)$/;"	f
+process_nsx	lib/TrialData/DataProcessing/convertDataToTD.m	/^function out = process_nsx(filename)$/;"	f
 rampandhold	SpindleSim/Hasan/rampandhold.m	/^function [t,acc,vel,len] = rampandhold(max_len,max_vel,max_acc,init_len,dt,rampdown)$/;"	f
 reCrop	lib/ClassyDataAnalysis/@firingRateData/reCrop.m	/^function reCrop(frd,cropType)$/;"	f
 readAdapFilterPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readAdapFilterPacket(fid)$/;"	f
@@ -658,7 +672,7 @@ removeNSxData	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/removeNSxData.m	/^fu
 removeSorting	lib/ClassyDataAnalysis/@unitData/removeSorting.m	/^function removeSorting(units,varargin)$/;"	f
 removeWindow	lib/KinectTracking/Marker_Tracking/4color/removeWindow.m	/^function [ color2 ] = removeWindow( color1, indices, xWin, yWin, zWin)$/;"	f
 remove_wrap	Hindlimb/leg_lib/remove_wrap.m	/^function unwrapped_angles = remove_wrap(angles)$/;"	f
-reorderTDfields	lib/TrialData/DataProcessing/reorderTDfields.m	/^function trial_data = reorderTDfields(trial_data)$/;"	f
+reorderTDfields	lib/TrialData/Tools/reorderTDfields.m	/^function trial_data = reorderTDfields(trial_data)$/;"	f
 resample_signals	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = resample_signals(data,var_list,bin_size,start_time,end_time)$/;"	f
 rethresholdNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/rethresholdNSx.m	/^function NEV = rethresholdNSx(varargin)$/;"	f
 root	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function t=root(f,N)$/;"	f
@@ -702,6 +716,7 @@ splitNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/splitNSx.m	/^function spl
 splitNSxNTrode	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/splitNEVNTrode.m	/^function splitNSxNTrode$/;"	f
 splitNSxNTrode	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/splitNSxNTrode.m	/^function splitNSxNTrode$/;"	f
 splitNSxPauses	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/splitNSxPauses.m	/^function splitNSxPauses(fileName)$/;"	f
+splitTD	lib/TrialData/Tools/splitTD.m	/^function td_s = splitTD(trial_data,params)$/;"	f
 split_array_Han	ForceKin/split_array_Han.m	/^function [ant_chans,post_chans] = split_array_Han(cds)$/;"	f
 sqrtTransform	lib/TrialData/Tools/sqrtTransform.m	/^function trial_data = sqrtTransform(trial_data,signals)$/;"	f
 stdpath	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function fn = stdpath(file,root)$/;"	f
@@ -750,6 +765,7 @@ trialAverage	lib/TrialData/Tools/trialAverage.m	/^function [avg_data,cond_idx] =
 trialCI	lib/trialCI.m	/^function [avg_data, CIhigh_data, CIlow_data] = trialCI(trial_data, conditions, params)$/;"	f
 triggersFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/triggersFromNSx.m	/^function triggersFromNSx(cds)$/;"	f
 trimTD	lib/TrialData/Tools/trimTD.m	/^function trial_data = trimTD(trial_data,idx_start,idx_end)$/;"	f
+trim_time	lib/TrialData/DataProcessing/convertDataToTD.m	/^function trial_data = trim_time(trial_data)$/;"	f
 twoStageEngine	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/twoStageEngine.m	/^function twoStageEngine(seqTrain, seqTest, fname, varargin)$/;"	f
 twoStageEngine_td	lib/TrialData/util/gpfa/twoStageEngine_td.m	/^function result = twoStageEngine_td(seqTrain, seqTest, fname, varargin)$/;"	f
 unitsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/unitsFromNEV.m	/^function unitsFromNEV(cds,opts)$/;"	f
