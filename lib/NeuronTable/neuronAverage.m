@@ -49,23 +49,37 @@ for key_idx = 1:height(keyTable)
     key = keyTable(key_idx,:);
     cond_idx(key_idx,:) = ismember(neuronTable(:,keycols),key);
     neuronTable_select = neuronTable(cond_idx(key_idx,:),:);
+
+    % extract data
     dataTable = neuronTable_select(:,~keycols);
-    meanTable = varfun(@mean,dataTable);
-    
+
+    % figure out which columns have circular data
+    circ_cols = contains(dataTable.Properties.VariableDescriptions,'circular');
+    lin_cols = ~circ_cols;
+
+    % for all linear columns take regular mean
+    meanTable_lin = varfun(@mean,dataTable(:,lin_cols));
+
     % strip 'mean' from variable names
-    meanTable.Properties.VariableNames = strrep(meanTable.Properties.VariableNames,'mean_','');
+    meanTable_lin.Properties.VariableNames = strrep(meanTable_lin.Properties.VariableNames,'mean_','');
 
     % calculate confidence intervals
-    ciLoArr = prctile(dataTable{:,:},2.5,1);
-    ciHiArr = prctile(dataTable{:,:},97.5,1);
+    ciLoArr = prctile(dataTable{:,lin_cols},2.5,1);
+    ciHiArr = prctile(dataTable{:,lin_cols},97.5,1);
 
-    ciLoTable = meanTable;
-    ciHiTable = meanTable;
+    ciLoTable = meanTable_lin;
+    ciHiTable = meanTable_lin;
     ciLoTable{:,:} = ciLoArr;
     ciHiTable{:,:} = ciHiArr;
     ciLoTable.Properties.VariableNames = strcat(ciLoTable.Properties.VariableNames,'CILo');
     ciHiTable.Properties.VariableNames = strcat(ciHiTable.Properties.VariableNames,'CIHi');
 
-    tab_append{key_idx} = horzcat(meanTable,ciLoTable,ciHiTable);
+    % for all circular data columns, take circ_mean
+    meanTable_circ = varfun(@circ_mean,dataTable(:,circ_cols));
+
+    % strip 'mean' from variable names
+    meanTable_circ.Properties.VariableNames = strrep(meanTable_circ.Properties.VariableNames,'circ_mean_','');
+
+    tab_append{key_idx} = horzcat(meanTable_circ,meanTable_lin,ciLoTable,ciHiTable);
 end
 avgTable = horzcat(keyTable,vertcat(tab_append{:}));

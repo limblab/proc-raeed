@@ -92,10 +92,14 @@ for i = 1:size(keys,1)
 
     % plot cloud
     % plot hull (have to figure out what to do about wraparound)
-    patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2),varargin{:});
-    patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2),varargin{:});
-    patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
-    patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
+    % patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2),varargin{:});
+    % patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2),varargin{:});
+    % patch(centered_clust(hull_idx,1)+means(1),centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
+    % patch(centered_clust(hull_idx,1)+means(1)-2*pi,centered_clust(hull_idx,2)+means(2)-2*pi,varargin{:});
+
+    % plot central points
+    scatter(means(1),means(2),50,'color','filled');
+
     
     % plot clusters
     % scatter(centered_clust(:,1)+means(1),centered_clust(:,2)+means(2),[],get(p,'facecolor'));

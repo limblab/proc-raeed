@@ -92,6 +92,7 @@ else
     var_names = [{'bins'} strcat(prefix,move_corr{:,1},{'Curve'})];
     tab_append = table(repmat(bins,size(response_var,2),1),curve,...
                 'VariableNames',var_names);
+    tab_append.Properties.VariableDescriptions = {'circular','linear'};
 end
 curves = horzcat(makeNeuronTableStarter(trial_data,params),tab_append);
 

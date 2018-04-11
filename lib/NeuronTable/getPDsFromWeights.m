@@ -89,6 +89,7 @@ for in_signal_idx = 1:length(weight_cols_idx)
     end
     tab_append{in_signal_idx} = table(PD_append,PDCI_append,moddepth_append,moddepthCI_append,'VariableNames',{[in_signal_name 'PD'],[in_signal_name 'PDCI'],...
                                                                                                 [in_signal_name 'Moddepth'],[in_signal_name 'ModdepthCI']});
+    tab_append{in_signal_idx}.Properties.VariableDescriptions = {'circular','circular','linear','linear'};
 end
 pdTable = horzcat(pdTable,tab_append{:});
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
