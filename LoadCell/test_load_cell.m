@@ -5,8 +5,8 @@ ranBy='ranByRaeed';
 monkey='monkeyHan';
 task='taskRW';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180326\';
-fname='LoadCell_20180326_still';
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180412\';
+fname='LoadCell_20180412_still';
 % Make CDS files
 
 cds = commonDataStructure();
