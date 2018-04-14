@@ -17,6 +17,7 @@
 %       .prefix       : prefix to add before column names
 %       .do_plot      : plot of directions for diagnostics, not for general
 %                       use.
+%       .meta   : meta parameters for makeNeuronTableStarter
 %
 % OUTPUTS:
 %   pdTable : calculated PD table, including columns for PDs, PDCI, and for whether neuron is tuned
