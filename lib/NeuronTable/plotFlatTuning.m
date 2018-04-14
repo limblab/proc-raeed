@@ -19,7 +19,7 @@ if(~isempty(curve))
         error('plotTuning:TooManyThings','curve must contain only one row')
     end
     th_fill = [bins(end)-2*pi bins fliplr(bins) bins(end)-2*pi];
-    r_fill = [curve.([move_cor 'CurveCIHi'])(end) curve.([move_cor 'CurveCIHi']) fliplr(curve.([move_cor 'CurveCILo'])) curve.([move_cor 'CurveCILo'])(end)];
+    r_fill = [curve.([move_cor 'CurveCIhigh'])(end) curve.([move_cor 'CurveCIhigh']) fliplr(curve.([move_cor 'CurveCIlow'])) curve.([move_cor 'CurveCIlow'])(end)];
     % h=plot(th_fill,r_fill);
     % set(h,'linewidth',1.2,'color',color)
     patch(th_fill,r_fill,color,'edgealpha',0,'facealpha',0.3);

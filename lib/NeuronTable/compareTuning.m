@@ -48,7 +48,7 @@ n_rows = ceil(sqrt(length(which_units)+1));
 % get signal ID
 signalID = curves{1}.signalID;
 % get maxFR for each neuron
-maxFR = max(cell2mat(cellfun(@(x) x.([move_cor 'CurveCIHi']),curves,'UniformOutput',false)),[],2);
+maxFR = max(cell2mat(cellfun(@(x) x.([move_cor 'CurveCIhigh']),curves,'UniformOutput',false)),[],2);
 % make plots
 for neuron_idx = 1:length(which_units)
     subplot(n_rows,n_rows,neuron_idx)
