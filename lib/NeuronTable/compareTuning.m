@@ -1,4 +1,4 @@
-function compareTuning(curves,pds,which_units,maxFR,move_corIn)
+function compareTuning(curves,pds,params)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   comares tuning between different conditions with empirical
 %   tuning curves and PDs.
@@ -6,57 +6,57 @@ function compareTuning(curves,pds,which_units,maxFR,move_corIn)
 %       curves - cell array of tuning curve tables, one table
 %                   per condition
 %       pds - cell array of PD tables, one table per condition
-%       which_units - (optional) vector array unit indices to plot
-%                   default - plots them all
-%       maxFR - (optional) array of maximum firing rates to
-%               display in polar plots. Default behavior is to
-%               find maximum firing rate over all curve
-%               conditions
+%       params - parameters struct
+%           .which_units - (optional) vector array unit indices to plot
+%                       default - plots them all
+%           .maxFR - (optional) array of maximum firing rates to
+%                   display in polar plots. Default behavior is to
+%                   find maximum firing rate over all curve
+%                   conditions
+%           .move_corr - move correlate to compare tuning over
+%               (default - 'vel')
+%           .cond_colors - colors for conditions
+%               (default - linspecer(num_conditions)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Default Param
-move_cor = 'vel';
-% check maxFR input
-if ~exist('maxFR','var') || isempty(maxFR)
-    maxFR = [];
-elseif numel(maxFR) == 1
+% initial check
+assert(iscell(curves) && iscell(pds),'Curves and PDs must be passed in as cell arrays')
+
+% Default Params
+which_units = 1:height(curves{1});
+move_corr = 'vel';
+maxFR = [];
+cond_colors = linspecer(numel(curves));
+
+if nargin > 2, assignParams(who,params); end % overwrite parameters
+
+% check inputs
+if numel(maxFR) == 1
     maxFR = repmat(maxFR,height(curves{1}));
-elseif numel(maxFR) ~= height(curves{1})
-    error('maxFR is wrong size')
 end
-
-if ~exist('which_units','var') || isempty(which_units)
-    which_units = 1:height(curves{1});
-elseif ~isvector(which_units)
-    error('which_units needs to be vector')
-end
-
-% check cell nature of curves and pds
-if ~iscell(curves) || ~iscell(pds)
-    error('curves and pds must be cell arrays of tables')
-end
+assert(isempty(maxFR) || numel(maxFR)==height(curves{1}),'maxFR is wrong size')
+assert(isvector(which_units),'which_units needs to be vector')
+assert(size(cond_colors,1)==numel(curves),'Number of colors must match number of conditions')
 
 % make curves a row cell array
 curves = reshape(curves,1,length(curves)); % this should throw an error if it's not a 1-d cell array
 
-if nargin >4, move_cor = move_corIn; end 
 %% Plot tuning curves
-% pick condition colors
-cond_colors = linspecer(numel(curves));
 % number of subplots (include plot for legends)
 n_rows = ceil(sqrt(length(which_units)+1));
 % get signal ID
 signalID = curves{1}.signalID;
 % get maxFR for each neuron
-maxFR = max(cell2mat(cellfun(@(x) x.([move_cor 'CurveCIhigh']),curves,'UniformOutput',false)),[],2);
+maxFR = max(cell2mat(cellfun(@(x) x.([move_corr 'CurveCIhigh']),curves,'UniformOutput',false)),[],2);
 % make plots
 for neuron_idx = 1:length(which_units)
     subplot(n_rows,n_rows,neuron_idx)
     for cond_idx = 1:numel(curves)
         pdTable = pds{cond_idx};
         curveTable = curves{cond_idx};
-        plotFlatTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
-        % plotTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_cor);
+        plotFlatTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),...
+            maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
+        % plotTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
         hold on
     end
     if isnumeric(signalID(which_units(neuron_idx)))
