@@ -14,9 +14,12 @@
 %       .in_signals   : which signals to calculate PDs on
 %                           note: each signal must have only two columns for a PD to be calculated
 %                           default - 'vel'
-%       .prefix       : prefix to add before column names
+%       .prefix       : prefix to add before column names (will automatically include '_' afterwards)
 %       .do_plot      : plot of directions for diagnostics, not for general
-%                       use.
+%                       use. (default: false)
+%       .verbose : whether to print progress (default: true)
+%       .bootForTuning : whether to bootstrap for tuning significance and CI
+%           (default: true)
 %       .meta   : meta parameters for makeNeuronTableStarter
 %
 % OUTPUTS:
@@ -32,6 +35,8 @@ out_signals      =  [];
 in_signals      = 'vel';
 prefix = '';
 do_plot = false;
+verbose = true;
+bootForTuning = true;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some undocumented parameters
 alpha_cutoff = 0.05;
@@ -58,7 +63,7 @@ if ~isempty(prefix)
     end
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% preallocate final table
+% calculate final table
 pdTable_cell = cell(1,num_in_signals*3);
 for in_signal_idx = 1:num_in_signals
     % extract signals
@@ -76,35 +81,50 @@ for in_signal_idx = 1:num_in_signals
     sig_tic = tic;
     for out_signal_idx = 1:num_out_signals
         % Calculate mean direction of in_signal weighted by firing rate of neuron
-        [PD(out_signal_idx), PDCI(out_signal_idx,2), PDCI(out_signal_idx,1)] = circ_mean(inDir,outArr(:,out_signal_idx));
+        PD(out_signal_idx) = circ_mean(inDir,outArr(:,out_signal_idx));
 
-        % Figure out if out_signal is tuned
-        % first define a function to use in bootstrapping
-        r_func = @(x) circ_r(x,outArr(:,out_signal_idx));
-        r_true = r_func(inDir);
+        if bootForTuning
+            % Calculate confidence intervals of PD by bootstrapping
+            bootPD = bootstrp(num_boots,@circ_mean,inDir,outArr(:,out_signal_idx));
+            boot_mean = circ_mean(bootPD);
+            centered_boot = minusPi2Pi(bootPD-boot_mean);
+            PDCI(out_signal_idx,:) = minusPi2Pi(prctile(centered_boot,[2.5 97.5])+boot_mean);
 
-        % Bootstrap a scrambled r
-        r_scramble = bootstrp(num_boots,@(x) r_func(x),inDir);
-        scramble_high = prctile(r_scramble,(1-alpha_cutoff)*100);
+            % Figure out if out_signal is tuned
+            % first define a function to use in bootstrapping
+            r_func = @(x) circ_r(x,outArr(:,out_signal_idx));
+            r_true = r_func(inDir);
 
-        % check if tuned
-        isTuned(out_signal_idx) = (r_true > scramble_high);
+            % Bootstrap a scrambled r
+            r_scramble = bootstrp(num_boots,@(x) r_func(x),inDir);
+            scramble_high = prctile(r_scramble,(1-alpha_cutoff)*100);
 
-        % diagnostic info
-        fprintf('Evaluated signal %d of %d at time %f\n',out_signal_idx,num_out_signals,toc(sig_tic))
-        if do_plot
-            % plot?
-            scatter(r_scramble,out_signal_idx*ones(size(r_scramble,1),1),[],'k','filled')
-            hold on
-            scatter(r_true,out_signal_idx,[],'r','filled')
+            % check if tuned
+            isTuned(out_signal_idx) = (r_true > scramble_high);
+
+            % diagnostic info
+            if do_plot
+                % plot?
+                scatter(r_scramble,out_signal_idx*ones(size(r_scramble,1),1),[],'k','filled')
+                hold on
+                scatter(r_true,out_signal_idx,[],'r','filled')
+            end
+        end
+        if verbose
+            fprintf('Evaluated signal %d of %d at time %f\n',out_signal_idx,num_out_signals,toc(sig_tic))
         end
     end
     if do_plot
         axis ij
         title(sprintf('Scramble plot for %s',in_signals{in_signal_idx,1}))
     end
-    pdTable_cell{in_signal_idx} = table(PD,PDCI,isTuned,...
-        'VariableNames',strcat([prefix in_signals{in_signal_idx,1}],{'PD','PDCI','Tuned'}));
+    if bootForTuning
+        pdTable_cell{in_signal_idx} = table(PD,PDCI,isTuned,...
+            'VariableNames',strcat([prefix in_signals{in_signal_idx,1}],{'PD','PDCI','Tuned'}));
+    else
+        pdTable_cell{in_signal_idx} = table(PD,...
+            'VariableNames',strcat([prefix in_signals{in_signal_idx,1}],{'PD'}));
+    end
 end
 starter = makeNeuronTableStarter(trial_data,params);
 pdTable = horzcat(starter,pdTable_cell{:});
