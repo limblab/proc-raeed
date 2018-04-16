@@ -77,6 +77,7 @@ _libraries	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevL
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) $/;"	f	file:
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) {$/;"	f	file:
 addCorrelatedNoise	lib/TrialData/Tools/addCorrelatedNoise.m	/^function [td] = addCorrelatedNoise(trial_data,params)$/;"	f
+addCylHand2TD	lib/TrialData/Tools/addCylHand2TD.m	/^function trial_data = addCylHand2TD(trial_data)$/;"	f
 addFiringRates	lib/TrialData/Tools/addFiringRates.m	/^function td = addFiringRates(trial_data,params)$/;"	f
 addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function addOperation(obj,operation,opPath,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
@@ -86,7 +87,7 @@ addSphereHand2TD	lib/TrialData/Tools/addSphereHand2TD.m	/^function trial_data = 
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
 analyzeFold	MultiWorkspace/lib/analyzeTRT.m	/^function [foldEval,foldTuning] = analyzeFold(td_train,td_test,params)$/;"	f
-analyzeTRT	MultiWorkspace/lib/analyzeTRT.m	/^function [crossEval, crossTuning, td] = analyzeTRT(trial_data,params)$/;"	f
+analyzeTRT	MultiWorkspace/lib/analyzeTRT.m	/^function [crossEval, crossTuning] = analyzeTRT(trial_data,params)$/;"	f
 angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
 animateBumpcurlTrials	BumpCurl/lib/animateBumpcurlTrials.m	/^function animateBumpcurlTrials(trial_data,field,bump_colors,waitperiod,tail_length)$/;"	f
 appendData	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function appendData(units,data,varargin)$/;"	f
@@ -117,7 +118,7 @@ causalInferencePrecomp	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInference
 cerebus2NEVNSx	lib/SpikeMerge/cerebus2NEVNSx.m	/^function NEVNSx = cerebus2NEVNSx(varargin)$/;"	f
 checkAssumption	lib/CircStat/circ_wwtest.m	/^function checkAssumption(rw,n)$/;"	f
 checkEmg60Hz	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function checkEmg60Hz(cds)$/;"	f
-checkIsTuned	lib/NeuronTable/checkIsTuned.m	/^function isTuned = checkIsTuned(pdData,params)$/;"	f
+checkIsTuned	lib/checkIsTuned.m	/^function [isTuned,isTunedPseudo] = checkIsTuned(trial_data,params)$/;"	f
 checkLFP60hz	lib/ClassyDataAnalysis/@commonDataStructure/checkLFP60hz.m	/^function [bad, badChanList]=checkLFP60hz(cds)$/;"	f
 check_muscle_dir	Hindlimb/leg_lib/check_muscle_dir.m	/^function [muscle_coef_elast,muscle_coef_fixed] = check_muscle_dir$/;"	f
 check_signals	lib/TrialData/util/subfcn/check_signals.m	/^function signals = check_signals(trial_data,signals)$/;"	f
@@ -132,7 +133,9 @@ circ_corrcl	lib/CircStat/circ_corrcl.m	/^function [rho pval] = circ_corrcl(alpha
 circ_dist	lib/CircStat/circ_dist.m	/^function r =  circ_dist(x,y)$/;"	f
 circ_dist2	lib/CircStat/circ_dist2.m	/^function r =  circ_dist2(x,y)$/;"	f
 circ_hktest	lib/CircStat/circ_hktest.m	/^function [pval table] = circ_hktest(alpha, idp, idq, inter, fn)$/;"	f
+circ_iqr	lib/CircKSDensity/circ_iqr.m	/^function p = circ_iqr(alpha)$/;"	f
 circ_kappa	lib/CircStat/circ_kappa.m	/^function kappa = circ_kappa(alpha,w)$/;"	f
+circ_ksdensity	lib/CircKSDensity/circ_ksdensity.m	/^function [pdf, sigma] = circ_ksdensity(T, ti, method, sigma)$/;"	f
 circ_ktest	lib/CircStat/circ_ktest.m	/^function [pval, f] = circ_ktest(alpha1, alpha2)$/;"	f
 circ_kuipertest	lib/CircStat/circ_kuipertest.m	/^function [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)$/;"	f
 circ_kurtosis	lib/CircStat/circ_kurtosis.m	/^function [k k0] = circ_kurtosis(alpha, w, dim)$/;"	f
@@ -171,7 +174,7 @@ colorm	lib/linspecer/linspecer.m	/^function cmap = colorm(varargin)$/;"	f
 combineNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/combineNSxNEV.m	/^function [NSx1, NEV1] = combineNSxNEV(filename1, filename2)$/;"	f
 comparePDClouds	lib/NeuronTable/comparePDClouds.m	/^function comparePDClouds(pdTable1,pdTable2,params,varargin)$/;"	f
 comparePDs	lib/NeuronTable/comparePDs.m	/^function comparePDs(pdTable1,pdTable2,params,varargin)$/;"	f
-compareTuning	lib/NeuronTable/compareTuning.m	/^function compareTuning(curves,pds,which_units,maxFR,move_corIn)$/;"	f
+compareTuning	lib/NeuronTable/compareTuning.m	/^function compareTuning(curves,pds,params)$/;"	f
 compute_pseudo_R2	lib/TrialData/util/compute_pseudo_R2.m	/^function R2 = compute_pseudo_R2(Y, Yhat, Ymean, distr, Yhat_null)$/;"	f
 compute_r2	lib/TrialData/util/compute_r2.m	/^function r2 = compute_r2(sig1,sig2,which_method)$/;"	f
 compute_rel_pseudo_R2	lib/TrialData/util/compute_rel_pseudo_R2.m	/^function R2 = compute_rel_pseudo_R2(Y, Yhat1, Yhat2)$/;"	f
@@ -362,6 +365,7 @@ getSeq_td	lib/TrialData/util/gpfa/getSeq_td.m	/^function seq = getSeq_td(dat, bi
 getSettingFileFullPath	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getSettingFileFullPath.m	/^function settingFileFullPath = getSettingFileFullPath(functionName)$/;"	f
 getShapeComps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [coeff,diffDist,matchDist,empDist]=getShapeComps(units,data,SNRThresh)$/;"	f
 getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data)$/;"	f
+getTDClassicalPDs	lib/NeuronTable/getTDClassicalPDs.m	/^function pdTable = getTDClassicalPDs(trial_data,params)$/;"	f
 getTDModelWeights	lib/NeuronTable/getTDModelWeights.m	/^function weightTable = getTDModelWeights(trial_data,params)$/;"	f
 getTDPDs	lib/NeuronTable/getTDPDs.m	/^function pdTable = getTDPDs(trial_data,params)$/;"	f
 getTDfields	lib/TrialData/Tools/getTDfields.m	/^function fn = getTDfields(trial_data,which_type,cont_var_ref)$/;"	f
