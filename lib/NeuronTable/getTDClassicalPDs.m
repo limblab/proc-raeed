@@ -71,6 +71,13 @@ for in_signal_idx = 1:num_in_signals
     inDir = atan2(inArr(:,2),inArr(:,1));
     outArr = get_vars(trial_data,out_signals);
 
+    % resample inDir and outArr so that inDir is uniformly distributed
+    % first estimate current distrubution of inDir with very smooth kernel
+    test_dirs = linspace(-pi,pi,1000)';
+    pdf = circ_ksdensity(inDir,test_dirs,10);
+    % We're going to sample the directions inversely to their frequency
+    sample_weight = 1./interp1(test_dirs,pdf,inDir);
+
     % loop over each out_signal to get PDs and tuned-ness
     PD = zeros(num_out_signals,1);
     PDCI = zeros(num_out_signals,2);
@@ -80,23 +87,37 @@ for in_signal_idx = 1:num_in_signals
     end
     sig_tic = tic;
     for out_signal_idx = 1:num_out_signals
+        % implement bootstrap with nonuniform sampling to deal with nonuniform inDir
+        bootPD = zeros(num_boots,1);
+        boot_r = zeros(num_boots,1);
+        for bootctr = 1:num_boots
+            [inDir_resamp,resamp_idx] = datasample(inDir,length(inDir),'Weights',sample_weight);
+            spikes_resamp = outArr(resamp_idx,out_signal_idx);
+
+            % Calculate confidence intervals of PD by bootstrapping
+            bootPD(bootctr) = circ_mean(inDir_resamp,spikes_resamp);
+            boot_r(bootctr) = circ_r(inDir_resamp,spikes_resamp);
+        end
+
         % Calculate mean direction of in_signal weighted by firing rate of neuron
-        PD(out_signal_idx) = circ_mean(inDir,outArr(:,out_signal_idx));
+        PD(out_signal_idx) = circ_mean(bootPD);
 
         if bootForTuning
-            % Calculate confidence intervals of PD by bootstrapping
-            bootPD = bootstrp(num_boots,@circ_mean,inDir,outArr(:,out_signal_idx));
             boot_mean = circ_mean(bootPD);
             centered_boot = minusPi2Pi(bootPD-boot_mean);
             PDCI(out_signal_idx,:) = minusPi2Pi(prctile(centered_boot,[2.5 97.5])+boot_mean);
 
             % Figure out if out_signal is tuned
             % first define a function to use in bootstrapping
-            r_func = @(x) circ_r(x,outArr(:,out_signal_idx));
-            r_true = r_func(inDir);
+            r_true = mean(boot_r);
 
             % Bootstrap a scrambled r
-            r_scramble = bootstrp(num_boots,@(x) r_func(x),inDir);
+            r_scramble = zeros(num_boots,1);
+            for bootctr = 1:num_boots
+                inDir_resamp = datasample(inDir,length(inDir),'Weights',sample_weight);
+                spikes_resamp = datasample(outArr(:,out_signal_idx),length(iDir),'Weights',sample_weight);
+                r_scramble(bootctr) = circ_r(inDir_resamp,spikes_resamp);
+            end
             scramble_high = prctile(r_scramble,(1-alpha_cutoff)*100);
 
             % check if tuned
