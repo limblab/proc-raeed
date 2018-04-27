@@ -1,4 +1,4 @@
-function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)
+function plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)
 % PLOT_TUNING makes a single figure showing the tuning curve and PD with
 % confidence intervals. Leave either entry blank to skip plotting it. Color
 % is a 3 element vector for the color of the plotted tuning curve and PD.
