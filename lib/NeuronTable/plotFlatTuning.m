@@ -13,11 +13,11 @@ if ~exist('linspec','var') || isempty(linspec)
 end
 
 % tuning curve
-bins = curve.bins;
 if(~isempty(curve))
     if(height(curve)>1)
         error('plotTuning:TooManyThings','curve must contain only one row')
     end
+    bins = curve.bins;
     th_fill = [bins(end)-2*pi bins fliplr(bins) bins(end)-2*pi];
     r_fill = [curve.([move_cor 'CurveCIhigh'])(end) curve.([move_cor 'CurveCIhigh']) fliplr(curve.([move_cor 'CurveCIlow'])) curve.([move_cor 'CurveCIlow'])(end)];
     % h=plot(th_fill,r_fill);
