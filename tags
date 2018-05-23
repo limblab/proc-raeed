@@ -96,6 +96,7 @@ appendTDs	lib/TrialData/Tools/appendTDs.m	/^function combined = appendTDs(vararg
 appendTable	lib/ClassyDataAnalysis/@timeSeriesData/appendTable.m	/^function appendTable(tsd,data,varargin)$/;"	f
 appendTable	lib/ClassyDataAnalysis/@trialData/appendTable.m	/^function appendTable(trials,data,varargin)$/;"	f
 arrayWaveLayout	lib/arrayWaveLayout.m	/^function h = arrayWaveLayout(cds)$/;"	f
+arrowMMC	lib/TanglingCode/arrowMMC.m	/^function h = arrowMMC(prevPoint, point, nextPoint, sizeArrow, axisRange, faceColor, edgeColor)$/;"	f
 artifact_removal	lib/SpikeMerge/artifact_removal.m	/^function unit_structure = artifact_removal(varargin)$/;"	f
 assignParams	lib/TrialData/util/assignParams.m	/^function assignParams(opts,params)$/;"	f
 assignopts	lib/ClassyDataAnalysis/lib/gpfa/util/assignopts.m	/^function remain = assignopts (opts, varargin)$/;"	f
@@ -105,6 +106,7 @@ bdf2cds	lib/ClassyDataAnalysis/@commonDataStructure/bdf2cds.m	/^function bdf2cds
 binData	lib/ClassyDataAnalysis/@experiment/binData.m	/^function binData(ex,varargin)$/;"	f
 binTD	lib/TrialData/Tools/binTD.m	/^function trial_data = binTD(trial_data,num_bins)$/;"	f
 bin_angles	lib/TrialData/util/bin_angles.m	/^function theta = bin_angles(theta,angle_bin_size)$/;"	f
+bin_events	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_events = bin_events(data,t_bin)$/;"	f
 bin_events	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = bin_events(trials,event_list,t_bin)$/;"	f
 bin_spikes	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_spikes = bin_spikes(units,unit_idx,t_bin)$/;"	f
 bin_spikes	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [binned_spikes,sg] = bin_spikes(units,unit_idx,t_bin)$/;"	f
@@ -618,7 +620,7 @@ plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
 plotSmoothFR	lib/plotSmoothFR.m	/^function plotSmoothFR(x,y,fr,gridrange)$/;"	f
 plotTRTTrials	MultiWorkspace/lib/plotTRTTrials.m	/^function plotTRTTrials(trial_data,params)$/;"	f
-plotTuning	lib/NeuronTable/plotTuning.m	/^function [handle] = plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
+plotTuning	lib/NeuronTable/plotTuning.m	/^function plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotTuningDistr	BumpCurl/plotTuningDistr.m	/^function plotTuningDistr(trial_data)$/;"	f
 plotWeightClouds	lib/NeuronTable/plotWeightClouds.m	/^function plotWeightClouds(tuningTable,params,varargin)$/;"	f
 plotWindows	lib/ClassyDataAnalysis/lib/plotWindows.m	/^function h=plotWindows(data,windows,colLabels,varargin)$/;"	f
@@ -642,10 +644,10 @@ principal_angles	lib/principle_angles.m	/^function [angles, varargout] = princip
 processDefault	lib/ClassyDataAnalysis/@emgData/processDefault.m	/^function processDefault(emg)$/;"	f
 processInput	lib/CircStat/circ_cmtest.m	/^function [alpha, idx] = processInput(varargin)$/;"	f
 processInput	lib/CircStat/circ_wwtest.m	/^function [alpha, idx, w] = processInput(varargin)$/;"	f
+processNEV	lib/TrialData/DataProcessing/processNEV.m	/^function out = processNEV(filename,params)$/;"	f
+processNSx	lib/TrialData/DataProcessing/processNSx.m	/^function out = processNSx(filename,params)$/;"	f
 processSpikesForSorting	lib/SpikeMerge/processSpikesForSorting.m	/^function status = processSpikesForSorting(file_path,file_prefix)$/;"	f
 process_emg	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_emg = process_emg(data,samprate,params)$/;"	f
-process_nev	lib/TrialData/DataProcessing/convertDataToTD.m	/^function out = process_nev(filename,params)$/;"	f
-process_nsx	lib/TrialData/DataProcessing/convertDataToTD.m	/^function out = process_nsx(filename)$/;"	f
 rampandhold	SpindleSim/Hasan/rampandhold.m	/^function [t,acc,vel,len] = rampandhold(max_len,max_vel,max_acc,init_len,dt,rampdown)$/;"	f
 reCrop	lib/ClassyDataAnalysis/@firingRateData/reCrop.m	/^function reCrop(frd,cropType)$/;"	f
 readAdapFilterPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readAdapFilterPacket(fid)$/;"	f
@@ -757,6 +759,8 @@ szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/Nev
 szProbeInfo	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szProbeInfo[128];  \/\/ Additional probe text information or source entity label$/;"	m	struct:__anon14
 szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char    szUnits[16];             \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon11
 szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szUnits[32];       \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon12
+tangleAnalysis	lib/TanglingCode/tangleAnalysis.m	/^function [ Q, out] = tangleAnalysis(  Data, samplingRate, varargin )$/;"	f
+tangle_visualize	lib/TanglingCode/tangle_visualize.m	/^function tangle_visualize( out )$/;"	f
 tesselateFR	lib/tesselateFR.m	/^function tesselateFR(x,y,fr)$/;"	f
 testSorting	lib/ClassyDataAnalysis/@commonDataStructure/testSorting.m	/^function testSorting(cds)$/;"	f
 test_sep	ForceKin/lib/test_sep.m	/^function [separability,mdl] = test_sep(td,params)$/;"	f
