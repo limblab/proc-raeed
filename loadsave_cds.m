@@ -2,12 +2,12 @@
 meta.lab=6;
 meta.ranBy='Raeed';
 meta.monkey='Han';
-meta.date='20171031';
-meta.task='COactpas'; % for the loading of cds
-meta.taskAlias={'COactpas_001'}; % for the filename (cell array list for files to load and save)
+meta.date='20171101';
+meta.task='TRT'; % for the loading of cds
+meta.taskAlias={'TRT_001'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
 meta.arrayAlias='area2EMG'; % for the filename
-meta.project='ForceKin'; % for the folder in data-preproc
+meta.project='MultiWorkspace'; % for the folder in data-preproc
 meta.hyperfolder=fullfile('C:\Users\rhc307\Projects\limblab'); % folder for both data_preproc and data_td
 meta.superfolder=fullfile(meta.hyperfolder,'data-preproc',meta.project,meta.monkey); % folder for data dump
 meta.folder=fullfile(meta.superfolder,meta.date); % compose subfolder and superfolder
@@ -17,7 +17,7 @@ meta.neuralPrefix = [meta.monkey '_' meta.date '_' meta.arrayAlias];
 if strcmp(meta.monkey,'Chips')
     meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Chips\left_S1\SN 6251-001455.cmp';
 elseif strcmp(meta.monkey,'Han')
-    meta.mapfile='C:\Users\Raeed\Projects\limblab\data-preproc\Meta\Mapfiles\Han\left_S1\SN 6251-001459.cmp';
+    meta.mapfile='C:\Users\rhc307\Projects\limblab\data-preproc\Meta\Mapfiles\Han\left_S1\SN 6251-001459.cmp';
     altMeta = meta;
     altMeta.array='';
     altMeta.arrayAlias='EMGextra';
