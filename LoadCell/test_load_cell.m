@@ -3,10 +3,10 @@
 lab=6;
 ranBy='ranByRaeed';
 monkey='monkeyHan';
-task='taskRW';
+task='taskCObump';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20171208\';
-fname='LoadCell_20171207_1kg_down';
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180309\';
+fname='LoadCell_20180309_still';
 % Make CDS files
 
 cds = commonDataStructure();
