@@ -1,13 +1,13 @@
 %% Set up
 meta.lab=6;
 meta.ranBy='Raeed';
-meta.monkey='Chips';
-meta.date='20170915';
-meta.task='TRT'; % for the loading of cds
-meta.taskAlias={'TRT_001'}; % for the filename (cell array list for files to load and save)
+meta.monkey='Han';
+meta.date='20171031';
+meta.task='COactpas'; % for the loading of cds
+meta.taskAlias={'COactpas_001'}; % for the filename (cell array list for files to load and save)
 meta.array='LeftS1Area2'; % for the loading of cds
-meta.arrayAlias='area2'; % for the filename
-meta.project='MultiWorkspace'; % for the folder in data-preproc
+meta.arrayAlias='area2EMG'; % for the filename
+meta.project='ForceKin'; % for the folder in data-preproc
 meta.hyperfolder=fullfile('C:\Users\rhc307\Projects\limblab'); % folder for both data_preproc and data_td
 meta.superfolder=fullfile(meta.hyperfolder,'data-preproc',meta.project,meta.monkey); % folder for data dump
 meta.folder=fullfile(meta.superfolder,meta.date); % compose subfolder and superfolder
@@ -207,17 +207,17 @@ for fileIdx = 1:length(meta.taskAlias)
 end
 
 %% Save CDS
-save(fullfile(meta.folder,'CDS',[meta.neuralPrefix '_CDS.mat']),'cds','-v7.3')
+save(fullfile(meta.folder,'CDS',[meta.monkey '_' meta.date '_CDS.mat']),'cds','-v7.3')
 
 %% Make TD
 % COactpas
-% params.array_alias = {'LeftS1Area2','S1'};
-% % params.exclude_units = [255];
-% params.event_list = {'ctrHoldBump';'bumpTime';'bumpDir';'ctrHold'};
-% params.trial_results = {'R','A','F','I'};
-% td_meta = struct('task',meta.task);
-% params.meta = td_meta;
-% trial_data = parseFileByTrial(cds{1},params);
+params.array_alias = {'LeftS1Area2','S1'};
+params.exclude_units = [255];
+params.event_list = {'ctrHoldBump';'bumpTime';'bumpDir';'ctrHold'};
+params.trial_results = {'R','A','F','I'};
+td_meta = struct('task',meta.task);
+params.meta = td_meta;
+trial_data = parseFileByTrial(cds{1},params);
 
 % OOR
 % params.array_alias = {'LeftS1Area2','S1'};
@@ -244,15 +244,15 @@ save(fullfile(meta.folder,'CDS',[meta.neuralPrefix '_CDS.mat']),'cds','-v7.3')
 % trial_data = cat(2,trial_data_BL,trial_data_AD,trial_data_WO);
 
 % TRT
-params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
-params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
-params.trial_results = {'R','A','F','I'};
-td_meta = struct('task',meta.task);
-params.meta = td_meta;
-trial_data = parseFileByTrial(cds{1},params);
-% sanitize?
-idxkeep = cat(1,trial_data.spaceNum) == 1 | cat(1,trial_data.spaceNum) == 2;
-trial_data = trial_data(idxkeep);
+% params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};
+% params.event_list = {'bumpTime';'bumpDir';'ctHoldTime';'otHoldTime';'spaceNum';'targetStartTime'};
+% params.trial_results = {'R','A','F','I'};
+% td_meta = struct('task',meta.task);
+% params.meta = td_meta;
+% trial_data = parseFileByTrial(cds{1},params);
+% % sanitize?
+% idxkeep = cat(1,trial_data.spaceNum) == 1 | cat(1,trial_data.spaceNum) == 2;
+% trial_data = trial_data(idxkeep);
 
 % RW DL/PM
 % params.array_alias = {'LeftS1Area2','S1';'RightCuneate','CN'};

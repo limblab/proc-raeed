@@ -5,12 +5,13 @@ ranBy='ranByRaeed';
 monkey='monkeyHan';
 task='taskCObump';
 array='arrayLeftS1Area2';
-folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180309\';
-fname='LoadCell_20180309_still';
+
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180412\';
+fname='LoadCell_20180412_still';
 % Make CDS files
 
 cds = commonDataStructure();
-cds.file2cds([folder fname],ranBy,array,monkey,lab,'ignoreJumps',task);
+cds.file2cds([folder fname],ranBy,array,monkey,lab,'ignoreJumps',task,'useAbsoluteStillThresh');
 % cds.file2cds([folder fname],ranBy,array,monkey,lab,'ignoreJumps',task,'getLoadCellOffsets','useAbsoluteStillThresh');
 
 %%
