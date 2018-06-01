@@ -34,7 +34,7 @@
 %  e.g. to get 10 random trials from the first half of baseline
 %       idx = getTDidx(trial_data,'epoch','BL','range',[0 0.5],'rand',10);
 %
-% Written by Matt Perich. Updated March 2017.
+% Written by Raeed Chowdhury. Updated April 2018
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [return_idx, neuronTable] = getNTidx(neuronTable,varargin)
