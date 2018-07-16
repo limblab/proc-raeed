@@ -1,18 +1,20 @@
 %% load for Juan
 
-filedates = {'20171116','20171128'};
+filedates = {'20151117', '20151120', '20151201', '20151204', '20151211'};
+% filedates = {'20170917'};
 
 %% loop over dates
-% for dateidx = 1:length(filedates)
+for dateidx = 1:length(filedates)
     %% Set up
     meta.lab=6;
     meta.ranBy='Raeed';
-    meta.monkey='Han';
-    meta.date='20171128';
-    meta.task='COactpas'; % for the loading of cds
+    meta.monkey='Chips';
+    % meta.date='20171128';
+    meta.date = filedates{dateidx};
+    meta.task='CO'; % for the loading of cds
     meta.taskAlias={'COactpas_001'}; % for the filename (cell array list for files to load and save)
     meta.array='LeftS1Area2'; % for the loading of cds
-    meta.arrayAlias='area2EMG'; % for the filename
+    meta.arrayAlias='area2'; % for the filename
     meta.project='ForceKin'; % for the folder in data-preproc
     meta.hyperfolder=fullfile('C:\Users\rhc307\Projects\limblab'); % folder for both data_preproc and data_td
     meta.superfolder=fullfile(meta.hyperfolder,'data-preproc',meta.project,meta.monkey); % folder for data dump
@@ -66,25 +68,25 @@ filedates = {'20171116','20171128'};
             movefile(fullfile(meta.folder,'preCDS',[altMeta.neuralPrefix '*.n*']),fullfile(meta.folder,'preCDS','Final'))
         end
     end
-    if ~exist(fullfile(meta.folder,'ColorTracking'),'dir')
-        mkdir(fullfile(meta.folder,'ColorTracking'))
-        movefile(fullfile(meta.folder,'*_colorTracking_*.mat'),fullfile(meta.folder,'ColorTracking'))
-    end
-    if ~exist(fullfile(meta.folder,'ColorTracking','Markers'),'dir')
-        mkdir(fullfile(meta.folder,'ColorTracking','Markers'))
-    end
-    if ~exist(fullfile(meta.folder,'OpenSim'),'dir')
-        mkdir(fullfile(meta.folder,'OpenSim'))
-    end
-    if ~exist(fullfile(meta.folder,'OpenSim','Analysis'),'dir')
-        mkdir(fullfile(meta.folder,'OpenSim','Analysis'))
-    end
-    if ~exist(fullfile(meta.folder,'CDS'),'dir')
-        mkdir(fullfile(meta.folder,'CDS'))
-    end
-    if ~exist(fullfile(meta.folder,'TD'),'dir')
-        mkdir(fullfile(meta.folder,'TD'))
-    end
+%     if ~exist(fullfile(meta.folder,'ColorTracking'),'dir')
+%         mkdir(fullfile(meta.folder,'ColorTracking'))
+%         movefile(fullfile(meta.folder,'*_colorTracking_*.mat'),fullfile(meta.folder,'ColorTracking'))
+%     end
+%     if ~exist(fullfile(meta.folder,'ColorTracking','Markers'),'dir')
+%         mkdir(fullfile(meta.folder,'ColorTracking','Markers'))
+%     end
+%     if ~exist(fullfile(meta.folder,'OpenSim'),'dir')
+%         mkdir(fullfile(meta.folder,'OpenSim'))
+%     end
+%     if ~exist(fullfile(meta.folder,'OpenSim','Analysis'),'dir')
+%         mkdir(fullfile(meta.folder,'OpenSim','Analysis'))
+%     end
+%     if ~exist(fullfile(meta.folder,'CDS'),'dir')
+%         mkdir(fullfile(meta.folder,'CDS'))
+%     end
+%     if ~exist(fullfile(meta.folder,'TD'),'dir')
+%         mkdir(fullfile(meta.folder,'TD'))
+%     end
 
     %% Merge and strip files for spike sorting
     % Run processSpikesForSorting for the first time to combine spike data from
@@ -225,4 +227,4 @@ filedates = {'20171116','20171128'};
     end
     
     clearvars -except filedates dateidx
-% end
+end
