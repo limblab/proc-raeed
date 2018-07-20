@@ -117,7 +117,8 @@
     num_repeats = 20; % 20 is default number of repeats, no need to pass in
     model_type = 'glm';
     % model_aliases = {'musc','ext','cyl','joint'};
-    model_aliases = {'ext','ego','musc','markers'};
+    % model_aliases = {'ext','ego','musc','markers'};
+    model_aliases = {'ext','musc'};
     model_names = [strcat(model_type,'_',model_aliases,'_model') {'S1_FR'}];
     num_models = length(model_names);
     model_titles = cell(num_models-1,1);
@@ -221,7 +222,7 @@
     % get PDs and tuning curves
     pdTables = cell(2,num_models);
     tuning_curves = cell(2,num_models);
-    for modelnum = 1:num_models
+    for modelnum = num_models%1:num_models
         for spacenum = 1:2
             % First PDs
             pd_params = struct('out_signals',model_names{modelnum},'out_signal_names',td(1).S1_unit_guide,'do_plot',false,'meta',struct('spaceNum',spacenum));
@@ -360,8 +361,10 @@
     vardiff = var(diffstat);
     correction = 1/100 + 1/4;
     alphaup = 1-alpha;
-    upp = tinv(alphaup,99);
-    errCIhigh_ext = mudiff + upp * sqrt(correction*vardiff);
+    upp = tinv(0.975,99);
+    low = tinv(0.025,99);
+    errCIhi = mudiff + upp * sqrt(correction*vardiff);
+    errCIlo = mudiff + low * sqrt(correction*vardiff);
 
     diffstat = err(:,models_to_compare(1))-err(:,models_to_compare(2)); % musc - ego
     mudiff = mean(diffstat);
@@ -439,7 +442,7 @@
     clear i idx color sigID;
     scatter(av_pR2_markers(:),av_pR2_musc(:),50,'r','filled')
     set(gca,'box','off','tickdir','out','xlim',[-0.1 0.6],'ylim',[-0.1 0.6])
-    xlabel 'marker-based pR2'
+    xlabel 'Marker-based pR2'
     ylabel 'Muscle-based pR2'
 
     figure
@@ -452,7 +455,7 @@
     color(marker_neurons,:) = repmat(model_colors(contains(model_names,'markers'),:),sum(marker_neurons),1);
     scatter(av_pR2_markers(:),av_pR2_musc(:),50,color,'filled')
     set(gca,'box','off','tickdir','out','xlim',[-0.1 0.6],'ylim',[-0.1 0.6])
-    xlabel 'marker-based pR2'
+    xlabel 'Marker-based pR2'
     ylabel 'Muscle-based pR2'
 
     % make plot
