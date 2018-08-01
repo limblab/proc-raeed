@@ -27,7 +27,7 @@ which_units = 1:height(curves{1});
 move_corr = 'vel';
 cond_colors = linspecer(numel(curves));
 % get maxFR for each neuron
-maxFR = max(cell2mat(cellfun(@(x) x.([move_corr 'CurveCIhigh']),curves,'UniformOutput',false)),[],2);
+maxFR = max(cell2mat(cellfun(@(x) x.([move_corr 'CurveCIhigh']),reshape(curves,1,[]),'UniformOutput',false)),[],2);
 
 if nargin > 2, assignParams(who,params); end % overwrite parameters
 
@@ -53,13 +53,13 @@ for neuron_idx = 1:length(which_units)
     for cond_idx = 1:numel(curves)
         pdTable = pds{cond_idx};
         curveTable = curves{cond_idx};
-        % plotFlatTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),...
-        %     maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
+        plotFlatTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),...
+            maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
         % plotTuning(pdTable(which_units(neuron_idx),:),curveTable(which_units(neuron_idx),:),...
         %     maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
         % plot only PDs
-        plotTuning(pdTable(which_units(neuron_idx),:),[],...
-            maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
+        % plotTuning(pdTable(which_units(neuron_idx),:),[],...
+        %     maxFR(which_units(neuron_idx)),cond_colors(cond_idx,:),[], move_corr);
         hold on
     end
     if isnumeric(signalID(which_units(neuron_idx)))
