@@ -115,6 +115,7 @@ bumpcurl_analysis	BumpCurl/bumpcurl_analysis.m	/^function bumpcurl_analysis(tria
 bytes2float	lib/ClassyDataAnalysis/lib/bytes2float.m	/^function f = bytes2float(varargin)$/;"	f
 calcFiringRate	lib/ClassyDataAnalysis/@experiment/calcFiringRate.m	/^function calcFiringRate(ex,varargin)$/;"	f
 calcTimeDelay	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/calcTimeDelay.m	/^function timeDelay = calcTimeDelay(NSx1, NSx2)$/;"	f
+catTD	lib/TrialData/Tools/catTD.m	/^function master_td = catTD(varargin)$/;"	f
 causalInference	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInference.m	/^function seq = causalInference(seq, params, varargin)$/;"	f
 causalInferencePrecomp	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInferencePrecomp.m	/^function precomp = causalInferencePrecomp(params, Tmax, varargin)$/;"	f
 cerebus2NEVNSx	lib/SpikeMerge/cerebus2NEVNSx.m	/^function NEVNSx = cerebus2NEVNSx(varargin)$/;"	f
@@ -122,6 +123,7 @@ checkAssumption	lib/CircStat/circ_wwtest.m	/^function checkAssumption(rw,n)$/;"	
 checkEmg60Hz	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function checkEmg60Hz(cds)$/;"	f
 checkIsTuned	lib/checkIsTuned.m	/^function [isTuned,isTunedPseudo] = checkIsTuned(trial_data,params)$/;"	f
 checkLFP60hz	lib/ClassyDataAnalysis/@commonDataStructure/checkLFP60hz.m	/^function [bad, badChanList]=checkLFP60hz(cds)$/;"	f
+checkUnitGuides	lib/TrialData/util/checkUnitGuides.m	/^function [badUnits, varargout] = checkUnitGuides(varargin)$/;"	f
 check_muscle_dir	Hindlimb/leg_lib/check_muscle_dir.m	/^function [muscle_coef_elast,muscle_coef_fixed] = check_muscle_dir$/;"	f
 check_signals	lib/TrialData/util/subfcn/check_signals.m	/^function signals = check_signals(trial_data,signals)$/;"	f
 circ_ang2rad	lib/CircStat/circ_ang2rad.m	/^function alpha = circ_ang2rad(alpha)$/;"	f
@@ -223,6 +225,7 @@ deleteInvalid	lib/ClassyDataAnalysis/@unitData/deleteInvalid.m	/^function delete
 deleteUnsorted	lib/ClassyDataAnalysis/@unitData/deleteUnsorted.m	/^function deleteUnsorted(units)$/;"	f
 dim	lib/linspecer/linspecer.m	/^function varIn = dim(varIn,f)$/;"	f
 dimRedHelper	lib/ClassyDataAnalysis/@binnedData/dimRedHelper.m	/^function [ dat ] = dimRedHelper( binned )$/;"	f
+dimReduce	lib/TrialData/Analysis/dimReduce.m	/^function [trial_data,info_out] = dimReduce(trial_data, params)$/;"	f
 dlclose	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	224;"	d	file:
 dlerror	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	225;"	d	file:
 dllHandle	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    DLL_HANDLE dllHandle;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
@@ -306,6 +309,7 @@ extract_ns5_spikes	lib/TrialData/util/subfcn/extract_ns5_spikes.m	/^function out
 extract_resid	ForceKin/lib/extract_resid.m	/^function [resid_lin,resid_non] = extract_resid(fr,thv,thf)$/;"	f
 fake_parula	lib/PythonColors/Colormaps/fake_parula.m	/^function cm_data=fake_parula(m)$/;"	f
 fastfa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
+fastfa	lib/TrialData/util/gpfa/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
 fastfa_estep	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa_estep.m	/^function [Z, LL] = fastfa_estep(X, params)$/;"	f
 filMIMO4	lib/ClassyDataAnalysis/@binnedData/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
 filMIMO4	lib/ClassyDataAnalysis/lib/weiner/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
@@ -342,6 +346,7 @@ getDifferential	lib/TrialData/Tools/getDifferential.m	/^function trial_data = ge
 getFile	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFile.m	/^function [dataFilename, dataFolder] = getFile(filterSpec, title)$/;"	f
 getFilteredFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/getFilteredFromNSx.m	/^function [adata,t]=getFilteredFromNSx(cds,fc,achan_index)$/;"	f
 getFolder	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFolder.m	/^function dataFolder = getFolder$/;"	f
+getGenericTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getGenericTaskTable.m	/^function getGenericTaskTable(cds) $/;"	f
 getGitInfo	lib/TrialData/util/getGitInfo.m	/^function gitInfo=getGitInfo()$/;"	f
 getGitLog	lib/ClassyDataAnalysis/@operationLogger/getGitLog.m	/^function varargout=getGitLog(obj,path,varargin)$/;"	f
 getISIcomps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [tsISI]=getISIcomps(units,data)$/;"	f
@@ -361,12 +366,14 @@ getPotentSpace	lib/TrialData/Analysis/getPotentSpace.m	/^function [trial_data,pc
 getRWMovements	lib/TrialData/Tools/getRWMovements.m	/^function rw_td = getRWMovements(trial_data,params)$/;"	f
 getRWTargetDirection	lib/TrialData/Tools/getRWTargetDirection.m	/^function [ trial_data ] = getRWTargetDirection(trial_data, params  )$/;"	f
 getRWTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getRWTaskTable.m	/^function getRWTaskTable(cds,times)$/;"	f
+getReactionTimeTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getReactionTimeTaskTable.m	/^function getReactionTimeTaskTable(cds,times)$/;"	f
+getRingReportingTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getRingReportingTaskTable.m	/^function getRingReportingTaskTable(cds,times)$/;"	f
 getSABESTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getSABESTaskTable.m	/^function getSABESTaskTable(cds,times)$/;"	f
 getSeq	lib/ClassyDataAnalysis/lib/gpfa/util/getSeq.m	/^function seq = getSeq(dat, binWidth, varargin)$/;"	f
 getSeq_td	lib/TrialData/util/gpfa/getSeq_td.m	/^function seq = getSeq_td(dat, binWidth, varargin)$/;"	f
 getSettingFileFullPath	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getSettingFileFullPath.m	/^function settingFileFullPath = getSettingFileFullPath(functionName)$/;"	f
 getShapeComps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [coeff,diffDist,matchDist,empDist]=getShapeComps(units,data,SNRThresh)$/;"	f
-getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data)$/;"	f
+getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data,params)$/;"	f
 getTDClassicalPDs	lib/NeuronTable/getTDClassicalPDs.m	/^function pdTable = getTDClassicalPDs(trial_data,params)$/;"	f
 getTDModelWeights	lib/NeuronTable/getTDModelWeights.m	/^function weightTable = getTDModelWeights(trial_data,params)$/;"	f
 getTDPDs	lib/NeuronTable/getTDPDs.m	/^function pdTable = getTDPDs(trial_data,params)$/;"	f
@@ -592,6 +599,7 @@ openNSxLimblab	lib/SpikeMerge/openNSxLimblab.m	/^function varargout = openNSxLim
 openNSxSync	lib/ClassyDataAnalysis/lib/NPMK/openNSxSync.m	/^function NSx = openNSxSync(varargin)$/;"	f
 openNSx_td	lib/TrialData/util/openNSx_td.m	/^function varargout = openNSx_td(varargin)$/;"	f
 orthogonalize	lib/ClassyDataAnalysis/lib/gpfa/util/orthogonalize.m	/^function [Xorth, Lorth, TT] = orthogonalize(X, L)$/;"	f
+orthogonalize	lib/TrialData/util/orthogonalize.m	/^function [Xorth, Lorth, TT] = orthogonalize(X, L)$/;"	f
 pairwiseCorr	lib/TrialData/Analysis/pairwiseCorr.m	/^function [rho,sort_idx] = pairwiseCorr(trial_data,params)$/;"	f
 parseAttributes	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function attributes = parseAttributes(theNode)$/;"	f
 parseAttributes	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function attributes = parseAttributes(theNode)$/;"	f
@@ -614,7 +622,7 @@ plotDecomposedFR	ForceKin/lib/plotDecomposedFR.m	/^function plotDecomposedFR(fr,
 plotEachDimVsTime	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotEachDimVsTime.m	/^function plotEachDimVsTime(seq, xspec, binWidth, varargin)$/;"	f
 plotFlatTuning	lib/NeuronTable/plotFlatTuning.m	/^function plotFlatTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotMWTuningCloud	MultiWorkspace/lib/plotMWTuningCloud.m	/^function plotMWTuningCloud(tuningHull,neuron_idx)$/;"	f
-plotMWTuningSurfaces	MultiWorkspace/lib/plotMWTuningSurfaces.m	/^function plotMWTuningSurfaces(td_test,pdTables,neuron_idx)$/;"	f
+plotMWTuningSurfaces	MultiWorkspace/lib/plotMWTuningSurfaces.m	/^function plotMWTuningSurfaces(td_test,pdTables,neuron_idx,model_aliases)$/;"	f
 plotMovie	lib/ClassyDataAnalysis/lib/gpfa/plotMovie.m	/^function plotMovie(seq, xspec, varargin)$/;"	f
 plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m	/^function method = plotPredErrorVsDim(runIdx, kernSD, varargin)$/;"	f
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
@@ -635,19 +643,21 @@ plot_tuning_surfaces	ForceKin/lib/plot_tuning_surfaces.m	/^function plot_tuning_
 poisson_sens	Hindlimb/leg_lib/poisson_sens.m	/^function [num_tuned_pois,pdChange_pois,moddepthChange_pois] = poisson_sens(neurons,num_secs_pois)$/;"	f
 polarTuningPlot	lib/ClassyDataAnalysis/lib/polarTuningPlot.m	/^function [H,axisID]=polarTuningPlot(dirs,activity,varargin)$/;"	f
 postprocess	lib/ClassyDataAnalysis/lib/gpfa/util/postprocess.m	/^function [estParams, seqTrain, seqTest] = postprocess(ws, varargin)$/;"	f
+postprocess	lib/TrialData/util/gpfa/postprocess.m	/^function [estParams, seqTrain, seqTest] = postprocess(ws, varargin)$/;"	f
 power60HzRatio	lib/ClassyDataAnalysis/lib/power60HzRatio.m	/^function RList=power60HzRatio(x)$/;"	f
 precomp_IN	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	41;"	d	file:
 predMIMO4	lib/ClassyDataAnalysis/@binnedData/predMIMO4.m	/^function [Y,Xnew,Ynew]=predMIMO4(X,H,numsides,fs,Yact)$/;"	f
 predMIMO4	lib/ClassyDataAnalysis/lib/weiner/predMIMO4.m	/^function [Y,Xnew,Yact]=predMIMO4(X,H,numsides,fs,Yact)$/;"	f
 predict_td_from_models	ForceKin/lib/predict_td_from_models.m	/^function td = predict_td_from_models(td,lin_models)$/;"	f
+principal_angles	lib/principal_angles.m	/^function [angles, varargout] = principal_angles(A,B)$/;"	f
 principal_angles	lib/principle_angles.m	/^function [angles, varargout] = principal_angles(A,B)$/;"	f
 processDefault	lib/ClassyDataAnalysis/@emgData/processDefault.m	/^function processDefault(emg)$/;"	f
 processInput	lib/CircStat/circ_cmtest.m	/^function [alpha, idx] = processInput(varargin)$/;"	f
 processInput	lib/CircStat/circ_wwtest.m	/^function [alpha, idx, w] = processInput(varargin)$/;"	f
-processNEV	lib/TrialData/DataProcessing/processNEV.m	/^function out = processNEV(filename,params)$/;"	f
-processNSx	lib/TrialData/DataProcessing/processNSx.m	/^function out = processNSx(filename,params)$/;"	f
+processNEV	lib/TrialData/DataProcessing/processNEV.m	/^function out = processNEV(filename,signal_info)$/;"	f
+processNSx	lib/TrialData/DataProcessing/processNSx.m	/^function out = processNSx(filename,signal_info)$/;"	f
 processSpikesForSorting	lib/SpikeMerge/processSpikesForSorting.m	/^function status = processSpikesForSorting(file_path,file_prefix)$/;"	f
-process_emg	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_emg = process_emg(data,samprate,params)$/;"	f
+process_emg	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_emg = process_emg(data,params)$/;"	f
 rampandhold	SpindleSim/Hasan/rampandhold.m	/^function [t,acc,vel,len] = rampandhold(max_len,max_vel,max_acc,init_len,dt,rampdown)$/;"	f
 reCrop	lib/ClassyDataAnalysis/@firingRateData/reCrop.m	/^function reCrop(frd,cropType)$/;"	f
 readAdapFilterPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readAdapFilterPacket(fid)$/;"	f
@@ -726,10 +736,12 @@ splitTD	lib/TrialData/Tools/splitTD.m	/^function td_s = splitTD(trial_data,param
 split_array_Han	ForceKin/split_array_Han.m	/^function [ant_chans,post_chans] = split_array_Han(cds)$/;"	f
 sqrtTransform	lib/TrialData/Tools/sqrtTransform.m	/^function trial_data = sqrtTransform(trial_data,signals)$/;"	f
 stdpath	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function fn = stdpath(file,root)$/;"	f
+stretchSignals	lib/TrialData/Tools/stretchSignals.m	/^function trial_data = stretchSignals(trial_data,params)$/;"	f
 stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	149;"	d	file:
 stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	228;"	d	file:
 stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	230;"	d	file:
 stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	231;"	d	file:
+stripSpikeSorting	lib/TrialData/Tools/stripSpikeSorting.m	/^function trial_data = stripSpikeSorting(trial_data)$/;"	f
 strobed2encoder	lib/ClassyDataAnalysis/lib/strobed2encoder.m	/^function varargout = strobed2encoder(strobed_events,varargin)$/;"	f
 subClustMotionTracking	lib/KinectTracking/Marker_Tracking/4color/subClustMotionTracking.m	/^function [ cluster1] = subClustMotionTracking( cluster, influence, options )$/;"	f
 subsets	lib/TrialData/util/dpca/dpca_marginalize.m	/^function S = subsets(X)$/;"	f
@@ -772,7 +784,7 @@ trenchSetup	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^fun
 trialAverage	lib/TrialData/Tools/trialAverage.m	/^function [avg_data,cond_idx] = trialAverage(trial_data, conditions, params)$/;"	f
 trialCI	lib/trialCI.m	/^function [avg_data, CIhigh_data, CIlow_data] = trialCI(trial_data, conditions, params)$/;"	f
 triggersFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/triggersFromNSx.m	/^function triggersFromNSx(cds)$/;"	f
-trimTD	lib/TrialData/Tools/trimTD.m	/^function trial_data = trimTD(trial_data,idx_start,idx_end)$/;"	f
+trimTD	lib/TrialData/Tools/trimTD.m	/^function trial_data = trimTD(trial_data,varargin)$/;"	f
 trim_time	lib/TrialData/DataProcessing/convertDataToTD.m	/^function trial_data = trim_time(trial_data)$/;"	f
 twoStageEngine	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/twoStageEngine.m	/^function twoStageEngine(seqTrain, seqTest, fname, varargin)$/;"	f
 twoStageEngine_td	lib/TrialData/util/gpfa/twoStageEngine_td.m	/^function result = twoStageEngine_td(seqTrain, seqTest, fname, varargin)$/;"	f
@@ -788,3 +800,4 @@ windows2mask	lib/ClassyDataAnalysis/lib/windows2mask.m	/^function mask=windows2m
 writeHandleForceFromCDS	lib/KinectTracking/functions/writeHandleForceFromCDS.m	/^function writeHandleForceFromCDS(cds,savefile_name)$/;"	f
 writeSessionSummary	lib/ClassyDataAnalysis/@commonDataStructure/writeSessionSummary.m	/^function writeSessionSummary(cds) $/;"	f
 writeTRCfromCDS	lib/KinectTracking/functions/writeTRCfromCDS.m	/^function writeTRCfromCDS(cds,savefile_name)$/;"	f
+zscoreSignals	lib/TrialData/Tools/zscoreSignals.m	/^function trial_data = zscoreSignals(trial_data,params)$/;"	f
