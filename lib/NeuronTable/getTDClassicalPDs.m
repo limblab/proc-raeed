@@ -115,7 +115,7 @@ for in_signal_idx = 1:num_in_signals
             r_scramble = zeros(num_boots,1);
             for bootctr = 1:num_boots
                 inDir_resamp = datasample(inDir,length(inDir),'Weights',sample_weight);
-                spikes_resamp = datasample(outArr(:,out_signal_idx),length(iDir),'Weights',sample_weight);
+                spikes_resamp = datasample(outArr(:,out_signal_idx),length(inDir),'Weights',sample_weight);
                 r_scramble(bootctr) = circ_r(inDir_resamp,spikes_resamp);
             end
             scramble_high = prctile(r_scramble,(1-alpha_cutoff)*100);
