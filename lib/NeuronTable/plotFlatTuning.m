@@ -18,12 +18,18 @@ if(~isempty(curve))
         error('plotTuning:TooManyThings','curve must contain only one row')
     end
     bins = curve.bins;
-    th_fill = [bins(end)-2*pi bins fliplr(bins) bins(end)-2*pi];
-    r_fill = [curve.([move_cor 'CurveCIhigh'])(end) curve.([move_cor 'CurveCIhigh']) fliplr(curve.([move_cor 'CurveCIlow'])) curve.([move_cor 'CurveCIlow'])(end)];
+    th_wrap = [bins-2*pi bins bins+2*pi];
+    th_fill = [th_wrap fliplr(th_wrap)];
+    r_fill = [repmat(curve.(sprintf('%sCurve',move_cor)),1,3) fliplr(repmat(curve.(sprintf('%sCurve',move_cor)),1,3))];
+    th_fill = th_fill(~isnan(r_fill));
+    r_fill = r_fill(~isnan(r_fill));
     % h=plot(th_fill,r_fill);
     % set(h,'linewidth',1.2,'color',color)
     patch(th_fill,r_fill,color,'edgealpha',0,'facealpha',0.3);
-    h=plot([bins(end)-2*pi bins],[curve.([move_cor 'Curve'])(end) curve.([move_cor 'Curve'])]);
+    curve_wrap = repmat(curve.(sprintf('%sCurve',move_cor)),1,3);
+    th_wrap = th_wrap(~isnan(curve_wrap));
+    curve_wrap = curve_wrap(~isnan(curve_wrap));
+    h=plot(th_wrap,curve_wrap);
     set(h,'linewidth',2,'color',color)
 end
 
