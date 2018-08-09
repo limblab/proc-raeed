@@ -2,8 +2,8 @@
 
 lab=6;
 task='taskRW';
-folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180720\';
-fname='Loadcell_20180720_still';
+folder='C:\Users\rhc307\Projects\limblab\data-preproc\Misc\LoadCell\20180801\';
+fname='Loadcell_20180801_still';
 % Make CDS files
 
 cds = commonDataStructure();
