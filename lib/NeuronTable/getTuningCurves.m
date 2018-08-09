@@ -51,7 +51,7 @@ move_var = get_vars(trial_data,move_corr);
 % get bins
 bins = linspace(-pi,pi,num_bins+1);
 bins = bins(2:end);
-bin_spacing = unique(diff(bins));
+bin_spacing = mean(unique(diff(bins)));
 assert(numel(bin_spacing)==1,'Something went wrong...')
 
 % bin directions
