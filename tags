@@ -77,13 +77,13 @@ _libraries	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevL
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) $/;"	f	file:
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) {$/;"	f	file:
 addCorrelatedNoise	lib/TrialData/Tools/addCorrelatedNoise.m	/^function [td] = addCorrelatedNoise(trial_data,params)$/;"	f
-addCylHand2TD	lib/TrialData/Tools/addCylHand2TD.m	/^function trial_data = addCylHand2TD(trial_data)$/;"	f
+addCylHand2TD	lib/TrialData/Tools/addCylHand2TD.m	/^function trial_data = addCylHand2TD(trial_data,method)$/;"	f
 addFiringRates	lib/TrialData/Tools/addFiringRates.m	/^function td = addFiringRates(trial_data,params)$/;"	f
 addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function addOperation(obj,operation,opPath,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@experiment/addProblem.m	/^function addProblem(ex,problem)$/;"	f
 addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession(ex,cds)$/;"	f
-addSphereHand2TD	lib/TrialData/Tools/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data)$/;"	f
+addSphereHand2TD	lib/TrialData/Tools/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data,method)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
 analyzeFold	MultiWorkspace/lib/analyzeTRT.m	/^function [foldEval,foldTuning] = analyzeFold(td_train,td_test,params)$/;"	f
@@ -115,6 +115,8 @@ bumpcurl_analysis	BumpCurl/bumpcurl_analysis.m	/^function bumpcurl_analysis(tria
 bytes2float	lib/ClassyDataAnalysis/lib/bytes2float.m	/^function f = bytes2float(varargin)$/;"	f
 calcFiringRate	lib/ClassyDataAnalysis/@experiment/calcFiringRate.m	/^function calcFiringRate(ex,varargin)$/;"	f
 calcTimeDelay	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/calcTimeDelay.m	/^function timeDelay = calcTimeDelay(NSx1, NSx2)$/;"	f
+calculateEncoderPDShiftErr	MultiWorkspace/lib/calculateEncoderPDShiftErr.m	/^function err = calculateEncoderPDShiftErr(encoderResults)$/;"	f
+calculatePDShiftTables	MultiWorkspace/lib/calculatePDShiftTables.m	/^function shift_tables = calculatePDShiftTables(encoderResults,model_names)$/;"	f
 catTD	lib/TrialData/Tools/catTD.m	/^function master_td = catTD(varargin)$/;"	f
 causalInference	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInference.m	/^function seq = causalInference(seq, params, varargin)$/;"	f
 causalInferencePrecomp	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInferencePrecomp.m	/^function precomp = causalInferencePrecomp(params, Tmax, varargin)$/;"	f
@@ -354,6 +356,8 @@ getLabParams	lib/ClassyDataAnalysis/lib/getLabParams.m	/^function [fhcal,rotcal,
 getLearningMetrics	lib/TrialData/Analysis/getLearningMetrics.m	/^function metric = getLearningMetrics(trial_data,params)$/;"	f
 getLoadCellOffsets	lib/ClassyDataAnalysis/lib/getLoadCellOffsets.m	/^function [dates, offsets] = getLoadCellOffsets(labNum,dateTime)$/;"	f
 getModel	lib/TrialData/Analysis/getModel.m	/^function [trial_data,model_info] = getModel(trial_data,params)$/;"	f
+getModelColors	MultiWorkspace/lib/getModelColors.m	/^function model_colors = getModelColors(model_alias)$/;"	f
+getModelColors	MultiWorkspace/lib/getModelTitles.m	/^function model_titles = getModelColors(model_alias)$/;"	f
 getMoveOnsetAndPeak	lib/TrialData/Tools/getMoveOnsetAndPeak.m	/^function trial_data = getMoveOnsetAndPeak(trial_data,params)$/;"	f
 getMoveStart	lib/ClassyDataAnalysis/@experiment/getMoveStart.m	/^function varargout=getMoveStart(ex,varargin)$/;"	f
 getNTidx	lib/NeuronTable/getNTidx.m	/^function [return_idx, neuronTable] = getNTidx(neuronTable,varargin)$/;"	f
@@ -476,6 +480,8 @@ mexFunction	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	/^vo
 minimize	lib/ClassyDataAnalysis/lib/gpfa/util/minimize.m	/^function [X, fX, i] = minimize(X, f, length, varargin)$/;"	f
 minusPi2Pi	lib/TrialData/util/minusPi2Pi.m	/^function out = minusPi2Pi(in)$/;"	f
 moving_average	lib/TrialData/util/moving_average.m	/^function data_mvavg = moving_average(data,bins)$/;"	f
+mwDecoders	MultiWorkspace/lib/mwDecoders.m	/^function results = mwDecoders(td,params)$/;"	f
+mwEncoders	MultiWorkspace/lib/mwEncoders.m	/^function results = mwEncoders(td,params)$/;"	f
 myode	SpindleSim/Hasan/hasan.m	/^function dmudt = myode(t,mu,t_x,x,dxdt,a,b,c)$/;"	f
 nanmmean	lib/TrialData/util/dpca/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
 nanmmean	lib/dPCA/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
@@ -620,6 +626,7 @@ plotBumpcurlTuning	BumpCurl/plotBumpcurlTuning.m	/^function plotBumpcurlTuning(t
 plotColor	lib/CircStat/circ_clust.m	/^function plotColor(x, y, c, varargin)$/;"	f
 plotDecomposedFR	ForceKin/lib/plotDecomposedFR.m	/^function plotDecomposedFR(fr,thv,thf,lin_models,savefigs)$/;"	f
 plotEachDimVsTime	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotEachDimVsTime.m	/^function plotEachDimVsTime(seq, xspec, binWidth, varargin)$/;"	f
+plotEncoderPR2	MultiWorkspace/lib/plotEncoderPR2.m	/^function plotEncoderPR2(encoderResults,x_model,y_model)$/;"	f
 plotFlatTuning	lib/NeuronTable/plotFlatTuning.m	/^function plotFlatTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotMWTuningCloud	MultiWorkspace/lib/plotMWTuningCloud.m	/^function plotMWTuningCloud(tuningHull,neuron_idx)$/;"	f
 plotMWTuningSurfaces	MultiWorkspace/lib/plotMWTuningSurfaces.m	/^function plotMWTuningSurfaces(td_test,pdTables,neuron_idx,model_aliases)$/;"	f
