@@ -117,7 +117,7 @@ calcFiringRate	lib/ClassyDataAnalysis/@experiment/calcFiringRate.m	/^function ca
 calcTimeDelay	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/calcTimeDelay.m	/^function timeDelay = calcTimeDelay(NSx1, NSx2)$/;"	f
 calculateEncoderPDShiftErr	MultiWorkspace/lib/calculateEncoderPDShiftErr.m	/^function err = calculateEncoderPDShiftErr(encoderResults)$/;"	f
 calculatePDShiftTables	MultiWorkspace/lib/calculatePDShiftTables.m	/^function shift_tables = calculatePDShiftTables(encoderResults,model_names)$/;"	f
-catTD	lib/TrialData/Tools/catTD.m	/^function master_td = catTD(varargin)$/;"	f
+catTDs	lib/TrialData/Tools/catTDs.m	/^function master_td = catTDs(varargin)$/;"	f
 causalInference	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInference.m	/^function seq = causalInference(seq, params, varargin)$/;"	f
 causalInferencePrecomp	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInferencePrecomp.m	/^function precomp = causalInferencePrecomp(params, Tmax, varargin)$/;"	f
 cerebus2NEVNSx	lib/SpikeMerge/cerebus2NEVNSx.m	/^function NEVNSx = cerebus2NEVNSx(varargin)$/;"	f
@@ -227,7 +227,7 @@ deleteInvalid	lib/ClassyDataAnalysis/@unitData/deleteInvalid.m	/^function delete
 deleteUnsorted	lib/ClassyDataAnalysis/@unitData/deleteUnsorted.m	/^function deleteUnsorted(units)$/;"	f
 dim	lib/linspecer/linspecer.m	/^function varIn = dim(varIn,f)$/;"	f
 dimRedHelper	lib/ClassyDataAnalysis/@binnedData/dimRedHelper.m	/^function [ dat ] = dimRedHelper( binned )$/;"	f
-dimReduce	lib/TrialData/Analysis/dimReduce.m	/^function [trial_data,info_out] = dimReduce(trial_data, params)$/;"	f
+dimReduce	lib/TrialData/Tools/dimReduce.m	/^function [trial_data,info_out] = dimReduce(trial_data, params)$/;"	f
 dlclose	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	224;"	d	file:
 dlerror	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	225;"	d	file:
 dllHandle	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    DLL_HANDLE dllHandle;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
@@ -742,6 +742,7 @@ splitNSxPauses	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/splitNSxPauses.m	/^
 splitTD	lib/TrialData/Tools/splitTD.m	/^function td_s = splitTD(trial_data,params)$/;"	f
 split_array_Han	ForceKin/split_array_Han.m	/^function [ant_chans,post_chans] = split_array_Han(cds)$/;"	f
 sqrtTransform	lib/TrialData/Tools/sqrtTransform.m	/^function trial_data = sqrtTransform(trial_data,signals)$/;"	f
+stattestPDShiftErr	MultiWorkspace/lib/stattestPDShiftErr.m	/^function [h,p] = stattestPDShiftErr(err,modelcompare,tails,num_repeats,num_folds)$/;"	f
 stdpath	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function fn = stdpath(file,root)$/;"	f
 stretchSignals	lib/TrialData/Tools/stretchSignals.m	/^function trial_data = stretchSignals(trial_data,params)$/;"	f
 stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	149;"	d	file:
