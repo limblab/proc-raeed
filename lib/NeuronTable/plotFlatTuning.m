@@ -55,4 +55,4 @@ if(~isempty(pdData))
     set(h,'linewidth',2,'color',color)
 end
 
-set(gca,'xlim',[-pi pi],'ylim',[0 maxRadius],'xtick',[-pi, 0, pi],'xticklabel',{'-\pi','0','\pi'})
+set(gca,'xlim',[-pi pi],'ylim',[0 maxRadius],'xtick',[-pi, 0, pi],'xticklabel',{'-180','0','180'})
