@@ -20,7 +20,7 @@ if(~isempty(curve))
     bins = curve.bins;
     th_wrap = [bins-2*pi bins bins+2*pi];
     th_fill = [th_wrap fliplr(th_wrap)];
-    r_fill = [repmat(curve.(sprintf('%sCurve',move_cor)),1,3) fliplr(repmat(curve.(sprintf('%sCurve',move_cor)),1,3))];
+    r_fill = [repmat(curve.(sprintf('%sCurveCIlow',move_cor)),1,3) fliplr(repmat(curve.(sprintf('%sCurveCIhigh',move_cor)),1,3))];
     th_fill = th_fill(~isnan(r_fill));
     r_fill = r_fill(~isnan(r_fill));
     % h=plot(th_fill,r_fill);
@@ -29,8 +29,7 @@ if(~isempty(curve))
     curve_wrap = repmat(curve.(sprintf('%sCurve',move_cor)),1,3);
     th_wrap = th_wrap(~isnan(curve_wrap));
     curve_wrap = curve_wrap(~isnan(curve_wrap));
-    h=plot(th_wrap,curve_wrap);
-    set(h,'linewidth',2,'color',color)
+    plot(th_wrap,curve_wrap,'linewidth',2,'color',color);
 end
 
 % PD
@@ -55,4 +54,4 @@ if(~isempty(pdData))
     set(h,'linewidth',2,'color',color)
 end
 
-set(gca,'xlim',[-pi pi],'ylim',[0 maxRadius],'xtick',[-pi, 0, pi],'xticklabel',{'-180','0','180'})
+set(gca,'box','off','tickdir','out','xlim',[-pi pi],'ylim',[0 maxRadius],'xtick',[-pi, 0, pi],'xticklabel',{'-180','0','180'})
