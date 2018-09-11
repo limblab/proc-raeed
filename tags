@@ -62,6 +62,7 @@ ReadSplines	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadSpl
 ReadView	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = ReadView(fid,nmcb)$/;"	f
 SO_EXT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	148;"	d	file:
 SO_EXT	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	226;"	d	file:
+TTB_Sparse	lib/tensor_toolbox/doc/html/bibtex.html	/^<a name="TTB_Sparse" class="nameonly"><\/a>$/;"	a
 T_IN	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	36;"	d	file:
 Ti_OUT	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	40;"	d	file:
 UINT16	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    typedef unsigned short      UINT16, *PUINT16;$/;"	t
@@ -76,18 +77,24 @@ _checkPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevL
 _libraries	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static struct NS_LIBRARY_FUNCS _libraries[MAX_LIBS];$/;"	v	typeref:struct:NS_LIBRARY_FUNCS	file:
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) $/;"	f	file:
 _setSearchPath	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^static void _setSearchPath (char *so_name) {$/;"	f	file:
+aatx	lib/tensor_toolbox/@sptenmat/aatx.m	/^function z = aatx(a,x)$/;"	f
+adapt_shift	lib/tensor_toolbox/eig_sshopm.m	/^function alpha = adapt_shift(A,x,tau,concave)$/;"	f
+addCoordPoint2TD	lib/TrialData/Tools/addCoordPoint2TD.m	/^function trial_data = addCoordPoint2TD(trial_data,params)$/;"	f
 addCorrelatedNoise	lib/TrialData/Tools/addCorrelatedNoise.m	/^function [td] = addCorrelatedNoise(trial_data,params)$/;"	f
-addCylHand2TD	lib/TrialData/Tools/addCylHand2TD.m	/^function trial_data = addCylHand2TD(trial_data,method)$/;"	f
 addFiringRates	lib/TrialData/Tools/addFiringRates.m	/^function td = addFiringRates(trial_data,params)$/;"	f
 addOperation	lib/ClassyDataAnalysis/@operationLogger/addOperation.m	/^function addOperation(obj,operation,opPath,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@commonDataStructure/addProblem.m	/^function addProblem(cds,problem,varargin)$/;"	f
 addProblem	lib/ClassyDataAnalysis/@experiment/addProblem.m	/^function addProblem(ex,problem)$/;"	f
+addProcessedSignal	lib/TrialData/Tools/addProcessedSignal.m	/^function trial_data = addProcessedSignal(trial_data,params)$/;"	f
 addSession	lib/ClassyDataAnalysis/@experiment/addSession.m	/^function addSession(ex,cds)$/;"	f
-addSphereHand2TD	lib/TrialData/Tools/addSphereHand2TD.m	/^function trial_data = addSphereHand2TD(trial_data,method)$/;"	f
 addUnit	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [flags,tmpUnitData]=addUnit(ID,UD,tmpUnitData,flags,uList,offset)$/;"	f
+allsubs	lib/tensor_toolbox/@sptensor/private/allsubs.m	/^function s = allsubs(x)$/;"	f
 analogFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function analogFromNSx(cds)$/;"	f
 analyzeFold	MultiWorkspace/lib/analyzeTRT.m	/^function [foldEval,foldTuning] = analyzeFold(td_train,td_test,params)$/;"	f
 analyzeTRT	MultiWorkspace/lib/analyzeTRT.m	/^function [crossEval, crossTuning] = analyzeTRT(trial_data,params)$/;"	f
+and	lib/tensor_toolbox/@sptensor/and.m	/^function C = and(A,B)$/;"	f
+and	lib/tensor_toolbox/@symtensor/and.m	/^function Z = and(X,Y)$/;"	f
+and	lib/tensor_toolbox/@tensor/and.m	/^function Z = and(X,Y)$/;"	f
 angleDiff	lib/TrialData/util/angleDiff.m	/^function adiff = angleDiff(angle1,angle2,useRad,preserveSign)$/;"	f
 animateBumpcurlTrials	BumpCurl/lib/animateBumpcurlTrials.m	/^function animateBumpcurlTrials(trial_data,field,bump_colors,waitperiod,tail_length)$/;"	f
 appendData	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function appendData(units,data,varargin)$/;"	f
@@ -95,6 +102,8 @@ appendLoadCellOffsets	lib/ClassyDataAnalysis/lib/appendLoadCellOffsets.m	/^funct
 appendTDs	lib/TrialData/Tools/appendTDs.m	/^function combined = appendTDs(varargin)$/;"	f
 appendTable	lib/ClassyDataAnalysis/@timeSeriesData/appendTable.m	/^function appendTable(tsd,data,varargin)$/;"	f
 appendTable	lib/ClassyDataAnalysis/@trialData/appendTable.m	/^function appendTable(trials,data,varargin)$/;"	f
+arrange	lib/tensor_toolbox/@ktensor/arrange.m	/^function X = arrange(X,foo)$/;"	f
+arrange	lib/tensor_toolbox/@symktensor/arrange.m	/^function X = arrange(X,perm)$/;"	f
 arrayWaveLayout	lib/arrayWaveLayout.m	/^function h = arrayWaveLayout(cds)$/;"	f
 arrowMMC	lib/TanglingCode/arrowMMC.m	/^function h = arrowMMC(prevPoint, point, nextPoint, sizeArrow, axisRange, faceColor, edgeColor)$/;"	f
 artifact_removal	lib/SpikeMerge/artifact_removal.m	/^function unit_structure = artifact_removal(varargin)$/;"	f
@@ -115,8 +124,13 @@ bumpcurl_analysis	BumpCurl/bumpcurl_analysis.m	/^function bumpcurl_analysis(tria
 bytes2float	lib/ClassyDataAnalysis/lib/bytes2float.m	/^function f = bytes2float(varargin)$/;"	f
 calcFiringRate	lib/ClassyDataAnalysis/@experiment/calcFiringRate.m	/^function calcFiringRate(ex,varargin)$/;"	f
 calcTimeDelay	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/calcTimeDelay.m	/^function timeDelay = calcTimeDelay(NSx1, NSx2)$/;"	f
+calc_grad	lib/tensor_toolbox/cp_apr.m	/^function [grad_row, phi_row] = calc_grad(isSparse, Pi, eps_div_zero, x_row, m_row)$/;"	f
 calculateEncoderPDShiftErr	MultiWorkspace/lib/calculateEncoderPDShiftErr.m	/^function err = calculateEncoderPDShiftErr(encoderResults)$/;"	f
 calculatePDShiftTables	MultiWorkspace/lib/calculatePDShiftTables.m	/^function shift_tables = calculatePDShiftTables(encoderResults,model_names)$/;"	f
+calculatePhi	lib/tensor_toolbox/cp_apr.m	/^function Phi = calculatePhi(X, M, R, n, Pi, epsilon)$/;"	f
+calculatePi	lib/tensor_toolbox/cp_apr.m	/^function Pi = calculatePi(X, M, R, n, N)$/;"	f
+cart2pol_wrap	lib/TrialData/Tools/addCoordPoint2TD.m	/^function cyl = cart2pol_wrap(cart)$/;"	f
+cart2sph_wrap	lib/TrialData/Tools/addCoordPoint2TD.m	/^function sph = cart2sph_wrap(cart)$/;"	f
 catTDs	lib/TrialData/Tools/catTDs.m	/^function master_td = catTDs(varargin)$/;"	f
 causalInference	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInference.m	/^function seq = causalInference(seq, params, varargin)$/;"	f
 causalInferencePrecomp	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/causalInferencePrecomp.m	/^function precomp = causalInferencePrecomp(params, Tmax, varargin)$/;"	f
@@ -175,9 +189,13 @@ cluster_func_reach	lib/KinectTracking/Marker_Tracking/Reaching/cluster_func_reac
 cluster_func_reach2	lib/KinectTracking/Marker_Tracking/Reaching/cluster_func_reach2.m	/^function [ prev_num_clust, prev_meds, medians, medians2  ] = cluster_func_reach2(t, loc, num_clust, prev_num_clust, dist_min, prev_meds, medians, medians2 )$/;"	f
 cluster_rho	lib/TrialData/Analysis/pairwiseCorr.m	/^function sort_idx = cluster_rho(rho)$/;"	f
 cmap2linspecer	lib/linspecer/linspecer.m	/^function vOut = cmap2linspecer(vIn) % changes the format from a double array to a cell array with the right format$/;"	f
+collapse	lib/tensor_toolbox/@sptensor/collapse.m	/^function s = collapse(t,dims,fun)$/;"	f
+collapse	lib/tensor_toolbox/@tensor/collapse.m	/^function Y = collapse(X,dims,fun)$/;"	f
 colorBrew2mat	lib/linspecer/linspecer.m	/^function varIn = colorBrew2mat(varIn)$/;"	f
 colorm	lib/linspecer/linspecer.m	/^function cmap = colorm(varargin)$/;"	f
 combineNSxNEV	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/combineNSxNEV.m	/^function [NSx1, NEV1] = combineNSxNEV(filename1, filename2)$/;"	f
+combs_no_rep	lib/tensor_toolbox/teneye.m	/^function CN = combs_no_rep(N,K)$/;"	f
+combs_rep	lib/tensor_toolbox/teneye.m	/^function CR = combs_rep(N,K)$/;"	f
 comparePDClouds	lib/NeuronTable/comparePDClouds.m	/^function comparePDClouds(pdTable1,pdTable2,params,varargin)$/;"	f
 comparePDs	lib/NeuronTable/comparePDs.m	/^function comparePDs(pdTable1,pdTable2,params,varargin)$/;"	f
 compareTuning	lib/NeuronTable/compareTuning.m	/^function compareTuning(curves,pds,params)$/;"	f
@@ -185,15 +203,33 @@ compute_pseudo_R2	lib/TrialData/util/compute_pseudo_R2.m	/^function R2 = compute
 compute_r2	lib/TrialData/util/compute_r2.m	/^function r2 = compute_r2(sig1,sig2,which_method)$/;"	f
 compute_rel_pseudo_R2	lib/TrialData/util/compute_rel_pseudo_R2.m	/^function R2 = compute_rel_pseudo_R2(Y, Yhat1, Yhat2)$/;"	f
 compute_vaf	lib/TrialData/util/compute_vaf.m	/^function VAF = compute_vaf(Y,Yhat,Yhat2)$/;"	f
+contract	lib/tensor_toolbox/@sptensor/contract.m	/^function y = contract(x,i,j)$/;"	f
+contract	lib/tensor_toolbox/@tensor/contract.m	/^function y = contract(x,i,j)$/;"	f
 convBasisFunc	lib/TrialData/Tools/convBasisFunc.m	/^function trial_data = convBasisFunc(trial_data,params)$/;"	f
-convertDataToTD	lib/TrialData/DataProcessing/convertDataToTD.m	/^function [trial_data,td_params] = convertDataToTD(varargin)$/;"	f
+convertDataToTD	lib/TrialData/DataProcessing/convertDataToTD.m	/^function [trial_data,td_params,error_flag] = convertDataToTD(varargin)$/;"	f
+convert_bound	lib/tensor_toolbox/cp_opt.m	/^function newbound = convert_bound(bound,sz,R)$/;"	f
+convert_bound	lib/tensor_toolbox/cp_wopt.m	/^function newbound = convert_bound(bound,sz,R)$/;"	f
 convert_model	Hindlimb/leg_lib/Neuromechanic/convert_model.m	/^function legmodel = convert_model(plotflag)$/;"	f
+coord_test	lib/TrialData/Tools/Tests/coord_test.m	/^function pass = coord_test(trial_data)$/;"	f
 cosmoother_fa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/cosmoother_fa.m	/^function [Ycs, Vcs] = cosmoother_fa(Y, params)$/;"	f
 cosmoother_gpfa_viaOrth	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/cosmoother_gpfa_viaOrth.m	/^function seq = cosmoother_gpfa_viaOrth(seq, params, mList)$/;"	f
 cosmoother_gpfa_viaOrth_fast	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/cosmoother_gpfa_viaOrth_fast.m	/^function seq = cosmoother_gpfa_viaOrth_fast(seq, params, mList)$/;"	f
 cosmoother_pca	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/cosmoother_pca.m	/^function Ycs = cosmoother_pca(Y, params)$/;"	f
+cp_als	lib/tensor_toolbox/cp_als.m	/^function [P,Uinit,output] = cp_als(X,R,varargin)$/;"	f
+cp_apr	lib/tensor_toolbox/cp_apr.m	/^function [M, Minit, output] = cp_apr(X, R, varargin)$/;"	f
+cp_arls	lib/tensor_toolbox/cp_arls.m	/^function [P,Uinit,output] = cp_arls(X,R,varargin)$/;"	f
+cp_nmu	lib/tensor_toolbox/cp_nmu.m	/^function [P,Uinit] = cp_nmu(X,R,opts)$/;"	f
+cp_opt	lib/tensor_toolbox/cp_opt.m	/^function [P, P0, output] = cp_opt(Z,R,varargin)$/;"	f
+cp_sym	lib/tensor_toolbox/cp_sym.m	/^function [Model,Info] = cp_sym(A,P,varargin)$/;"	f
+cp_wopt	lib/tensor_toolbox/cp_wopt.m	/^function [P, P0, output] = cp_wopt(Z,W,R,varargin)$/;"	f
 create_call_list	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function call = create_call_list(called_from)$/;"	f
+create_dircontents	lib/tensor_toolbox/maintenance/create_dircontents.m	/^function C = create_dircontents(dirname,varargin)$/;"	f
+create_guess	lib/tensor_toolbox/create_guess.m	/^function U = create_guess(varargin)$/;"	f
 create_hg_cbnames	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function hg_cbnames = create_hg_cbnames$/;"	f
+create_problem	lib/tensor_toolbox/create_problem.m	/^function [info,params] = create_problem(varargin)$/;"	f
+create_topcontents	lib/tensor_toolbox/maintenance/create_topcontents.m	/^function create_topcontents$/;"	f
+ctranspose	lib/tensor_toolbox/@tenmat/ctranspose.m	/^function a = ctranspose(a)$/;"	f
+cumsum2	lib/tensor_toolbox/teneye.m	/^function A = cumsum2(A)$/;"	f
 curvature	lib/curvature.m	/^function k = curvature(varargin)$/;"	f
 cutTrials	lib/ClassyDataAnalysis/lib/gpfa/util/cutTrials.m	/^function seqOut = cutTrials(seqIn, varargin)$/;"	f
 dHighFreqCorner	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double    dHighFreqCorner;       \/\/ High frequency cutoff in Hz of the source signal filtering$/;"	m	struct:__anon11
@@ -220,14 +256,35 @@ dSubSampleShift	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05
 dTimeSpan	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dTimeSpan;              \/\/ Time span covered by the data file in seconds$/;"	m	struct:__anon8
 dTimeStampResolution	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    double dTimeStampResolution;   \/\/ Minimum timestamp resolution$/;"	m	struct:__anon8
 database2cds	lib/ClassyDataAnalysis/@commonDataStructure/database2cds.m	/^function database2cds(cds,conn,filepath,varargin)$/;"	f
+datadisp	lib/tensor_toolbox/@ktensor/datadisp.m	/^function datadisp(T, dimlabels, opts)$/;"	f
 dct1d	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function data=dct1d(data)$/;"	f
 decimateData	lib/ClassyDataAnalysis/lib/decimateData.m	/^function [dataD]=decimateData(data,fc)$/;"	f
 decimate_signals	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = decimate_signals(data,var_list,bin_size)$/;"	f
 deleteInvalid	lib/ClassyDataAnalysis/@unitData/deleteInvalid.m	/^function deleteInvalid(units)$/;"	f
 deleteUnsorted	lib/ClassyDataAnalysis/@unitData/deleteUnsorted.m	/^function deleteUnsorted(units)$/;"	f
+dense_sample_mttkrp	lib/tensor_toolbox/cp_arls.m	/^function [V, Xsamp, Zsamp] = dense_sample_mttkrp(X,U,n,nsamplsq,mixinfo)$/;"	f
 dim	lib/linspecer/linspecer.m	/^function varIn = dim(varIn,f)$/;"	f
 dimRedHelper	lib/ClassyDataAnalysis/@binnedData/dimRedHelper.m	/^function [ dat ] = dimRedHelper( binned )$/;"	f
 dimReduce	lib/TrialData/Tools/dimReduce.m	/^function [trial_data,info_out] = dimReduce(trial_data, params)$/;"	f
+disp	lib/tensor_toolbox/@ktensor/disp.m	/^function disp(t, name)$/;"	f
+disp	lib/tensor_toolbox/@sptenmat/disp.m	/^function disp(a,name)$/;"	f
+disp	lib/tensor_toolbox/@sptensor/disp.m	/^function disp(X,name)$/;"	f
+disp	lib/tensor_toolbox/@sumtensor/disp.m	/^function disp(t,name)$/;"	f
+disp	lib/tensor_toolbox/@symktensor/disp.m	/^function disp(t, name)$/;"	f
+disp	lib/tensor_toolbox/@symtensor/disp.m	/^function disp(X, name) $/;"	f
+disp	lib/tensor_toolbox/@tenmat/disp.m	/^function disp(t,name)$/;"	f
+disp	lib/tensor_toolbox/@tensor/disp.m	/^function disp(X,name)$/;"	f
+disp	lib/tensor_toolbox/@ttensor/disp.m	/^function disp(t,name)$/;"	f
+display	lib/tensor_toolbox/@ktensor/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@sptenmat/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@sptensor/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@sumtensor/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@symktensor/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@symtensor/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@tenmat/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@tensor/display.m	/^function display(t)$/;"	f
+display	lib/tensor_toolbox/@ttensor/display.m	/^function display(t)$/;"	f
+divide	lib/tensor_toolbox/@sptensor/divide.m	/^function Y = divide(X,K,epsilon)$/;"	f
 dlclose	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	224;"	d	file:
 dlerror	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	225;"	d	file:
 dllHandle	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    DLL_HANDLE dllHandle;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
@@ -237,6 +294,14 @@ dnaPlot	MultiWorkspace/lib/dnaPlot.m	/^function dnaPlot( PM_pdData, DL_pdData)$/
 do_affine_xform	lib/KinectTracking/functions/do_affine_xform.m	/^function [ kinect_pos ] = do_affine_xform( all_medians, affine_xform, plot_flag )$/;"	f
 do_the_loading	lib/TrialData/DataProcessing/loadTDfiles.m	/^function [trial_data,extra_outs] = do_the_loading(filename,func_calls)$/;"	f
 do_translation_rotation	lib/KinectTracking/functions/Deprecated/do_translation_rotation.m	/^function [ kinect_pos ] = do_translation_rotation( all_medians, alignment_settings, plot_flag, times_good, pos_h, colors_xy )$/;"	f
+double	lib/tensor_toolbox/@ktensor/double.m	/^function A = double(X)$/;"	f
+double	lib/tensor_toolbox/@sptenmat/double.m	/^function A = double(T)$/;"	f
+double	lib/tensor_toolbox/@sptensor/double.m	/^function a = double(s)$/;"	f
+double	lib/tensor_toolbox/@sumtensor/double.m	/^function A = double(T)$/;"	f
+double	lib/tensor_toolbox/@symktensor/double.m	/^function A = double(X)$/;"	f
+double	lib/tensor_toolbox/@tenmat/double.m	/^function a = double(t)$/;"	f
+double	lib/tensor_toolbox/@tensor/double.m	/^function A = double(X)$/;"	f
+double	lib/tensor_toolbox/@ttensor/double.m	/^function A = double(T)$/;"	f
 dpca	lib/TrialData/util/dpca/dpca.m	/^function [W, V, whichMarg] = dpca(Xfull, numComps, varargin)$/;"	f
 dpca	lib/dPCA/dpca.m	/^function [W, V, whichMarg] = dpca(Xfull, numComps, varargin)$/;"	f
 dpca_classificationAccuracy	lib/dPCA/dpca_classificationAccuracy.m	/^function [accuracy, brier] = dpca_classificationAccuracy(Xfull, Xtrial, numOfTrials, varargin)$/;"	f
@@ -294,30 +359,58 @@ dwTime_Sec	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevL
 dwTime_Year	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Year;            \/\/ Year the file was created$/;"	m	struct:__anon8
 dwTime_Year	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    UINT32 dwTime_Year;        \/\/ Year of last modification date$/;"	m	struct:__anon7
 edgeDetect	lib/ClassyDataAnalysis/lib/NPMK/Other tools/edgeDetect.m	/^function timestamps = edgeDetect(signal, threshold, type)$/;"	f
+eig_geap	lib/tensor_toolbox/eig_geap.m	/^function [varargout] = eig_geap(A,B,varargin)$/;"	f
+eig_sshopm	lib/tensor_toolbox/eig_sshopm.m	/^function [lambda,x,flag,its,x0] = eig_sshopm(A,varargin)$/;"	f
+eig_sshopmc	lib/tensor_toolbox/eig_sshopmc.m	/^function [lambda,x,flag,its,x0,trace] = eig_sshopmc(A,varargin)$/;"	f
 elastic_joint_cost	Hindlimb/leg_lib/elastic_joint_cost.m	/^function cost = elastic_joint_cost(angles,eq_angles,joint_elast)$/;"	f
+elemfun	lib/tensor_toolbox/@sptensor/elemfun.m	/^function a = elemfun(a,fun)$/;"	f
 em	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/em.m	/^function [estParams, seq, LL, iterTime] = em(currentParams, seq, varargin)$/;"	f
 emgFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/emgFromNSx.m	/^function emgFromNSx(cds)$/;"	f
 enc2WFpos	lib/ClassyDataAnalysis/@commonDataStructure/enc2WFpos.m	/^function pos=enc2WFpos(cds)$/;"	f
 enc2handlepos	lib/ClassyDataAnalysis/@commonDataStructure/enc2handlepos.m	/^function [pos]=enc2handlepos(cds,dateTime,lab)$/;"	f
+end	lib/tensor_toolbox/@ktensor/end.m	/^function e = end(X,k,n)$/;"	f
+end	lib/tensor_toolbox/@sptenmat/end.m	/^function e = end(X,k,n)$/;"	f
+end	lib/tensor_toolbox/@sptensor/end.m	/^function e = end(X,k,n)$/;"	f
+end	lib/tensor_toolbox/@symktensor/end.m	/^function e = end(X,k,n)$/;"	f
+end	lib/tensor_toolbox/@tenmat/end.m	/^function e = end(X,k,n)$/;"	f
+end	lib/tensor_toolbox/@tensor/end.m	/^function e = end(X,k,n)$/;"	f
+end	lib/tensor_toolbox/@ttensor/end.m	/^function e = end(X,k,n)$/;"	f
 endpoint_constraint	Hindlimb/leg_lib/endpoint_constraint.m	/^function [C,Ceq] = endpoint_constraint(angles,endpoint,legmodel)$/;"	f
+entry	lib/tensor_toolbox/@symktensor/entry.m	/^function value = entry(model,I)$/;"	f
+eq	lib/tensor_toolbox/@sptensor/eq.m	/^function z = eq(x,y)$/;"	f
+eq	lib/tensor_toolbox/@symtensor/eq.m	/^function Z = eq(X,Y)$/;"	f
+eq	lib/tensor_toolbox/@tensor/eq.m	/^function Z = eq(X,Y)$/;"	f
 error2CellStr	lib/ClassyDataAnalysis/lib/error2CellStr.m	/^function [errorCellStr]=error2CellStr(ME)$/;"	f
 estimateBumpFromPCA	BumpCurl/lib/estimateBumpFromPCA.m	/^function td = estimateBumpFromPCA(trial_data)$/;"	f
 estimateDimensionality	lib/TrialData/Analysis/estimateDimensionality.m	/^function [dims,noise_eigen_prctile] = estimateDimensionality(trial_data,params)$/;"	f
 evalModel	lib/TrialData/Analysis/evalModel.m	/^function metric = evalModel(trial_data,params)$/;"	f
 eventsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/eventsFromNEV.m	/^function eventsFromNEV(cds,opts)$/;"	f
 exactInferenceWithLL	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/exactInferenceWithLL.m	/^function [seq, LL] = exactInferenceWithLL(seq, params, varargin)$/;"	f
+exp	lib/tensor_toolbox/@tensor/exp.m	/^function t = exp(t)$/;"	f
 exploreData	BumpCurl/exploreData.m	/^function exploreData(trial_data)$/;"	f
+export_array	lib/tensor_toolbox/export_data.m	/^function export_array(fid, data)$/;"	f
+export_data	lib/tensor_toolbox/export_data.m	/^function export_data(A, fname)$/;"	f
+export_size	lib/tensor_toolbox/export_data.m	/^function export_size(fid, sz)$/;"	f
+export_sparse_array	lib/tensor_toolbox/export_data.m	/^function export_sparse_array(fid, A)$/;"	f
+export_sparse_size	lib/tensor_toolbox/export_data.m	/^function export_sparse_size(fid, A)$/;"	f
+extract	lib/tensor_toolbox/@ktensor/extract.m	/^function new_X = extract(X,idx)$/;"	f
+extract	lib/tensor_toolbox/@sptensor/private/extract.m	/^function a = extract(t,srchsubs)$/;"	f
 extract_ns5_spikes	lib/TrialData/util/subfcn/extract_ns5_spikes.m	/^function out = extract_ns5_spikes(file_data,params)$/;"	f
 extract_resid	ForceKin/lib/extract_resid.m	/^function [resid_lin,resid_non] = extract_resid(fr,thv,thf)$/;"	f
 fake_parula	lib/PythonColors/Colormaps/fake_parula.m	/^function cm_data=fake_parula(m)$/;"	f
 fastfa	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
 fastfa	lib/TrialData/util/gpfa/fastfa.m	/^function [estParams, LL] = fastfa(X, zDim, varargin)$/;"	f
 fastfa_estep	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/fastfa_estep.m	/^function [Z, LL] = fastfa_estep(X, params)$/;"	f
+fg	lib/tensor_toolbox/@symktensor/fg.m	/^function [F,G] = fg(Model,Data)$/;"	f
+fg_setup	lib/tensor_toolbox/@symktensor/fg_setup.m	/^function data = fg_setup(Model, A, varargin)$/;"	f
+fg_wrapper	lib/tensor_toolbox/cp_sym.m	/^function [f,g] = fg_wrapper(x,data)$/;"	f
 filMIMO4	lib/ClassyDataAnalysis/@binnedData/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
 filMIMO4	lib/ClassyDataAnalysis/lib/weiner/filMIMO4.m	/^function [H,v,mcc]=filMIMO4(X,Y,numlags,numsides,fs)$/;"	f
 file2cds	lib/ClassyDataAnalysis/@commonDataStructure/file2cds.m	/^function file2cds(cds,filePath,varargin)$/;"	f
 fillPerSymm	lib/ClassyDataAnalysis/lib/gpfa/util/fillPerSymm.m	/^function Pout = fillPerSymm(Pin, blkSize, T, varargin)$/;"	f
 filter22	lib/ClassyDataAnalysis/lib/weiner/filter22.m	/^function y = filter22(fil,x,numsides)$/;"	f
+find	lib/tensor_toolbox/@sptensor/find.m	/^function [subs,vals] = find(t)$/;"	f
+find	lib/tensor_toolbox/@tensor/find.m	/^function [subs,vals] = find(t)$/;"	f
 findAllListeners	lib/ClassyDataAnalysis/lib/findAllListeners.m	/^function eventsWithListeners=findAllListeners(obj)$/;"	f
 findEventTimes	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/findEventTimes.m	/^function [allTimestamps allSnippets allIndices] = findEventTimes(NEV, Channel, Units)$/;"	f
 findSpikes	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/findSpikes.m	/^function Spikes = findSpikes(NSx, varargin)$/;"	f
@@ -333,10 +426,31 @@ fitPPCA	lib/ClassyDataAnalysis/@binnedData/fitPPCA.m	/^function fitPPCA(binned)$
 fitPds	lib/ClassyDataAnalysis/@binnedData/fitPds.m	/^function fitPds(binned)$/;"	f
 fitWeiner	lib/ClassyDataAnalysis/@binnedData/fitWeiner.m	/^function fitWeiner(binned)$/;"	f
 fixed_point	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function  out=fixed_point(t,N,I,a2)$/;"	f
+fixsigns	lib/tensor_toolbox/@ktensor/fixsigns.m	/^function K = fixsigns(K,K0)$/;"	f
+fixsigns_oneargin	lib/tensor_toolbox/@ktensor/fixsigns.m	/^function K = fixsigns_oneargin(K)$/;"	f
+fixsigns_twoargin	lib/tensor_toolbox/@ktensor/fixsigns.m	/^function [A, best_sign] = fixsigns_twoargin(A,B)$/;"	f
 followLinks	lib/ClassyDataAnalysis/lib/followLinks.m	/^function fname=followLinks(fname)$/;"	f
+footer	lib/tensor_toolbox/maintenance/tensor_toolbox_product_page_template.html	/^	<a name="footer"><\/a>$/;"	a
 forceFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/forceFromNSx.m	/^function forceFromNSx(cds,opts)$/;"	f
 formatForLee	lib/ClassyDataAnalysis/lib/formatForLee.m	/^function formatForLee(fhandle)$/;"	f
 formatSubplot	lib/CircStat/examples/formatSubplot.m	/^function formatSubplot(handle,varargin)$/;"	f
+full	lib/tensor_toolbox/@ktensor/full.m	/^function t = full(t)$/;"	f
+full	lib/tensor_toolbox/@sptenmat/full.m	/^function B = full(A)$/;"	f
+full	lib/tensor_toolbox/@sptensor/full.m	/^function B = full(A)$/;"	f
+full	lib/tensor_toolbox/@sumtensor/full.m	/^function X = full(T)$/;"	f
+full	lib/tensor_toolbox/@symktensor/full.m	/^function t = full(t)$/;"	f
+full	lib/tensor_toolbox/@symtensor/full.m	/^function Y = full(X,ver)$/;"	f
+full	lib/tensor_toolbox/@tensor/full.m	/^function X = full(X)$/;"	f
+full	lib/tensor_toolbox/@ttensor/full.m	/^function X = full(T)$/;"	f
+ge	lib/tensor_toolbox/@sptensor/ge.m	/^function z = ge(x,y)$/;"	f
+ge	lib/tensor_toolbox/@symtensor/ge.m	/^function Z = ge(X,Y)$/;"	f
+ge	lib/tensor_toolbox/@tensor/ge.m	/^function Z = ge(X,Y)$/;"	f
+geap_data	lib/tensor_toolbox/eig_geap.m	/^function data = geap_data(x,A,B)$/;"	f
+geap_hessian	lib/tensor_toolbox/eig_geap.m	/^function H = geap_hessian(data,alpha,dividebym)$/;"	f
+generate_data	lib/tensor_toolbox/create_problem.m	/^function D = generate_data(S, W, params)$/;"	f
+generate_data_sparse	lib/tensor_toolbox/create_problem.m	/^function [Z,S] = generate_data_sparse(S,params)$/;"	f
+generate_missing_pattern	lib/tensor_toolbox/create_problem.m	/^function W = generate_missing_pattern(sz, params)$/;"	f
+generate_solution	lib/tensor_toolbox/create_problem.m	/^function S = generate_solution(params)$/;"	f
 getBDTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getBDTaskTable.m	/^function getBDTaskTable(cds,times)$/;"	f
 getCOTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCOTaskTable.m	/^function getCOTaskTable(cds,times)$/;"	f
 getCObumpTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getCObumpTaskTable.m	/^function getCObumpTaskTable(cds,times)$/;"	f
@@ -351,13 +465,14 @@ getFolder	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getFolder.m	/^func
 getGenericTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getGenericTaskTable.m	/^function getGenericTaskTable(cds) $/;"	f
 getGitInfo	lib/TrialData/util/getGitInfo.m	/^function gitInfo=getGitInfo()$/;"	f
 getGitLog	lib/ClassyDataAnalysis/@operationLogger/getGitLog.m	/^function varargout=getGitLog(obj,path,varargin)$/;"	f
+getHessian	lib/tensor_toolbox/cp_apr.m	/^function H = getHessian(upsilon, Pi, free_indices)$/;"	f
 getISIcomps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [tsISI]=getISIcomps(units,data)$/;"	f
 getLabParams	lib/ClassyDataAnalysis/lib/getLabParams.m	/^function [fhcal,rotcal,Fy_invert, forceOffsets]=getLabParams(labnum,dateTime,rothandle)$/;"	f
 getLearningMetrics	lib/TrialData/Analysis/getLearningMetrics.m	/^function metric = getLearningMetrics(trial_data,params)$/;"	f
 getLoadCellOffsets	lib/ClassyDataAnalysis/lib/getLoadCellOffsets.m	/^function [dates, offsets] = getLoadCellOffsets(labNum,dateTime)$/;"	f
 getModel	lib/TrialData/Analysis/getModel.m	/^function [trial_data,model_info] = getModel(trial_data,params)$/;"	f
 getModelColors	MultiWorkspace/lib/getModelColors.m	/^function model_colors = getModelColors(model_alias)$/;"	f
-getModelColors	MultiWorkspace/lib/getModelTitles.m	/^function model_titles = getModelColors(model_alias)$/;"	f
+getModelTitles	MultiWorkspace/lib/getModelTitles.m	/^function model_titles = getModelTitles(model_alias)$/;"	f
 getMoveOnsetAndPeak	lib/TrialData/Tools/getMoveOnsetAndPeak.m	/^function trial_data = getMoveOnsetAndPeak(trial_data,params)$/;"	f
 getMoveStart	lib/ClassyDataAnalysis/@experiment/getMoveStart.m	/^function varargout=getMoveStart(ex,varargin)$/;"	f
 getNTidx	lib/NeuronTable/getNTidx.m	/^function [return_idx, neuronTable] = getNTidx(neuronTable,varargin)$/;"	f
@@ -373,10 +488,12 @@ getRWTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getRWTaskTable.m	/^fu
 getReactionTimeTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getReactionTimeTaskTable.m	/^function getReactionTimeTaskTable(cds,times)$/;"	f
 getRingReportingTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getRingReportingTaskTable.m	/^function getRingReportingTaskTable(cds,times)$/;"	f
 getSABESTaskTable	lib/ClassyDataAnalysis/@commonDataStructure/getSABESTaskTable.m	/^function getSABESTaskTable(cds,times)$/;"	f
+getSearchDirPqnr	lib/tensor_toolbox/cp_apr.m	/^function [d] = getSearchDirPqnr (m_row, grad, epsActSet, ...$/;"	f
 getSeq	lib/ClassyDataAnalysis/lib/gpfa/util/getSeq.m	/^function seq = getSeq(dat, binWidth, varargin)$/;"	f
 getSeq_td	lib/TrialData/util/gpfa/getSeq_td.m	/^function seq = getSeq_td(dat, binWidth, varargin)$/;"	f
 getSettingFileFullPath	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/getSettingFileFullPath.m	/^function settingFileFullPath = getSettingFileFullPath(functionName)$/;"	f
 getShapeComps	lib/ClassyDataAnalysis/@unitData/appendData.m	/^function [coeff,diffDist,matchDist,empDist]=getShapeComps(units,data,SNRThresh)$/;"	f
+getSig	lib/TrialData/Tools/getSig.m	/^function out = getSig(trial_data,signals)$/;"	f
 getSpeed	lib/TrialData/Tools/getSpeed.m	/^function trial_data = getSpeed(trial_data,params)$/;"	f
 getTDClassicalPDs	lib/NeuronTable/getTDClassicalPDs.m	/^function pdTable = getTDClassicalPDs(trial_data,params)$/;"	f
 getTDModelWeights	lib/NeuronTable/getTDModelWeights.m	/^function weightTable = getTDModelWeights(trial_data,params)$/;"	f
@@ -402,6 +519,7 @@ getXYZfromKinect	lib/KinectTracking/Marker_Tracking/4color/getXYZfromKinect.m	/^
 get_activity	Hindlimb/leg_lib/get_activity.m	/^function [activity,avg_act] = get_activity(neurons, scaled_lengths, num_sec)$/;"	f
 get_affine_xform	lib/KinectTracking/functions/get_affine_xform.m	/^function [ affine_xform ] = get_affine_xform( cds, kinect_times, all_medians, x_lim_handle, y_lim_handle, plot_flag )$/;"	f
 get_alpha_potent	MultiWorkspace/lib/get_alpha_potent.m	/^function [alpha_potent,alpha_null,del_Jinv] = get_alpha_potent(trial_data)$/;"	f
+get_generator	lib/tensor_toolbox/create_problem.m	/^function fh = get_generator(x)$/;"	f
 get_legpts	Hindlimb/leg_lib/Neuromechanic/get_legpts.m	/^function [worldpoint,oiv_world] = get_legpts(legmodel,q)$/;"	f
 get_lin_models	ForceKin/lib/get_lin_models.m	/^function [lin_models] = get_lin_models(fr,thv,thf)$/;"	f
 get_lin_models_from_td	ForceKin/lib/get_lin_models_from_td.m	/^function lin_models = get_lin_models_from_td(td)$/;"	f
@@ -415,32 +533,79 @@ get_vars	lib/TrialData/util/subfcn/get_vars.m	/^function x = get_vars(trial_data
 gpfaEngine	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/gpfaEngine.m	/^function output = gpfaEngine(seqTrain, seqTest, varargin)$/;"	f
 gpfaEngine_td	lib/TrialData/util/gpfa/gpfaEngine_td.m	/^function result = gpfaEngine_td(seqTrain, seqTest, fname, varargin)$/;"	f
 grad_betgam	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/grad_betgam.m	/^function [f, df] = grad_betgam(p, precomp, const)$/;"	f
+gt	lib/tensor_toolbox/@sptensor/gt.m	/^function z = gt(x,y)$/;"	f
+gt	lib/tensor_toolbox/@symtensor/gt.m	/^function Z = gt(X,Y)$/;"	f
+gt	lib/tensor_toolbox/@tensor/gt.m	/^function Z = gt(X,Y)$/;"	f
 handleForceFromNEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/handleForceFromNEVNSx.m	/^function handleforce=handleForceFromNEVNSx(raw_force,cds,enc,opts)$/;"	f
 handleForceFromRaw	lib/ClassyDataAnalysis/@commonDataStructure/handleForceFromRaw.m	/^function handleForce=handleForceFromRaw(cds,loadCellData,t,opts)$/;"	f
 hasan	SpindleSim/Hasan/hasan.m	/^function [t,mu,dmudt,r] = hasan(a,b,c,h,p,g,offset,t_x,dxdt,x)$/;"	f
+hosvd	lib/tensor_toolbox/hosvd.m	/^function T = hosvd(X,tol,varargin)$/;"	f
 idct1d	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function out = idct1d(data)$/;"	f
+import_array	lib/tensor_toolbox/import_data.m	/^function data = import_array(fid, n)$/;"	f
+import_data	lib/tensor_toolbox/import_data.m	/^function A = import_data(fname)$/;"	f
+import_nnz	lib/tensor_toolbox/import_data.m	/^function nz = import_nnz(fid)$/;"	f
+import_rank	lib/tensor_toolbox/import_data.m	/^function r = import_rank(fid)$/;"	f
+import_size	lib/tensor_toolbox/import_data.m	/^function sz = import_size(fid)$/;"	f
+import_sparse_array	lib/tensor_toolbox/import_data.m	/^function [subs, vals] = import_sparse_array(fid, n, nz)$/;"	f
+import_type	lib/tensor_toolbox/import_data.m	/^function type = import_type(fid)$/;"	f
 inBound	lib/KinectTracking/Marker_Tracking/4color/inBound.m	/^function [ out ] = inBound( val, window )$/;"	f
+indices	lib/tensor_toolbox/@symtensor/indices.m	/^function [I,C,W,Q] = indices(varargin)$/;"	f
 inferno	lib/PythonColors/Colormaps/inferno.m	/^function [cm_data]=inferno(m)$/;"	f
 initSignalStruct	lib/TrialData/DataProcessing/initSignalStruct.m	/^function signal_info = initSignalStruct(varargin)$/;"	f
+init_fields	lib/tensor_toolbox/@symtensor/symtensor.m	/^function t = init_fields()$/;"	f
 initializeWaveform	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function waveForms = initializeWaveform(numOfTimestamps)$/;"	f
+innerprod	lib/tensor_toolbox/@ktensor/innerprod.m	/^function res = innerprod(X,Y)$/;"	f
+innerprod	lib/tensor_toolbox/@sptensor/innerprod.m	/^function res = innerprod(X,Y)$/;"	f
+innerprod	lib/tensor_toolbox/@sumtensor/innerprod.m	/^function res = innerprod(X,Y)$/;"	f
+innerprod	lib/tensor_toolbox/@tensor/innerprod.m	/^function res = innerprod(X,Y)$/;"	f
+innerprod	lib/tensor_toolbox/@ttensor/innerprod.m	/^function res = innerprod(X,Y)$/;"	f
 installNPMK	lib/ClassyDataAnalysis/lib/NPMK/installNPMK.m	/^function installNPMK$/;"	f
 interpomap	lib/linspecer/linspecer.m	/^function cmap = interpomap(n,cmapp)$/;"	f
 invPerSymm	lib/ClassyDataAnalysis/lib/gpfa/util/invPerSymm.m	/^function [invM, logdet_M] = invPerSymm(M, blkSize, varargin)$/;"	f
 invToeplitz	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [Ti,ld] = invToeplitz( T , runMode )$/;"	f
 invToeplitzFast	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFast.m	/^function [Ti,ld] = invToeplitzFast(T)$/;"	f
 invToeplitzMode	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [Ti,ld] = invToeplitzMode( T , runMode )$/;"	f
+irenumber	lib/tensor_toolbox/@sptensor/private/irenumber.m	/^function newsubs = irenumber(t, sz, range)$/;"	f
 irisPlot	lib/NeuronTable/irisPlot.m	/^function [tunedNeurons] = irisPlot( PM_pdData, DL_pdData)$/;"	f
 isStill	lib/ClassyDataAnalysis/@commonDataStructure/isStill.m	/^function [still,stats]=isStill(cds,x,varargin)$/;"	f
+is_missing_data	lib/tensor_toolbox/create_problem.m	/^function tf = is_missing_data(x)$/;"	f
+is_valid_matrix_generator	lib/tensor_toolbox/create_problem.m	/^function b = is_valid_matrix_generator(x)$/;"	f
+is_valid_tensor_generator	lib/tensor_toolbox/create_problem.m	/^function b = is_valid_tensor_generator(x)$/;"	f
+isequal	lib/tensor_toolbox/@ktensor/isequal.m	/^function [tf, tf_lambda, tf_U] = isequal(A,B)$/;"	f
+isequal	lib/tensor_toolbox/@sptensor/isequal.m	/^function z = isequal(x,y)$/;"	f
+isequal	lib/tensor_toolbox/@symktensor/isequal.m	/^function [tf, tf_lambda, tf_U] = isequal(A,B)$/;"	f
+isequal	lib/tensor_toolbox/@symtensor/isequal.m	/^function z = isequal(x,y)$/;"	f
+isequal	lib/tensor_toolbox/@tensor/isequal.m	/^function z = isequal(x,y)$/;"	f
+isequal	lib/tensor_toolbox/@ttensor/isequal.m	/^function [tf, tf_core, tf_U] = isequal(A,B)$/;"	f
+isscalar	lib/tensor_toolbox/@ktensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+isscalar	lib/tensor_toolbox/@sptensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+isscalar	lib/tensor_toolbox/@sumtensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+isscalar	lib/tensor_toolbox/@symktensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+isscalar	lib/tensor_toolbox/@symtensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+isscalar	lib/tensor_toolbox/@tensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+isscalar	lib/tensor_toolbox/@ttensor/isscalar.m	/^function output = isscalar(~)$/;"	f
+issymmetric	lib/tensor_toolbox/@ktensor/issymmetric.m	/^function [tf,diffs] = issymmetric(X)$/;"	f
+issymmetric	lib/tensor_toolbox/@symktensor/issymmetric.m	/^function tf = issymmetric(X)$/;"	f
+issymmetric	lib/tensor_toolbox/@symtensor/issymmetric.m	/^function tf = issymmetric(t)$/;"	f
+issymmetric	lib/tensor_toolbox/@tensor/issymmetric.m	/^function [tf,all_diffs,all_perms] = issymmetric(X,grps,ver)$/;"	f
 jangoData	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function [pRatios,classification]=jangoData()$/;"	f
 joint_elast_sens	Hindlimb/joint_elast_sens.m	/^function [num_tuned_spring,pdChange_spring,moddepthChange_spring,spring_list] = joint_elast_sens(neurons)$/;"	f
 joint_elast_sens	Hindlimb/leg_lib/joint_elast_sens.m	/^function [num_tuned_spring,pdChange_spring,moddepthChange_spring] = joint_elast_sens(neurons)$/;"	f
 kde	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function [bandwidth,density,xmesh,cdf]=kde(data,n,MIN,MAX)$/;"	f
 kevinData	lib/ClassyDataAnalysis/@commonDataStructure/checkEmg60Hz.m	/^function [pRatios,classification]=kevinData()$/;"	f
+khatrirao	lib/tensor_toolbox/khatrirao.m	/^function P = khatrirao(varargin)$/;"	f
 killUnwantedChannels	lib/ClassyDataAnalysis/lib/NPMK/openNEV.m	/^function NEV = killUnwantedChannels(NEV, selectedChannels)$/;"	f
 kinematicsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/kinematicsFromNEV.m	/^function kinematicsFromNEV(cds,opts)$/;"	f
 kneefix_cost	Hindlimb/leg_lib/kneefix_cost.m	/^function y = kneefix_cost(x)$/;"	f
 kshuffle	lib/ClassyDataAnalysis/lib/NPMK/Other tools/kshuffle.m	/^function shuffledArray = kshuffle(inputArray, DIM)$/;"	f
+ktensor	lib/tensor_toolbox/@ktensor/ktensor.m	/^function t = ktensor(varargin)$/;"	f
 kuiperlookup	lib/CircStat/circ_kuipertest.m	/^function [p K] = kuiperlookup(n, k)$/;"	f
+ldivide	lib/tensor_toolbox/@sptensor/ldivide.m	/^function C = ldivide(A,B)$/;"	f
+ldivide	lib/tensor_toolbox/@symtensor/ldivide.m	/^function Z = ldivide(X,Y)$/;"	f
+ldivide	lib/tensor_toolbox/@tensor/ldivide.m	/^function Z = ldivide(X,Y)$/;"	f
+le	lib/tensor_toolbox/@sptensor/le.m	/^function z = le(x,y)$/;"	f
+le	lib/tensor_toolbox/@symtensor/le.m	/^function Z = le(X,Y)$/;"	f
+le	lib/tensor_toolbox/@tensor/le.m	/^function Z = le(X,Y)$/;"	f
 learnGPparams	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/learnGPparams.m	/^function res = learnGPparams(seq, params, varargin)$/;"	f
 lfpFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/lfpFromNSx.m	/^function lfpFromNSx(cds,opts)$/;"	f
 linspecer	lib/linspecer/linspecer.m	/^function lineStyles=linspecer(N,varargin)$/;"	f
@@ -457,6 +622,9 @@ logdet	lib/ClassyDataAnalysis/lib/gpfa/util/logdet.m	/^function y = logdet(A)$/;
 loop_me_twice	lib/TrialData/Analysis/getDPCA.m	/^function valCat = loop_me_twice(dim,valCat,val,valIdx,depthCount,varargin)$/;"	f
 loops_all_the_way_down	lib/TrialData/Analysis/getDPCA.m	/^function val = loops_all_the_way_down(val,varargin)$/;"	f
 loops_for_fr	lib/TrialData/Analysis/getDPCA.m	/^function [val,valIdx] = loops_for_fr(depthCount,valIdx,val,trial_data,signals,max_trial_num,varargin)$/;"	f
+lt	lib/tensor_toolbox/@sptensor/lt.m	/^function z = lt(x,y)$/;"	f
+lt	lib/tensor_toolbox/@symtensor/lt.m	/^function Z = lt(X,Y)$/;"	f
+lt	lib/tensor_toolbox/@tensor/lt.m	/^function Z = lt(X,Y)$/;"	f
 magma	lib/PythonColors/Colormaps/magma.m	/^function [cm_data]=magma(m)$/;"	f
 makeBasis_PostSpike	lib/TrialData/util/makeBasis_PostSpike.m	/^function [iht, ihbas, ihbasis] = makeBasis_PostSpike(ihprs,dt,iht0)$/;"	f
 makeNeuronTableStarter	lib/NeuronTable/makeNeuronTableStarter.m	/^function neuronTable = makeNeuronTableStarter(trial_data,params)$/;"	f
@@ -464,8 +632,14 @@ makePrecomp	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePrecomp.m	/^functio
 makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/parseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f
 makeStructFromNode	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function nodeStruct = makeStructFromNode(theNode)$/;"	f
 make_K_big	lib/ClassyDataAnalysis/lib/gpfa/core_gpfa/make_K_big.m	/^function [K_big, K_big_inv, logdet_K_big] = make_K_big(params, T)$/;"	f
+mask	lib/tensor_toolbox/@ktensor/mask.m	/^function vals = mask(X,W)$/;"	f
+mask	lib/tensor_toolbox/@sptensor/mask.m	/^function vals = mask(X,W)$/;"	f
+mask	lib/tensor_toolbox/@tensor/mask.m	/^function vals = mask(X,W)$/;"	f
 match_squarewave_func	lib/KinectTracking/functions/match_squarewave_func.m	/^function [ sse ] = match_squarewave_func( x, led_vals, KinectSquare, times, handle_times )$/;"	f
 match_squarewave_main	lib/KinectTracking/functions/match_squarewave_main.m	/^function [ kinect_times ] = match_squarewave_main( cerebus_vals, led_vals, times, kinect_start_guess, plot_flag)$/;"	f
+matrandcong	lib/tensor_toolbox/matrandcong.m	/^function X = matrandcong(m,n,gamma)$/;"	f
+matrandnorm	lib/tensor_toolbox/matrandnorm.m	/^function X = matrandnorm(varargin)$/;"	f
+matrandorth	lib/tensor_toolbox/matrandorth.m	/^function M=matrandorth(n, tol)$/;"	f
 matrixToNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/matrixToNSx.m	/^function matrixToNSx(varargin)$/;"	f
 medfilt1nan	lib/KinectTracking/functions/medfilt1nan.m	/^function y = medfilt1nan( x, s )$/;"	f
 mergeAnalogTables	lib/ClassyDataAnalysis/@commonDataStructure/analogFromNSx.m	/^function merged=mergeAnalogTables(table1,table2)$/;"	f
@@ -478,18 +652,70 @@ metaFromNEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/metaFromNEVNSx.m	/^fu
 mexFunction	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitzFastZohar.c	/^void mexFunction( int nlhs, mxArray *plhs[], $/;"	f
 mexFunction	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	/^void mexFunction( int nlhs, mxArray *plhs[], $/;"	f
 minimize	lib/ClassyDataAnalysis/lib/gpfa/util/minimize.m	/^function [X, fX, i] = minimize(X, f, length, varargin)$/;"	f
+minus	lib/tensor_toolbox/@ktensor/minus.m	/^function C = minus(A,B)$/;"	f
+minus	lib/tensor_toolbox/@sptensor/minus.m	/^function C = minus(A,B)$/;"	f
+minus	lib/tensor_toolbox/@symtensor/minus.m	/^function Z = minus(X,Y)$/;"	f
+minus	lib/tensor_toolbox/@tenmat/minus.m	/^function Z = minus(X,Y)$/;"	f
+minus	lib/tensor_toolbox/@tensor/minus.m	/^function Z = minus(X,Y)$/;"	f
 minusPi2Pi	lib/TrialData/util/minusPi2Pi.m	/^function out = minusPi2Pi(in)$/;"	f
+mldivide	lib/tensor_toolbox/@sptensor/mldivide.m	/^function C = mldivide(A,B)$/;"	f
+mldivide	lib/tensor_toolbox/@symtensor/mldivide.m	/^function Z = mldivide(X,Y)$/;"	f
+mldivide	lib/tensor_toolbox/@tensor/mldivide.m	/^function Z = mldivide(X,Y)$/;"	f
 moving_average	lib/TrialData/util/moving_average.m	/^function data_mvavg = moving_average(data,bins)$/;"	f
+mrdivide	lib/tensor_toolbox/@sptensor/mrdivide.m	/^function C = mrdivide(A,B)$/;"	f
+mrdivide	lib/tensor_toolbox/@symtensor/mrdivide.m	/^function Z = mrdivide(X,Y)$/;"	f
+mrdivide	lib/tensor_toolbox/@tensor/mrdivide.m	/^function Z = mrdivide(X,Y)$/;"	f
+mtimes	lib/tensor_toolbox/@ktensor/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mtimes	lib/tensor_toolbox/@sptensor/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mtimes	lib/tensor_toolbox/@symktensor/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mtimes	lib/tensor_toolbox/@symtensor/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mtimes	lib/tensor_toolbox/@tenmat/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mtimes	lib/tensor_toolbox/@tensor/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mtimes	lib/tensor_toolbox/@ttensor/mtimes.m	/^function C = mtimes(A,B)$/;"	f
+mttkrp	lib/tensor_toolbox/@ktensor/mttkrp.m	/^function V = mttkrp(X,U,n)$/;"	f
+mttkrp	lib/tensor_toolbox/@sptensor/mttkrp.m	/^function V = mttkrp(X,U,n)$/;"	f
+mttkrp	lib/tensor_toolbox/@sumtensor/mttkrp.m	/^function V = mttkrp(X,U,n)$/;"	f
+mttkrp	lib/tensor_toolbox/@tensor/mttkrp.m	/^function V = mttkrp(X,U,n,vers)$/;"	f
+mttkrp	lib/tensor_toolbox/@ttensor/mttkrp.m	/^function V = mttkrp(X,U,n)$/;"	f
+multinomial	lib/tensor_toolbox/@symtensor/private/multinomial.m	/^function c = multinomial(n,varargin)$/;"	f
 mwDecoders	MultiWorkspace/lib/mwDecoders.m	/^function results = mwDecoders(td,params)$/;"	f
 mwEncoders	MultiWorkspace/lib/mwEncoders.m	/^function results = mwEncoders(td,params)$/;"	f
 myode	SpindleSim/Hasan/hasan.m	/^function dmudt = myode(t,mu,t_x,x,dxdt,a,b,c)$/;"	f
 nanmmean	lib/TrialData/util/dpca/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
 nanmmean	lib/dPCA/dpca_marginalize.m	/^function Y = nanmmean(X, dimlist)$/;"	f
+ncomponents	lib/tensor_toolbox/@ktensor/ncomponents.m	/^function n = ncomponents(t)$/;"	f
+ncomponents	lib/tensor_toolbox/@symktensor/ncomponents.m	/^function n = ncomponents(t)$/;"	f
+ndims	lib/tensor_toolbox/@ktensor/ndims.m	/^function n = ndims(t)$/;"	f
+ndims	lib/tensor_toolbox/@sptensor/ndims.m	/^function n = ndims(t)$/;"	f
+ndims	lib/tensor_toolbox/@sumtensor/ndims.m	/^function n = ndims(t)$/;"	f
+ndims	lib/tensor_toolbox/@symktensor/ndims.m	/^function n = ndims(t)$/;"	f
+ndims	lib/tensor_toolbox/@symtensor/ndims.m	/^function n = ndims(t)$/;"	f
+ndims	lib/tensor_toolbox/@tensor/ndims.m	/^function n = ndims(t)$/;"	f
+ndims	lib/tensor_toolbox/@ttensor/ndims.m	/^function n = ndims(t)$/;"	f
+ne	lib/tensor_toolbox/@sptensor/ne.m	/^function z = ne(x,y)$/;"	f
+ne	lib/tensor_toolbox/@symtensor/ne.m	/^function Z = ne(X,Y)$/;"	f
+ne	lib/tensor_toolbox/@tensor/ne.m	/^function Z = ne(X,Y)$/;"	f
 neuralTraj	lib/ClassyDataAnalysis/lib/gpfa/neuralTraj.m	/^function result = neuralTraj(runIdx, dat, varargin)$/;"	f
 neuralTraj_td	lib/TrialData/util/gpfa/neuralTraj_td.m	/^function result = neuralTraj_td(runIdx, dat, directory, varargin)$/;"	f
 neuronAverage	lib/NeuronTable/neuronAverage.m	/^function [avgTable,cond_idx] = neuronAverage(neuronTable, keycols)$/;"	f
 nev2NEVNSx	lib/ClassyDataAnalysis/@commonDataStructure/nev2NEVNSx.m	/^function nev2NEVNSx(cds,fname,varargin)$/;"	f
 next_arg_file	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function [trace_file,off] = next_arg_file(arg_file)$/;"	f
+nnz	lib/tensor_toolbox/@sptenmat/nnz.m	/^function n = nnz(a)$/;"	f
+nnz	lib/tensor_toolbox/@sptensor/nnz.m	/^function a = nnz(t)$/;"	f
+nnz	lib/tensor_toolbox/@tensor/nnz.m	/^function n = nnz(x)$/;"	f
+norm	lib/tensor_toolbox/@ktensor/norm.m	/^function nrm = norm(A)$/;"	f
+norm	lib/tensor_toolbox/@sptenmat/norm.m	/^function nrm = norm(T)$/;"	f
+norm	lib/tensor_toolbox/@sptensor/norm.m	/^function nrm = norm(T)$/;"	f
+norm	lib/tensor_toolbox/@sumtensor/norm.m	/^function n = norm(T)$/;"	f
+norm	lib/tensor_toolbox/@symktensor/norm.m	/^function nrm = norm(A)$/;"	f
+norm	lib/tensor_toolbox/@tenmat/norm.m	/^function n = norm(T)$/;"	f
+norm	lib/tensor_toolbox/@tensor/norm.m	/^function n = norm(T)$/;"	f
+norm	lib/tensor_toolbox/@ttensor/norm.m	/^function nrm = norm(X)$/;"	f
+normalize	lib/tensor_toolbox/@ktensor/normalize.m	/^function X = normalize(X,N,normtype,mode)$/;"	f
+normalize	lib/tensor_toolbox/@symktensor/normalize.m	/^function X = normalize(X,N,normtype)$/;"	f
+not	lib/tensor_toolbox/@sptensor/not.m	/^function y = not(x)$/;"	f
+not	lib/tensor_toolbox/@symtensor/not.m	/^function B = not(A)$/;"	f
+not	lib/tensor_toolbox/@tensor/not.m	/^function B = not(A)$/;"	f
 ns_AFTER	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_AFTER   = +1,  \/\/ greater than or equal to specified time$/;"	e	enum:__anon5
 ns_ANALOGINFO	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^} GCC_ALIGN_4  ns_ANALOGINFO;$/;"	t	typeref:struct:__anon11
 ns_BADENTITY	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    ns_BADENTITY = -5,  \/\/Invalid or inappropriate entity identifier specified$/;"	e	enum:__anon1
@@ -591,7 +817,12 @@ ns_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevL
 ns_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	316;"	d
 ns_stdcall	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	318;"	d
 ntrodeGroups	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/ntrodeGroups.m	/^function output = ntrodeGroups(ccf)$/;"	f
+nvecs	lib/tensor_toolbox/@ktensor/nvecs.m	/^function u = nvecs(X,n,r,opts)$/;"	f
+nvecs	lib/tensor_toolbox/@sptensor/nvecs.m	/^function u = nvecs(t,n,r,opts)$/;"	f
+nvecs	lib/tensor_toolbox/@tensor/nvecs.m	/^function u = nvecs(X,n,r,opts)$/;"	f
+nvecs	lib/tensor_toolbox/@ttensor/nvecs.m	/^function u = nvecs(X,n,r,opts)$/;"	f
 obs_window_pds	ForceKin/lib/obs_window_pds.m	/^function [fr,thv,thf] = obs_window_pds(td,params)$/;"	f
+ones	lib/tensor_toolbox/@sptensor/ones.m	/^function t = ones(t)$/;"	f
 openCCF	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function [infoPackets, version] = openCCF(filename)$/;"	f
 openFile	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function [path fname fext] = openFile$/;"	f
 openNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/openNEVTracking.m	/^function varargout = openNEV(varargin)$/;"	f
@@ -604,6 +835,9 @@ openNSxHL	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/openNSxHL.m	/^function O
 openNSxLimblab	lib/SpikeMerge/openNSxLimblab.m	/^function varargout = openNSxLimblab(varargin)$/;"	f
 openNSxSync	lib/ClassyDataAnalysis/lib/NPMK/openNSxSync.m	/^function NSx = openNSxSync(varargin)$/;"	f
 openNSx_td	lib/TrialData/util/openNSx_td.m	/^function varargout = openNSx_td(varargin)$/;"	f
+or	lib/tensor_toolbox/@sptensor/or.m	/^function C = or(A,B)$/;"	f
+or	lib/tensor_toolbox/@symtensor/or.m	/^function Z = or(X,Y)$/;"	f
+or	lib/tensor_toolbox/@tensor/or.m	/^function Z = or(X,Y)$/;"	f
 orthogonalize	lib/ClassyDataAnalysis/lib/gpfa/util/orthogonalize.m	/^function [Xorth, Lorth, TT] = orthogonalize(X, L)$/;"	f
 orthogonalize	lib/TrialData/util/orthogonalize.m	/^function [Xorth, Lorth, TT] = orthogonalize(X, L)$/;"	f
 pairwiseCorr	lib/TrialData/Analysis/pairwiseCorr.m	/^function [rho,sort_idx] = pairwiseCorr(trial_data,params)$/;"	f
@@ -617,6 +851,14 @@ parseFileByTrial	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [tri
 parseFileByTrial_cds	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function [trial_data,td_params] = parseFileByTrial_cds(cds,params)$/;"	f
 parseFilename	lib/ClassyDataAnalysis/lib/gpfa/util/parseFilename.m	/^function [result, err] = parseFilename(str)$/;"	f
 parseVarArgs	lib/CircStat/examples/parseVarArgs.m	/^function params = parseVarArgs(params,varargin)$/;"	f
+perms_loop	lib/tensor_toolbox/teneye.m	/^function P = perms_loop(N)$/;"	f
+perms_no_rep	lib/tensor_toolbox/teneye.m	/^function PN = perms_no_rep(N,K)$/;"	f
+perms_rep	lib/tensor_toolbox/teneye.m	/^function PR = perms_rep(N,K)$/;"	f
+permute	lib/tensor_toolbox/@ktensor/permute.m	/^function b = permute(a,order)$/;"	f
+permute	lib/tensor_toolbox/@sptensor/permute.m	/^function t = permute(t,order)$/;"	f
+permute	lib/tensor_toolbox/@symktensor/permute.m	/^function b = permute(a,order)$/;"	f
+permute	lib/tensor_toolbox/@tensor/permute.m	/^function T = permute(T,order)$/;"	f
+permute	lib/tensor_toolbox/@ttensor/permute.m	/^function b = permute(a,order)$/;"	f
 plasma	lib/PythonColors/Colormaps/plasma.m	/^function cm_data=plasma(m)$/;"	f
 playSound	lib/ClassyDataAnalysis/lib/NPMK/Other tools/playSound.m	/^function playSound(soundType)$/;"	f
 plot3D	lib/ClassyDataAnalysis/lib/gpfa/plotting/plot3D.m	/^function plot3D(seq, xspec, varargin)$/;"	f
@@ -635,6 +877,7 @@ plotPredErrorVsDim	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsDim.m
 plotPredErrorVsKernSD	lib/ClassyDataAnalysis/lib/gpfa/plotting/plotPredErrorVsKernSD.m	/^function method = plotPredErrorVsKernSD(runIdx, xDim, varargin)$/;"	f
 plotSmoothFR	lib/plotSmoothFR.m	/^function plotSmoothFR(x,y,fr,gridrange)$/;"	f
 plotTRTTrials	MultiWorkspace/lib/plotTRTTrials.m	/^function plotTRTTrials(trial_data,params)$/;"	f
+plotTensorDecomp	lib/plotTensorDecomp.m	/^function plotTensorDecomp(M, params)$/;"	f
 plotTuning	lib/NeuronTable/plotTuning.m	/^function plotTuning(pdData,curve,maxRadius,color,linspec, move_corrIn)$/;"	f
 plotTuningDistr	BumpCurl/plotTuningDistr.m	/^function plotTuningDistr(trial_data)$/;"	f
 plotWeightClouds	lib/NeuronTable/plotWeightClouds.m	/^function plotWeightClouds(tuningTable,params,varargin)$/;"	f
@@ -647,10 +890,18 @@ plot_heat_map_con	Hindlimb/leg_lib/plot_heat_map_con.m	/^function plot_heat_map_
 plot_together_3colors_func	lib/KinectTracking/Marker_Tracking/tracking_functions/plot_together_3colors_func.m	/^function [] = plot_together_3colors_func(frame,text_markers,markers,all_medians, color1, color2, color3, start, finish, plot_original)$/;"	f
 plot_together_4colors_func	lib/KinectTracking/Marker_Tracking/tracking_functions/plot_together_4colors_func.m	/^function [] = plot_together_4colors_func(frame,text_markers,markers,all_medians, color1, color2, color3, color4, start, finish, plot_original)$/;"	f
 plot_tuning_surfaces	ForceKin/lib/plot_tuning_surfaces.m	/^function plot_tuning_surfaces(fr,thv,thf)$/;"	f
+plus	lib/tensor_toolbox/@ktensor/plus.m	/^function C = plus(A,B)$/;"	f
+plus	lib/tensor_toolbox/@sptensor/plus.m	/^function C = plus(A,B)$/;"	f
+plus	lib/tensor_toolbox/@sumtensor/plus.m	/^function t = plus( t, x )$/;"	f
+plus	lib/tensor_toolbox/@symtensor/plus.m	/^function Z = plus( X, Y )$/;"	f
+plus	lib/tensor_toolbox/@tenmat/plus.m	/^function Z = plus(X,Y)$/;"	f
+plus	lib/tensor_toolbox/@tensor/plus.m	/^function Z = plus(X,Y)$/;"	f
 poisson_sens	Hindlimb/leg_lib/poisson_sens.m	/^function [num_tuned_pois,pdChange_pois,moddepthChange_pois] = poisson_sens(neurons,num_secs_pois)$/;"	f
 polarTuningPlot	lib/ClassyDataAnalysis/lib/polarTuningPlot.m	/^function [H,axisID]=polarTuningPlot(dirs,activity,varargin)$/;"	f
 postprocess	lib/ClassyDataAnalysis/lib/gpfa/util/postprocess.m	/^function [estParams, seqTrain, seqTest] = postprocess(ws, varargin)$/;"	f
 postprocess	lib/TrialData/util/gpfa/postprocess.m	/^function [estParams, seqTrain, seqTest] = postprocess(ws, varargin)$/;"	f
+power	lib/tensor_toolbox/@symtensor/power.m	/^function Z = power(X,Y)$/;"	f
+power	lib/tensor_toolbox/@tensor/power.m	/^function Z = power(X,Y)$/;"	f
 power60HzRatio	lib/ClassyDataAnalysis/lib/power60HzRatio.m	/^function RList=power60HzRatio(x)$/;"	f
 precomp_IN	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	41;"	d	file:
 predMIMO4	lib/ClassyDataAnalysis/@binnedData/predMIMO4.m	/^function [Y,Xnew,Ynew]=predMIMO4(X,H,numsides,fs,Yact)$/;"	f
@@ -658,6 +909,7 @@ predMIMO4	lib/ClassyDataAnalysis/lib/weiner/predMIMO4.m	/^function [Y,Xnew,Yact]
 predict_td_from_models	ForceKin/lib/predict_td_from_models.m	/^function td = predict_td_from_models(td,lin_models)$/;"	f
 principal_angles	lib/principal_angles.m	/^function [angles, varargout] = principal_angles(A,B)$/;"	f
 principal_angles	lib/principle_angles.m	/^function [angles, varargout] = principal_angles(A,B)$/;"	f
+print_sublist	lib/tensor_toolbox/@ktensor/datadisp.m	/^function print_sublist(score, labels, type, maxentries, threshold)$/;"	f
 processDefault	lib/ClassyDataAnalysis/@emgData/processDefault.m	/^function processDefault(emg)$/;"	f
 processInput	lib/CircStat/circ_cmtest.m	/^function [alpha, idx] = processInput(varargin)$/;"	f
 processInput	lib/CircStat/circ_wwtest.m	/^function [alpha, idx, w] = processInput(varargin)$/;"	f
@@ -665,7 +917,13 @@ processNEV	lib/TrialData/DataProcessing/processNEV.m	/^function out = processNEV
 processNSx	lib/TrialData/DataProcessing/processNSx.m	/^function out = processNSx(filename,signal_info)$/;"	f
 processSpikesForSorting	lib/SpikeMerge/processSpikesForSorting.m	/^function status = processSpikesForSorting(file_path,file_prefix)$/;"	f
 process_emg	lib/TrialData/DataProcessing/convertDataToTD.m	/^function binned_emg = process_emg(data,params)$/;"	f
+prosample	lib/tensor_toolbox/create_problem.m	/^function output = prosample(nsamples, prob)$/;"	f
 rampandhold	SpindleSim/Hasan/rampandhold.m	/^function [t,acc,vel,len] = rampandhold(max_len,max_vel,max_acc,init_len,dt,rampdown)$/;"	f
+rand_column_stochastic	lib/tensor_toolbox/create_problem.m	/^function Y = rand_column_stochastic(M,N)$/;"	f
+rand_orth_mat	lib/tensor_toolbox/create_problem.m	/^function Y = rand_orth_mat(M,N)$/;"	f
+rdivide	lib/tensor_toolbox/@sptensor/rdivide.m	/^function C = rdivide(A,B)$/;"	f
+rdivide	lib/tensor_toolbox/@symtensor/rdivide.m	/^function Z = rdivide(X,Y)$/;"	f
+rdivide	lib/tensor_toolbox/@tensor/rdivide.m	/^function Z = rdivide(X,Y)$/;"	f
 reCrop	lib/ClassyDataAnalysis/@firingRateData/reCrop.m	/^function reCrop(frd,cropType)$/;"	f
 readAdapFilterPacket	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function p = readAdapFilterPacket(fid)$/;"	f
 readCbHoop	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = readCbHoop(fid)$/;"	f
@@ -685,6 +943,7 @@ readrigidbodies	Hindlimb/leg_lib/Neuromechanic/read_nmcb.m	/^function nmcb = rea
 realignMarkerSpacetime	lib/KinectTracking/functions/realignMarkerSpacetime.m	/^function [marker_data_aligned,affine_xform] = realignMarkerSpacetime(cds,marker_data,varargin)$/;"	f
 realignMarkerTimes	lib/KinectTracking/functions/realignMarkerTimes.m	/^function kinect_times = realignMarkerTimes(cerebus_vals,marker_data,plot_flag)$/;"	f
 rectify	lib/ClassyDataAnalysis/@emgData/rectify.m	/^function rectify(emg)$/;"	f
+redistribute	lib/tensor_toolbox/@ktensor/redistribute.m	/^function X = redistribute(X,mode)$/;"	f
 refCount	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    int refCount;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
 refilter	lib/ClassyDataAnalysis/@timeSeriesData/refilter.m	/^function refilter(tsd)$/;"	f
 removeBadNeurons	lib/TrialData/Tools/removeBadNeurons.m	/^function [trial_data,bad_units] = removeBadNeurons(trial_data,params)$/;"	f
@@ -694,9 +953,14 @@ removeIndentNodes	lib/ClassyDataAnalysis/lib/NPMK/ParseCCF.m	/^function removeIn
 removeNSxData	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/removeNSxData.m	/^function removeNSxData(timestamps, filename)$/;"	f
 removeSorting	lib/ClassyDataAnalysis/@unitData/removeSorting.m	/^function removeSorting(units,varargin)$/;"	f
 removeWindow	lib/KinectTracking/Marker_Tracking/4color/removeWindow.m	/^function [ color2 ] = removeWindow( color1, indices, xWin, yWin, zWin)$/;"	f
+remove_spike_artifacts	lib/TrialData/util/remove_spike_artifacts.m	/^function unit_structure = remove_spike_artifacts(varargin)$/;"	f
 remove_wrap	Hindlimb/leg_lib/remove_wrap.m	/^function unwrapped_angles = remove_wrap(angles)$/;"	f
+renumber	lib/tensor_toolbox/@sptensor/private/renumber.m	/^function [newsubs, newsz] = renumber(subs, sz, range)$/;"	f
+renumberdim	lib/tensor_toolbox/@sptensor/private/renumber.m	/^function [newidx, newsz] = renumberdim(idx, sz, range)$/;"	f
 reorderTDfields	lib/TrialData/Tools/reorderTDfields.m	/^function trial_data = reorderTDfields(trial_data)$/;"	f
 resample_signals	lib/TrialData/DataProcessing/parseFileByTrial.m	/^function out = resample_signals(data,var_list,bin_size,start_time,end_time)$/;"	f
+reshape	lib/tensor_toolbox/@sptensor/reshape.m	/^function a = reshape(a,new_size,old_modes)$/;"	f
+reshape	lib/tensor_toolbox/@tensor/reshape.m	/^function t = reshape(t,siz)$/;"	f
 rethresholdNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/rethresholdNSx.m	/^function NEV = rethresholdNSx(varargin)$/;"	f
 root	lib/ClassyDataAnalysis/lib/kernelDensityEstimator/kde.m	/^function t=root(f,N)$/;"	f
 rotate_func	lib/KinectTracking/functions/Deprecated/rotate_func.m	/^function [sse]=rotate_func(x,rec_pos_trans,true_pos_trans)$/;"	f
@@ -708,6 +972,9 @@ runGPFA	lib/TrialData/Analysis/runGPFA.m	/^function [trial_data, gpfa_out] = run
 run_func	lib/TrialData/DataProcessing/loadTDfiles.m	/^function [trial_data,out_params] = run_func(trial_data,funcCall)$/;"	f
 run_hindlimb	Hindlimb/leg_lib/run_hindlimb.m	/^function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb(neurons,num_sec,joint_elast)$/;"	f
 run_hindlimb_joint	Hindlimb/leg_lib/run_hindlimb_joint.m	/^function [out_table_unc,out_table_con,endpoint_positions] = run_hindlimb_joint(neurons,num_sec,joint_elast)$/;"	f
+sample_all_modes	lib/tensor_toolbox/cp_arls.m	/^function [subs, idxs] = sample_all_modes(nsamplsq, dims)$/;"	f
+sample_ktensor	lib/tensor_toolbox/cp_arls.m	/^function [data] = sample_ktensor(P, subs)$/;"	f
+sample_mode_n	lib/tensor_toolbox/cp_arls.m	/^function [tensor_idx, factor_idx] = sample_mode_n(nsamplsq, dims, n)$/;"	f
 sanitizeTimeWindows	lib/ClassyDataAnalysis/@commonDataStructure/sanitizeTimeWindows.m	/^function sanitizeTimeWindows(cds)$/;"	f
 saveChNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveChNSx.m	/^function NSx = saveChNSx(varargin)$/;"	f
 saveNEV	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/saveNEV.m	/^function saveNEV(NEV, varargin)$/;"	f
@@ -718,6 +985,10 @@ saveNEVTetrodes	lib/ClassyDataAnalysis/lib/NPMK/NEV Utilities/saveNEVTetrodes.m	
 saveNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/saveNSx.m	/^function saveNSx(NSx,varargin)$/;"	f
 savecds	lib/ClassyDataAnalysis/@commonDataStructure/savecds.m	/^function savecds(cds,filePath)$/;"	f
 saveobj	lib/ClassyDataAnalysis/@commonDataStructure/saveobj.m	/^function S=saveobj(cds)$/;"	f
+scale	lib/tensor_toolbox/@sptensor/scale.m	/^function t = scale(t,s,dims)$/;"	f
+scale	lib/tensor_toolbox/@tensor/scale.m	/^function Y = scale(X,S,dims)$/;"	f
+score	lib/tensor_toolbox/@ktensor/score.m	/^function [best_score, A, flag, best_perm] = score(A,B,varargin)$/;"	f
+score	lib/tensor_toolbox/@symktensor/score.m	/^function [best_score, A, flag, best_perm] = score(A,B,varargin)$/;"	f
 segmentByTrial	lib/ClassyDataAnalysis/lib/gpfa/util/segmentByTrial.m	/^function seq = segmentByTrial(seq, X, fn)$/;"	f
 separatePausedNSx	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/separatePausedNSx.m	/^function separatePausedNSx(varargin)$/;"	f
 seq_IN	lib/ClassyDataAnalysis/lib/gpfa/util/precomp/makePautoSumFast.c	42;"	d	file:
@@ -726,7 +997,19 @@ setFlagsCBAOUT	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlags
 setFlagsCBCHAN	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBCHAN(flags)$/;"	f
 setFlagsCBDINP	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBDINP(flags)$/;"	f
 setFlagsCBDOUT	lib/ClassyDataAnalysis/lib/NPMK/openCCF.m	/^function h = setFlagsCBDOUT(flags)$/;"	f
+setparam	lib/tensor_toolbox/@ktensor/datadisp.m	/^function x = setparam(opts,name,default)$/;"	f
+setparam	lib/tensor_toolbox/cp_nmu.m	/^function x = setparam(opts,name,default)$/;"	f
+size	lib/tensor_toolbox/@ktensor/size.m	/^function m = size(t,idx)$/;"	f
+size	lib/tensor_toolbox/@sptenmat/size.m	/^function siz = size(a,idx)$/;"	f
+size	lib/tensor_toolbox/@sptensor/size.m	/^function m = size(t,idx)$/;"	f
+size	lib/tensor_toolbox/@sumtensor/size.m	/^function m = size(t,idx)$/;"	f
+size	lib/tensor_toolbox/@symktensor/size.m	/^function sz = size(t,idx)$/;"	f
+size	lib/tensor_toolbox/@symtensor/size.m	/^function sz = size(t,idx)$/;"	f
+size	lib/tensor_toolbox/@tenmat/size.m	/^function sz = size(a,idx)$/;"	f
+size	lib/tensor_toolbox/@tensor/size.m	/^function m = size(t,idx)$/;"	f
+size	lib/tensor_toolbox/@ttensor/size.m	/^function m = size(t,idx)$/;"	f
 skipResets	lib/ClassyDataAnalysis/@commonDataStructure/skipResets.m	/^function idx=skipResets(cds,ts)$/;"	f
+skr	lib/tensor_toolbox/cp_arls.m	/^function P = skr(varargin)$/;"	f
 smoothMarkerData	lib/KinectTracking/functions/smoothMarkerData.m	/^function md_smooth = smoothMarkerData(marker_data)$/;"	f
 smoothSignals	lib/TrialData/Tools/smoothSignals.m	/^function trial_data = smoothSignals(trial_data,params)$/;"	f
 smooth_data	lib/TrialData/util/smooth_data.m	/^function data_smooth = smooth_data(data,dt,kernel_SD)$/;"	f
@@ -741,7 +1024,15 @@ splitNSxNTrode	lib/ClassyDataAnalysis/lib/NPMK/NTrode Utilities/splitNSxNTrode.m
 splitNSxPauses	lib/ClassyDataAnalysis/lib/NPMK/NSx Utilities/splitNSxPauses.m	/^function splitNSxPauses(fileName)$/;"	f
 splitTD	lib/TrialData/Tools/splitTD.m	/^function td_s = splitTD(trial_data,params)$/;"	f
 split_array_Han	ForceKin/split_array_Han.m	/^function [ant_chans,post_chans] = split_array_Han(cds)$/;"	f
+spmatrix	lib/tensor_toolbox/@sptensor/spmatrix.m	/^function s = spmatrix(a)$/;"	f
+sptendiag	lib/tensor_toolbox/sptendiag.m	/^function X = sptendiag(v,sz)$/;"	f
+sptenmat	lib/tensor_toolbox/@sptenmat/sptenmat.m	/^function a = sptenmat(varargin)$/;"	f
+sptenrand	lib/tensor_toolbox/sptenrand.m	/^function Y = sptenrand(sz,nz)$/;"	f
+sptensor	lib/tensor_toolbox/@sptensor/sptensor.m	/^function t = sptensor(varargin)$/;"	f
 sqrtTransform	lib/TrialData/Tools/sqrtTransform.m	/^function trial_data = sqrtTransform(trial_data,signals)$/;"	f
+squeeze	lib/tensor_toolbox/@sptensor/squeeze.m	/^function Y = squeeze(X)$/;"	f
+squeeze	lib/tensor_toolbox/@tensor/squeeze.m	/^function Y = squeeze(X)$/;"	f
+stackgrad	lib/tensor_toolbox/@symktensor/fg.m	/^function g = stackgrad(G,nolambda)$/;"	f
 stattestPDShiftErr	MultiWorkspace/lib/stattestPDShiftErr.m	/^function [h,p] = stattestPDShiftErr(err,modelcompare,tails,num_repeats,num_folds)$/;"	f
 stdpath	lib/ClassyDataAnalysis/lib/depfunLimblab.m	/^function fn = stdpath(file,root)$/;"	f
 stretchSignals	lib/TrialData/Tools/stretchSignals.m	/^function trial_data = stretchSignals(trial_data,params)$/;"	f
@@ -752,10 +1043,34 @@ stricmp	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-
 stripSpikeSorting	lib/TrialData/Tools/stripSpikeSorting.m	/^function trial_data = stripSpikeSorting(trial_data)$/;"	f
 strobed2encoder	lib/ClassyDataAnalysis/lib/strobed2encoder.m	/^function varargout = strobed2encoder(strobed_events,varargin)$/;"	f
 subClustMotionTracking	lib/KinectTracking/Marker_Tracking/4color/subClustMotionTracking.m	/^function [ cluster1] = subClustMotionTracking( cluster, influence, options )$/;"	f
+subdims	lib/tensor_toolbox/@sptensor/private/subdims.m	/^function loc = subdims(subd, t)$/;"	f
+subsasgn	lib/tensor_toolbox/@ktensor/subsasgn.m	/^function t = subsasgn(t,s,b)$/;"	f
+subsasgn	lib/tensor_toolbox/@sptenmat/subsasgn.m	/^function t = subsasgn(t,s,b)$/;"	f
+subsasgn	lib/tensor_toolbox/@sptensor/subsasgn.m	/^function t = subsasgn(t,s,rhs)$/;"	f
+subsasgn	lib/tensor_toolbox/@symktensor/subsasgn.m	/^function t = subsasgn(t,s,b)$/;"	f
+subsasgn	lib/tensor_toolbox/@symtensor/subsasgn.m	/^function A = subsasgn(A, S, B)$/;"	f
+subsasgn	lib/tensor_toolbox/@tenmat/subsasgn.m	/^function t = subsasgn(t,s,b)$/;"	f
+subsasgn	lib/tensor_toolbox/@tensor/subsasgn.m	/^function x = subsasgn(x,s,b)$/;"	f
+subsasgn	lib/tensor_toolbox/@ttensor/subsasgn.m	/^function t = subsasgn(t,s,b)$/;"	f
 subsets	lib/TrialData/util/dpca/dpca_marginalize.m	/^function S = subsets(X)$/;"	f
 subsets	lib/dPCA/dpca_marginalize.m	/^function S = subsets(X)$/;"	f
+subsref	lib/tensor_toolbox/@ktensor/subsref.m	/^function a = subsref(t,s)$/;"	f
+subsref	lib/tensor_toolbox/@sptenmat/subsref.m	/^function a = subsref(t,s)$/;"	f
+subsref	lib/tensor_toolbox/@sptensor/subsref.m	/^function a = subsref(t,s)$/;"	f
+subsref	lib/tensor_toolbox/@sumtensor/subsref.m	/^function B = subsref(A, S) $/;"	f
+subsref	lib/tensor_toolbox/@symktensor/subsref.m	/^function a = subsref(t,s)$/;"	f
+subsref	lib/tensor_toolbox/@symtensor/subsref.m	/^function B = subsref(A, S)$/;"	f
+subsref	lib/tensor_toolbox/@tenmat/subsref.m	/^function a = subsref(t,s)$/;"	f
+subsref	lib/tensor_toolbox/@tensor/subsref.m	/^function a = subsref(t,s)$/;"	f
+subsref	lib/tensor_toolbox/@ttensor/subsref.m	/^function a = subsref(t,s)$/;"	f
 subtractConditionMean	lib/TrialData/Tools/subtractConditionMean.m	/^function trial_data = subtractConditionMean(trial_data,params)$/;"	f
+sumtensor	lib/tensor_toolbox/@sumtensor/sumtensor.m	/^function t = sumtensor(varargin)$/;"	f
 switch_pts	lib/KinectTracking/Marker_Tracking/tracking_functions/switch_pts.m	/^function [ all_medians, all_medians2 ] = switch_pts(switch_pts,t,all_medians,all_medians2)$/;"	f
+symktensor	lib/tensor_toolbox/@symktensor/symktensor.m	/^function t = symktensor(varargin)$/;"	f
+symmetrize	lib/tensor_toolbox/@ktensor/symmetrize.m	/^function Y = symmetrize(X)$/;"	f
+symmetrize	lib/tensor_toolbox/@tensor/symmetrize.m	/^function Y = symmetrize(X,grps,ver)$/;"	f
+symprod	lib/tensor_toolbox/eig_geap.m	/^function M = symprod(a,b)$/;"	f
+symtensor	lib/tensor_toolbox/@symtensor/symtensor.m	/^function [t,I] = symtensor(varargin)$/;"	f
 syncPatternDetectNEV	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/syncPatternDetectNEV.m	/^function codeKeeper = syncPatternDetectNEV(NEVStruct)$/;"	f
 syncPatternDetectNSx	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/syncPatternDetectNSx.m	/^function codeKeeper = syncPatternDetectNSx(data)$/;"	f
 syncPatternFinderNSx	lib/ClassyDataAnalysis/lib/NPMK/Dependent Functions/syncPatternFinderNSx.m	/^function codeKeeper = syncPatternFinderNSx(filenameNSx)$/;"	f
@@ -781,31 +1096,120 @@ szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-
 szUnits	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.h	/^    char   szUnits[32];       \/\/ Specifies the recording units of measurement$/;"	m	struct:__anon12
 tangleAnalysis	lib/TanglingCode/tangleAnalysis.m	/^function [ Q, out] = tangleAnalysis(  Data, samplingRate, varargin )$/;"	f
 tangle_visualize	lib/TanglingCode/tangle_visualize.m	/^function tangle_visualize( out )$/;"	f
+tendiag	lib/tensor_toolbox/tendiag.m	/^function X = tendiag(v,sz)$/;"	f
+teneye	lib/tensor_toolbox/teneye.m	/^function A = teneye(M,N)$/;"	f
+tenfun	lib/tensor_toolbox/@symtensor/tenfun.m	/^function Z = tenfun(fun,varargin)$/;"	f
+tenfun	lib/tensor_toolbox/@tensor/tenfun.m	/^function Z = tenfun(fun,varargin)$/;"	f
+tenmat	lib/tensor_toolbox/@tenmat/tenmat.m	/^function A = tenmat(varargin)$/;"	f
+tenones	lib/tensor_toolbox/tenones.m	/^function X = tenones(varargin)$/;"	f
+tenrand	lib/tensor_toolbox/tenrand.m	/^function X = tenrand(varargin)$/;"	f
+tenrandblk	lib/tensor_toolbox/tenrandblk.m	/^function G = tenrandblk(bsz, bns, verbose)$/;"	f
+tensor	lib/tensor_toolbox/@tensor/tensor.m	/^function t = tensor(varargin)$/;"	f
+tenzeros	lib/tensor_toolbox/tenzeros.m	/^function X = tenzeros(varargin)$/;"	f
 tesselateFR	lib/tesselateFR.m	/^function tesselateFR(x,y,fr)$/;"	f
 testSorting	lib/ClassyDataAnalysis/@commonDataStructure/testSorting.m	/^function testSorting(cds)$/;"	f
 test_sep	ForceKin/lib/test_sep.m	/^function [separability,mdl] = test_sep(td,params)$/;"	f
 timeShiftBins	lib/ClassyDataAnalysis/@experiment/timeShiftBins.m	/^function [lagData, lagPts, t]=timeShiftBins(ex,data,lags,varargin)$/;"	f
 timeStampsSecondsToTimestamps	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function timeStamps = timeStampsSecondsToTimestamps(timeStampsSeconds, samplingRate)$/;"	f
 timeStampsToTimestampSeconds	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/MClust/BlackrockNEVLoadingEngine.m	/^function timeStampsSec = timeStampsToTimestampSeconds(timeStamps, samplingRate)$/;"	f
+times	lib/tensor_toolbox/@ktensor/times.m	/^function C = times(A,B)$/;"	f
+times	lib/tensor_toolbox/@sptensor/times.m	/^function C = times(A,B)$/;"	f
+times	lib/tensor_toolbox/@symtensor/times.m	/^function Z = times(X,Y)$/;"	f
+times	lib/tensor_toolbox/@tensor/times.m	/^function Z = times(X,Y)$/;"	f
+tocell	lib/tensor_toolbox/@ktensor/tocell.m	/^function U = tocell(X,N)$/;"	f
+tovec	lib/tensor_toolbox/@ktensor/tovec.m	/^function x = tovec(K,lambdaflag)$/;"	f
+tovec	lib/tensor_toolbox/@symktensor/tovec.m	/^function x = tovec(S,nolambda)$/;"	f
 transformForOpenSim	lib/KinectTracking/functions/transformForOpenSim.m	/^function [md_opensim,handle_opensim] = transformForOpenSim(marker_data,cds)$/;"	f
+transpose	lib/tensor_toolbox/@tensor/transpose.m	/^function transpose(x)$/;"	f
 trenchSetup	lib/ClassyDataAnalysis/lib/gpfa/util/invToeplitz/invToeplitz.m	/^function [r,gam,v] = trenchSetup(T);$/;"	f
 trialAverage	lib/TrialData/Tools/trialAverage.m	/^function [avg_data,cond_idx] = trialAverage(trial_data, conditions, params)$/;"	f
 trialCI	lib/trialCI.m	/^function [avg_data, CIhigh_data, CIlow_data] = trialCI(trial_data, conditions, params)$/;"	f
 triggersFromNSx	lib/ClassyDataAnalysis/@commonDataStructure/triggersFromNSx.m	/^function triggersFromNSx(cds)$/;"	f
 trimTD	lib/TrialData/Tools/trimTD.m	/^function trial_data = trimTD(trial_data,varargin)$/;"	f
 trim_time	lib/TrialData/DataProcessing/convertDataToTD.m	/^function trial_data = trim_time(trial_data)$/;"	f
+tsize	lib/tensor_toolbox/@sptenmat/tsize.m	/^function sz = tsize(a,idx)$/;"	f
+tsize	lib/tensor_toolbox/@tenmat/tsize.m	/^function sz = tsize(a,idx)$/;"	f
+tt_assignment_type	lib/tensor_toolbox/@sptensor/subsasgn.m	/^function type = tt_assignment_type(x,subs,rhs)$/;"	f
+tt_calcpi_prowsubprob	lib/tensor_toolbox/cp_apr.m	/^function Pi = tt_calcpi_prowsubprob(X, isSparse, M, R, n, N, sparse_indices)$/;"	f
+tt_combinator	lib/tensor_toolbox/teneye.m	/^function [A] = tt_combinator(N,K,s1,s2)$/;"	f
+tt_cp_apr_mu	lib/tensor_toolbox/cp_apr.m	/^function [M, output] = tt_cp_apr_mu(X, R, Minit, varargin)$/;"	f
+tt_cp_apr_pdnr	lib/tensor_toolbox/cp_apr.m	/^function [M, out] = tt_cp_apr_pdnr(X, R, Minit, varargin)$/;"	f
+tt_cp_apr_pqnr	lib/tensor_toolbox/cp_apr.m	/^function [M, out] = tt_cp_apr_pqnr(X, R, Minit, varargin)$/;"	f
+tt_cp_fg	lib/tensor_toolbox/tt_cp_fg.m	/^function [f,G] = tt_cp_fg(Z,A,Znormsqr)$/;"	f
+tt_cp_fun	lib/tensor_toolbox/tt_cp_fun.m	/^function [f,g] = tt_cp_fun(x,Z,Znormsqr)$/;"	f
+tt_cp_vec_to_fac	lib/tensor_toolbox/tt_cp_vec_to_fac.m	/^function A = tt_cp_vec_to_fac(x,Z)$/;"	f
+tt_cp_wfg	lib/tensor_toolbox/cp_wopt.m	/^function [f,G] = tt_cp_wfg(Z,W,A,normZsqr)$/;"	f
+tt_cp_wfg_sparse	lib/tensor_toolbox/cp_wopt.m	/^function [f,G] = tt_cp_wfg_sparse(Zvals,W,A,normZsqr,memflag)$/;"	f
+tt_cp_wfg_sparse_setup	lib/tensor_toolbox/cp_wopt.m	/^function Zvals = tt_cp_wfg_sparse_setup(Z,W)$/;"	f
+tt_cp_wfun	lib/tensor_toolbox/cp_wopt.m	/^function [f,g] = tt_cp_wfun(Zdata,W,x,normZsqr,memflag)$/;"	f
+tt_create_missing_data_pattern	lib/tensor_toolbox/create_problem.m	/^function W = tt_create_missing_data_pattern(sz,M,isSparse)$/;"	f
+tt_dimscheck	lib/tensor_toolbox/tt_dimscheck.m	/^function [sdims,vidx] = tt_dimscheck(dims,N,M)$/;"	f
+tt_fac_to_vec	lib/tensor_toolbox/tt_fac_to_vec.m	/^function x = tt_fac_to_vec(A)$/;"	f
+tt_ind2sub	lib/tensor_toolbox/tt_ind2sub.m	/^function subs = tt_ind2sub(siz,idx)$/;"	f
+tt_intvec2str	lib/tensor_toolbox/tt_intvec2str.m	/^function s = tt_intvec2str(v)$/;"	f
+tt_loglikelihood	lib/tensor_toolbox/cp_apr.m	/^function f = tt_loglikelihood(X,M)$/;"	f
+tt_loglikelihood_row	lib/tensor_toolbox/cp_apr.m	/^function f = tt_loglikelihood_row(isSparse, x, m, Pi)$/;"	f
+tt_matrix2cellstr	lib/tensor_toolbox/tt_matrix2cellstr.m	/^function S = tt_matrix2cellstr(M)$/;"	f
+tt_size2str	lib/tensor_toolbox/tt_size2str.m	/^function s = tt_size2str(sz)$/;"	f
+tt_sizecheck	lib/tensor_toolbox/tt_sizecheck.m	/^function ok = tt_sizecheck(siz)$/;"	f
+tt_sub2ind	lib/tensor_toolbox/tt_sub2ind.m	/^function idx = tt_sub2ind(siz,subs)$/;"	f
+tt_subscheck	lib/tensor_toolbox/tt_subscheck.m	/^function ok = tt_subscheck(subs)$/;"	f
+tt_subsubsref	lib/tensor_toolbox/tt_subsubsref.m	/^function a = tt_subsubsref(obj,s)$/;"	f
+tt_valscheck	lib/tensor_toolbox/tt_valscheck.m	/^function ok = tt_valscheck(vals)$/;"	f
+ttensor	lib/tensor_toolbox/@ttensor/ttensor.m	/^function t = ttensor(varargin)$/;"	f
+ttm	lib/tensor_toolbox/@ktensor/ttm.m	/^function X = ttm(X,V,varargin)$/;"	f
+ttm	lib/tensor_toolbox/@sptensor/ttm.m	/^function Y = ttm(X,V,varargin)$/;"	f
+ttm	lib/tensor_toolbox/@tensor/ttm.m	/^function Y = ttm(X,V,varargin)$/;"	f
+ttm	lib/tensor_toolbox/@ttensor/ttm.m	/^function X = ttm(X,V,varargin)$/;"	f
+ttsv	lib/tensor_toolbox/@tensor/ttsv.m	/^function y = ttsv(A,x,n,ver)$/;"	f
+ttt	lib/tensor_toolbox/@sptensor/ttt.m	/^function c = ttt(varargin)$/;"	f
+ttt	lib/tensor_toolbox/@tensor/ttt.m	/^function c = ttt(varargin)$/;"	f
+ttv	lib/tensor_toolbox/@ktensor/ttv.m	/^function c = ttv(a,v,dims)$/;"	f
+ttv	lib/tensor_toolbox/@sptensor/ttv.m	/^function c = ttv(a,v,dims)$/;"	f
+ttv	lib/tensor_toolbox/@sumtensor/ttv.m	/^function c = ttv(a,v,dims)$/;"	f
+ttv	lib/tensor_toolbox/@tensor/ttv.m	/^function c = ttv(a,v,dims)$/;"	f
+ttv	lib/tensor_toolbox/@ttensor/ttv.m	/^function c = ttv(a,v,dims)$/;"	f
+tucker_als	lib/tensor_toolbox/tucker_als.m	/^function [T,Uinit] = tucker_als(X,R,varargin)$/;"	f
+tucker_sym	lib/tensor_toolbox/tucker_sym.m	/^function [T,Xinit] = tucker_sym(S,R,varargin)$/;"	f
 twoStageEngine	lib/ClassyDataAnalysis/lib/gpfa/core_twostage/twoStageEngine.m	/^function twoStageEngine(seqTrain, seqTest, fname, varargin)$/;"	f
 twoStageEngine_td	lib/TrialData/util/gpfa/twoStageEngine_td.m	/^function result = twoStageEngine_td(seqTrain, seqTest, fname, varargin)$/;"	f
+uminus	lib/tensor_toolbox/@ktensor/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@sptenmat/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@sptensor/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@sumtensor/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@symktensor/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@symtensor/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@tenmat/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@tensor/uminus.m	/^function t = uminus(t)$/;"	f
+uminus	lib/tensor_toolbox/@ttensor/uminus.m	/^function t = uminus(t)$/;"	f
 unitsFromNEV	lib/ClassyDataAnalysis/@commonDataStructure/unitsFromNEV.m	/^function unitsFromNEV(cds,opts)$/;"	f
+update	lib/tensor_toolbox/@ktensor/update.m	/^function M = update(M,modes,data)$/;"	f
 updateBins	lib/ClassyDataAnalysis/@binnedData/updateBins.m	/^function updateBins(bd,bins)$/;"	f
 updateMeta	lib/ClassyDataAnalysis/@firingRateData/updateMeta.m	/^function updateMeta(frd,meta)$/;"	f
+update_classlist	lib/tensor_toolbox/maintenance/update_classlist.m	/^function update_classlist(varargin)$/;"	f
+update_copyright	lib/tensor_toolbox/maintenance/update_copyright.m	/^function update_copyright(fname,varargin)$/;"	f
 upload2DB	lib/ClassyDataAnalysis/@commonDataStructure/upload2DB.m	/^function upload2DB(cds)$/;"	f
+uplus	lib/tensor_toolbox/@ktensor/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@sptenmat/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@sptensor/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@sumtensor/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@symktensor/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@symtensor/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@tenmat/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@tensor/uplus.m	/^function t = uplus(t)$/;"	f
+uplus	lib/tensor_toolbox/@ttensor/uplus.m	/^function t = uplus(t)$/;"	f
 valid	lib/ClassyDataAnalysis/lib/NPMK/LoadingEngines/nsNEVLIbrary 3.05/NevLIb-3-05/ns/ns.c	/^    int valid;$/;"	m	struct:NS_LIBRARY_FUNCS	file:
+var2struct	lib/tensor_toolbox/@symktensor/fg_setup.m	/^function s = var2struct(varargin)$/;"	f
+vectorizeForMu	lib/tensor_toolbox/cp_apr.m	/^function y = vectorizeForMu(x)$/;"	f
 viridis	lib/PythonColors/Colormaps/viridis.m	/^function cm_data=viridis(m)$/;"	f
 visData	lib/TrialData/Plotting/visData.m	/^function [ ] = visData( trial_data, params )$/;"	f
+viz	lib/tensor_toolbox/@ktensor/viz.m	/^function info = viz(K, varargin)$/;"	f
 whiteFade	lib/linspecer/linspecer.m	/^function cmap = whiteFade(varargin)$/;"	f
 windows2mask	lib/ClassyDataAnalysis/lib/windows2mask.m	/^function mask=windows2mask(time,windows)$/;"	f
 writeHandleForceFromCDS	lib/KinectTracking/functions/writeHandleForceFromCDS.m	/^function writeHandleForceFromCDS(cds,savefile_name)$/;"	f
 writeSessionSummary	lib/ClassyDataAnalysis/@commonDataStructure/writeSessionSummary.m	/^function writeSessionSummary(cds) $/;"	f
 writeTRCfromCDS	lib/KinectTracking/functions/writeTRCfromCDS.m	/^function writeTRCfromCDS(cds,savefile_name)$/;"	f
+xor	lib/tensor_toolbox/@sptensor/xor.m	/^function C = xor(A,B)$/;"	f
+xor	lib/tensor_toolbox/@symtensor/xor.m	/^function Z = xor(X,Y)$/;"	f
+xor	lib/tensor_toolbox/@tensor/xor.m	/^function Z = xor(X,Y)$/;"	f
 zscoreSignals	lib/TrialData/Tools/zscoreSignals.m	/^function trial_data = zscoreSignals(trial_data,params)$/;"	f
